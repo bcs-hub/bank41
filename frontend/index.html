@@ -44,34 +44,56 @@
 </table>
 
 <h4>Lisa uus klient</h4>
-<label for="">Eesnimi</label>
-<input type="text" id="firstName">
 
-<!--todo: <input> text  (hidden), value -->
-<!-- peidetud info -->
+<label for="firstName">Eesnimi</label>
+<input type="text" id="firstName" placeholder="Eesnimi">
+<br>
 
-<!--todo: <input> number (placeholder)-->
-<!-- Vanus (age) -->
+<label for="lastName">Perekonnanimi</label>
+<input type="text" id="lastName" placeholder="Tamm">
+<br>
 
-<!--todo: <input> date -->
-<!-- sünnikuupäev -->
-
-<!--todo: <select> (disabled, selected, label) -->
-<!-- --Linn-- -->
-<!-- Tallinn -->
-<!-- Tartu -->
-<!-- Viljandi -->
+<label for="age">Vanus</label>
+<input type="number" id="age" >
+<br>
+<br>
 
 
-<!--todo: <input> textarea (label, cols, rows)-->
-<!-- Tutvustus -->
 
-<!--todo: <input> radio (label, name="group1" )-->
-<!-- Mees -->
-<!-- Naine -->
+<select>
+    <option value="0" disabled selected>--linn--</option>
+    <option value="2">Tallinn</option>
+    <option value="3">Tartu</option>
+    <option value="1">Viljandi</option>
+</select>
 
-<!--todo: <input> password (placeholder)-->
-<!-- parool -->
+<br>
+<br>
+<h4>Tutvustus</h4>
+<textarea placeholder="Olen usaldusväärne uus klient...." cols="30" rows="5"></textarea>
+
+<br>
+<br>
+
+<h4>Sugu:</h4>
+<input type="radio" name="gender">
+<label for="">Mees</label>
+<br>
+<input type="radio" name="gender">
+<label for="">Naine</label>
+
+
+<br>
+<br>
+<input type="checkbox">
+<span>Nõustun kõigi</span>
+<a href="/tingimused.html" target="_blank">tingimustega</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 <!--todo: Link <a> external, internal, width-->
 
