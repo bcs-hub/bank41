@@ -1,217 +1,12 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="et">
+
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="/favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vite App</title>
-</head>
-<body>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="container my-5">
-
-<!-- Pealkiri / Main heading -->
-<h1>Meie pank</h1>
-
-<!-- Alapealkiri / Subtitle -->
-<h4>Eriti äge pank</h4>
-
-
-<!-- Paragraph / lõik -->
-<!-- <span> võimaldab muuta ainult osa tekstist -->
-<p>
-    Siin on meie
-    <span style="color: red">90'ndate stiilis</span>
-    pank. And it's awesome!
-</p>
-
-<!-- Reavahetus / line break -->
-<br>
-<br>
-
-
-<!-- Kontorite nimekirja pealkiri -->
-<h5>Meie panga kontorid</h5>
-
-<!-- Ordered list / nummerdatud nimekiri -->
-<ol>
-    <!-- List item / nimekirja element -->
-    <li>Tallinn</li>
-    <li>Tartu</li>
-    <li>Viljandi</li>
-</ol>
-
-<br>
-
-
-<!-- Klientide sektsioon -->
-<h4>Meie kliendid</h4>
-
-<!-- Table / tabel -->
-<table>
-
-    <!-- Esimene tabeli rida -->
-    <tr>
-        <!-- Table data / tabeli lahter -->
-        <td>Eesnimi</td>
-        <td>Perekonnanimi</td>
-    </tr>
-
-    <!-- Teine tabeli rida -->
-    <tr>
-        <td>Rain</td>
-        <td>Tüür</td>
-    </tr>
-
-    <!-- Kolmas tabeli rida -->
-    <tr>
-        <td>Juku</td>
-        <td>Juhan</td>
-    </tr>
-
-</table>
-
-
-<!-- Uue kliendi lisamise sektsioon -->
-<h4>Lisa uus klient</h4>
-
-
-<!-- Label on input välja kirjeldus -->
-<!-- for="firstName" seob labeli inputiga, mille id="firstName" -->
-<label for="firstName">Eesnimi</label>
-
-<!-- Text input / tekstiväli -->
-<!-- placeholder näitab näidisteksti enne kasutaja sisestust -->
-<input
-        type="text"
-        id="firstName"
-        placeholder="Eesnimi"
->
-
-<br>
-
-
-<!-- Perekonnanime input -->
-<label for="lastName">Perekonnanimi</label>
-
-<input
-        type="text"
-        id="lastName"
-        placeholder="Tamm"
->
-
-<br>
-
-
-<!-- Number input / numbriväli -->
-<label for="age">Vanus</label>
-
-<input
-        type="number"
-        id="age"
->
-
-<br>
-<br>
-
-
-<!-- Select / rippmenüü -->
-<select>
-
-    <!-- Vaikimisi valik -->
-    <!-- disabled = kasutaja ei saa seda valida -->
-    <!-- selected = see kuvatakse alguses -->
-    <option value="0" disabled selected>
-        --linn--
-    </option>
-
-    <!-- Select valikud -->
-    <!-- value on väärtus, mida programm saab hiljem kasutada -->
-    <option value="2">Tallinn</option>
-    <option value="3">Tartu</option>
-    <option value="1">Viljandi</option>
-
-</select>
-
-
-<br>
-<br>
-
-
-<!-- Textarea sektsioon -->
-<h4>Tutvustus</h4>
-
-<!-- Textarea sobib pikema teksti sisestamiseks -->
-<!-- cols = laius -->
-<!-- rows = kõrgus -->
-<textarea
-        placeholder="Olen usaldusväärne uus klient...."
-        cols="30"
-        rows="5">
-</textarea>
-
-
-<br>
-<br>
-
-
-<!-- Radio button sektsioon -->
-<h4>Sugu:</h4>
-
-<!-- Radio button -->
-<!-- Sama name="gender" tähendab, et valida saab ainult ühe variandi -->
-<input
-        type="radio"
-        name="gender"
-        id="male"
->
-
-<!-- Label on seotud radio buttoniga -->
-<label for="male">Mees</label>
-
-<br>
-
-
-<input
-        type="radio"
-        name="gender"
-        id="female"
->
-
-<label for="female">Naine</label>
-
-
-<br>
-<br>
-
-
-<!-- Checkbox / märkeruut -->
-<input
-        type="checkbox"
-        id="terms"
->
-
-<label for="terms">
-    Nõustun kõigi
-</label>
-
-<!-- Internal link / sisemine link -->
-<!-- Avab tingimused.html faili -->
-<!-- target="_blank" avab lingi uues tab'is -->
-<a
-        href="/tingimused.html"
-        target="_blank">
-    tingimustega
-</a>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-    <title>HTML ja CSS harjutus</title>
+    <title>Meie pank</title>
 
     <!-- Bootstrap -->
     <link
@@ -221,6 +16,7 @@
 
     <!-- Sisemised stiilid / Internal CSS -->
     <style>
+
         body {
             background-color: #f5f5f5;
         }
@@ -282,83 +78,494 @@
             text-align: center;
             border-radius: 5px;
         }
+
     </style>
+
+</head>
+
+
+<body>
+
+<div class="container my-5">
+
+
+    <!-- ======================================== -->
+    <!-- HTML -->
+    <!-- ======================================== -->
+
+
+    <!-- Pealkiri / Main heading -->
+    <h1>Meie pank</h1>
+
+
+    <!-- Alapealkiri / Subtitle -->
+    <h4>Eriti äge pank</h4>
+
+
+    <!-- Paragraph / lõik -->
+    <!-- span võimaldab muuta ainult osa tekstist -->
+
+    <p>
+        Siin on meie
+        <span style="color: red">
+            90'ndate stiilis
+        </span>
+        pank. And it's awesome!
+    </p>
+
+
+    <!-- Reavahetus / line break -->
+
+    <br>
+    <br>
+
+
+    <!-- ======================================== -->
+    <!-- ORDERED LIST -->
+    <!-- ======================================== -->
+
+    <h5>Meie panga kontorid</h5>
+
+
+    <!-- Ordered list / nummerdatud nimekiri -->
+
+    <ol>
+
+        <!-- List item / nimekirja element -->
+
+        <li>Tallinn</li>
+
+        <li>Tartu</li>
+
+        <li>Viljandi</li>
+
+    </ol>
+
+
+    <br>
+
+
+    <!-- ======================================== -->
+    <!-- TABLE -->
+    <!-- ======================================== -->
+
+
+    <h4>Meie kliendid</h4>
+
+
+    <!-- Table / tabel -->
+
+    <table>
+
+        <!-- Table row / tabeli rida -->
+
+        <tr>
+
+            <!-- Table header / tabeli päis -->
+
+            <th>Eesnimi</th>
+
+            <th>Perekonnanimi</th>
+
+        </tr>
+
+
+        <tr>
+
+            <!-- Table data / tabeli lahter -->
+
+            <td>Rain</td>
+
+            <td>Tüür</td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>Juku</td>
+
+            <td>Juhan</td>
+
+        </tr>
+
+    </table>
+
+
+    <br>
+    <br>
+
+
+    <!-- ======================================== -->
+    <!-- INPUT -->
+    <!-- ======================================== -->
+
+
+    <h4>Lisa uus klient</h4>
+
+
+    <!-- Label on input välja kirjeldus -->
+    <!-- for seob labeli input elemendiga -->
+
+
+    <label for="firstName">
+        Eesnimi
+    </label>
+
+
+    <!-- Text input / tekstiväli -->
+    <!-- placeholder näitab näidisteksti -->
+
+    <input
+            type="text"
+            id="firstName"
+            placeholder="Eesnimi"
+    >
+
+
+    <br>
+
+
+    <label for="lastName">
+        Perekonnanimi
+    </label>
+
+
+    <input
+            type="text"
+            id="lastName"
+            placeholder="Tamm"
+    >
+
+
+    <br>
+
+
+    <!-- Number input / numbriväli -->
+
+    <label for="age">
+        Vanus
+    </label>
+
+
+    <input
+            type="number"
+            id="age"
+    >
+
+
+    <br>
+    <br>
+
+
+    <!-- ======================================== -->
+    <!-- SELECT -->
+    <!-- ======================================== -->
+
+
+    <label for="city">
+        Linn
+    </label>
+
+
+    <!-- Select / rippmenüü -->
+
+    <select id="city">
+
+
+        <!-- disabled = seda valikut ei saa valida -->
+        <!-- selected = kuvatakse alguses -->
+
+        <option
+                value=""
+                disabled
+                selected
+        >
+            --linn--
+        </option>
+
+
+        <option value="2">
+            Tallinn
+        </option>
+
+
+        <option value="3">
+            Tartu
+        </option>
+
+
+        <option value="1">
+            Viljandi
+        </option>
+
+    </select>
+
+
+    <br>
+    <br>
+
+
+    <!-- ======================================== -->
+    <!-- TEXTAREA -->
+    <!-- ======================================== -->
+
+
+    <h4>Tutvustus</h4>
+
+
+    <!-- Textarea sobib pikema teksti sisestamiseks -->
+    <!-- cols = laius -->
+    <!-- rows = kõrgus -->
+
+    <textarea
+            id="description"
+            placeholder="Olen usaldusväärne uus klient...."
+            cols="30"
+            rows="5"
+    ></textarea>
+
+
+    <br>
+    <br>
+
+
+    <!-- ======================================== -->
+    <!-- RADIO BUTTON -->
+    <!-- ======================================== -->
+
+
+    <h4>Sugu:</h4>
+
+
+    <!-- Sama name tähendab,
+         et valida saab ainult ühe variandi -->
+
+
+    <input
+            type="radio"
+            name="gender"
+            id="male"
+            value="male"
+    >
+
+
+    <label for="male">
+        Mees
+    </label>
+
+
+    <br>
+
+
+    <input
+            type="radio"
+            name="gender"
+            id="female"
+            value="female"
+    >
+
+
+    <label for="female">
+        Naine
+    </label>
+
+
+    <br>
+    <br>
+
+
+    <!-- ======================================== -->
+    <!-- CHECKBOX + LINK -->
+    <!-- ======================================== -->
+
+
+    <input
+            type="checkbox"
+            id="terms"
+    >
+
+
+    <label for="terms">
+        Nõustun kõigi
+    </label>
+
+
+    <!-- Internal link / sisemine link -->
+    <!-- target="_blank" avab lingi uues tab'is -->
+
+    <a
+            href="/tingimused.html"
+            target="_blank"
+    >
+        tingimustega
+    </a>
+
+
+    <br>
+    <br>
+
+
+    <!-- ======================================== -->
+    <!-- BUTTON -->
+    <!-- ======================================== -->
+
+
+    <!-- Nupp käivitab JavaScript funktsiooni addCustomer() -->
+
+    <button
+            type="button"
+            onclick="addCustomer()"
+            class="btn btn-primary"
+    >
+        Lisa klient
+    </button>
+
+
+    <br>
+    <br>
+    <br>
+
+
+    <!-- ======================================== -->
+    <!-- CSS HARJUTUS -->
+    <!-- ======================================== -->
 
 
     <h1>HTML ja CSS harjutus</h1>
 
-    <!-- LINK -->
+
+    <!-- ======================================== -->
+    <!-- LINKS -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>1. Lingid</h2>
 
+
         <!-- External link -->
-        <a href="https://www.google.com" target="_blank">
+
+        <a
+                href="https://www.google.com"
+                target="_blank"
+        >
             Ava Google
         </a>
 
-        <br><br>
+
+        <br>
+        <br>
+
 
         <!-- Internal link -->
+
         <a href="#client">
             Mine kliendi sektsiooni
         </a>
 
-        <br><br>
+
+        <br>
+        <br>
+
 
         <!-- Width -->
+
         <div class="link-box">
-            <a href="https://github.com" target="_blank">
+
+            <a
+                    href="https://github.com"
+                    target="_blank"
+            >
                 GitHub
             </a>
+
         </div>
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- CHECKBOX -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>2. Checkbox</h2>
 
-        <input type="checkbox" id="terms">
 
-        <label for="terms">
+        <input
+                type="checkbox"
+                id="termsExample"
+        >
+
+
+        <label for="termsExample">
             Nõustun kõikide tingimustega
         </label>
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- FILE INPUT -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>3. Faili lisamine</h2>
+
 
         <label for="file">
             Lisa fail
         </label>
+
 
         <input
                 type="file"
                 id="file"
                 class="form-control"
         >
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- DIV + ID -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>4. DIV ja ID</h2>
 
+
         <div id="client">
+
             <h3>Klient</h3>
+
 
             <p>
                 See div kasutab ID-d "client".
             </p>
+
         </div>
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- BUTTON -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>5. Button</h2>
+
 
         <button
                 type="button"
@@ -366,87 +573,148 @@
         >
             Lisa klient
         </button>
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- CSS STYLES -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>6. CSS stiilid</h2>
 
+
         <!-- Reasisene stiil / Inline CSS -->
-        <p style="color: red; font-size: 20px;">
+
+        <p
+                style="
+                color: red;
+                font-size: 20px;
+            "
+        >
             Reasisene stiil / Inline CSS
         </p>
 
+
         <!-- Sisemine stiil / Internal CSS -->
+
         <p class="internal-style">
             Sisemine stiil / Internal CSS
         </p>
 
+
         <!-- Väline stiil näitena -->
+
         <p class="external-style">
             Väline stiil / External CSS näide
         </p>
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- CSS SELECTORS -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>7. CSS selectorid</h2>
 
+
         <!-- Element selector -->
+
         <p>
             Element selector
         </p>
 
+
         <!-- Class selector -->
+
         <p class="special-text">
             Class selector
         </p>
 
+
         <!-- ID selector -->
+
         <p id="unique-text">
             ID selector
         </p>
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- BOOTSTRAP GRID -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>8. Bootstrap Grid</h2>
+
+
+        <!-- row = rida -->
 
         <div class="row">
 
+
+            <!-- col = veerg -->
+
             <div class="col">
+
                 <div class="bootstrap-box">
                     Column 1
                 </div>
+
             </div>
 
+
             <div class="col">
+
                 <div class="bootstrap-box">
                     Column 2
                 </div>
+
             </div>
 
+
             <div class="col">
+
                 <div class="bootstrap-box">
                     Column 3
                 </div>
+
             </div>
 
         </div>
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- BOOTSTRAP INPUT -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>9. Bootstrap input</h2>
 
+
         <div class="mb-3">
-            <label for="name" class="form-label">
+
+            <label
+                    for="name"
+                    class="form-label"
+            >
                 Nimi
             </label>
+
 
             <input
                     type="text"
@@ -454,12 +722,19 @@
                     class="form-control"
                     placeholder="Sisesta nimi"
             >
+
         </div>
 
+
         <div class="mb-3">
-            <label for="email" class="form-label">
+
+            <label
+                    for="email"
+                    class="form-label"
+            >
                 E-mail
             </label>
+
 
             <input
                     type="email"
@@ -467,71 +742,129 @@
                     class="form-control"
                     placeholder="name@example.com"
             >
+
         </div>
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- BOOTSTRAP TABLE -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>10. Bootstrap table</h2>
+
 
         <table class="table table-striped table-bordered">
 
+
             <thead>
+
             <tr>
+
                 <th>ID</th>
+
                 <th>Nimi</th>
+
                 <th>E-mail</th>
+
             </tr>
+
             </thead>
 
+
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Anna</td>
-                <td>anna@example.com</td>
-            </tr>
 
             <tr>
-                <td>2</td>
-                <td>Maria</td>
-                <td>maria@example.com</td>
+
+                <td>1</td>
+
+                <td>Anna</td>
+
+                <td>anna@example.com</td>
+
             </tr>
+
+
+            <tr>
+
+                <td>2</td>
+
+                <td>Maria</td>
+
+                <td>maria@example.com</td>
+
+            </tr>
+
             </tbody>
 
         </table>
+
     </section>
 
 
+    <!-- ======================================== -->
     <!-- BOOTSTRAP BUTTONS -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>11. Bootstrap buttons</h2>
 
-        <button class="btn btn-primary">
+
+        <button
+                type="button"
+                class="btn btn-primary"
+        >
             Primary
         </button>
 
-        <button class="btn btn-success">
+
+        <button
+                type="button"
+                class="btn btn-success"
+        >
             Salvesta
         </button>
 
-        <button class="btn btn-danger">
+
+        <button
+                type="button"
+                class="btn btn-danger"
+        >
             Kustuta
         </button>
 
-        <button class="btn btn-warning">
+
+        <button
+                type="button"
+                class="btn btn-warning"
+        >
             Muuda
         </button>
+
     </section>
 
 
-    <!-- CLIENT FORM -->
+    <!-- ======================================== -->
+    <!-- BOOTSTRAP CLIENT FORM -->
+    <!-- ======================================== -->
+
+
     <section>
+
         <h2>12. Kliendi vorm</h2>
+
 
         <form>
 
+
             <div class="mb-3">
+
 
                 <label
                         for="clientName"
@@ -540,6 +873,7 @@
                     Kliendi nimi
                 </label>
 
+
                 <input
                         type="text"
                         id="clientName"
@@ -547,10 +881,12 @@
                         placeholder="Sisesta kliendi nimi"
                 >
 
+
             </div>
 
 
             <div class="mb-3">
+
 
                 <label
                         for="clientEmail"
@@ -559,6 +895,7 @@
                     Kliendi e-mail
                 </label>
 
+
                 <input
                         type="email"
                         id="clientEmail"
@@ -566,10 +903,12 @@
                         placeholder="Sisesta e-mail"
                 >
 
+
             </div>
 
 
             <div class="mb-3">
+
 
                 <label
                         for="clientFile"
@@ -578,22 +917,26 @@
                     Lisa fail
                 </label>
 
+
                 <input
                         type="file"
                         id="clientFile"
                         class="form-control"
                 >
 
+
             </div>
 
 
             <div class="form-check mb-3">
+
 
                 <input
                         type="checkbox"
                         id="clientTerms"
                         class="form-check-input"
                 >
+
 
                 <label
                         for="clientTerms"
@@ -602,60 +945,276 @@
                     Nõustun kõikide tingimustega
                 </label>
 
+
             </div>
 
 
             <button
-                    type="submit"
-                    onclick="addCustomer('ASYA')"
+                    type="button"
+                    onclick="addCustomer()"
                     class="btn btn-primary"
             >
                 Lisa klient
             </button>
 
+
         </form>
+
     </section>
+
 
 </div>
 
-<!-- Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ======================================== -->
+<!-- BOOTSTRAP JAVASCRIPT -->
+<!-- ======================================== -->
 
 
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+></script>
 
-<!--todo: Conflu: JavaScript -->
 
-<!--todo: <script> -->
+<!-- ======================================== -->
+<!-- JAVASCRIPT -->
+<!-- ======================================== -->
+
+
 <script>
-function addCustomer(firstName) {
-    alert("TSAUKI, susteemi lisati: "+ firstName)
-}
 
-addCustomer()
+
+    // ============================================
+    // 1. addCustomer()
+    //
+    // Funktsioon käivitub siis,
+    // kui kasutaja vajutab nuppu
+    // ============================================
+
+
+    function addCustomer() {
+
+
+        // ============================================
+        // HTML elementidest väärtuste võtmine
+        //
+        // document.getElementById(...)
+        // leiab HTML elemendi ID järgi
+        //
+        // .value
+        // võtab input välja väärtuse
+        // ============================================
+
+
+        let firstName =
+            document.getElementById('firstName').value;
+
+
+        let lastName =
+            document.getElementById('lastName').value;
+
+
+        let age =
+            document.getElementById('age').value;
+
+
+
+        // ============================================
+        // 2. Simple Hello World alert
+        //
+        // alert() näitab brauseris hüpikakent
+        // ============================================
+
+
+        alert("Hello World");
+
+
+
+        // ============================================
+        // 3. Hello World console.log()
+        //
+        // console.log()
+        // kirjutab info browser console'i
+        // ============================================
+
+
+        console.log("Hello World");
+
+
+
+        // ============================================
+        // 4. customerV1 objekti konstruktoriga
+        //
+        // new Object()
+        // loob uue JavaScript objekti
+        //
+        // Staatilised väärtused
+        // ============================================
+
+
+        let customerV1 = new Object();
+
+
+        customerV1.firstName = "Asya";
+
+        customerV1.lastName = "Selevjorstova";
+
+        customerV1.age = 25;
+
+
+
+        // ============================================
+        // 5. console.log(customerV1)
+        //
+        // Näitame objekti console'is
+        // ============================================
+
+
+        console.log(customerV1);
+
+
+
+        // ============================================
+        // alert(customerV1)
+        //
+        // Kui kirjutaksime:
+        //
+        // alert(customerV1)
+        //
+        // siis saaksime:
+        //
+        // [object Object]
+        //
+        // Sellepärast kasutame JSON.stringify()
+        // ============================================
+
+
+
+        // ============================================
+        // 6. JSON.stringify()
+        //
+        // Muudab JavaScript objekti tekstiks
+        // ============================================
+
+
+        alert(
+            JSON.stringify(customerV1)
+        );
+
+
+
+        // Sama asja võib salvestada muutujasse
+
+
+        let customerV1Text =
+            JSON.stringify(customerV1);
+
+
+        console.log(customerV1Text);
+
+
+
+        // ============================================
+        // 7. customerV2 objekt literaaliga
+        //
+        // Object literal = {}
+        //
+        // Staatilised väärtused
+        // ============================================
+
+
+        let customerV2 = {
+
+            firstName: "Rain",
+
+            lastName: "Tüür",
+
+            age: 30
+
+        };
+
+
+        console.log(customerV2);
+
+
+
+        // ============================================
+        // 8. Lisame customerV2 objektile
+        // peale objekti loomist uue välja
+        // ============================================
+
+
+        customerV2.city = "Tallinn";
+
+
+        console.log(customerV2);
+
+
+
+        // Võime lisada veel ühe välja
+
+
+        customerV2.isCustomer = true;
+
+
+        console.log(customerV2);
+
+
+
+        // ============================================
+        // 9. customerV3 objekt literaaliga
+        //
+        // Väärtused tulevad HTML input väljadest
+        // ============================================
+
+
+        let customerV3 = {
+
+            firstName: firstName,
+
+            lastName: lastName,
+
+            age: age
+
+        };
+
+
+
+        // Näitame objekti console'is
+
+
+        console.log(customerV3);
+
+
+
+        // ============================================
+        // JSON.stringify(customerV3)
+        //
+        // Muudame objekti tekstiks
+        // ja näitame alert aknas
+        // ============================================
+
+
+        alert(
+            "TSAUKI, süsteemi lisati: "
+            + JSON.stringify(customerV3)
+        );
+
+
+    }
+
 
 </script>
-<!--todo: addCustomer() -->
-<!-- simple Hello World alert -->
-<!-- Hello World console.log() -->
-<!-- customerV1 objekti konstruktoriga (staatilised väärtused) -->
-<!-- console.log(customerV1), alert(customerV1) -->
-<!-- JSON.stringify() -->
-<!-- customerV2 objekt literaaliga (staatilised väärtused) -->
-<!-- customerV2 lisame peale objekti loomist juurde mingi suvalise välja -->
-<!-- customerV3 objekt literaaliga (väärtused html elementidest) -->
 
-<script type="module" src="/src/main.js"></script>
+
+<!-- Vite main.js -->
+
+<script
+        type="module"
+        src="/src/main.js"
+></script>
+
+
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
