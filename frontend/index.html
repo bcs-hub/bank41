@@ -114,7 +114,7 @@
 <br>
 <br>
 
-<button type="submit">Lisa uus klient</button>
+<button type="submit" onclick="addCustomer('Rain')">Lisa uus klient</button>
 
 <br>
 <br>
@@ -139,7 +139,17 @@
 <!-- customerV2 lisame peale objekti loomist juurde mingi suvalise välja -->
 <!-- customerV3 objekt literaaliga (väärtused html elementidest) -->
 
-<script type="module" src="/src/main.js"></script>
+<script>
+
+
+
+    function addCustomer(firstName) {
+        alert("Süstemi lisati: " + firstName)
+    }
+
+
+
+</script>
 </body>
 
 </html>
