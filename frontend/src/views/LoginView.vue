@@ -25,8 +25,8 @@ export default {
     <div class="row justify-content-center">
       <div class="col col-6">
         <h4>Sisselogimine</h4>
-        ,
-        <div v-if="true" class="alert-danger" role="alert"> {{messege}}</div>
+
+         <div v-if="true" class="alert-danger" role="alert"> {{message}}</div>
 
         <div class="form-floating mb-3">
           <input v-model="loginRequest.username" type="text" class="form-control" placeholder="" />
