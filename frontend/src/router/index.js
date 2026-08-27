@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import AtmsView from '@/views/AtmsView.vue'
+import ErrorView from '@/views/ErrorView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/atms',
       name: 'atms',
       component: AtmsView,
+    },
+    {
+      path: '/error',
+      name: 'error',
+      component: ErrorView,
     },
   ],
 })
