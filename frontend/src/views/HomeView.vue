@@ -1,4 +1,11 @@
-<script></script>
+<script>
+export default  {
+
+  name: 'HomeView'
+}
+
+
+</script>
 
 <template>
   <div class="container text-center">
