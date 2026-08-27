@@ -16,7 +16,10 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="collapse navbar-collapse justify-content-center" id="navMenu">
       <div class="navbar-nav">
         <RouterLink class="nav-link" to="/">Kodu</RouterLink>
+      </div><div class="navbar-nav">
+        <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
       </div>
+
     </div>
   </nav>
 
