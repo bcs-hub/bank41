@@ -1,0 +1,741 @@
+<title>Git Prune</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,400..700,0..1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+  :root {
+    --ink: #1a1f1c;
+    --ink-soft: #4a5148;
+    --paper: #f7f5ef;
+    --surface: #ece8dc;
+    --surface-2: #e2ddcc;
+    --line: #d8d3c4;
+    --accent: #3d6b4f;
+    --accent-soft: #6b8f78;
+    --accent-wash: #e2e9e2;
+    --danger: #9a4a3a;
+    --danger-wash: #f2e2dd;
+    --focus: #2f6ee0;
+
+    --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', serif;
+    --font-body: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #eae7dd;
+      --ink-soft: #b7b3a3;
+      --paper: #17181a;
+      --surface: #1f211f;
+      --surface-2: #272a26;
+      --line: #34372f;
+      --accent: #7fb08f;
+      --accent-soft: #5d8f6d;
+      --accent-wash: #1e2a20;
+      --danger: #d38a76;
+      --danger-wash: #2c1e19;
+      --focus: #7fa8f5;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #eae7dd;
+    --ink-soft: #b7b3a3;
+    --paper: #17181a;
+    --surface: #1f211f;
+    --surface-2: #272a26;
+    --line: #34372f;
+    --accent: #7fb08f;
+    --accent-soft: #5d8f6d;
+    --accent-wash: #1e2a20;
+    --danger: #d38a76;
+    --danger-wash: #2c1e19;
+    --focus: #7fa8f5;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    background: var(--paper);
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 0) 0 0 / 28px 28px,
+      var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent-soft); color: var(--paper); }
+
+  a { color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin-bottom: 1.1rem;
+  }
+  .kicker::before {
+    content: "";
+    width: 0.55em;
+    height: 0.55em;
+    background: var(--accent);
+    border-radius: 1px;
+    transform: rotate(45deg);
+    flex: none;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 6vw, 3.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .standfirst {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 38rem;
+    text-wrap: pretty;
+    margin: 0 0 2.6rem;
+  }
+
+  .analogy-line {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 0.6rem 0;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .analogy-line span:first-child { color: var(--ink); }
+
+  /* ---------- Article typography ---------- */
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.7rem;
+    letter-spacing: -0.005em;
+    margin: 3.4rem 0 1rem;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.15rem;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
+  }
+
+  p { margin: 0 0 1.15rem; max-width: 65ch; }
+  strong { font-weight: 600; }
+
+  ul, ol { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+  li { margin-bottom: 0.45rem; max-width: 62ch; }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 0.1em 0.38em;
+  }
+
+  .callout {
+    background: var(--danger-wash);
+    border: 1px solid color-mix(in srgb, var(--danger) 35%, var(--line));
+    border-left: 3px solid var(--danger);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin: 1.6rem 0;
+    font-size: 0.95rem;
+  }
+  .callout-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--danger);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ---------- Table ---------- */
+
+  .table-wrap { overflow-x: auto; margin: 1.5rem 0 2rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    min-width: 30rem;
+  }
+  caption {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.6rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.65rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    border-bottom: 2px solid var(--line);
+  }
+  td:first-child code { white-space: nowrap; }
+  tbody tr:hover { background: var(--surface); }
+
+  /* ---------- Interactive graph widget ---------- */
+
+  .widget {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.5rem 1.5rem 1.3rem;
+    margin: 1.8rem 0 2.4rem;
+  }
+  .widget-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+    flex-wrap: wrap;
+  }
+  .widget-title {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .prune-btn {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.15s ease;
+  }
+  .prune-btn:hover { background: var(--accent); }
+  .prune-btn:active { transform: scale(0.97); }
+  .prune-btn[data-state="done"] { background: var(--danger); }
+  .prune-btn[data-state="done"]:hover { background: var(--danger); opacity: 0.9; }
+  @media (prefers-reduced-motion: reduce) {
+    .prune-btn { transition: none; }
+  }
+
+  canvas#graph {
+    display: block;
+    width: 100%;
+    height: 220px;
+    border-radius: 5px;
+  }
+
+  .widget-caption {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin-top: 0.8rem;
+    min-height: 1.4em;
+  }
+  .widget-caption .flag { color: var(--danger); }
+  .widget-caption .ok { color: var(--accent); }
+
+  /* ---------- Terminal sandbox ---------- */
+
+  .terminal {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1.6rem 0 2.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    box-shadow: 0 8px 24px -12px rgba(0,0,0,0.35);
+  }
+  :root[data-theme="light"] .terminal,
+  :root:not([data-theme="dark"]):not(.force-dark) .terminal {
+    /* keep terminal always dark-on-dark regardless of page theme for contrast/effect */
+  }
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.8rem;
+    background: rgba(255,255,255,0.06);
+  }
+  .terminal-dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: rgba(255,255,255,0.25); }
+  .terminal-label {
+    margin-left: 0.5rem;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.04em;
+  }
+  .terminal-body { padding: 1rem 1.1rem 1.2rem; }
+  .terminal-body .prompt::before { content: "$ "; color: var(--accent-soft); }
+  .terminal-line { margin: 0 0 0.3rem; white-space: pre-wrap; }
+  .terminal-out { color: rgba(255,255,255,0.62); margin: 0 0 0.15rem; }
+  .terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.9rem;
+    flex-wrap: wrap;
+  }
+  .term-btn {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    background: transparent;
+    color: var(--paper);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 5px;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+  }
+  .term-btn:hover { border-color: var(--accent-soft); color: var(--accent-soft); }
+
+  /* ---------- Summary table already styled above; recap grid ---------- */
+
+  .recap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 1.8rem 0;
+  }
+  .recap-item {
+    background: var(--surface);
+    padding: 1rem 1.1rem;
+  }
+  .recap-item dt {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+  }
+  .recap-item dd { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+
+  /* ---------- Next steps ---------- */
+
+  .next-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+  }
+  .next-list li {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    max-width: none;
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+  }
+  .next-list code { flex: none; }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 520px) {
+    .page { padding: 3rem 1.1rem 4rem; }
+    h1 { font-size: 2.2rem; }
+  }
+</style>
+
+<div class="page">
+
+  <p class="kicker">git · repositooriumi hooldus</p>
+  <h1>Git <em>prune</em>:<br>prügikasti tühjendamine</h1>
+  <p class="standfirst">
+    Git ei kustuta iial midagi kohe. Iga kustutatud haru, iga <code>rebase</code>, iga
+    <code>commit --amend</code> jätab endast maha commit'e, millele enam miski ei viita.
+    <code>git prune</code> on käsk, mis need lõplikult minema pühib.
+  </p>
+
+  <p class="analogy-line">
+    <span>Prügikasti analoogia</span>
+    <span>kustutamine peidab faili → prune tühjendab prügikasti päriselt</span>
+  </p>
+
+  <h2>Enne ja pärast</h2>
+  <p>
+    Kui kustutad haru, ei kao selle commit'id kettalt — nad jäävad <code>.git</code> kausta sisse
+    "kummitustena", kuni miski (või keegi) need koristab. Vajuta nuppu ja vaata, mis juhtub.
+  </p>
+
+  <div class="widget">
+    <div class="widget-head">
+      <span class="widget-title">Commit-graaf</span>
+      <button class="prune-btn" id="pruneBtn" type="button" aria-describedby="graphCaption">git prune</button>
+    </div>
+    <canvas id="graph" width="800" height="220" role="img" aria-label="Commit-graaf, mis näitab peaharu ja hüljatud haru"></canvas>
+    <p class="widget-caption" id="graphCaption">
+      Hall haru on kustutatud, aga selle kolm commit'i <span class="flag">jäävad kettale hüljatuna</span>, kuni käivitad prune'i.
+    </p>
+  </div>
+
+  <h2>Miks see oluline on</h2>
+  <p>
+    <code>.git</code> kaust kasvab aja jooksul, sest Git säilitab vaikimisi <strong>kõik</strong>
+    objektid — ka need, mida keegi enam ei kasuta:
+  </p>
+  <ul>
+    <li>Kustutatud harude commit'id</li>
+    <li><code>git rebase</code> või <code>git commit --amend</code> käigus tekkinud vanad versioonid</li>
+    <li><code>git reset --hard</code> käigus mahajäänud commit'id</li>
+  </ul>
+  <p>Need objektid võtavad kettaruumi, kuigi neile enam miski ei viita. <code>git prune</code> hoiab repositooriumi puhtana.</p>
+
+  <h2>Proovi ise (turvaliselt)</h2>
+  <p>
+    Enne päris kustutamist tasub alati vaadata, <em>mida</em> kustutataks — selleks on <code>--dry-run</code> lipp.
+    Alloleval terminalil pole päris jõudu, aga selle käsud ja väljundid on tõesed.
+  </p>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+      <span class="terminal-label">bash — sandbox</span>
+    </div>
+    <div class="terminal-body" id="termBody">
+      <p class="terminal-line">Vali käsk allpool, et näha selle väljundit.</p>
+    </div>
+    <div class="terminal-controls">
+      <button class="term-btn" data-cmd="dry">git prune --dry-run</button>
+      <button class="term-btn" data-cmd="run">git prune</button>
+      <button class="term-btn" data-cmd="gc">git gc</button>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-label">Ettevaatust</span>
+    <code>git prune</code> on <strong>pöördumatu</strong>. Kui kustutad objekti, mida oleks vaja
+    läinud (nt taastamiseks <code>git reflog</code> abil), siis pärast prune'i see enam ei õnnestu.
+    Tavalises igapäevatöös ei pea seda käsitsi käivitama — Git teeb sarnast tööd ise <code>git gc</code> kaudu.
+  </div>
+
+  <h2>Kolm sarnast, aga erinevat käsku</h2>
+  <p>Neid aetakse tihti segi — igaühel on oma roll.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Käskude võrdlus</caption>
+      <thead>
+        <tr><th>Käsk</th><th>Mida teeb</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>git prune</code></td>
+          <td>Kustutab lokaalsed hüljatud <strong>objektid</strong> (commit'id, blob'id) kettalt.</td>
+        </tr>
+        <tr>
+          <td><code>git gc</code></td>
+          <td>Üldine "prügikoristus" — pakib objektid kokku, kutsub ka prune'i, aga arvestab <code>reflog</code>'i ja varutähtaegu.</td>
+        </tr>
+        <tr>
+          <td><code>git fetch --prune</code></td>
+          <td>Eemaldab lokaalsed viited <strong>kaugharudele</strong>, mis serveris enam ei eksisteeri.</td>
+        </tr>
+        <tr>
+          <td><code>git branch -d</code></td>
+          <td>Kustutab ühe lokaalse haru — commit'id ise jäävad kettale, kuni prune need koristab.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Kokkuvõte</h2>
+  <dl class="recap">
+    <div class="recap-item"><dt>Unreachable</dt><dd>objekt, millele ei viita ükski branch ega tag</dd></div>
+    <div class="recap-item"><dt>--dry-run</dt><dd>näitab, mida kustutataks, midagi kustutamata</dd></div>
+    <div class="recap-item"><dt>Pöördumatus</dt><dd>prune järel ei saa objekte enam taastada</dd></div>
+    <div class="recap-item"><dt>git gc</dt><dd>automaatne ja turvalisem koristus, mis sisaldab prune-loogikat</dd></div>
+  </dl>
+
+  <h2>Järgmised sammud</h2>
+  <ul class="next-list">
+    <li><code>git reflog</code><span>kuidas "kadunud" commit'e üles leida, enne kui prune need kustutab</span></li>
+    <li><code>git gc</code><span>automaatne koristus ja selle seaded</span></li>
+    <li><code>branch -d</code> vs <code>-D</code><span>haru kustutamise erinevused</span></li>
+    <li><code>.git/objects</code><span>kuidas Git objekte tegelikult kettal hoiab</span></li>
+  </ul>
+
+  <footer>
+    <span>Vali-IT · Git materjalid</span>
+    <span>git-prune</span>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  const canvas = document.getElementById('graph');
+  const ctx = canvas.getContext('2d');
+  const btn = document.getElementById('pruneBtn');
+  const caption = document.getElementById('graphCaption');
+  let dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let pruned = false;
+  let sweepProgress = 0; // 0..1, animates the fade-out
+  let animId = null;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function cssVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(rect.width * dpr);
+    canvas.height = Math.round(rect.height * dpr);
+    draw();
+  }
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function draw() {
+    const w = canvas.width, h = canvas.height;
+    ctx.save();
+    ctx.scale(dpr, dpr);
+    const cw = w / dpr, ch = h / dpr;
+    ctx.clearRect(0, 0, cw, ch);
+
+    const ink = cssVar('--ink');
+    const inkSoft = cssVar('--ink-soft');
+    const accent = cssVar('--accent');
+    const danger = cssVar('--danger');
+    const line = cssVar('--line');
+
+    // layout
+    const mainY = ch * 0.36;
+    const branchY = ch * 0.72;
+    const startX = 60;
+    const stepX = (cw - 140) / 4;
+    const r = 7;
+
+    // main branch commits (4 dots + arrow onward)
+    ctx.strokeStyle = accent;
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.moveTo(startX, mainY);
+    ctx.lineTo(startX + stepX * 3, mainY);
+    ctx.stroke();
+
+    // arrow head continuing right
+    ctx.beginPath();
+    ctx.moveTo(startX + stepX * 3, mainY);
+    ctx.lineTo(startX + stepX * 3 + 18, mainY - 6);
+    ctx.moveTo(startX + stepX * 3, mainY);
+    ctx.lineTo(startX + stepX * 3 + 18, mainY + 6);
+    ctx.stroke();
+
+    for (let i = 0; i < 4; i++) {
+      const x = startX + stepX * i;
+      ctx.beginPath();
+      ctx.arc(x, mainY, r, 0, Math.PI * 2);
+      ctx.fillStyle = accent;
+      ctx.fill();
+    }
+
+    ctx.fillStyle = ink;
+    ctx.font = '500 12px "JetBrains Mono", monospace';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('main', startX + stepX * 3 + 26, mainY);
+
+    // branch fork point at commit index 1
+    const forkX = startX + stepX * 1;
+    const fadeAlpha = pruned ? lerp(1, 0, sweepProgress) : 1;
+    const dropOffset = pruned ? lerp(0, 22, sweepProgress) : 0;
+
+    ctx.globalAlpha = fadeAlpha;
+
+    // connector from fork down to branch
+    ctx.strokeStyle = danger;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(forkX, mainY);
+    ctx.lineTo(forkX, branchY + dropOffset);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // branch commits (3 dots)
+    ctx.strokeStyle = danger;
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.moveTo(forkX, branchY + dropOffset);
+    ctx.lineTo(forkX + stepX * 1.4, branchY + dropOffset);
+    ctx.stroke();
+
+    for (let i = 0; i < 3; i++) {
+      const x = forkX + (stepX * 1.4 / 2) * i;
+      ctx.beginPath();
+      ctx.arc(x, branchY + dropOffset, r, 0, Math.PI * 2);
+      ctx.fillStyle = danger;
+      ctx.fill();
+    }
+
+    ctx.fillStyle = danger;
+    ctx.font = 'italic 500 12px "Source Serif 4", serif';
+    ctx.fillText(pruned ? 'kustutatud' : 'vana-haru (kustutatud viide)', forkX + stepX * 1.4 + 14, branchY + dropOffset);
+
+    ctx.globalAlpha = 1;
+
+    ctx.restore();
+  }
+
+  function animateSweep() {
+    sweepProgress += 0.05;
+    if (sweepProgress >= 1) {
+      sweepProgress = 1;
+      draw();
+      cancelAnimationFrame(animId);
+      animId = null;
+      return;
+    }
+    draw();
+    animId = requestAnimationFrame(animateSweep);
+  }
+
+  btn.addEventListener('click', function () {
+    if (pruned) {
+      // reset
+      pruned = false;
+      sweepProgress = 0;
+      btn.textContent = 'git prune';
+      btn.removeAttribute('data-state');
+      caption.innerHTML = 'Hall haru on kustutatud, aga selle kolm commit\'i <span class="flag">jäävad kettale hüljatuna</span>, kuni käivitad prune\'i.';
+      draw();
+      return;
+    }
+    pruned = true;
+    btn.textContent = 'lähtesta';
+    btn.setAttribute('data-state', 'done');
+    caption.innerHTML = 'Hüljatud commit\'id on <span class="flag">jäädavalt kustutatud</span>. <span class="ok">main</span> haru jäi täiesti puutumata.';
+    if (reduceMotion) {
+      sweepProgress = 1;
+      draw();
+    } else {
+      animateSweep();
+    }
+  });
+
+  window.addEventListener('resize', resize);
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+  resize();
+
+  // ---- Terminal sandbox ----
+  const termBody = document.getElementById('termBody');
+  const outputs = {
+    dry: [
+      { t: 'line', text: 'git prune --dry-run', prompt: true },
+      { t: 'out', text: 'would prune a1b2c3d "vana-haru: WIP katsetus"' },
+      { t: 'out', text: 'would prune 9f8e7d6 "vana-haru: parandus"' },
+      { t: 'out', text: 'would prune 4c5b6a7 "vana-haru: esimene versioon"' },
+      { t: 'out', text: '(midagi ei kustutatud — see oli ainult eelvaade)' }
+    ],
+    run: [
+      { t: 'line', text: 'git prune', prompt: true },
+      { t: 'out', text: 'Kustutati 3 hüljatud objekti.' },
+      { t: 'out', text: '.git kausta suurus: 4.2 MB → 3.6 MB' }
+    ],
+    gc: [
+      { t: 'line', text: 'git gc', prompt: true },
+      { t: 'out', text: 'Enumerating objects: 128, done.' },
+      { t: 'out', text: 'Compressing objects: 100% (96/96), done.' },
+      { t: 'out', text: '(sisaldab ka prune-loogikat, aga arvestab reflog varutähtaega)' }
+    ]
+  };
+
+  document.querySelectorAll('.term-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      const cmd = b.getAttribute('data-cmd');
+      const lines = outputs[cmd];
+      termBody.innerHTML = '';
+      lines.forEach(function (l) {
+        const p = document.createElement('p');
+        p.className = l.t === 'line' ? 'terminal-line prompt' : 'terminal-out';
+        p.textContent = l.text;
+        termBody.appendChild(p);
+      });
+    });
+  });
+})();
+</script>
