@@ -5,7 +5,15 @@ export default {
 </script>
 
 <template>
-  <div>TERE</div>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <h1>Uups, midagi läks valesti</h1>
+        <img src="https://media.tenor.com/nANqORN7qhQAAAAM/explosion-explode.gif"
+        alt="Pommid tulevad"
+
+        />
+      </div>
+    </div>
+  </div>
 </template>
-
-
