@@ -17,6 +17,11 @@
           <div class="rounded p-2">Kodu</div>
         </RouterLink>
       </div>
+      <div class="navbar-nav">
+        <RouterLink class="nav-link" to="/atms">
+          <div class="rounded p-2">Pangaautomaadid</div>
+        </RouterLink>
+      </div>
     </div>
   </nav>
 
