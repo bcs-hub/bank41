@@ -13,6 +13,7 @@
       <div class="navbar-nav">
         <RouterLink class="nav-link" to="/">Kodu</RouterLink>
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
+        <RouterLink class="nav-link" to="/login">Sisse logimine</RouterLink>
       </div>
     </div>
   </nav>
