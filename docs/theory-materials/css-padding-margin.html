@@ -1,0 +1,722 @@
+<meta charset="UTF-8">
+<title>Padding ja Margin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,400..700,0..1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+  :root {
+    --ink: #241f1a;
+    --ink-soft: #6b5f52;
+    --paper: #f7f2e9;
+    --surface: #ede4d4;
+    --surface-2: #e2d6c0;
+    --line: #d8c9ac;
+
+    --padding-hue: #3d6b7a;
+    --padding-wash: #dce8ea;
+    --margin-hue: #a85834;
+    --margin-wash: #f0dfd2;
+
+    --focus: #2f6ee0;
+
+    --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', serif;
+    --font-body: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ede6d9;
+      --ink-soft: #b3a692;
+      --paper: #1a1712;
+      --surface: #221e17;
+      --surface-2: #2b261d;
+      --line: #3b3427;
+
+      --padding-hue: #7fb4c2;
+      --padding-wash: #1e2c30;
+      --margin-hue: #d99368;
+      --margin-wash: #2e2018;
+
+      --focus: #7fa8f5;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #ede6d9;
+    --ink-soft: #b3a692;
+    --paper: #1a1712;
+    --surface: #221e17;
+    --surface-2: #2b261d;
+    --line: #3b3427;
+
+    --padding-hue: #7fb4c2;
+    --padding-wash: #1e2c30;
+    --margin-hue: #d99368;
+    --margin-wash: #2e2018;
+
+    --focus: #7fa8f5;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { background: var(--paper); }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--padding-hue); color: var(--paper); }
+
+  a { color: var(--padding-hue); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin-bottom: 1.1rem;
+  }
+  .kicker::before {
+    content: "";
+    width: 0.55em;
+    height: 0.55em;
+    border: 2px solid var(--padding-hue);
+    border-radius: 1px;
+    flex: none;
+  }
+  .kicker::after {
+    content: "";
+    width: 1.4em;
+    height: 0.55em;
+    background: var(--margin-hue);
+    opacity: 0.55;
+    flex: none;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 3.4rem);
+    line-height: 1.03;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+  }
+  h1 .p-word { color: var(--padding-hue); }
+  h1 .m-word { color: var(--margin-hue); }
+
+  .standfirst {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 38rem;
+    text-wrap: pretty;
+    margin: 0 0 2.6rem;
+  }
+
+  .analogy-line {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 0.6rem 0;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .analogy-line span:first-child { color: var(--ink); }
+
+  /* ---------- Article typography ---------- */
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.65rem;
+    letter-spacing: -0.005em;
+    margin: 3.4rem 0 1rem;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.12rem;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
+  }
+
+  p { margin: 0 0 1.15rem; max-width: 65ch; }
+  strong { font-weight: 600; }
+
+  ul, ol { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+  li { margin-bottom: 0.45rem; max-width: 62ch; }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 0.1em 0.38em;
+  }
+
+  pre {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+    margin: 0 0 1.6rem;
+  }
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  /* ---------- Legend chips ---------- */
+
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 0 0 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+  }
+  .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+  .legend-swatch { width: 1rem; height: 1rem; border-radius: 3px; flex: none; }
+  .legend-swatch.padding { background: var(--padding-hue); }
+  .legend-swatch.margin { background: var(--margin-hue); opacity: 0.6; border: 1.5px dashed var(--margin-hue); }
+
+  /* ---------- Box model widget ---------- */
+
+  .widget {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.6rem 1.8rem;
+    margin: 0 0 2.6rem;
+  }
+
+  .stage {
+    background:
+      linear-gradient(var(--surface-2) 1px, transparent 1px),
+      linear-gradient(90deg, var(--surface-2) 1px, transparent 1px);
+    background-size: 24px 24px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 2rem 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    overflow: auto;
+  }
+
+  .box-model {
+    /* margin ring */
+    background: repeating-linear-gradient(
+      45deg,
+      color-mix(in srgb, var(--margin-hue) 22%, transparent),
+      color-mix(in srgb, var(--margin-hue) 22%, transparent) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+    border: 1.5px dashed color-mix(in srgb, var(--margin-hue) 70%, var(--line));
+    border-radius: 6px;
+    transition: padding 0.15s ease;
+    position: relative;
+  }
+
+  .border-ring {
+    border: 3px solid var(--ink);
+    border-radius: 4px;
+    transition: padding 0.15s ease;
+  }
+
+  .padding-ring {
+    background: var(--padding-wash);
+    border-radius: 3px;
+    transition: padding 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-box {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 0.9rem 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--ink);
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .ring-label {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--margin-hue);
+    top: -1.4rem;
+    left: 0.2rem;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.4rem;
+  }
+
+  .control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .control-label {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.03em;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .control-label .name { color: var(--ink-soft); }
+  .control.padding .control-label .name { color: var(--padding-hue); font-weight: 600; }
+  .control.margin .control-label .name { color: var(--margin-hue); font-weight: 600; }
+  .control-label .value {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    accent-color: var(--ink);
+    cursor: pointer;
+  }
+  .control.padding input[type="range"] { accent-color: var(--padding-hue); }
+  .control.margin input[type="range"] { accent-color: var(--margin-hue); }
+
+  .widget-caption {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin-top: 1.3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+  .widget-caption strong.p { color: var(--padding-hue); }
+  .widget-caption strong.m { color: var(--margin-hue); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .box-model, .border-ring, .padding-ring { transition: none; }
+  }
+
+  /* ---------- Collapse demo ---------- */
+
+  .collapse-demo {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem;
+    margin: 0 0 1.5rem;
+  }
+  .collapse-stage {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .collapse-block {
+    width: 100%;
+    max-width: 20rem;
+    background: var(--padding-wash);
+    border: 1px solid color-mix(in srgb, var(--padding-hue) 50%, var(--line));
+    border-radius: 4px;
+    padding: 0.7rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--ink);
+  }
+  .collapse-gap {
+    width: 100%;
+    max-width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeating-linear-gradient(
+      45deg,
+      color-mix(in srgb, var(--margin-hue) 18%, transparent),
+      color-mix(in srgb, var(--margin-hue) 18%, transparent) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--margin-hue);
+    transition: height 0.15s ease;
+  }
+  .collapse-toggle {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: 5px;
+    padding: 0.55rem 1.1rem;
+    cursor: pointer;
+    margin-top: 1.2rem;
+  }
+  .collapse-toggle:hover { background: var(--padding-hue); }
+  .collapse-note {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin-top: 0.9rem;
+    text-align: center;
+  }
+  .collapse-note strong { color: var(--ink); }
+
+  /* ---------- Table ---------- */
+
+  .table-wrap { overflow-x: auto; margin: 1.5rem 0 2rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    min-width: 30rem;
+  }
+  caption {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.6rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.65rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    border-bottom: 2px solid var(--line);
+  }
+  tbody tr:hover { background: var(--surface); }
+
+  /* ---------- Recap ---------- */
+
+  .recap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 1.8rem 0;
+  }
+  .recap-item { background: var(--surface); padding: 1rem 1.1rem; }
+  .recap-item dt {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.35rem;
+  }
+  .recap-item dd { margin: 0; font-size: 0.9rem; color: var(--ink); }
+
+  /* ---------- Next steps ---------- */
+
+  .next-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+  }
+  .next-list li {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    max-width: none;
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+  }
+  .next-list code { flex: none; }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 520px) {
+    .page { padding: 3rem 1.1rem 4rem; }
+    h1 { font-size: 2.1rem; }
+    .stage { padding: 1.2rem 0.6rem; }
+  }
+</style>
+
+<div class="page">
+
+  <p class="kicker">css · box model</p>
+  <h1><span class="p-word">Padding</span> ja <span class="m-word">margin</span>:<br>ruum sees ja ruum väljas</h1>
+  <p class="standfirst">
+    Mõlemad tekitavad "tühja ruumi" elemendi ümber, aga täiesti erinevas kohas.
+    <strong>Padding</strong> jääb kasti <em>sisse</em> — sisu ja serva vahele.
+    <strong>Margin</strong> jääb kasti <em>välja</em> — kasti ja naabrite vahele.
+  </p>
+
+  <p class="analogy-line">
+    <span>Pildiraami analoogia</span>
+    <span>padding = paspartuu raami sees · margin = vahe raamide vahel seinal</span>
+  </p>
+
+  <h2>Katsuta ise: box model</h2>
+  <p>
+    Liiguta liugureid ja vaata, kuidas padding (sinine) ja margin (oranž) käituvad täiesti erinevalt.
+    Pane tähele: taustavärv katab padding'u, aga margin jääb alati läbipaistvaks.
+  </p>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch padding"></span> padding — sees, taustavärviga</span>
+    <span class="legend-item"><span class="legend-swatch margin"></span> margin — väljas, läbipaistev</span>
+  </div>
+
+  <div class="widget">
+    <div class="stage">
+      <div class="box-model" id="marginRing">
+        <span class="ring-label">margin</span>
+        <div class="border-ring" id="borderRing">
+          <div class="padding-ring" id="paddingRing">
+            <div class="content-box">sisu (tekst)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="control padding">
+        <label class="control-label" for="paddingSlider">
+          <span class="name">padding</span>
+          <span class="value" id="paddingValue">20px</span>
+        </label>
+        <input type="range" id="paddingSlider" min="0" max="48" value="20" step="2" aria-describedby="widgetCaption">
+      </div>
+      <div class="control margin">
+        <label class="control-label" for="marginSlider">
+          <span class="name">margin</span>
+          <span class="value" id="marginValue">32px</span>
+        </label>
+        <input type="range" id="marginSlider" min="0" max="60" value="32" step="2" aria-describedby="widgetCaption">
+      </div>
+    </div>
+
+    <p class="widget-caption" id="widgetCaption">
+      <strong class="p">Padding</strong> suurendab valget/sinist ala sisu ümber — kast ise "paisub".
+      <strong class="m">Margin</strong> lükkab kogu kasti naabritest kaugemale, aga kasti enda suurus ei muutu.
+    </p>
+  </div>
+
+  <h2>Box model — kast kasti sees</h2>
+  <p>Iga element koosneb neljast kihist, väljastpoolt sissepoole:</p>
+  <pre><code>margin  → border → padding → sisu</code></pre>
+  <p>
+    Margin on alati läbipaistev — sellest "paistab läbi" see, mis on elemendi taga.
+    Padding on osa elemendist endast, seega kui elemendil on taustavärv, laieneb see värv ka padding'i alale.
+  </p>
+
+  <h2>Koodinäide</h2>
+  <pre><code>.kast {
+    background-color: lightblue;   /* näitab, kus kast lõpeb */
+    padding: 20px;                  /* ruum SEES, sisu ja serva vahel */
+    margin: 40px;                   /* ruum VÄLJAS, naabrite suhtes */
+    border: 2px solid darkblue;
+}</code></pre>
+  <p>
+    Lühivorm neljale küljele korraga järgib kellaosuti suunda, alustades ülevalt:
+  </p>
+  <pre><code>padding: 10px 20px 10px 20px;   /* üles, paremale, alla, vasakule */
+padding: 10px 20px;              /* üles/alla 10px, vasak/parem 20px */</code></pre>
+
+  <h2>Margin collapse — üllatus, mida tasub teada</h2>
+  <p>
+    Erinevalt padding'ust võivad kaks <strong>vertikaalset</strong> margin'it kokku sulada, kui nad puutuvad kokku —
+    vahe ei ole nende summa, vaid <strong>suurem neist kahest</strong>. Vajuta nuppu ja vaata, kuidas kaks plokki
+    käituvad.
+  </p>
+
+  <div class="collapse-demo">
+    <div class="collapse-stage">
+      <div class="collapse-block">Element A — margin-bottom: 30px</div>
+      <div class="collapse-gap" id="collapseGap" style="height: 30px;">30px</div>
+      <div class="collapse-block">Element B — margin-top: 20px</div>
+    </div>
+    <button class="collapse-toggle" id="collapseToggle" type="button">Näita "kokku sulanud" vahet</button>
+    <p class="collapse-note" id="collapseNote">
+      Vahe on <strong>30px</strong> — suurem kahest väärtusest, mitte 50px summa.
+    </p>
+  </div>
+
+  <h2>Padding vs Margin — kõrvuti</h2>
+  <div class="table-wrap">
+    <table>
+      <caption>Kiire võrdlus</caption>
+      <thead>
+        <tr><th></th><th>Padding</th><th>Margin</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Asukoht</td>
+          <td>Kasti <strong>sees</strong>, sisu ja serva vahel</td>
+          <td>Kasti <strong>väljas</strong>, teiste elementide suhtes</td>
+        </tr>
+        <tr>
+          <td>Taustavärv katab?</td>
+          <td>Jah — osa elemendist</td>
+          <td>Ei — alati läbipaistev</td>
+        </tr>
+        <tr>
+          <td>Mõjutab kasti suurust</td>
+          <td>Jah, "paisutab" seestpoolt</td>
+          <td>Ei, ainult vahemaad naabriteni</td>
+        </tr>
+        <tr>
+          <td>Kas "sulab kokku" naabriga?</td>
+          <td>Ei</td>
+          <td>Jah (vertikaalsete puhul)</td>
+        </tr>
+        <tr>
+          <td>Päriselu analoog</td>
+          <td>Paspartuu pildi ja raami vahel</td>
+          <td>Vahe raami ja järgmise pildi vahel</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Kokkuvõte</h2>
+  <dl class="recap">
+    <div class="recap-item"><dt>Padding</dt><dd>ruum sisu ja serva vahel, elemendi sees</dd></div>
+    <div class="recap-item"><dt>Margin</dt><dd>ruum elemendi ja naabrite vahel, väljas</dd></div>
+    <div class="recap-item"><dt>Box model</dt><dd>margin → border → padding → sisu</dd></div>
+    <div class="recap-item"><dt>Margin collapse</dt><dd>vertikaalsed marginid ei liidetud, vaid võetakse suurem</dd></div>
+  </dl>
+
+  <h2>Järgmised sammud</h2>
+  <ul class="next-list">
+    <li><code>box-sizing</code><span>kas padding/border lisanduvad laiusele juurde või arvestatakse sisse</span></li>
+    <li><code>flexbox / grid</code><span>kaasaegsed paigutusviisid, vähem käsitsi margin'eid</span></li>
+    <li><code>gap</code><span>flex/grid konteinerites asendab tihti margin'i vajaduse</span></li>
+    <li><code>margin: 0 auto</code><span>kuidas tsentreerida elementi horisontaalselt</span></li>
+  </ul>
+
+  <footer>
+    <span>Vali-IT · CSS materjalid</span>
+    <span>padding-margin</span>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  const paddingSlider = document.getElementById('paddingSlider');
+  const marginSlider = document.getElementById('marginSlider');
+  const paddingValue = document.getElementById('paddingValue');
+  const marginValue = document.getElementById('marginValue');
+  const paddingRing = document.getElementById('paddingRing');
+  const marginRing = document.getElementById('marginRing');
+
+  function update() {
+    const p = paddingSlider.value;
+    const m = marginSlider.value;
+    paddingValue.textContent = p + 'px';
+    marginValue.textContent = m + 'px';
+    paddingRing.style.padding = p + 'px';
+    marginRing.style.padding = m + 'px';
+  }
+
+  paddingSlider.addEventListener('input', update);
+  marginSlider.addEventListener('input', update);
+  update();
+
+  // ---- Margin collapse demo ----
+  const collapseToggle = document.getElementById('collapseToggle');
+  const collapseGap = document.getElementById('collapseGap');
+  const collapseNote = document.getElementById('collapseNote');
+  let collapsed = false;
+
+  collapseToggle.addEventListener('click', function () {
+    collapsed = !collapsed;
+    if (collapsed) {
+      collapseGap.style.height = '50px';
+      collapseGap.textContent = '50px?';
+      collapseNote.innerHTML = 'Kui marginid <strong>liidetaks</strong> kokku, oleks vahe 50px. Aga see EI toimu nii —';
+      collapseToggle.textContent = 'Näita tegelikku (kokku sulanud) vahet';
+    } else {
+      collapseGap.style.height = '30px';
+      collapseGap.textContent = '30px';
+      collapseNote.innerHTML = 'Vahe on <strong>30px</strong> — suurem kahest väärtusest, mitte 50px summa.';
+      collapseToggle.textContent = 'Näita "kokku sulanud" vahet';
+    }
+  });
+})();
+</script>
