@@ -4,23 +4,22 @@ export default {
   methods: {
     login() {
 
+      this.message = ''
       if (this.loginRequest.username === '' || this.loginRequest.password === '') {
-
-        alert('Täida kõik välja')
+        this.message = 'Täida kõik väljad'
       }
+
+
     },
   },
   data() {
     return {
-      message: 'Täida kõik välja',
-
+      message: '',
 
       loginRequest: {
         username: '',
         password: '',
       },
-
-
     }
   },
 }
@@ -31,14 +30,9 @@ export default {
     <div class="row justify-content-center">
       <div class="col col-6">
 
-
-        <div v-if="true" class="alert alert-danger" role="alert"> {{message}}</div>
-
-
-
+        <div v-if="message !== ''" class="alert alert-danger" role="alert">{{ message }}</div>
 
       </div>
-
     </div>
 
     <div class="row justify-content-center">
