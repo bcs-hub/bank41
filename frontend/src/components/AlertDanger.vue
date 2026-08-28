@@ -2,13 +2,13 @@
 export default {
   name: 'AlertDanger',
   props: {
-    message: String,
+    errorMessage: String,
   },
 }
 </script>
 
 <template>
   <div>
-    <div v-if="message !== ''" class="alert alert-danger" role="alert">{{ message }}</div>
+    <div v-if="errorMessage !== ''" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
   </div>
 </template>

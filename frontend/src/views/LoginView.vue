@@ -1,5 +1,6 @@
 <script>
 import AlertDanger from '@/components/AlertDanger.vue'
+import axios from 'axios'
 
 export default {
   name: 'LoginView',
@@ -7,16 +8,19 @@ export default {
   methods: {
     login() {
       this.resetMessage()
-
       if (this.allFieldsHaveInput()) {
         // proovime sisse logida. saadame backile sõnumile
+        axios.post('/api/login', this.loginRequest)
+          .then()
+          .catch()
+          .finally()
       } else {
-        this.message = 'Täida kõik väljad'
+        this.errorMessage = 'Täida kõik väljad'
       }
     },
 
     resetMessage() {
-      this.message = ''
+      this.errorMessage = ''
     },
 
     allFieldsHaveInput() {
@@ -25,7 +29,8 @@ export default {
   },
   data() {
     return {
-      message: '',
+      errorMessage: '',
+      showSpinner: false,
 
       loginRequest: {
         username: '',
@@ -40,7 +45,7 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col col-6">
-        <AlertDanger :message="message" />
+        <AlertDanger :error-message="errorMessage" />
       </div>
     </div>
 
@@ -62,7 +67,11 @@ export default {
           <label>Parool</label>
         </div>
 
-        <button @click="login" type="submit" class="btn btn-primary">Logi sisse</button>
+        <button v-if="showSpinner" class="btn btn-primary" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+          <span role="status">Login sisse...</span>
+        </button>
+        <button v-else @click="login" type="submit" class="btn btn-primary">Logi sisse</button>
       </div>
     </div>
   </div>
