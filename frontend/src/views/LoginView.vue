@@ -1,6 +1,9 @@
 <script>
+import AlertDanger from '@/components/AlertDanger.vue'
+
 export default {
   name: 'LoginView',
+  components: { AlertDanger },
   methods: {
 
 
@@ -39,6 +42,10 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col col-6">
+
+        <AlertDanger/>
+
+
         <div v-if="message !== ''" class="alert alert-danger" role="alert">{{ message }}</div>
       </div>
     </div>
