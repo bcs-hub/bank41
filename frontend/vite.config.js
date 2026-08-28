@@ -6,19 +6,16 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevTools(),
-  ],
+  plugins: [vue(), vueDevTools()],
   server: {
     proxy: {
-      '/api': 'https://stoplight.io/mocks/valiit/myproject/170385130'
+      '/api': 'https://stoplight.io/mocks/valiit/myproject/1968960041',
       // '/api': 'http://localhost:8080'
-    }
+    },
   },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 })

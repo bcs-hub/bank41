@@ -9,14 +9,23 @@ export default {
     login() {
       this.resetMessage()
       if (this.allFieldsHaveInput()) {
-        // proovime sisse logida. saadame backile sõnumile
+        this.startSpinner()
+
         axios.post('/api/login', this.loginRequest)
           .then()
           .catch()
-          .finally()
+          .finally(() => this.stopSpinner())
       } else {
         this.errorMessage = 'Täida kõik väljad'
       }
+    },
+
+    startSpinner() {
+      this.showSpinner = true
+    },
+
+    stopSpinner() {
+      this.showSpinner = false
     },
 
     resetMessage() {
