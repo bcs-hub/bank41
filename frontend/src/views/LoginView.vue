@@ -1,13 +1,14 @@
 <script>
 import AlertDanger from '@/components/AlertDanger.vue'
 import axios from 'axios'
+import router from '@/router/index.js'
 
 export default {
   name: 'LoginView',
   components: { AlertDanger },
   methods: {
     login() {
-
+      console.log('Olen siin')
       this.resetMessage()
       if (this.allFieldsHaveInput()) {
         this.startSpinner()
@@ -27,10 +28,16 @@ export default {
     },
 
     handleLoginResponse(response) {
+      this.loginResponse = response.data
+      sessionStorage.setItem('userId', this.loginResponse.userId)
+      sessionStorage.setItem('roleName', this.loginResponse.roleName)
 
+      router.push({
+        name: 'atmsRoute'
+      })
+
+      // Vastusest saadud roleName väärtus salvestatakse sessionStorage faili võtmega roleName
     },
-
-
 
     startSpinner() {
       this.showSpinner = true
@@ -52,6 +59,11 @@ export default {
       loginRequest: {
         username: '',
         password: '',
+      },
+
+      loginResponse: {
+        userId: 0,
+        roleName: '',
       },
     }
   },
