@@ -7,18 +7,30 @@ export default {
   components: { AlertDanger },
   methods: {
     login() {
+
       this.resetMessage()
       if (this.allFieldsHaveInput()) {
         this.startSpinner()
 
-        axios.post('/api/login', this.loginRequest)
-          .then()
+        axios
+          .post('/api/login', this.loginRequest)
+          .then((response) => this.handleLoginResponse(response))
           .catch()
           .finally(() => this.stopSpinner())
       } else {
         this.errorMessage = 'Täida kõik väljad'
       }
     },
+
+    allFieldsHaveInput() {
+      return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
+    },
+
+    handleLoginResponse(response) {
+
+    },
+
+
 
     startSpinner() {
       this.showSpinner = true
@@ -30,10 +42,6 @@ export default {
 
     resetMessage() {
       this.errorMessage = ''
-    },
-
-    allFieldsHaveInput() {
-      return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
     },
   },
   data() {
