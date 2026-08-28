@@ -5,8 +5,6 @@ export default {
   name: 'LoginView',
   components: { AlertDanger },
   methods: {
-
-
     login() {
       this.resetMessage()
 
@@ -30,7 +28,7 @@ export default {
       message: '',
 
       loginRequest: {
-        username: 'aaaaaaaaa',
+        username: '',
         password: '',
       },
     }
@@ -42,11 +40,7 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col col-6">
-
-        <AlertDanger/>
-
-
-        <div v-if="message !== ''" class="alert alert-danger" role="alert">{{ message }}</div>
+        <AlertDanger :message="message" />
       </div>
     </div>
 
