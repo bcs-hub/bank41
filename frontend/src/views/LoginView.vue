@@ -2,14 +2,24 @@
 export default {
   name: 'LoginView',
   methods: {
-    login() {
 
-      this.message = ''
-      if (this.loginRequest.username === '' || this.loginRequest.password === '') {
+
+    login() {
+      this.resetMessage()
+
+      if (this.allFieldsHaveInput()) {
+        // proovime sisse logida. saadame backile sõnumile
+      } else {
         this.message = 'Täida kõik väljad'
       }
+    },
 
+    resetMessage() {
+      this.message = ''
+    },
 
+    allFieldsHaveInput() {
+      return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
     },
   },
   data() {
@@ -17,7 +27,7 @@ export default {
       message: '',
 
       loginRequest: {
-        username: '',
+        username: 'aaaaaaaaa',
         password: '',
       },
     }
@@ -29,9 +39,7 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col col-6">
-
         <div v-if="message !== ''" class="alert alert-danger" role="alert">{{ message }}</div>
-
       </div>
     </div>
 
