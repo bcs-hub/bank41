@@ -8,7 +8,7 @@ export default {
   <div class="container text-center">
     <div class="row">
       <div class="col">
-        <h1 class="text-light">Pangaautomaadid</h1>
+        <h1>Pangaautomaadid</h1>
         test
       </div>
     </div>

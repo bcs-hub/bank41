@@ -1,8 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 mb-3">
-    <RouterLink class="navbar-brand" to="/">
-      <div class="rounded p-2">Bank</div>
-    </RouterLink>
+    <RouterLink class="navbar-brand" to="/">Bank</RouterLink>
     <button
       class="navbar-toggler"
       type="button"
@@ -13,14 +11,9 @@
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navMenu">
       <div class="navbar-nav">
-        <RouterLink class="nav-link" to="/">
-          <div class="rounded p-2">Kodu</div>
-        </RouterLink>
-      </div>
-      <div class="navbar-nav">
-        <RouterLink class="nav-link" to="/atms">
-          <div class="rounded p-2">Pangaautomaadid</div>
-        </RouterLink>
+        <RouterLink class="nav-link" to="/">Kodu</RouterLink>
+        <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
+        <RouterLink class="nav-link" to="/login">Sisse logimine</RouterLink>
       </div>
     </div>
   </nav>
