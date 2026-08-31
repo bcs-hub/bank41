@@ -6,6 +6,25 @@ import NavigationService from '@/services/NavigationService.js'
 export default {
   name: 'LoginView',
   components: { AlertDanger },
+  data() {
+    return {
+      errorMessage: '',
+      showSpinner: false,
+      loginRequest: {
+        username: 'test',
+        password: '',
+      },
+      loginResponse: {
+        userId: 0,
+        roleName: '',
+      },
+
+      errorResponse: {
+        message: '',
+        errorCode: '',
+      },
+    }
+  },
   methods: {
     login() {
       this.resetErrorMessage()
@@ -15,7 +34,7 @@ export default {
 
         LoginService.postLoginRequest(this.loginRequest)
           .then((response) => this.handleLoginResponse(response))
-          .catch()
+          .catch((error) => this.handleLoginErrorResponse(error))
           .finally(this.stopSpinner())
       } else {
         this.errorMessage = 'Täida kõik väljad / vale kasutajanimi või parool'
@@ -33,8 +52,20 @@ export default {
       this.saveLoginResponseInfoToSessionStorage()
       // parent update navbar
 
-      this.$emit('event-user-logged-in');
+      this.$emit('event-user-logged-in')
       NavigationService.navigateToAtmsView()
+    },
+    handleLoginErrorResponse(error) {
+      this.errorResponse = error.response.data
+
+      if (
+        error.response.status === 403 &&
+        this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS'
+      ) {
+        this.errorMessage = this.errorResponse.message
+      } else {
+        NavigationService.navigateToErrorView()
+      }
     },
     startSpinner() {
       this.showSpinner = true
@@ -45,20 +76,6 @@ export default {
     resetErrorMessage() {
       this.errorMessage = ''
     },
-  },
-  data() {
-    return {
-      errorMessage: '',
-      showSpinner: false,
-      loginRequest: {
-        username: 'test',
-        password: '',
-      },
-      loginResponse: {
-        userId: 0,
-        roleName: '',
-      },
-    }
   },
 }
 </script>

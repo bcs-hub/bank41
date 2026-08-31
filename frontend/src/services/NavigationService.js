@@ -11,4 +11,9 @@ export default {
       name: 'homeRoute',
     })
   },
+  navigateToErrorView() {
+    router.push({
+      name: 'errorRoute',
+    })
+  },
 }
