@@ -6,16 +6,7 @@ export default {
   components: { RouterLink, RouterView },
   data() {
     return {
-      isLoggedIn: false,
-    }
-  },
-  beforeMount() {
-    let userId = sessionStorage.getItem('userId')
-
-    if ((userId === null)) {
-      this.isLoggedIn = false
-    } else {
-      this.isLoggedIn = true
+      isLoggedIn: sessionStorage.getItem('userId') !== null,
     }
   },
 }
