@@ -12,4 +12,9 @@ export default {
   },
 
 
+  navigateToErrorView() {
+    router.push({name: "errorRoute"})
+  },
+
+
 }
