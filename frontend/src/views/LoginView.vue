@@ -2,22 +2,23 @@
 import AlertDanger from '@/components/AlertDanger.vue'
 import axios from 'axios'
 import router from '@/router/index.js'
+import LoginService from '@/services/LoginService.js'
 
 export default {
   name: 'LoginView',
   components: { AlertDanger },
   methods: {
+
     login() {
-      console.log('Olen siin')
-      this.resetMessage()
+      this.resetErrorMessage()
       if (this.allFieldsHaveInput()) {
         this.startSpinner()
 
-        axios
-          .post('/api/login', this.loginRequest)
-          .then((response) => this.handleLoginResponse(response))
+        LoginService.postLoginRequest(this.loginRequest)
+          .then(response => )
           .catch()
-          .finally(() => this.stopSpinner())
+          .finally()
+
       } else {
         this.errorMessage = 'Täida kõik väljad'
       }
@@ -27,17 +28,7 @@ export default {
       return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
     },
 
-    handleLoginResponse(response) {
-      this.loginResponse = response.data
-      sessionStorage.setItem('userId', this.loginResponse.userId)
-      sessionStorage.setItem('roleName', this.loginResponse.roleName)
 
-      router.push({
-        name: 'atmsRoute'
-      })
-
-      // Vastusest saadud roleName väärtus salvestatakse sessionStorage faili võtmega roleName
-    },
 
     startSpinner() {
       this.showSpinner = true
@@ -47,7 +38,7 @@ export default {
       this.showSpinner = false
     },
 
-    resetMessage() {
+    resetErrorMessage() {
       this.errorMessage = ''
     },
   },
