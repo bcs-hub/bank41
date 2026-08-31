@@ -1,24 +1,20 @@
 <script>
 import AlertDanger from '@/components/AlertDanger.vue'
-import axios from 'axios'
-import router from '@/router/index.js'
 import LoginService from '@/services/LoginService.js'
 
 export default {
   name: 'LoginView',
   components: { AlertDanger },
   methods: {
-
     login() {
       this.resetErrorMessage()
       if (this.allFieldsHaveInput()) {
         this.startSpinner()
 
         LoginService.postLoginRequest(this.loginRequest)
-          .then(response => )
+          .then((response) => this.handleLoginResponse(response))
           .catch()
           .finally()
-
       } else {
         this.errorMessage = 'Täida kõik väljad'
       }
@@ -27,8 +23,6 @@ export default {
     allFieldsHaveInput() {
       return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
     },
-
-
 
     startSpinner() {
       this.showSpinner = true
@@ -40,6 +34,10 @@ export default {
 
     resetErrorMessage() {
       this.errorMessage = ''
+    },
+
+    handleLoginResponse(response) {
+      this.loginResponse = response.data
     },
   },
   data() {
@@ -56,6 +54,7 @@ export default {
         userId: 0,
         roleName: '',
       },
+
     }
   },
 }
