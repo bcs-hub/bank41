@@ -1,6 +1,7 @@
 <script>
 import AlertDanger from '@/components/AlertDanger.vue'
 import LoginService from '@/services/LoginService.js'
+import NavigationService from '@/services/NavigationService.js'
 
 export default {
   name: 'LoginView',
@@ -38,10 +39,22 @@ export default {
 
     handleLoginResponse(response) {
       this.loginResponse = response.data
+      this.saveLoginResponseInfoToSessionStorage()
+      NavigationService.navigateToAtmsView()
+    },
+
+    saveLoginResponseInfoToSessionStorage() {
+      sessionStorage.setItem('userId', this.loginResponse.userId)
+      sessionStorage.setItem('roleName', this.loginResponse.roleName)
     },
   },
   data() {
     return {
+      loginResponse: {
+        userId: 1,
+        roleName: 'admin',
+      },
+
       errorMessage: '',
       showSpinner: false,
 
@@ -49,12 +62,6 @@ export default {
         username: '',
         password: '',
       },
-
-      loginResponse: {
-        userId: 0,
-        roleName: '',
-      },
-
     }
   },
 }
