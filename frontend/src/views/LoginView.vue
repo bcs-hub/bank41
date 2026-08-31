@@ -1,35 +1,62 @@
 <script>
 import AlertDanger from '@/components/AlertDanger.vue'
+import axios from 'axios'
+import router from '@/router/index.js'
 
 export default {
   name: 'LoginView',
   components: { AlertDanger },
   methods: {
     login() {
-      this.resetMessage();
+      this.resetMessage()
 
       if (this.allFieldsHaveInput()) {
-        console.log("IF");
-        //   proovime sisse logida. saadame backile sõnumi
+        this.startSpinner()
+
+        axios
+          .post('/api/login', this.loginRequest)
+          .then((response) => this.handleLoginResponse(response))
+          .catch()
+          .finally(() => this.stopSpinner())
       } else {
-        console.log("else")
         this.errorMessage = 'Täida kõik väljad / vale kasutajanimi või parool'
       }
     },
     allFieldsHaveInput() {
       return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
     },
+    handleLoginResponse(response) {
+      this.loginResponse = response.data;
+      sessionStorage.setItem('userId', this.loginResponse.userId)
+      sessionStorage.setItem('roleName', this.loginResponse.roleName)
+
+      router.push({
+        name: 'atmsRoute'
+      })
+    },
+    startSpinner() {
+      this.showSpinner = true
+    },
+    stopSpinner() {
+      this.showSpinner = false
+    },
     resetMessage() {
       this.errorMessage = ''
     },
+
   },
   data() {
     return {
       errorMessage: '',
+      showSpinner: false,
       loginRequest: {
         username: 'test',
         password: '',
       },
+      loginResponse: {
+        userId: 0,
+        roleName: ''
+      }
     }
   },
 }
@@ -39,7 +66,7 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col col-6">
-        <AlertDanger :message="errorMessage" />
+        <AlertDanger :error-message="errorMessage" />
       </div>
     </div>
     <div class="row justify-content-center">
@@ -58,7 +85,11 @@ export default {
           />
           <label>Parool</label>
         </div>
-        <button @click="login" type="submit" class="btn btn-primary">Logi sisse</button>
+        <button v-if="showSpinner" type="submit" class="btn btn-primary" disabled>
+          <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+          <span role="status">Login sisse...</span>
+        </button>
+        <button v-else @click="login" type="submit" class="btn btn-primary">Logi sisse</button>
       </div>
     </div>
   </div>

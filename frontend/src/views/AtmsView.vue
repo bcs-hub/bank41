@@ -1,6 +1,19 @@
 <script>
 export default {
   name: 'AtmsView',
+  methods: {
+    showAlert() {
+      alert('userId: ' + this.userId)
+    },
+  },
+    beforeMount() {
+      this.showAlert()
+    },
+  data() {
+    return {
+      userId: sessionStorage.getItem('userId'),
+    }
+  },
 }
 </script>
 
@@ -9,7 +22,8 @@ export default {
     <div class="row">
       <div class="col">
         <h1>Pangaautomaadid</h1>
-        test
+        <div>userId: {{ userId }}</div>
+        <div>roleName: y</div>
       </div>
     </div>
   </div>
