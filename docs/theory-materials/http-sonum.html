@@ -1,0 +1,800 @@
+<meta charset="UTF-8">
+<title>HTTP sõnum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,400..700,0..1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+  :root {
+    --ink: #241f1a;
+    --ink-soft: #6b5f52;
+    --paper: #f7f2e9;
+    --surface: #ede4d4;
+    --surface-2: #e2d6c0;
+    --line: #d8c9ac;
+
+    --req-hue: #3d6b7a;
+    --req-wash: #dce8ea;
+    --res-hue: #a85834;
+    --res-wash: #f0dfd2;
+
+    --ok-hue: #4f7d3a;
+    --ok-wash: #dfe9d5;
+    --err-hue: #b3402f;
+    --err-wash: #f2ddd7;
+    --info-hue: #6b5fa8;
+    --info-wash: #e4dff0;
+
+    --focus: #2f6ee0;
+
+    --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', serif;
+    --font-body: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ede6d9;
+      --ink-soft: #b3a692;
+      --paper: #1a1712;
+      --surface: #221e17;
+      --surface-2: #2b261d;
+      --line: #3b3427;
+
+      --req-hue: #7fb4c2;
+      --req-wash: #1e2c30;
+      --res-hue: #d99368;
+      --res-wash: #2e2018;
+
+      --ok-hue: #8fbf72;
+      --ok-wash: #223019;
+      --err-hue: #e08370;
+      --err-wash: #331e1a;
+      --info-hue: #b3a6e0;
+      --info-wash: #29233a;
+
+      --focus: #7fa8f5;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #ede6d9;
+    --ink-soft: #b3a692;
+    --paper: #1a1712;
+    --surface: #221e17;
+    --surface-2: #2b261d;
+    --line: #3b3427;
+
+    --req-hue: #7fb4c2;
+    --req-wash: #1e2c30;
+    --res-hue: #d99368;
+    --res-wash: #2e2018;
+
+    --ok-hue: #8fbf72;
+    --ok-wash: #223019;
+    --err-hue: #e08370;
+    --err-wash: #331e1a;
+    --info-hue: #b3a6e0;
+    --info-wash: #29233a;
+
+    --focus: #7fa8f5;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--paper); }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--req-hue); color: var(--paper); }
+
+  a { color: var(--req-hue); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, select:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin-bottom: 1.1rem;
+  }
+  .kicker::before {
+    content: "";
+    width: 0.55em;
+    height: 0.55em;
+    border: 2px solid var(--req-hue);
+    border-radius: 1px;
+    flex: none;
+  }
+  .kicker::after {
+    content: "";
+    width: 1.4em;
+    height: 0.55em;
+    background: var(--res-hue);
+    opacity: 0.55;
+    flex: none;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 3.4rem);
+    line-height: 1.03;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+  }
+  h1 .req-word { color: var(--req-hue); }
+  h1 .res-word { color: var(--res-hue); }
+
+  .standfirst {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 38rem;
+    text-wrap: pretty;
+    margin: 0 0 2.6rem;
+  }
+
+  .analogy-line {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 0.6rem 0;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .analogy-line span:first-child { color: var(--ink); }
+
+  /* ---------- Article typography ---------- */
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.65rem;
+    letter-spacing: -0.005em;
+    margin: 3.4rem 0 1rem;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.12rem;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
+  }
+
+  p { margin: 0 0 1.15rem; max-width: 65ch; }
+  strong { font-weight: 600; }
+
+  ul, ol { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+  li { margin-bottom: 0.45rem; max-width: 62ch; }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 0.1em 0.38em;
+  }
+
+  pre {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+    margin: 0 0 1.6rem;
+  }
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  /* ---------- Anatomy diagram ---------- */
+
+  .anatomy {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 0 2.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+  }
+  .anatomy-row {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+  }
+  .anatomy-row:last-child { border-bottom: none; }
+  .anatomy-tag {
+    flex: none;
+    width: 8.5rem;
+    padding: 0.85rem 1rem;
+    color: var(--ink-soft);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--line);
+  }
+  .anatomy-content {
+    padding: 0.85rem 1.1rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .anatomy-row.startline .anatomy-tag { color: var(--req-hue); font-weight: 600; }
+  .anatomy-row.headers .anatomy-tag { color: var(--ink); }
+  .anatomy-row.body .anatomy-tag { color: var(--res-hue); font-weight: 600; }
+  .anatomy-row.gap { background: repeating-linear-gradient(
+      45deg, var(--surface-2), var(--surface-2) 6px, transparent 6px, transparent 12px
+    ); }
+  .anatomy-row.gap .anatomy-content { color: var(--ink-soft); font-size: 0.74rem; font-style: italic; padding: 0.4rem 1.1rem; }
+  .anatomy-row.gap .anatomy-tag { border-right: 1px solid var(--line); }
+
+  /* ---------- Message builder widget ---------- */
+
+  .widget {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem;
+    margin: 0 0 2.6rem;
+  }
+
+  .widget-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+    min-width: 140px;
+  }
+  .field label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  select, input[type="text"] {
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 0.5rem 0.6rem;
+  }
+
+  .msg-frame {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .msg-bar {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--req-hue);
+    padding: 0.45rem 1rem;
+  }
+  pre.msg-body {
+    margin: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 1.1rem;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  pre.msg-body code { background: none; border: none; padding: 0; }
+
+  .tok-method { color: var(--req-hue); font-weight: 700; }
+  .tok-path { color: var(--ink); }
+  .tok-key { color: var(--res-hue); }
+  .tok-val { color: var(--ink-soft); }
+  .tok-body { color: var(--ok-hue); }
+
+  .widget-caption {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  /* ---------- Method table ---------- */
+
+  .table-wrap { overflow-x: auto; margin: 1.5rem 0 2rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    min-width: 30rem;
+  }
+  caption {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.6rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.65rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    border-bottom: 2px solid var(--line);
+  }
+  tbody tr:hover { background: var(--surface); }
+
+  /* ---------- Status code explorer ---------- */
+
+  .status-demo {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem;
+    margin: 0 0 2.6rem;
+  }
+  .status-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.6rem;
+    margin-bottom: 1.4rem;
+  }
+  .status-btn {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-align: left;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.6rem 0.8rem;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .status-btn .code { font-weight: 700; display: block; }
+  .status-btn .label { color: var(--ink-soft); font-size: 0.72rem; }
+  .status-btn:hover { border-color: var(--ink-soft); }
+  .status-btn.active {
+    border-color: currentColor;
+    background: var(--wash, var(--surface-2));
+  }
+  .status-btn.cat-2xx.active { color: var(--ok-hue); background: var(--ok-wash); }
+  .status-btn.cat-4xx.active { color: var(--err-hue); background: var(--err-wash); }
+  .status-btn.cat-5xx.active { color: var(--err-hue); background: var(--err-wash); }
+
+  .status-result {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .status-result-bar {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    padding: 0.6rem 1rem;
+    color: var(--paper);
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .status-result-bar.cat-2xx { background: var(--ok-hue); }
+  .status-result-bar.cat-4xx, .status-result-bar.cat-5xx { background: var(--err-hue); }
+  .status-result-body {
+    padding: 1rem 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+  .status-result-body strong { color: var(--ink); }
+
+  /* ---------- Sequence diagram ---------- */
+
+  .sequence {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem;
+    margin: 0 0 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    overflow-x: auto;
+  }
+  .sequence pre {
+    margin: 0;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .sequence .who { color: var(--ink); font-weight: 700; }
+  .sequence .req { color: var(--req-hue); }
+  .sequence .res { color: var(--res-hue); }
+
+  /* ---------- Recap ---------- */
+
+  .recap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 1.8rem 0;
+  }
+  .recap-item { background: var(--surface); padding: 1rem 1.1rem; }
+  .recap-item dt {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.35rem;
+  }
+  .recap-item dd { margin: 0; font-size: 0.9rem; color: var(--ink); }
+
+  /* ---------- Next steps ---------- */
+
+  .next-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+  }
+  .next-list li {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    max-width: none;
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+  }
+  .next-list code { flex: none; }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 520px) {
+    .page { padding: 3rem 1.1rem 4rem; }
+    h1 { font-size: 2.1rem; }
+    .anatomy-tag { width: 6rem; font-size: 0.66rem; }
+  }
+</style>
+
+<div class="page">
+
+  <p class="kicker">http · sõnumid</p>
+  <h1>HTTP <span class="req-word">sõnum</span>: <span class="res-word">kiri</span> brauseri ja serveri vahel</h1>
+  <p class="standfirst">
+    Iga kord, kui brauser laadib lehe või Vue rakendus küsib backendilt andmeid, saadetakse
+    kokkuleppelise vormiga <strong>kiri</strong>. Klient saadab <strong>päringu</strong>,
+    server vastab <strong>vastusega</strong> — mõlemal on sama ehitus.
+  </p>
+
+  <p class="analogy-line">
+    <span>Tähitud kirja analoogia</span>
+    <span>päised = ümbrik · keha = kirja sisu</span>
+  </p>
+
+  <h2>HTTP sõnumi ehitus</h2>
+  <p>
+    Nii päringul kui vastusel on kolm osa: <strong>algusrida</strong>, <strong>päised</strong> ja
+    valikuline <strong>keha</strong>, mis on päistest eraldatud tühja reaga.
+  </p>
+
+  <div class="anatomy">
+    <div class="anatomy-row startline">
+      <div class="anatomy-tag">Algusrida</div>
+      <div class="anatomy-content">mida tahetakse / mis juhtus</div>
+    </div>
+    <div class="anatomy-row headers">
+      <div class="anatomy-tag">Päised</div>
+      <div class="anatomy-content">Key: Value (lisainfo sõnumi kohta)</div>
+    </div>
+    <div class="anatomy-row gap">
+      <div class="anatomy-tag">—</div>
+      <div class="anatomy-content">tühi rida eraldab päised kehast</div>
+    </div>
+    <div class="anatomy-row body">
+      <div class="anatomy-tag">Keha</div>
+      <div class="anatomy-content">tegelik andmesisu (valikuline)</div>
+    </div>
+  </div>
+
+  <h2>Katsuta ise: pane päring kokku</h2>
+  <p>
+    Vali meetod ja vaata, kuidas HTTP päring reaalselt välja näeb — täpselt selline sõnum
+    liigub brauserist serverisse, kui Vue rakendus teeb <code>this.$axios</code> päringu.
+  </p>
+
+  <div class="widget">
+    <div class="widget-controls">
+      <div class="field">
+        <label for="methodSelect">Meetod</label>
+        <select id="methodSelect">
+          <option value="GET">GET — näita mulle</option>
+          <option value="POST" selected>POST — siin on uus asi</option>
+          <option value="PUT">PUT — asenda täielikult</option>
+          <option value="PATCH">PATCH — muuda osaliselt</option>
+          <option value="DELETE">DELETE — kustuta</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="pathInput">Tee</label>
+        <input type="text" id="pathInput" value="/api/login">
+      </div>
+    </div>
+
+    <div class="msg-frame">
+      <div class="msg-bar">Päring (request)</div>
+      <pre class="msg-body"><code id="reqOutput"></code></pre>
+    </div>
+
+    <p class="widget-caption" id="widgetCaption">
+      <code>POST</code>-il ja <code>PUT</code>/<code>PATCH</code>-il on tavaliselt keha (JSON) —
+      <code>GET</code> ja <code>DELETE</code> tavaliselt kehata, kuna nad ei saada andmeid kaasa.
+    </p>
+  </div>
+
+  <h3>Levinumad HTTP meetodid</h3>
+  <div class="table-wrap">
+    <table>
+      <caption>Meetod ja tähendus</caption>
+      <thead>
+        <tr><th>Meetod</th><th>Analoogia</th><th>Kasutus</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>GET</code></td><td>"Näita mulle"</td><td>Andmete pärimine, ei muuda midagi</td></tr>
+        <tr><td><code>POST</code></td><td>"Siin on uus asi"</td><td>Uue ressursi loomine</td></tr>
+        <tr><td><code>PUT</code></td><td>"Asenda see täielikult"</td><td>Täielik uuendamine</td></tr>
+        <tr><td><code>PATCH</code></td><td>"Muuda ainult see osa"</td><td>Osaline uuendamine</td></tr>
+        <tr><td><code>DELETE</code></td><td>"Kustuta see"</td><td>Ressursi kustutamine</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Katsuta ise: staatuskoodid</h2>
+  <p>
+    Vali staatuskood ja vaata, mis kategooriasse see kuulub. Esimene number ütleb kohe, kuidas läks:
+    <strong>2xx</strong> õnnestus, <strong>4xx</strong> sinu (kliendi) viga, <strong>5xx</strong> serveri viga.
+  </p>
+
+  <div class="status-demo">
+    <div class="status-buttons" id="statusButtons"></div>
+    <div class="status-result">
+      <div class="status-result-bar" id="statusResultBar">
+        <span id="statusResultCode"></span>
+        <span id="statusResultCategory"></span>
+      </div>
+      <div class="status-result-body" id="statusResultBody"></div>
+    </div>
+  </div>
+
+  <h2>Päised — lisainfo ümbrikul</h2>
+  <p>Päised on <strong>võti-väärtus paarid</strong>, mis annavad sõnumi kohta lisainfot, ilma et need oleksid osa tegelikust sisust.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Levinumad päised</caption>
+      <thead>
+        <tr><th>Päis</th><th>Kasutus</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>Content-Type</code></td><td>Millises formaadis on keha (nt <code>application/json</code>)</td></tr>
+        <tr><td><code>Content-Length</code></td><td>Keha pikkus baitides</td></tr>
+        <tr><td><code>Authorization</code></td><td>Autentimisinfo (nt token)</td></tr>
+        <tr><td><code>Accept</code></td><td>Millises formaadis klient vastust soovib</td></tr>
+        <tr><td><code>Set-Cookie</code></td><td>Server palub kliendil salvestada küpsise</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Kogu suhtlus koos — sisselogimise näide</h2>
+  <p>
+    Täpselt see toimub, kui panga-äpi <code>LoginView.vue</code> kasutaja "Logi sisse" nuppu vajutab:
+  </p>
+
+  <div class="sequence">
+    <pre><span class="who">KLIENT (brauser)</span>                          <span class="who">SERVER (backend)</span>
+      │                                         │
+      │ <span class="req">POST /api/login HTTP/1.1</span>              │
+      │ <span class="req">Content-Type: application/json</span>        │
+      │                                         │
+      │ <span class="req">{"username":"mari","password":"..."}</span>  │
+      │ ──────────────────────────────────────▶ │
+      │                                         │
+      │                    (kontrollib          │
+      │                     kasutajanime/parooli)│
+      │                                         │
+      │ <span class="res">HTTP/1.1 200 OK</span>                       │
+      │ <span class="res">Content-Type: application/json</span>        │
+      │                                         │
+      │ <span class="res">{"token":"eyJhbGciOiJIUzI1NiJ9..."}</span>   │
+      │ ◀────────────────────────────────────── │
+      │                                         │</pre>
+  </div>
+
+  <h2>Kokkuvõte</h2>
+  <dl class="recap">
+    <div class="recap-item"><dt>HTTP sõnum</dt><dd>kokkuleppelise vormiga "kiri" kliendi ja serveri vahel</dd></div>
+    <div class="recap-item"><dt>Päring</dt><dd>meetod + tee + päised + valikuline keha</dd></div>
+    <div class="recap-item"><dt>Vastus</dt><dd>staatuskood + tekst + päised + valikuline keha</dd></div>
+    <div class="recap-item"><dt>Staatuskoodid</dt><dd>2xx õnnestus · 4xx kliendi viga · 5xx serveri viga</dd></div>
+  </dl>
+
+  <h2>Järgmised sammud</h2>
+  <ul class="next-list">
+    <li><code>REST API</code><span>kuidas meetodeid ja teid loogiliselt kokku panna</span></li>
+    <li><code>JSON</code><span>kuidas andmeid struktureeritult HTTP kehas saata</span></li>
+    <li><code>CORS</code><span>miks brauser mõnikord blokeerib päringuid teisele domeenile</span></li>
+    <li><code>Axios</code><span>kuidas Vue päriselt HTTP päringuid saadab</span></li>
+    <li><code>JWT</code><span>kuidas Authorization päist kasutatakse autentimiseks</span></li>
+  </ul>
+
+  <footer>
+    <span>Vali-IT · HTTP materjalid</span>
+    <span>http-sõnum</span>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  // ---- Request builder widget ----
+  const methodSelect = document.getElementById('methodSelect');
+  const pathInput = document.getElementById('pathInput');
+  const reqOutput = document.getElementById('reqOutput');
+  const widgetCaption = document.getElementById('widgetCaption');
+
+  const bodyByMethod = {
+    GET: null,
+    DELETE: null,
+    POST: '{"username": "mari", "password": "salajane123"}',
+    PUT: '{"id": 42, "nimi": "Mari Maasikas", "saldo": 128.50}',
+    PATCH: '{"saldo": 200.00}',
+  };
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function renderRequest() {
+    const method = methodSelect.value;
+    const path = pathInput.value || '/';
+    const body = bodyByMethod[method];
+
+    let html = '';
+    html += '<span class="tok-method">' + method + '</span> <span class="tok-path">' + escapeHtml(path) + '</span> HTTP/1.1\n';
+    html += '<span class="tok-key">Host:</span> <span class="tok-val">minupank.ee</span>\n';
+    if (body) {
+      html += '<span class="tok-key">Content-Type:</span> <span class="tok-val">application/json</span>\n';
+      html += '<span class="tok-key">Content-Length:</span> <span class="tok-val">' + body.length + '</span>\n';
+    } else {
+      html += '<span class="tok-key">Accept:</span> <span class="tok-val">application/json</span>\n';
+    }
+    html += '\n';
+    html += body ? '<span class="tok-body">' + escapeHtml(body) + '</span>' : '<span class="tok-val">(keha puudub)</span>';
+
+    reqOutput.innerHTML = html;
+
+    widgetCaption.innerHTML = body
+      ? '<code>' + method + '</code> saadab keha kaasa — server saab sellest lugeda andmed, mida luua/uuendada.'
+      : '<code>' + method + '</code>-il puudub tavaliselt keha — kogu vajalik info mahub juba teele ja päistesse.';
+  }
+
+  methodSelect.addEventListener('change', renderRequest);
+  pathInput.addEventListener('input', renderRequest);
+  renderRequest();
+
+  // ---- Status code explorer ----
+  const statuses = [
+    { code: 200, text: 'OK', cat: '2xx', label: 'Kõik õnnestus', body: 'Tavaline edukas vastus. Nt <strong>GET</strong> päring õnnestus ja andmed tulevad kehas kaasa.' },
+    { code: 201, text: 'Created', cat: '2xx', label: 'Loodi uus ressurss', body: 'Vastus pärast õnnestunud <strong>POST</strong>-i — nt uus kasutaja loodi andmebaasi.' },
+    { code: 400, text: 'Bad Request', cat: '4xx', label: 'Vigane päring', body: 'Päring on vigaselt formeeritud — nt kohustuslik väli (<code>password</code>) puudub kehast.' },
+    { code: 401, text: 'Unauthorized', cat: '4xx', label: 'Pole autenditud', body: 'Kasutaja pole sisse logitud või <code>Authorization</code> päis puudub/on vale.' },
+    { code: 403, text: 'Forbidden', cat: '4xx', label: 'Õigust pole', body: 'Kasutaja on sisse logitud, aga tal pole õigust seda tegevust teha (nt tavakasutaja üritab admin-tegevust).' },
+    { code: 404, text: 'Not Found', cat: '4xx', label: 'Ei leitud', body: 'Küsitud ressurssi ei eksisteeri — nt vale kasutaja ID teel <code>/api/kasutajad/999</code>.' },
+    { code: 500, text: 'Internal Server Error', cat: '5xx', label: 'Serveri viga', body: 'Serveris läks midagi katki (nt programmiviga backend\'is) — see <strong>pole</strong> kliendi süü.' },
+  ];
+
+  const statusButtons = document.getElementById('statusButtons');
+  const resultBar = document.getElementById('statusResultBar');
+  const resultCode = document.getElementById('statusResultCode');
+  const resultCategory = document.getElementById('statusResultCategory');
+  const resultBody = document.getElementById('statusResultBody');
+
+  function selectStatus(status, btn) {
+    document.querySelectorAll('.status-btn').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+
+    resultBar.className = 'status-result-bar cat-' + status.cat;
+    resultCode.textContent = status.code + ' ' + status.text;
+    resultCategory.textContent = status.cat + ' — ' + status.label;
+    resultBody.innerHTML = status.body;
+  }
+
+  statuses.forEach(function (status, i) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'status-btn cat-' + status.cat;
+    btn.innerHTML = '<span class="code">' + status.code + ' ' + status.text + '</span><span class="label">' + status.label + '</span>';
+    btn.addEventListener('click', function () { selectStatus(status, btn); });
+    statusButtons.appendChild(btn);
+    if (i === 0) selectStatus(status, btn);
+  });
+})();
+</script>
