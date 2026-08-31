@@ -14,7 +14,7 @@ export default {
 
         LoginService.postLoginRequest(this.loginRequest)
           .then((response) => this.handleLoginResponse(response))
-          .catch(() => alert('Catch'))
+          .catch(() => alert('Catch blokk'))
           .finally()
       } else {
         this.errorMessage = 'Täida kõik väljad'

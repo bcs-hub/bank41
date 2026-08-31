@@ -1,6 +1,7 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 import SessionStorageService from '@/services/SessionStorageService.js'
+import NavigationService from '@/services/NavigationService.js'
 
 export default {
   name: 'App',
@@ -9,6 +10,15 @@ export default {
     return {
       isLoggedIn: SessionStorageService.userIsLoggedIn(),
     }
+  },
+  methods: {
+
+    executeLogOut() {
+      sessionStorage.clear()
+      this.isLoggedIn = false
+      NavigationService.navigateToHomeView()
+    },
+
   },
 }
 </script>
@@ -30,7 +40,7 @@ export default {
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
 
         <div v-if="isLoggedIn">
-          <button class="btn btn-primary" type="submit">Logi välja</button>
+          <button @click="executeLogOut" class="btn btn-primary" type="submit">Logi välja</button>
         </div>
         <div v-else>
           <RouterLink class="nav-link" to="/login">Sisse logimine</RouterLink>

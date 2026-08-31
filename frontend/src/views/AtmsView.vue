@@ -3,15 +3,6 @@ export default {
   name: 'AtmsView',
   methods: {
 
-    showAlert() {
-      alert('userId: ' + this.userId)
-
-      this.$refs.useridShowBox
-    },
-
-  },
-  beforeMount() {
-    this.showAlert()
   },
   data() {
     return {
