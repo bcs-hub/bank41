@@ -1,12 +1,12 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 import SessionStorageService from '@/services/SessionStorageService.js'
-// import { PhSignOut } from '@phosphor-icons/vue'
-import NavigationService from "@/services/NavigationService.js";
+import NavigationService from '@/services/NavigationService.js'
+import { PhSignOut } from '@phosphor-icons/vue'
 
 export default {
   name: 'App',
-  components: { RouterLink, RouterView },
+  components: { PhSignOut, RouterLink, RouterView },
   data() {
     return {
       isLoggedIn: SessionStorageService.userIsLoggedIn(),
@@ -39,7 +39,8 @@ export default {
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
 
         <div v-if="isLoggedIn">
-          <button @click="executeLogOut" class="btn btn-primary" type="submit">Logi välja</button>
+          <button @click="executeLogOut" class="btn btn-dark"><PhSignOut :size="30" color="white" /></button>
+<!--           <button @click="executeLogOut" class="btn btn-primary">Login välja</button>-->
         </div>
         <div v-else>
           <RouterLink class="nav-link" to="/login">Sisse logimine</RouterLink>

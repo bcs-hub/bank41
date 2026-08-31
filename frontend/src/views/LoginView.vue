@@ -8,7 +8,6 @@ export default {
   components: { AlertDanger },
   data() {
     return {
-
       errorMessage: '',
       showSpinner: false,
 
@@ -22,10 +21,10 @@ export default {
         roleName: '',
       },
 
-      errorResponse:{
+      errorResponse: {
         message: '',
         errorCode: '',
-      }
+      },
     }
   },
   methods: {
@@ -35,8 +34,8 @@ export default {
         this.startSpinner()
 
         LoginService.postLoginRequest(this.loginRequest)
-          .then(response => this.handleLoginResponse(response))
-          .catch(error => this.handleLoginErrorResponse(error))
+          .then((response) => this.handleLoginResponse(response))
+          .catch((error) => this.handleLoginErrorResponse(error))
           .finally(() => this.stopSpinner())
       } else {
         this.errorMessage = 'Täida kõik väljad'
@@ -71,17 +70,17 @@ export default {
       sessionStorage.setItem('userId', this.loginResponse.userId)
       sessionStorage.setItem('roleName', this.loginResponse.roleName)
     },
+
     handleLoginErrorResponse(error) {
+      console.log(error.response)
       this.errorResponse = error.response.data
-      if (error.response.status === 403 && this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS'){
+
+      if (error.response.status === 403  && this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS') {
         this.errorMessage = this.errorResponse.message
-
-
-      } else{
+      } else {
         NavigationService.navigateToErrorView()
       }
-
-    }
+    },
   },
 }
 </script>
