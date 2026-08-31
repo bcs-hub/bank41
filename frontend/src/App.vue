@@ -1,12 +1,13 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
+import SessionStorageService from '@/services/SessionStorageService.js'
 
 export default {
   name: 'App',
   components: { RouterLink, RouterView },
   data() {
     return {
-      isLoggedIn: sessionStorage.getItem('userId') !== null,
+      isLoggedIn: SessionStorageService.userIsLoggedIn(),
     }
   },
 }
@@ -37,5 +38,5 @@ export default {
       </div>
     </div>
   </nav>
-  <RouterView />
+  <RouterView @event-user-logged-in="isLoggedIn = true" />
 </template>
