@@ -1,23 +1,22 @@
 <script>
 import AlertDanger from '@/components/AlertDanger.vue'
-import axios from 'axios'
-import router from '@/router/index.js'
+import LoginService from '@/services/LoginService.js'
+import NavigationService from '@/services/NavigationService.js'
 
 export default {
   name: 'LoginView',
   components: { AlertDanger },
   methods: {
     login() {
-      this.resetMessage()
+      this.resetErrorMessage()
 
       if (this.allFieldsHaveInput()) {
         this.startSpinner()
 
-        axios
-          .post('/api/login', this.loginRequest)
+        LoginService.postLoginRequest(this.loginRequest)
           .then((response) => this.handleLoginResponse(response))
           .catch()
-          .finally(() => this.stopSpinner())
+          .finally(this.stopSpinner())
       } else {
         this.errorMessage = 'Täida kõik väljad / vale kasutajanimi või parool'
       }
@@ -25,14 +24,17 @@ export default {
     allFieldsHaveInput() {
       return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
     },
-    handleLoginResponse(response) {
-      this.loginResponse = response.data;
+    saveLoginResponseInfoToSessionStorage() {
       sessionStorage.setItem('userId', this.loginResponse.userId)
       sessionStorage.setItem('roleName', this.loginResponse.roleName)
+    },
+    handleLoginResponse(response) {
+      this.loginResponse = response.data
+      this.saveLoginResponseInfoToSessionStorage()
+      // parent update navbar
 
-      router.push({
-        name: 'atmsRoute'
-      })
+      this.$emit('event-user-logged-in');
+      NavigationService.navigateToAtmsView()
     },
     startSpinner() {
       this.showSpinner = true
@@ -40,10 +42,9 @@ export default {
     stopSpinner() {
       this.showSpinner = false
     },
-    resetMessage() {
+    resetErrorMessage() {
       this.errorMessage = ''
     },
-
   },
   data() {
     return {
@@ -55,8 +56,8 @@ export default {
       },
       loginResponse: {
         userId: 0,
-        roleName: ''
-      }
+        roleName: '',
+      },
     }
   },
 }

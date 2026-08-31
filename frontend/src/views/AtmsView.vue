@@ -1,14 +1,7 @@
 <script>
 export default {
   name: 'AtmsView',
-  methods: {
-    showAlert() {
-      alert('userId: ' + this.userId)
-    },
-  },
-    beforeMount() {
-      this.showAlert()
-    },
+  methods: {},
   data() {
     return {
       userId: sessionStorage.getItem('userId'),

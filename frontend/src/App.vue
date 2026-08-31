@@ -1,3 +1,26 @@
+<script>
+import { RouterLink, RouterView } from 'vue-router'
+import SessionStorageService from '@/services/SessionStorageService.js'
+import NavigationService from '@/services/NavigationService.js'
+
+export default {
+  name: 'App',
+  components: { RouterLink, RouterView },
+  data() {
+    return {
+      isLoggedIn: SessionStorageService.userIsLoggedIn(),
+    }
+  },
+  methods: {
+    executeLogout() {
+      sessionStorage.clear()
+      this.isLoggedIn = false
+      NavigationService.navigateToHomeView();
+    },
+  },
+}
+</script>
+
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 mb-3">
     <RouterLink class="navbar-brand" to="/">Bank</RouterLink>
@@ -13,14 +36,17 @@
       <div class="navbar-nav">
         <RouterLink class="nav-link" to="/">Kodu</RouterLink>
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
-        <RouterLink class="nav-link" to="/login">Sisse logimine</RouterLink>
+        <div v-if="isLoggedIn">
+          <button @click="executeLogout" class="btn btn-dark text-primary" type="submit">
+            Logi välja
+          </button>
+        </div>
+        <div v-else>
+          <RouterLink class="nav-link" to="/login">Sisse logimine</RouterLink>
+        </div>
       </div>
     </div>
   </nav>
 
-  <RouterView />
+  <RouterView @event-user-logged-in="isLoggedIn = true" />
 </template>
-
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
