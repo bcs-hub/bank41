@@ -6,6 +6,28 @@ import NavigationService from '@/services/NavigationService.js'
 export default {
   name: 'LoginView',
   components: { AlertDanger },
+  data() {
+    return {
+
+      errorMessage: '',
+      showSpinner: false,
+
+      loginRequest: {
+        username: '',
+        password: '',
+      },
+
+      loginResponse: {
+        userId: 0,
+        roleName: '',
+      },
+
+      errorResponse:{
+        message: '',
+        errorCode: '',
+      }
+    }
+  },
   methods: {
     login() {
       this.resetErrorMessage()
@@ -13,8 +35,8 @@ export default {
         this.startSpinner()
 
         LoginService.postLoginRequest(this.loginRequest)
-          .then((response) => this.handleLoginResponse(response))
-          .catch(() => alert('Catch'))
+          .then(response => this.handleLoginResponse(response))
+          .catch(error => this.handleLoginErrorResponse(error))
           .finally()
       } else {
         this.errorMessage = 'Täida kõik väljad'
@@ -49,21 +71,13 @@ export default {
       sessionStorage.setItem('userId', this.loginResponse.userId)
       sessionStorage.setItem('roleName', this.loginResponse.roleName)
     },
-  },
-  data() {
-    return {
-      loginResponse: {
-        userId: 1,
-        roleName: 'admin',
-      },
+    handleLoginErrorResponse(error) {
+      this.errorResponse = error.response.data
+      if (this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS'){
+        this.errorMessage = this.errorResponse.message
 
-      errorMessage: '',
-      showSpinner: false,
+      }
 
-      loginRequest: {
-        username: '',
-        password: '',
-      },
     }
   },
 }
