@@ -37,7 +37,7 @@ export default {
         LoginService.postLoginRequest(this.loginRequest)
           .then(response => this.handleLoginResponse(response))
           .catch(error => this.handleLoginErrorResponse(error))
-          .finally()
+          .finally(() => this.stopSpinner())
       } else {
         this.errorMessage = 'Täida kõik väljad'
       }
@@ -73,9 +73,12 @@ export default {
     },
     handleLoginErrorResponse(error) {
       this.errorResponse = error.response.data
-      if (this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS'){
+      if (error.response.status === 403 && this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS'){
         this.errorMessage = this.errorResponse.message
 
+
+      } else{
+        NavigationService.navigateToErrorView()
       }
 
     }
