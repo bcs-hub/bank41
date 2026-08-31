@@ -14,12 +14,12 @@ const router = createRouter({
     },
     {
       path: '/atms',
-      name: 'atms',
+      name: 'atmsRoute',
       component: AtmsView,
     },
     {
       path: '/error',
-      name: 'error',
+      name: 'errorRoute',
       component: ErrorView,
     },
     {

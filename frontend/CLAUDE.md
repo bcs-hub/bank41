@@ -20,7 +20,7 @@ See on Vue 3 + Vite frontend pangaäpile (Vali-IT grupiprojekt).
 
 **Sisenemispunkt:** `index.html` on hetkel Vue app kommenteeritud välja ja näitab lihtsat HTML õppeharjutust. Vue app (`src/main.js` → `src/App.vue`) käivitatakse eraldi, kuid pole veel `index.html`-ga ühendatud.
 
-**API proksi:** Vite suunab `/api` päringud Stoplight mock-serverisse (`https://stoplight.io/mocks/valiit/myproject/170385130`). Kohalik backendivahetaja (`http://localhost:8080`) on `vite.config.js`-is kommenteeritud välja.
+**API proksi:** Vite suunab `/api` päringud Stoplight mock-serverisse (`https://stoplight.io/mocks/valiit/myproject/1968960041`). Kohalik backendivahetaja (`http://localhost:8080`) on `vite.config.js`-is kommenteeritud välja.
 
 **Globaalne axios:** Axios on registreeritud `app.config.globalProperties.$axios`-na — komponentides kasuta `this.$axios` (Options API) või inject via `getCurrentInstance` (Composition API).
 
