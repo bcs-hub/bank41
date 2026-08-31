@@ -30,8 +30,7 @@ export default {
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
 
         <div v-if="isLoggedIn">
-          <PhSignOut :size="32" color="white"/>
-          <RouterLink class="nav-link" to="/">Logi välja</RouterLink>
+          <button class="btn btn-primary" type="submit">Logi välja</button>
         </div>
         <div v-else>
           <RouterLink class="nav-link" to="/login">Sisse logimine</RouterLink>
