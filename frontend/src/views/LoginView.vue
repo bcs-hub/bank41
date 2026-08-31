@@ -7,6 +7,8 @@ export default {
   name: 'LoginView',
   components: { AlertDanger },
   methods: {
+
+
     login() {
       this.resetErrorMessage()
       if (this.allFieldsHaveInput()) {
@@ -14,12 +16,13 @@ export default {
 
         LoginService.postLoginRequest(this.loginRequest)
           .then((response) => this.handleLoginResponse(response))
-          .catch()
+          .catch(() => alert("Catch"))
           .finally()
       } else {
         this.errorMessage = 'Täida kõik väljad'
       }
     },
+
 
     allFieldsHaveInput() {
       return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
