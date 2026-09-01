@@ -1,6 +1,9 @@
 <script>
 import CityService from '@/services/CityService.js'
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
+import LocationService from '@/services/LocationService.js'
+import navigationService from '@/services/NavigationService.js'
+import NavigationService from '@/services/NavigationService.js'
 
 export default {
   name: 'AtmsView',
@@ -9,11 +12,29 @@ export default {
     return {
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
+      cityId: 0,
 
       cities: [
         {
           cityId: 0,
           cityName: '',
+        },
+      ],
+
+      locations: [
+        {
+          locationId: 0,
+          locationName: '',
+          cityName: '',
+          lng: 0,
+          lat: 0,
+          transactionTypes: [
+            {
+              transactionTypeId: 0,
+              transactionTypeName: '',
+              isAvailable: true,
+            },
+          ],
         },
       ],
     }
@@ -22,7 +43,14 @@ export default {
     getCities() {
       CityService.getCitiesRequest()
         .then((response) => this.handleGetCitiesResponse(response))
-        .catch()
+        .catch(() => NavigationService.navigateToErrorView())
+        .finally()
+    },
+
+    getLocations() {
+      LocationService.getLocationsRequest(this.cityId)
+        .then((response) => this.handleGetLocationsResponse(response))
+        .catch(() => NavigationService.navigateToErrorView())
         .finally()
     },
 
@@ -33,16 +61,20 @@ export default {
     alertWithCityId(cityId) {
       alert('cityId: ' + cityId)
     },
+    handleGetLocationsResponse(response) {
+      this.locations = response.data
+    },
   },
   beforeMount() {
     this.getCities()
+    this.getLocations()
   },
 }
 </script>
 
 <template>
   <div class="container text-center">
-    <div class="row">
+    <div class="row mb-4">
       <div class="col">
         <h1>Pangaautomaadid</h1>
       </div>
@@ -54,29 +86,28 @@ export default {
       </div>
 
       <div class="col">
-
         <table class="table table-dark table-hover">
           <thead>
-          <tr>
-            <th scope="col">Linn</th>
-            <th scope="col">Asukoht</th>
-            <th scope="col">Teenused</th>
-          </tr>
+            <tr>
+              <th scope="col">Linn</th>
+              <th scope="col">Asukoht</th>
+              <th scope="col">Teenused</th>
+            </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>Tallinn</td>
-            <td>Sikupilli Prisma</td>
-            <td>
-              <ul>
-                <li>Raha sisse</li>
-                <li>Raha välja</li>
-              </ul>
-            </td>
-          </tr>
+            <tr v-for="location in locations" :key="location.locationId">
+              <td>{{ location.cityName }}</td>
+              <td>{{ location.locationName }}</td>
+              <td>
+                  <div v-for="transactionType in location.transactionTypes" :key="transactionType.transactionTypeId">
+                    <div v-if="transactionType.isAvailable">
+                      {{transactionType.transactionTypeName}}
+                    </div>
+                  </div>
+              </td>
+            </tr>
           </tbody>
         </table>
-
       </div>
     </div>
   </div>
