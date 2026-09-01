@@ -53,7 +53,30 @@ export default {
         <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId" />
       </div>
 
-      <div class="col">asukohtade tabel (placeholder)</div>
+      <div class="col">
+<!-- todo  SIIN ON ASUKOHTADE TABEL     -->
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Linn</th>
+              <th scope="col">Asukoht</th>
+              <th scope="col">Teenused</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tallinn</td>
+              <td>Sikupilli Prisma</td>
+              <td>
+                <ul>
+                  <li>raha sisse</li>
+                  <li>raha välja</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
