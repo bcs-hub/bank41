@@ -1,54 +1,126 @@
 <script>
 import CityService from '@/services/CityService.js'
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
+import LocationService from '@/services/LocationService.js'
+import NavigationService from '@/services/NavigationService.js'
+import AlertDanger from '@/components/AlertDanger.vue'
 
 export default {
   name: 'AtmsView',
-  components: { CitiesDropdown },
+  components: { AlertDanger, CitiesDropdown },
   data() {
     return {
+      errorMessage: '',
       userId: sessionStorage.getItem('userId'),
+      cityId: 0,
       cities: [
         {
           cityId: 0,
           cityName: '',
         },
       ],
+      locations: [
+        {
+          locationId: 0,
+          locationName: '',
+          cityName: '',
+          lng: 0,
+          lat: 0,
+          transactionTypes: [
+            {
+              transactionTypeId: 0,
+              transactionTypeName: '',
+              isAvailable: true,
+            },
+          ],
+        },
+      ],
+      errorResponse: {
+        message: '',
+        errorCode: '',
+      },
     }
   },
   methods: {
     getCitites() {
       CityService.getCitiesRequest()
         .then((response) => this.handleGetCitiesResponse(response))
-        .catch()
+        .catch(() => NavigationService.navigateToErrorView())
         .finally()
+    },
+    getLocations() {
+      this.errorMessage = ''
+      LocationService.getAtmLocationsRequest(this.cityId)
+        .then((response) => this.handleGetLocationsResponse(response))
+        .catch((error) => this.handleGetLocationsErrorResponse(error))
+        .finally()
+    },
+    reloadLocationsTable(cityId) {
+      this.cityId = cityId
+      this.getLocations()
     },
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
-    alertWithCityId(cityId) {
-      console.log(cityId);
-      alert(cityId)
+    handleGetLocationsResponse(response) {
+      this.locations = response.data
+    },
+    handleGetLocationsErrorResponse(error) {
+      this.errorResponse = error.response.data
+
+      if (error.response.status === 404 && this.errorResponse.errorCode === 'NO_LOCATION_FOUND') {
+        this.errorMessage = this.errorResponse.message
+        this.locations = []
+      }
     },
   },
   beforeMount() {
     this.getCitites()
+    this.getLocations()
   },
 }
 </script>
 
 <template>
   <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <h1>Pangaautomaadid</h1>
+    <div class="row justify-content-center">
+      <div class="col col-8">
+        <h1 class="mt-2">Pangaautomaadid</h1>
+        <AlertDanger :errorMessage="errorMessage" />
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-2 justify-content-center">
       <div class="col col-4">
-        <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId" />
+        <CitiesDropdown :cities="cities" @event-new-city-selected="reloadLocationsTable" />
       </div>
-      <div class="col">placeholder tabel</div>
+      <div class="col col-5">
+        <table class="table table-hover table-bordered table-light">
+          <thead>
+            <tr>
+              <th scope="col">Linn</th>
+              <th scope="col">Asukoht</th>
+              <th scope="col">Teenused</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="location in locations" :key="location.locationId">
+              <th scope="row">{{ location.cityName }}</th>
+              <td>{{ location.locationName }}</td>
+              <td>
+                <div
+                  v-for="transactionType in location.transactionTypes"
+                  :key="transactionType.transactionTypeId"
+                  class="text-left"
+                >
+                  <div v-if="transactionType.isAvailable">
+                    {{ transactionType.transactionTypeName }}
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
