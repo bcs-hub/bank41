@@ -46,7 +46,7 @@ export default {
 
     <div class="row">
       <div class="col col-2">
-        <CitiesDropdown :cities="cities" />
+        <CitiesDropdown :cities="cities"/>
       </div>
 
       <div class="col">asukohtade tabel (placeholder)</div>
