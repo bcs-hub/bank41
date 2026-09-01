@@ -1,14 +1,41 @@
 <script>
+import CityService from '@/services/CityService.js'
+import CitiesDropdown from '@/components/CitiesDropdown.vue'
+
 export default {
   name: 'AtmsView',
-  methods: {
-
-  },
+  components: { CitiesDropdown },
   data() {
     return {
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
+
+      cities: [
+        {
+          cityId: 0,
+          cityName: '',
+        },
+      ],
     }
+  },
+  methods: {
+    getCities() {
+      CityService.getCitiesRequest()
+        .then((response) => this.handleGetCitiesResponse(response))
+        .catch()
+        .finally()
+    },
+
+    handleGetCitiesResponse(response) {
+      this.cities = response.data
+    },
+
+    alertWithCityId(cityId) {
+      alert('cityId: ' + cityId)
+    },
+  },
+  beforeMount() {
+    this.getCities()
   },
 }
 </script>
@@ -18,9 +45,15 @@ export default {
     <div class="row">
       <div class="col">
         <h1>Pangaautomaadid</h1>
-        <div ref="useridShowBox">userId: x</div>
-        <div>roleName: y</div>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-2">
+        <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId" />
+      </div>
+
+      <div class="col">asukohtade tabel (placeholder)</div>
     </div>
   </div>
 </template>
