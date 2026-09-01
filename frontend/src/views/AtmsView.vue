@@ -3,12 +3,14 @@ import CityService from '@/services/CityService.js'
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
 import LocationService from '@/services/LocationService.js'
 import NavigationService from '@/services/NavigationService.js'
+import AlertDanger from "@/components/AlertDanger.vue";
 
 export default {
   name: 'AtmsView',
-  components: { CitiesDropdown },
+  components: {AlertDanger, CitiesDropdown },
   data() {
     return {
+      errorMessage: '',
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
       cityId: 0,
@@ -36,6 +38,11 @@ export default {
           ],
         },
       ],
+
+      errorResponse: {
+        message: '',
+        errorCode: '',
+      },
     }
   },
   methods: {
@@ -53,7 +60,7 @@ export default {
     getLocations() {
       LocationService.getAtmLocations(this.cityId)
         .then((response) => this.handleGetLocationsResponse(response))
-        .catch()
+        .catch((error) => this.handleGetLocationsErrorResponse(error))
         .finally()
     },
 
@@ -63,6 +70,14 @@ export default {
     },
     handleGetLocationsResponse(response) {
       this.locations = response.data
+    },
+
+    handleGetLocationsErrorResponse(error) {
+      this.errorResponse = error.response.data
+      if (error.response.status === 404 && this.errorResponse.errorCode === 'NO_LOCATION_FOUND'){
+        this.errorMessage = this.errorResponse.message
+        this.locations = []
+      }
     },
   },
   beforeMount() {
@@ -74,18 +89,19 @@ export default {
 
 <template>
   <div class="container text-center">
-    <div class="row mb-4">
-      <div class="col">
+    <div class="row justify-content-center mb-4">
+      <div class="col col-5">
         <h1>Pangaautomaadid</h1>
+        <AlertDanger :error-message="errorMessage"/>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col col-2">
         <CitiesDropdown :cities="cities" @event-new-city-selected="reloadLocationsTable" />
       </div>
 
-      <div class="col">
+      <div class="col col-5">
         <!-- todo  SIIN ON ASUKOHTADE TABEL     -->
         <table class="table table-dark table-hover">
           <thead>
@@ -100,9 +116,12 @@ export default {
               <td>{{ location.cityName }}</td>
               <td>{{ location.locationName }}</td>
               <td>
-                <div v-for="transactionType in location.transactionTypes" :key="transactionType.transactionTypeId">
+                <div
+                  v-for="transactionType in location.transactionTypes"
+                  :key="transactionType.transactionTypeId"
+                >
                   <div v-if="transactionType.isAvailable">
-                    {{transactionType.transactionTypeName}}
+                    {{ transactionType.transactionTypeName }}
                   </div>
                 </div>
               </td>
