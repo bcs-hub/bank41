@@ -1,16 +1,36 @@
 <script>
+import CityService from "@/services/CityService.js";
+
 export default {
   name: 'AtmsView',
   data() {
     return {
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
+      cities: [
+          {
+        cityId: 0,
+        cityName: ''
+      },
+
+  ]
     }
+
   },
   methods: {
     getCities() {
-      alert("Toon andmeid")
+
+      CityService.getCitiesRequest()
+
+          .then(response => this.handleGetCitiesResponse(response))
+          .catch()
+          .finally()
     },
+    handleGetCitiesResponse(response) {
+      this.cities = response.data
+
+
+    }
   },
   beforeMount() {
     this.getCities()
@@ -31,8 +51,6 @@ export default {
         <select class="form-select" aria-label="Default select example">
           <option value="0">Kõik linnad</option>
           <option value="2">Tallinn</option>
-          <option value="3">Tartu</option>
-          <option value="1">Pärnu</option>
         </select>
       </div>
 
