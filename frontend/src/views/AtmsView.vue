@@ -58,6 +58,7 @@ export default {
     },
 
     getLocations() {
+      this.errorMessage = ''
       LocationService.getAtmLocations(this.cityId)
         .then((response) => this.handleGetLocationsResponse(response))
         .catch((error) => this.handleGetLocationsErrorResponse(error))
