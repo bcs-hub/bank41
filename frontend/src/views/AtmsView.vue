@@ -28,6 +28,9 @@ export default {
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
+    alertWithCityId(cityId) {
+      alert("cityId: " + cityId)
+    },
   },
   beforeMount() {
     this.getCities()
@@ -44,7 +47,8 @@ export default {
     </div>
     <div class="row row">
       <div class="col col-2">
-        <CitiesDropdown :cities="cities" />
+        <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId"
+        />
       </div>
       <div class="col">Tabel</div>
     </div>
