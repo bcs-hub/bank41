@@ -2,7 +2,6 @@
 import CityService from '@/services/CityService.js'
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
 import LocationService from '@/services/LocationService.js'
-import navigationService from '@/services/NavigationService.js'
 import NavigationService from '@/services/NavigationService.js'
 
 export default {
@@ -58,8 +57,9 @@ export default {
       this.cities = response.data
     },
 
-    alertWithCityId(cityId) {
-      alert('cityId: ' + cityId)
+    reloadLocationsTable(cityId) {
+      this.cityId = cityId
+      this.getLocations()
     },
     handleGetLocationsResponse(response) {
       this.locations = response.data
@@ -82,7 +82,7 @@ export default {
 
     <div class="row">
       <div class="col col-2">
-        <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId" />
+        <CitiesDropdown :cities="cities" @event-new-city-selected="reloadLocationsTable" />
       </div>
 
       <div class="col">
