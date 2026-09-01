@@ -1,6 +1,8 @@
 <script>
 import CityService from '@/services/CityService.js'
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
+import LocationService from '@/services/LocationService.js'
+import NavigationService from '@/services/NavigationService.js'
 
 export default {
   name: 'AtmsView',
@@ -9,6 +11,7 @@ export default {
     return {
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
+      cityId: 0,
 
       cities: [
         {
@@ -16,41 +19,91 @@ export default {
           cityName: '',
         },
       ],
+
+      locations:
+        [
+          {
+            locationId: 0,
+            locationName: '',
+            cityName: '',
+            lng: 0,
+            lat: 0,
+            transactionTypes: [
+              {
+                transactionTypeId: 1,
+                transactionTypeName: '',
+                isAvailable: true
+              }
+            ]
+          },
+        ]
     }
   },
   methods: {
     getCities() {
       CityService.getCitiesRequest()
         .then((response) => this.handleGetCitiesResponse(response))
-        .catch()
+        .catch(() => NavigationService.navigateToErrorView())
         .finally()
     },
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
-    alertWithCityId(cityId) {
-      alert("cityId: " + cityId)
+    getLocations() {
+      LocationService.getAtmLocations(this.cityId)
+        .then(response => this.handleGetLocationsResponse(response))
+        .catch()
+        .finally()
     },
+
+    alertWithCityId(cityId) {
+      alert('cityId: ' + cityId)
+    },
+    handleGetLocationsResponse(response) {
+
+    }
   },
   beforeMount() {
     this.getCities()
+    this.getLocations()
   },
 }
 </script>
 
 <template>
   <div class="container text-center">
-    <div class="row mt-2">
-      <div class="col mb-5">
+    <div class="row mb-3">
+      <div class="col">
         <h1>Pangaautomaadid</h1>
       </div>
     </div>
     <div class="row row">
       <div class="col col-2">
-        <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId"
-        />
+        <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId" />
       </div>
-      <div class="col">Tabel</div>
+      <div class="col">
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Linn</th>
+              <th scope="col">Asukoht</th>
+              <th scope="col">Teenused</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tallinn</td>
+              <td>Sikupilli Prisma</td>
+              <td>
+                <ul>
+                  <li>raha sisse</li>
+                  <li>raha välja</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
