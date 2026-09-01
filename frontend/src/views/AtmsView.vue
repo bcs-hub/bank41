@@ -1,6 +1,8 @@
 <script>
 import CityService from '@/services/CityService.js'
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
+import LocationService from '@/services/LocationService.js'
+import NavigationService from '@/services/NavigationService.js'
 
 export default {
   name: 'AtmsView',
@@ -9,6 +11,7 @@ export default {
     return {
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
+      cityId: 0,
 
       cities: [
         {
@@ -16,13 +19,30 @@ export default {
           cityName: '',
         },
       ],
+
+      locations: [
+        {
+          locationId: 0,
+          locationName: '',
+          cityName: '',
+          lng: 0,
+          lat: 0,
+          transactionTypes: [
+            {
+              transactionTypeId: 1,
+              transactionTypeName: '',
+              isAvailable: true,
+            }
+          ],
+        }
+      ],
     }
   },
   methods: {
     getCities() {
       CityService.getCitiesRequest()
         .then((response) => this.handleGetCitiesResponse(response))
-        .catch()
+        .catch(() => NavigationService.navigateToErrorView())
         .finally()
     },
 
@@ -30,12 +50,21 @@ export default {
       this.cities = response.data
     },
 
+    getLocations() {
+      LocationService.getAtmLocations(this.cityId)
+        .then((response) => this.handleGetLocationsResponse(response))
+        .catch()
+        .finally()
+    },
+
     alertWithCityId(cityId) {
       alert('cityId: ' + cityId)
     },
+    handleGetLocationsResponse(response) {},
   },
   beforeMount() {
     this.getCities()
+    this.getLocations()
   },
 }
 </script>
@@ -54,7 +83,7 @@ export default {
       </div>
 
       <div class="col">
-<!-- todo  SIIN ON ASUKOHTADE TABEL     -->
+        <!-- todo  SIIN ON ASUKOHTADE TABEL     -->
         <table class="table table-dark table-hover">
           <thead>
             <tr>
