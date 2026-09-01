@@ -4,6 +4,7 @@ export default {
   props: {
     cities: Array,
   },
+  emits: ['event-new-city-selected'],
 }
 </script>
 
