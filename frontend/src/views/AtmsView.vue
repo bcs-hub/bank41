@@ -1,15 +1,37 @@
 <script>
+import CityService from '@/services/CityService.js'
+import CitiesDropdown from '@/components/CitiesDropdown.vue'
+
 export default {
   name: 'AtmsView',
+  components: { CitiesDropdown },
   data() {
     return {
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
+
+      cities: [
+        {
+          cityId: 0,
+          cityName: '',
+        },
+      ],
     }
   },
   methods: {
     getCities() {
-      alert('Toon andmeid')
+      CityService.getCitiesRequest()
+        .then((response) => this.handleGetCitiesResponse(response))
+        .catch()
+        .finally()
+    },
+
+    handleGetCitiesResponse(response) {
+      this.cities = response.data
+    },
+
+    alertWithCityId(cityId) {
+      alert('cityId: ' + cityId)
     },
   },
   beforeMount() {
@@ -20,7 +42,7 @@ export default {
 
 <template>
   <div class="container text-center">
-    <div class="row">
+    <div class="row mb-4">
       <div class="col">
         <h1>Pangaautomaadid</h1>
       </div>
@@ -28,15 +50,8 @@ export default {
 
     <div class="row">
       <div class="col col-2">
-        <select class="form-select" aria-label="Default select example">
-          <option value="0">Kõik linnad</option>
-          <option value="2">Tallinn</option>
-          <option value="3">Tartu</option>
-          <option value="1">Pärnu</option>
-        </select>
+        <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId" />
       </div>
-
-      <div class="col">asukohtade tabel (placeholder)</div>
     </div>
   </div>
 </template>
