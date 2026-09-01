@@ -3,6 +3,7 @@ export default {
   name: 'CitiesDropdown',
   props: {
     cities: Array,
+    cityId: Number,
   },
   emits: ['event-new-city-selected'],
 }
@@ -10,7 +11,8 @@ export default {
 
 <template>
   <select
-    @change="$emit('event-new-city-selected', $event.target.value)"
+    :value="cityId"
+    @change="$emit('event-new-city-selected', Number($event.target.value))"
     class="form-select"
     aria-label="Default select example"
   >
