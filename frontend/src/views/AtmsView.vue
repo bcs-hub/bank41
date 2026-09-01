@@ -32,9 +32,9 @@ export default {
               transactionTypeId: 1,
               transactionTypeName: '',
               isAvailable: true,
-            }
+            },
           ],
-        }
+        },
       ],
     }
   },
@@ -60,7 +60,9 @@ export default {
     alertWithCityId(cityId) {
       alert('cityId: ' + cityId)
     },
-    handleGetLocationsResponse(response) {},
+    handleGetLocationsResponse(response) {
+      this.locations = response.data
+    },
   },
   beforeMount() {
     this.getCities()
@@ -93,14 +95,15 @@ export default {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Tallinn</td>
-              <td>Sikupilli Prisma</td>
+            <tr v-for="location in locations" :key="location.locationId">
+              <td>{{ location.cityName }}</td>
+              <td>{{ location.locationName }}</td>
               <td>
-                <ul>
-                  <li>raha sisse</li>
-                  <li>raha välja</li>
-                </ul>
+                <div v-for="transactionType in location.transactionTypes" :key="transactionType.transactionTypeId">
+                  <div v-if="transactionType.isAvailable">
+                    {{transactionType.transactionTypeName}}
+                  </div>
+                </div>
               </td>
             </tr>
           </tbody>
