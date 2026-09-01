@@ -1,8 +1,10 @@
 <script>
-import CityService from "@/services/CityService.js";
+import CityService from '@/services/CityService.js'
+import CitiesDropdown from '@/components/CitiesDropdown.vue'
 
 export default {
   name: 'AtmsView',
+  components: { CitiesDropdown },
   data() {
     return {
       userId: sessionStorage.getItem('userId'),
@@ -11,24 +13,22 @@ export default {
       cities: [
         {
           cityId: 0,
-          cityName: ""
+          cityName: '',
         },
-
-      ]
+      ],
     }
   },
   methods: {
     getCities() {
       CityService.getCitiesRequest()
-        .then(response => this.handleGetCitiesResponse(response))
+        .then((response) => this.handleGetCitiesResponse(response))
         .catch()
         .finally()
     },
 
     handleGetCitiesResponse(response) {
       this.cities = response.data
-
-    }
+    },
   },
   beforeMount() {
     this.getCities()
@@ -46,12 +46,7 @@ export default {
 
     <div class="row">
       <div class="col col-2">
-        <select class="form-select" aria-label="Default select example">
-          <option value="0">Kõik linnad</option>
-          <option value="2">Tallinn</option>
-          <option value="3">Tartu</option>
-          <option value="1">Pärnu</option>
-        </select>
+        <CitiesDropdown :cities="cities" />
       </div>
 
       <div class="col">asukohtade tabel (placeholder)</div>
