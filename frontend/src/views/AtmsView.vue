@@ -20,23 +20,22 @@ export default {
         },
       ],
 
-      locations:
-        [
-          {
-            locationId: 0,
-            locationName: '',
-            cityName: '',
-            lng: 0,
-            lat: 0,
-            transactionTypes: [
-              {
-                transactionTypeId: 1,
-                transactionTypeName: '',
-                isAvailable: true
-              }
-            ]
-          },
-        ]
+      locations: [
+        {
+          locationId: 0,
+          locationName: '',
+          cityName: '',
+          lng: 0,
+          lat: 0,
+          transactionTypes: [
+            {
+              transactionTypeId: 1,
+              transactionTypeName: '',
+              isAvailable: true,
+            },
+          ],
+        },
+      ],
     }
   },
   methods: {
@@ -46,12 +45,14 @@ export default {
         .catch(() => NavigationService.navigateToErrorView())
         .finally()
     },
+
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
+
     getLocations() {
       LocationService.getAtmLocations(this.cityId)
-        .then(response => this.handleGetLocationsResponse(response))
+        .then((response) => this.handleGetLocationsResponse(response))
         .catch()
         .finally()
     },
@@ -60,8 +61,8 @@ export default {
       alert('cityId: ' + cityId)
     },
     handleGetLocationsResponse(response) {
-
-    }
+      this.locations = response.data
+    },
   },
   beforeMount() {
     this.getCities()
@@ -72,16 +73,19 @@ export default {
 
 <template>
   <div class="container text-center">
-    <div class="row mb-3">
+    <div class="row mb-4">
       <div class="col">
         <h1>Pangaautomaadid</h1>
       </div>
     </div>
-    <div class="row row">
+
+    <div class="row">
       <div class="col col-2">
         <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId" />
       </div>
+
       <div class="col">
+        <!-- todo  SIIN ON ASUKOHTADE TABEL     -->
         <table class="table table-dark table-hover">
           <thead>
             <tr>
@@ -91,14 +95,15 @@ export default {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Tallinn</td>
-              <td>Sikupilli Prisma</td>
+            <tr v-for="location in locations" :key="location.locationId">
+              <td>{{ location.cityName }}</td>
+              <td>{{ location.locationName }}</td>
               <td>
-                <ul>
-                  <li>raha sisse</li>
-                  <li>raha välja</li>
-                </ul>
+                <div v-for="transactionType in location.transactionTypes" :key="transactionType.transactionTypeId">
+                  <div v-if="transactionType.isAvailable">
+                    {{transactionType.transactionTypeName}}
+                  </div>
+                </div>
               </td>
             </tr>
           </tbody>

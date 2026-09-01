@@ -13,11 +13,13 @@ export default {
     }
   },
   methods: {
+
     executeLogOut() {
       sessionStorage.clear()
       this.isLoggedIn = false
       NavigationService.navigateToHomeView()
     },
+
   },
 }
 </script>
