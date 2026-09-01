@@ -1,16 +1,34 @@
 <script>
+import CityService from "@/services/CityService.js";
+
 export default {
   name: 'AtmsView',
   data() {
     return {
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
+
+      cities: [
+        {
+          cityId: 0,
+          cityName: ""
+        },
+
+      ]
     }
   },
   methods: {
     getCities() {
-      alert("Toon andmeid")
+      CityService.getCitiesRequest()
+        .then(response => this.handleGetCitiesResponse(response))
+        .catch()
+        .finally()
     },
+
+    handleGetCitiesResponse(response) {
+      this.cities = response.data
+
+    }
   },
   beforeMount() {
     this.getCities()
