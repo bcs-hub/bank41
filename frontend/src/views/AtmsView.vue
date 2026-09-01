@@ -57,8 +57,9 @@ export default {
         .finally()
     },
 
-    alertWithCityId(cityId) {
-      alert('cityId: ' + cityId)
+    reloadLocationsTable(cityId) {
+      this.cityId = cityId
+      this.getLocations()
     },
     handleGetLocationsResponse(response) {
       this.locations = response.data
@@ -81,7 +82,7 @@ export default {
 
     <div class="row">
       <div class="col col-2">
-        <CitiesDropdown :cities="cities" @event-new-city-selected="alertWithCityId" />
+        <CitiesDropdown :cities="cities" @event-new-city-selected="reloadLocationsTable"/>
       </div>
 
       <div class="col">
@@ -101,7 +102,7 @@ export default {
               <td>
                 <div v-for="transactionType in location.transactionTypes" :key="transactionType.transactionTypeId">
                   <div v-if="transactionType.isAvailable">
-                    {{transactionType.transactionTypeName}}
+                    {{ transactionType.transactionTypeName }}
                   </div>
                 </div>
               </td>
