@@ -1,9 +1,8 @@
 <script>
-import CitiesDropdown from "@/components/CitiesDropdown.vue";
 
 export default {
   name: 'LocationView',
-  components: {CitiesDropdown},
+  components: {},
 }
 </script>
 
@@ -15,14 +14,8 @@ export default {
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col col-2">
-        <CitiesDropdown/>
-      </div>
       <div class="col">
-        väljad placeholder
-      </div>
-      <div class="col">
-        pilt
+        siia tuleb kogu vorm
       </div>
     </div>
     <div class="row justify-content-center">
