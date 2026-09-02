@@ -6,16 +6,27 @@ import NavigationService from '@/services/NavigationService.js'
 export default {
   name: 'App',
   components: { RouterLink, RouterView },
-  data() {
+
+  data: function () {
     return {
       isLoggedIn: SessionStorageService.userIsLoggedIn(),
+      isAdmin: SessionStorageService.userIsAdmin(),
     }
   },
+
   methods: {
     executeLogOut() {
       sessionStorage.clear()
+
       this.isLoggedIn = false
+      this.isAdmin = false
+
       NavigationService.navigateToHomeView()
+    },
+
+    updateNavMenu() {
+      this.isLoggedIn = true
+      this.isAdmin = SessionStorageService.userIsAdmin()
     },
   },
 }
@@ -37,6 +48,8 @@ export default {
         <RouterLink class="nav-link" to="/">Kodu</RouterLink>
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
 
+        <RouterLink v-if="isAdmin" class="nav-link" to="/location"> Asukoht </RouterLink>
+
         <div v-if="isLoggedIn">
           <button @click="executeLogOut" class="btn btn-primary" type="submit">Logi välja</button>
         </div>
@@ -46,5 +59,5 @@ export default {
       </div>
     </div>
   </nav>
-  <RouterView @event-user-logged-in="isLoggedIn = true" />
+  <RouterView @event-user-logged-in="updateNavMenu" />
 </template>

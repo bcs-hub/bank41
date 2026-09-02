@@ -198,6 +198,92 @@ Lihtsad sündmused võib kirjutada otse template'i:
 
 ---
 
+## v-for — nimekirjade renderdamine
+
+`v-for` kordab elementi iga massiivi kirje jaoks.
+
+Üldine kuju:
+```
+v-for="element in elements"
+```
+
+- `element` — üks kirje (nimi valid ise, kehtib ainult selle ploki sees)
+- `elements` — terve massiiv (props või data)
+
+Näited:
+```html
+<div v-for="city in cities">...</div>
+<div v-for="location in locations">...</div>
+<div v-for="transactionType in transactionTypes">...</div>
+```
+
+Meelespea: **üks element `in` kogu massiiv**.
+
+Koos `:key`-ga (peaaegu alati kohustuslik):
+```html
+<div
+  v-for="transactionType in transactionTypes"
+  :key="transactionType.transactionTypeId"
+>
+```
+
+`key` on unikaalne ja stabiilne tunnus (tavaliselt ID, mitte massiivi indeks), mille
+järgi Vue eristab kirjeid — see aitab Vue'l õigesti mõista, milline DOM-element vastab
+millisele andmekirjele, kui nimekiri muutub (lisandub/kustub/järjestub ümber).
+
+---
+
+## Levinud viga: `:checked`/`:value` vs `v-model`
+
+Checkbox/input väljal on kaks erinevat lähenemist ja neid ei tohi segamini ajada:
+
+**`v-model`** — kahesuunaline sidumine. Vue uuendab andmeid automaatselt, kui
+kasutaja muudab välja väärtust:
+```html
+<input v-model="transactionType.isAvailable" type="checkbox" />
+```
+
+**`:checked` (või `:value`) ilma `v-model`-ita** — **ühesuunaline** sidumine, ainult
+kuvamiseks. Väli näitab andmete väärtust, aga klõpsamine **ei muuda** seda andmetes:
+```html
+<input :checked="transactionType.isAvailable" type="checkbox" />
+```
+
+Kui kasutad `:checked`-only ilma `@change`-ta:
+- checkboxi muutust ei salvestata Vue andmetesse
+- `transactionType.isAvailable` ei muutu
+- vastav `event-new-...-input` sündmust ei saadeta parent komponendile
+- checkbox võib klõpsates korraks visuaalselt muutuda, aga järgmisel Vue
+  re-renderdusel läheb see tagasi vana `isAvailable` väärtuse peale (kuna DOM-i
+  hetkeolek ei ole tegelik tõe allikas — `isAvailable` on)
+
+Kui tahad, et väli oleks **päriselt ainult kuvamiseks** (kasutaja ei tohigi muuta),
+lisa selguse mõttes `disabled`:
+```html
+<input :checked="transactionType.isAvailable" type="checkbox" disabled />
+```
+
+Kui tahad, et kasutaja **saaks** väärtust muuta ilma `v-model`-ita (nt kui on vaja
+täpsemat kontrolli muutmise üle), pead käsitsi väärtuse tagasi kirjutama:
+```html
+<input
+  :checked="transactionType.isAvailable"
+  @change="transactionType.isAvailable = $event.target.checked"
+  type="checkbox"
+/>
+```
+
+**`id` ja `label` seos:** kui `<label :for="'x' + id">` viitab inputi `id`-le, aga
+inputil endal `id` puudub, siis:
+- labeli `for` ei leia enam vastavat inputit
+- labelile klõpsamine ei aktiveeri (enam) checkboxi
+- ligipääsetavus/WCAG on katki
+
+Kui checkbox on `disabled`, on see väiksem probleem (klõps poleks niikuinii midagi
+muutnud), aga muidu kasutatava välja puhul tuleb `id` ja `for` alati kokku sobitada.
+
+---
+
 ## Täielik näidiskomponent
 
 ```vue
