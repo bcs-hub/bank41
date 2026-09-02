@@ -1,13 +1,14 @@
 <script>
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
+import LocationNameInput from '@/components/LocationNameInput.vue'
 
 export default {
   name: 'LocationForm',
-  components: { CitiesDropdown },
+  components: { LocationNameInput, CitiesDropdown },
   props: {
     cities: Array,
   },
-  emits: ['event-new-city-selected'],
+  emits: ['event-new-city-selected', 'event-new-location-name-input'],
 }
 </script>
 
@@ -20,8 +21,10 @@ export default {
           @event-new-city-selected="$emit('event-new-city-selected', $event)"
         />
       </div>
-      <div class="col">väljad placeholder</div>
-      <div class="col">pilt</div>
+      <div class="col col-3">
+        <LocationNameInput @event-new-location-name-input="$emit('event-new-location-name-input', $event)" />
+      </div>
+      <div class="col col-2">pilt</div>
     </div>
   </div>
 </template>
