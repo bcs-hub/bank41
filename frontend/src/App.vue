@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import SessionStorageService from '@/services/SessionStorageService.js'
 import NavigationService from '@/services/NavigationService.js'
 import { PhSignOut } from '@phosphor-icons/vue'
+import sessionStorageService from '@/services/SessionStorageService.js'
 
 export default {
   name: 'App',
@@ -10,16 +11,22 @@ export default {
   data() {
     return {
       isLoggedIn: SessionStorageService.userIsLoggedIn(),
+      isAdmin: SessionStorageService.userIsAdmin(),
     }
   },
   methods: {
+    updateNavMenu() {
+      this.isLoggedIn = true
+      this.isAdmin = sessionStorageService.userIsAdmin()
+
+    },
 
     executeLogOut() {
       sessionStorage.clear()
       this.isLoggedIn = false
+      this.isAdmin = false
       NavigationService.navigateToHomeView()
     },
-
   },
 }
 </script>
@@ -39,10 +46,13 @@ export default {
       <div class="navbar-nav">
         <RouterLink class="nav-link" to="/">Kodu</RouterLink>
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
+        <RouterLink v-if="isAdmin" class="nav-link" to="/location">Asukoht</RouterLink>
 
         <div v-if="isLoggedIn">
-          <button @click="executeLogOut" class="btn btn-dark"><PhSignOut :size="30" color="white" /></button>
-<!--           <button @click="executeLogOut" class="btn btn-primary">Login välja</button>-->
+          <button @click="executeLogOut" class="btn btn-dark">
+            <PhSignOut :size="30" color="white" />
+          </button>
+          <!--           <button @click="executeLogOut" class="btn btn-primary">Login välja</button>-->
         </div>
         <div v-else>
           <RouterLink class="nav-link" to="/login">Sisse logimine</RouterLink>
@@ -50,5 +60,5 @@ export default {
       </div>
     </div>
   </nav>
-  <RouterView @event-user-logged-in="isLoggedIn = true" />
+  <RouterView @event-user-logged-in="updateNavMenu" />
 </template>
