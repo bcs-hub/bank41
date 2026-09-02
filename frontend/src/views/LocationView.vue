@@ -58,7 +58,9 @@ export default {
     </div>
     <div class="row justify-content-center">
       <div class="col">
-        <LocationForm :cities="cities" />
+        <LocationForm :cities="cities"
+                      @event-new-city-selected="location.cityId = $event"
+        />
       </div>
     </div>
     <div class="row justify-content-center">
