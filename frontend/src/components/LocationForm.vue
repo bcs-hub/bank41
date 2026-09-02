@@ -23,6 +23,7 @@ export default {
     'event-new-location-name-input',
     'event-new-number-of-atms-input',
     'event-new-location-map-input',
+    'event-transaction-types-checkbox-updated',
   ],
 }
 </script>
@@ -47,7 +48,10 @@ export default {
           @event-new-location-map-input="$emit('event-new-location-map-input', $event)"
         />
 
-        <TransactionTypesCheckbox :transaction-types="location.transactionTypes" />
+        <TransactionTypesCheckbox
+          :transaction-types="location.transactionTypes"
+          @event-transaction-types-checkbox-updated="$emit('event-transaction-types-checkbox-updated', $event)"
+        />
       </div>
       <div class="col col-2">pilt</div>
     </div>

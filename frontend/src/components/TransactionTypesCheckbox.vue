@@ -4,6 +4,17 @@ export default {
   props: {
     transactionTypes: Array,
   },
+  methods: {
+    emitEventTransactionTypesCheckboxUpdated(transactionTypeId, checked) {
+      let updatedCheckbox = {
+        transactionTypeId: transactionTypeId,
+        checked: checked,
+      }
+      alert(JSON.stringify(updatedCheckbox))
+      this.$emit('event-transaction-types-checkbox-updated', updatedCheckbox)
+    },
+  },
+  emits: ['event-transaction-types-checkbox-updated'],
 }
 </script>
 
@@ -15,6 +26,12 @@ export default {
       class="form-check form-switch text-start"
     >
       <input
+        @change="
+          emitEventTransactionTypesCheckboxUpdated(
+            transactionType.transactionTypeId,
+            $event.target.checked,
+          )
+        "
         class="form-check-input"
         type="checkbox"
         role="switch"
