@@ -1,8 +1,35 @@
 <script>
+import LocationForm from '@/components/LocationForm.vue'
+import CityService from '@/services/CityService.js'
+import NavigationService from '@/services/NavigationService.js'
 
 export default {
   name: 'LocationView',
-  components: {},
+  components: { LocationForm },
+  data() {
+    return {
+      cities: [
+        {
+          cityId: 0,
+          cityName: '',
+        },
+      ],
+    }
+  },
+  methods: {
+    getCities() {
+      CityService.getCitiesRequest()
+        .then((response) => this.handleGetCitiesResponse(response))
+        .catch(() => NavigationService.navigateToErrorView())
+    },
+
+    handleGetCitiesResponse(response) {
+      this.cities = response.data
+    },
+  },
+  beforeMount() {
+    this.getCities()
+  },
 }
 </script>
 
@@ -15,7 +42,7 @@ export default {
     </div>
     <div class="row justify-content-center">
       <div class="col">
-        siia tuleb kogu vorm
+        <LocationForm :cities="cities"/>
       </div>
     </div>
     <div class="row justify-content-center">
