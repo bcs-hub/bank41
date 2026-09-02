@@ -60,6 +60,20 @@ export default {
     handleGetLocationTransactionTypesResponse(response) {
       this.location.transactionTypes = response.data
     },
+
+    updateLocationTransactionTypesIsAvailableValue(updatedCheckbox) {
+      // otsib ülesse target objekti arrayst
+      let transactionType = this.location.transactionTypes.find(
+        (transactionType) =>
+          transactionType.transactionTypeId === updatedCheckbox.transactionTypeId,
+      )
+
+      // kui objekt on olemas (ei ole null)
+      if (transactionType) {
+        // siis muuda selle objekti 'isAvailable' -> nii  nagu on 'updatedCheckbox.checked' väärtus
+        transactionType.isAvailable = updatedCheckbox.checked
+      }
+    },
   },
   beforeMount() {
     this.getCities()
@@ -84,6 +98,7 @@ export default {
           @event-new-location-name-input="location.locationName = $event"
           @event-new-number-of-atms-input="location.numberOfAtms = $event"
           @event-new-location-map-input="setLocationLngLat"
+          @event-transaction-types-checkbox-updated="updateLocationTransactionTypesIsAvailableValue"
         />
       </div>
     </div>
