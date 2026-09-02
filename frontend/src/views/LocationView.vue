@@ -79,6 +79,7 @@ export default {
       <div class="col">
         <LocationForm
           :cities="cities"
+          :location="location"
           @event-new-city-selected="location.cityId = $event"
           @event-new-location-name-input="location.locationName = $event"
           @event-new-number-of-atms-input="location.numberOfAtms = $event"
