@@ -13,6 +13,6 @@ export default {
       class="form-control"
       placeholder=""
     />
-    <label for="floatingInput">Asukoht</label>
+    <label for="floatingInput">Asukoha nimi</label>
   </div>
 </template>
