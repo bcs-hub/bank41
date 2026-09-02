@@ -20,8 +20,8 @@ export default {
         locationName: '',
         numberOfAtms: 1,
         imageData: '',
-        lng: 0.0,
         lat: 0.0,
+        lng: 0.0,
         transactionTypes: [
           {
             transactionTypeId: 0,
@@ -42,6 +42,12 @@ export default {
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
+
+    setLocationLngLat(lngLat) {
+      let resultArray = lngLat.split(', ')
+      this.location.lat = Number(resultArray[0])
+      this.location.lng = Number(resultArray[1])
+    },
   },
   beforeMount() {
     this.getCities()
@@ -58,10 +64,12 @@ export default {
     </div>
     <div class="row justify-content-center">
       <div class="col">
-        <LocationForm :cities="cities"
-                      @event-new-city-selected="location.cityId = $event"
-                      @event-new-location-name-input="location.locationName = $event"
-                      @event-new-number-of-atms-input="location.numberOfAtms = $event"
+        <LocationForm
+          :cities="cities"
+          @event-new-city-selected="location.cityId = $event"
+          @event-new-location-name-input="location.locationName = $event"
+          @event-new-number-of-atms-input="location.numberOfAtms = $event"
+          @event-new-location-map-input="setLocationLngLat"
         />
       </div>
     </div>
