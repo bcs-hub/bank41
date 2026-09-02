@@ -2,6 +2,7 @@
 import LocationForm from '@/components/LocationForm.vue'
 import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
+import TransactionTypeService from '@/services/TransactionTypeService.js'
 
 export default {
   name: 'LocationView',
@@ -48,9 +49,21 @@ export default {
       this.location.lat = Number(resultArray[0])
       this.location.lng = Number(resultArray[1])
     },
+
+    getLocationTransactionTypes() {
+      TransactionTypeService.getTransactionTypesRequest()
+        .then((response) => this.handleGetLocationTransactionTypesResponse(response))
+        .catch(() => NavigationService.navigateToErrorView())
+        .finally()
+    },
+
+    handleGetLocationTransactionTypesResponse(response) {
+      this.location.transactionTypes = response.data
+    },
   },
   beforeMount() {
     this.getCities()
+    this.getLocationTransactionTypes()
   },
 }
 </script>

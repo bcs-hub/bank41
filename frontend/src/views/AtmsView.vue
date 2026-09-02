@@ -47,6 +47,7 @@ export default {
     }
   },
   methods: {
+    // todo: meetodite hierarhia (järts)
     getCities() {
       CityService.getCitiesRequest()
         .then((response) => this.handleGetCitiesResponse(response))

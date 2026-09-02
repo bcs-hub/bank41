@@ -28,6 +28,7 @@ export default {
     }
   },
   methods: {
+    // todo: meetodite hierarhia (järts)
     login() {
       this.resetErrorMessage()
       if (this.allFieldsHaveInput()) {
@@ -72,10 +73,13 @@ export default {
     },
 
     handleLoginErrorResponse(error) {
-      console.log("Olen siin")
+      console.log('Olen siin')
       this.errorResponse = error.response.data
 
-      if (error.response.status === 403  && this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS') {
+      if (
+        error.response.status === 403 &&
+        this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS'
+      ) {
         this.errorMessage = this.errorResponse.message
       } else {
         NavigationService.navigateToErrorView()
