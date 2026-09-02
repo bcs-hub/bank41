@@ -9,13 +9,19 @@ export default {
   data() {
     return {
       isLoggedIn: SessionStorageService.userIsLoggedIn(),
+      isAdmin: SessionStorageService.userIsAdmin(),
     }
   },
   methods: {
     executeLogout() {
       sessionStorage.clear()
       this.isLoggedIn = false
-      NavigationService.navigateToHomeView();
+      this.isAdmin = false
+      NavigationService.navigateToHomeView()
+    },
+    updateNavMenu() {
+      this.isLoggedIn = true
+      this.isAdmin = SessionStorageService.userIsAdmin()
     },
   },
 }
@@ -37,6 +43,7 @@ export default {
         <RouterLink class="nav-link" to="/">Kodu</RouterLink>
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
         <div v-if="isLoggedIn">
+          <RouterLink v-if="isAdmin" class="nav-link" to="/location">Asukoht</RouterLink>
           <button @click="executeLogout" class="btn btn-dark text-primary" type="submit">
             Logi välja
           </button>
@@ -48,5 +55,5 @@ export default {
     </div>
   </nav>
 
-  <RouterView @event-user-logged-in="isLoggedIn = true" />
+  <RouterView @event-user-logged-in="updateNavMenu" />
 </template>
