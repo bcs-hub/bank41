@@ -14,6 +14,22 @@ export default {
           cityName: '',
         },
       ],
+
+      location: {
+        cityId: 0,
+        locationName: '',
+        numberOfAtms: 1,
+        imageData: '',
+        lng: 0.0,
+        lat: 0.0,
+        transactionTypes: [
+          {
+            transactionTypeId: 0,
+            transactionTypeName: '',
+            isAvailable: true,
+          },
+        ],
+      },
     }
   },
   methods: {
@@ -42,7 +58,7 @@ export default {
     </div>
     <div class="row justify-content-center">
       <div class="col">
-        <LocationForm :cities="cities"/>
+        <LocationForm :cities="cities" />
       </div>
     </div>
     <div class="row justify-content-center">
