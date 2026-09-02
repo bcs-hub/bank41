@@ -4,7 +4,7 @@ export default {
   props: {
     cities: Array,
   },
-  emits: ['event-new-city-selected']
+  emits: ['event-new-city-selected'],
 }
 </script>
 
@@ -14,7 +14,7 @@ export default {
     class="form-select"
     aria-label="Default select example"
   >
-    <option value="0">Kõik linnad</option>
+    <option :value="0">Kõik linnad</option>
     <option v-for="city in cities" :key="city.cityId" :value="city.cityId">
       {{ city.cityName }}
     </option>
