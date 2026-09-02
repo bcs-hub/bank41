@@ -58,8 +58,12 @@ export default {
       this.location.transactionTypes = response.data
     },
     updateLocationTransactionTypesIsAvailableValue(updatedCheckbox){
-
-
+      let transactionType = this.location.transactionTypes.find(
+          (value) => value.transactionTypeId === updatedCheckbox.transactionTypeId,
+      )
+      if(transactionType){
+        transactionType.isAvailable = updatedCheckbox.checked
+      }
     },
   },
   beforeMount() {
@@ -85,7 +89,7 @@ export default {
           @event-new-location-name-input="location.locationName = $event"
           @event-new-number-of-atms-input="location.numberOfAtms = $event"
           @event-new-location-map-input="setLocationLngLatValues"
-          @event-transaction-types-checkbox-updated=""
+          @event-transaction-types-checkbox-updated="updateLocationTransactionTypesIsAvailableValue"
         />
       </div>
     </div>

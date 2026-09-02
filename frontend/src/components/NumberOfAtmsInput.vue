@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'NumberofAtmsInput',
+  name: 'NumberOfAtmsInput',
   emits: ['event-new-number-of-atms-input'],
 }
 </script>

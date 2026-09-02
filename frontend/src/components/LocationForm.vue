@@ -1,16 +1,16 @@
 <script>
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
 import LocationNameInput from '@/components/LocationNameInput.vue'
-import NumberofAtmsInput from '@/components/NumberOfAtmsInput.vue'
 import LocationMapInput from '@/components/LocationMapInput.vue'
 import TransactionTypesCheckbox from '@/components/TransactionTypesCheckbox.vue'
+import NumberOfAtmsInput from "@/components/NumberOfAtmsInput.vue";
 
 export default {
   name: 'LocationForm',
   components: {
+    NumberOfAtmsInput,
     TransactionTypesCheckbox,
     LocationMapInput,
-    NumberofAtmsInput,
     LocationNameInput,
     CitiesDropdown,
   },
@@ -22,6 +22,7 @@ export default {
     'event-new-city-selected',
     'event-new-location-input',
     'event-new-number-of-atms-input',
+    'event-new-location-name-input',
     'event-new-location-map-input',
     'event-transaction-types-checkbox-updated',
   ],
@@ -39,11 +40,10 @@ export default {
       </div>
       <div class="col col-3">
         <LocationNameInput
-          @event-new-location-name-input="$emit('event-new-location-input', $event)"
+          @event-new-location-name-input="$emit('event-new-location-name-input', $event)"
         />
-        <NumberofAtmsInput
-          @event-new-number-of-atms-input="$emit('event-new-number-of-atms-input', $event)"
-        />
+        <NumberOfAtmsInput
+        @event-new-number-of-atms-input="$emit('event-new-number-of-atms-input', $event)"/>
         <LocationMapInput
           @event-new-location-map-input="$emit('event-new-location-map-input', $event)"
         />

@@ -28,9 +28,7 @@ export default {
         @change="
           emitEventTransactionTypesCheckboxUpdated(
             transactionType.transactionTypeId,
-            $event.target.checked,
-          )
-        "
+            $event.target.checked )"
         class="form-check-input"
         type="checkbox"
         role="switch"
