@@ -26,10 +26,10 @@ export default {
           {
             transactionTypeId: 0,
             transactionTypeName: '',
-            isAvailable: true
-          }
-        ]
-      }
+            isAvailable: true,
+          },
+        ],
+      },
     }
   },
 
@@ -58,8 +58,11 @@ export default {
     </div>
     <div class="row justify-content-center">
       <div class="col">
-        <LocationForm :cities="cities"
-        @event-new-city-selected="location.cityId = $event"
+        <LocationForm
+          :cities="cities"
+          @event-new-city-selected="location.cityId = $event"
+          @event-new-location-input="location.locationName = $event"
+          @eventNewNumberOfAtmsInput="location.numberOfAtms = $event"
         />
       </div>
     </div>
