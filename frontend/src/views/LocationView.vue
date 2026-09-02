@@ -2,6 +2,7 @@
 import LocationForm from '@/components/LocationForm.vue'
 import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
+import TransactionTypeService from '@/services/TransactionTypeService.js'
 
 export default {
   name: 'LocationView',
@@ -20,8 +21,8 @@ export default {
         locationName: '',
         numberOfAtms: 1,
         imageData: '',
-        lng: 0.0,
         lat: 0.0,
+        lng: 0.0,
         transactionTypes: [
           {
             transactionTypeId: 0,
@@ -42,9 +43,28 @@ export default {
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
+    setLocationLngLatValues(lngLat) {
+      let resultArray = lngLat.split(', ')
+      this.location.lat = Number(resultArray[0])
+      this.location.lng = Number(resultArray[1])
+    },
+    getLocationTransactionTypes() {
+      TransactionTypeService.getTransactionTypesRequest()
+        .then(response => this.handleGetLocationTransactionTypesResponse(response))
+        .catch(() => NavigationService.navigateToErrorView())
+        .finally()
+    },
+    handleGetLocationTransactionTypesResponse(response) {
+      this.location.transactionTypes = response.data
+    },
+    updateLocationTransactionTypesIsAvailableValue(updatedCheckbox){
+
+
+    },
   },
   beforeMount() {
     this.getCities()
+    this.getLocationTransactionTypes()
   },
 }
 </script>
@@ -60,14 +80,17 @@ export default {
       <div class="col">
         <LocationForm
           :cities="cities"
+          :location="location"
           @event-new-city-selected="location.cityId = $event"
-          @event-new-location-input="location.locationName = $event"
-          @eventNewNumberOfAtmsInput="location.numberOfAtms = $event"
+          @event-new-location-name-input="location.locationName = $event"
+          @event-new-number-of-atms-input="location.numberOfAtms = $event"
+          @event-new-location-map-input="setLocationLngLatValues"
+          @event-transaction-types-checkbox-updated=""
         />
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col justify-content-center">
+      <div class="col">
         <button class="btn btn-secondary" type="submit">Tagasi</button>
         <button class="btn btn-success" type="submit">Lisa</button>
       </div>

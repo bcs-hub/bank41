@@ -2,14 +2,29 @@
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
 import LocationNameInput from '@/components/LocationNameInput.vue'
 import NumberofAtmsInput from '@/components/NumberOfAtmsInput.vue'
+import LocationMapInput from '@/components/LocationMapInput.vue'
+import TransactionTypesCheckbox from '@/components/TransactionTypesCheckbox.vue'
 
 export default {
   name: 'LocationForm',
-  components: { NumberofAtmsInput, LocationNameInput, CitiesDropdown },
+  components: {
+    TransactionTypesCheckbox,
+    LocationMapInput,
+    NumberofAtmsInput,
+    LocationNameInput,
+    CitiesDropdown,
+  },
   props: {
     cities: Array,
+    location: Object,
   },
-  emits: ['event-new-city-selected', 'event-new-location-input', 'event-new-number-of-atms-input'],
+  emits: [
+    'event-new-city-selected',
+    'event-new-location-input',
+    'event-new-number-of-atms-input',
+    'event-new-location-map-input',
+    'event-transaction-types-checkbox-updated',
+  ],
 }
 </script>
 
@@ -24,8 +39,18 @@ export default {
       </div>
       <div class="col col-3">
         <LocationNameInput
-          @event-new-location-name-input="$emit('event-new-location-input', $event)"/>
-        <NumberofAtmsInput @eventNewNumberOfAtmsInput="$emit('event-new-number-of-atms-input')" />
+          @event-new-location-name-input="$emit('event-new-location-input', $event)"
+        />
+        <NumberofAtmsInput
+          @event-new-number-of-atms-input="$emit('event-new-number-of-atms-input', $event)"
+        />
+        <LocationMapInput
+          @event-new-location-map-input="$emit('event-new-location-map-input', $event)"
+        />
+        <TransactionTypesCheckbox
+          :transaction-types="location.transactionTypes"
+          @event-transaction-types-checkbox-updated="$emit('event-transaction-types-checkbox-updated', $event)"
+        />
       </div>
       <div class="col col-2">img placeholder</div>
     </div>

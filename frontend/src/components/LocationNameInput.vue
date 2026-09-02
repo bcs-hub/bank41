@@ -7,7 +7,12 @@ export default {
 
 <template>
   <div class="form-floating mb-3">
-    <input @input="$emit('event-new-location-name-input', $event.target.value)" type="text" class="form-control" placeholder="">
-    <label for="floatingInput">Asukoht</label>
+    <input
+      @input="$emit('event-new-location-name-input', $event.target.value)"
+      type="text"
+      class="form-control"
+      placeholder=""
+    />
+    <label for="floatingInput">Asukoha nimi</label>
   </div>
 </template>

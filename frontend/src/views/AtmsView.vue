@@ -39,6 +39,7 @@ export default {
           ],
         },
       ],
+
       errorResponse: {
         message: '',
         errorCode: '',
@@ -72,6 +73,7 @@ export default {
     handleGetLocationsResponse(response) {
       this.locations = response.data
     },
+
     handleGetLocationsErrorResponse(error) {
       this.errorResponse = error.response.data
       if (error.response.status === 404 && this.errorResponse.errorCode === 'NO_LOCATION_FOUND') {

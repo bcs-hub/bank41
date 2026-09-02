@@ -12,6 +12,7 @@ export default {
       type="number"
       class="form-control"
       placeholder=""
+      min="1"
     />
     <label for="floatingInput">Automaatide arv</label>
   </div>
