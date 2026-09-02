@@ -1,14 +1,19 @@
 <script>
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
 import LocationNameInput from '@/components/LocationNameInput.vue'
+import NumberOfAtmsInput from '@/components/NumberOfAtmsInput.vue'
 
 export default {
   name: 'LocationForm',
-  components: { LocationNameInput, CitiesDropdown },
+  components: { NumberOfAtmsInput, LocationNameInput, CitiesDropdown },
   props: {
     cities: Array,
   },
-  emits: ['event-new-city-selected', 'event-new-location-name-input'],
+  emits: [
+    'event-new-city-selected',
+    'event-new-location-name-input',
+    'event-new-number-of-atms-input',
+  ],
 }
 </script>
 
@@ -22,7 +27,12 @@ export default {
         />
       </div>
       <div class="col col-3">
-        <LocationNameInput @event-new-location-name-input="$emit('event-new-location-name-input', $event)" />
+        <LocationNameInput
+          @event-new-location-name-input="$emit('event-new-location-name-input', $event)"
+        />
+        <NumberOfAtmsInput
+          @event-new-number-of-atms-input="$emit('event-new-number-of-atms-input', $event)"
+        />
       </div>
       <div class="col col-2">pilt</div>
     </div>
