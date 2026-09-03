@@ -99,6 +99,7 @@ export default {
           @event-new-number-of-atms-input="location.numberOfAtms = $event"
           @event-new-location-map-input="setLocationLngLat"
           @event-transaction-types-checkbox-updated="updateLocationTransactionTypesIsAvailableValue"
+          @event-new-image-selected="location.imageData = $event"
         />
       </div>
     </div>

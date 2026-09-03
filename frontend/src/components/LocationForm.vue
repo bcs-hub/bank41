@@ -4,10 +4,12 @@ import LocationNameInput from '@/components/LocationNameInput.vue'
 import NumberOfAtmsInput from '@/components/NumberOfAtmsInput.vue'
 import LocationMapInput from '@/components/LocationMapInput.vue'
 import TransactionTypesCheckbox from '@/components/TransactionTypesCheckbox.vue'
+import ImageInput from '@/components/image/ImageInput.vue'
 
 export default {
   name: 'LocationForm',
   components: {
+    ImageInput,
     TransactionTypesCheckbox,
     LocationMapInput,
     NumberOfAtmsInput,
@@ -24,6 +26,7 @@ export default {
     'event-new-number-of-atms-input',
     'event-new-location-map-input',
     'event-transaction-types-checkbox-updated',
+    'event-new-image-selected',
   ],
 }
 </script>
@@ -50,10 +53,19 @@ export default {
 
         <TransactionTypesCheckbox
           :transaction-types="location.transactionTypes"
-          @event-transaction-types-checkbox-updated="$emit('event-transaction-types-checkbox-updated', $event)"
+          @event-transaction-types-checkbox-updated="
+            $emit('event-transaction-types-checkbox-updated', $event)
+          "
         />
       </div>
-      <div class="col col-2">pilt</div>
+      <div class="col col-2">
+        <img src="..." class="img-thumbnail" alt="..." />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col col-4">
+        <ImageInput @event-new-image-selected="$emit('event-new-image-selected', $event)" />
+      </div>
     </div>
   </div>
 </template>
