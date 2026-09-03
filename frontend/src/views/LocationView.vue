@@ -106,7 +106,7 @@ export default {
     </div>
     <div class="row justify-content-center">
       <div class="col">
-        <button class="btn btn-secondary" type="submit">Tagasi</button>
+        <button class="btn btn-secondary me-3" type="submit">Tagasi</button>
         <button class="btn btn-success" type="submit">Lisa</button>
       </div>
     </div>
