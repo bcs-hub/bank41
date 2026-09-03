@@ -5,9 +5,15 @@ import NumberOfAtmsInput from '@/components/NumberOfAtmsInput.vue'
 import LocationMapInput from '@/components/LocationMapInput.vue'
 import TransactionTypesCheckbox from '@/components/TransactionTypesCheckbox.vue'
 import ImageInput from '@/components/image/ImageInput.vue'
+import { embertest } from 'globals'
 
 export default {
   name: 'LocationForm',
+  computed: {
+    embertest() {
+      return embertest
+    },
+  },
   components: {
     ImageInput,
     TransactionTypesCheckbox,
@@ -27,6 +33,7 @@ export default {
     'event-new-location-map-input',
     'event-transaction-types-checkbox-updated',
     'event-new-image-selected',
+    'event-chosen-image-cleared',
   ],
 }
 </script>
@@ -59,12 +66,21 @@ export default {
         />
       </div>
       <div class="col col-2">
-        <img src="..." class="img-thumbnail" alt="..." />
+        <img
+          v-if="location.imageData === ''"
+          src="@/assets/images/atm.png"
+          class="img-thumbnail"
+          alt="..."
+        />
+        <img :src="location.imageData" class="img-thumbnail" alt="..." />
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col col-4">
-        <ImageInput @event-new-image-selected="$emit('event-new-image-selected', $event)" />
+        <ImageInput
+          @event-new-image-selected="$emit('event-new-image-selected', $event)"
+          @event-chosen-image-cleared="$emit('event-chosen-image-cleared', $event)"
+        />
       </div>
     </div>
   </div>

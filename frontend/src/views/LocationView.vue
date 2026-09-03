@@ -100,12 +100,13 @@ export default {
           @event-new-location-map-input="setLocationLngLat"
           @event-transaction-types-checkbox-updated="updateLocationTransactionTypesIsAvailableValue"
           @event-new-image-selected="location.imageData = $event"
+          @eventChosenImageCleared="location.imageData"
         />
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col">
-        <button class="btn btn-secondary" type="submit">Tagasi</button>
+        <button class="btn btn-secondary me-4" type="submit">Tagasi</button>
         <button class="btn btn-success" type="submit">Lisa</button>
       </div>
     </div>
