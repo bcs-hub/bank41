@@ -80,18 +80,27 @@ export default {
 
     addLocation() {
 
-      // alert(this.location.numberOfAtms)
-
       this.resetErrorMessage()
 
       if (this.location.cityId === 0) {
         this.errorMessage = 'Vali linn'
-      } else if (this.location.locationName === ''){
+      } else if (this.location.locationName === '') {
         this.errorMessage = 'Lisa asukoha nimi'
-      } else if (this.location.numberOfAtms < 1){
+      } else if (this.location.numberOfAtms < 1) {
         this.errorMessage = 'Automaatide arv peab olema vähemalt 1'
+      } else if (!this.transactionTypeIsSelected()){
+        this.errorMessage = 'Vali vähemalt üks ATM teenus'
+      }
+    },
+
+    transactionTypeIsSelected() {
+      for (let transactionType in this.location.transactionTypes) {
+        if (transactionType.isAvailable) {
+          return true
+        }
       }
 
+      return false
     },
 
     resetErrorMessage() {

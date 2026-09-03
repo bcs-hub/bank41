@@ -19,6 +19,7 @@ export default {
 
 <template>
   <div class="mb-4">
+    <h5>ATM teenused</h5>
     <div
       v-for="transactionType in transactionTypes"
       :key="transactionType.transactionTypeId"
