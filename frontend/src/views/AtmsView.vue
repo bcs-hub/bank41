@@ -60,7 +60,7 @@ export default {
 
     getLocations() {
       this.errorMessage = ''
-      LocationService.getAtmLocations(this.cityId)
+      LocationService.getAtmLocationsRequest(this.cityId)
         .then((response) => this.handleGetLocationsResponse(response))
         .catch((error) => this.handleGetLocationsErrorResponse(error))
         .finally()
@@ -100,7 +100,9 @@ export default {
 
     <div class="row justify-content-center">
       <div class="col col-2">
-        <CitiesDropdown :cities="cities" @event-new-city-selected="reloadLocationsTable" />
+        <CitiesDropdown
+          :cities="cities"
+          @event-new-city-selected="reloadLocationsTable" />
       </div>
 
       <div class="col col-4">

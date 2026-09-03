@@ -51,7 +51,7 @@ export default {
         ref="fileInput"
         class="form-control"
         type="file"
-        @change="handleImage"
+        @change="handleImage($event)"
         accept="image/x-png,image/jpeg,image/gif"
       />
       <button class="btn btn-outline-danger" type="button" @click="clearFileInput">

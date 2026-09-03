@@ -19,12 +19,12 @@ export default {
   props: {
     cities: Array,
     location: Object,
+
   },
   emits: [
     'event-new-city-selected',
-    'event-new-location-input',
-    'event-new-number-of-atms-input',
     'event-new-location-name-input',
+    'event-new-number-of-atms-input',
     'event-new-location-map-input',
     'event-transaction-types-checkbox-updated',
     'event-new-image-selected',
@@ -39,19 +39,23 @@ export default {
       <div class="col col-2">
         <CitiesDropdown
           :cities="cities"
+          :city-id="location.cityId"
           @event-new-city-selected="$emit('event-new-city-selected', $event)"
         />
       </div>
       <div class="col col-3">
         <LocationNameInput
+          :location-name="location.locationName"
           @event-new-location-name-input="$emit('event-new-location-name-input', $event)"
         />
         <NumberOfAtmsInput
+          :number-of-atms="location.numberOfAtms"
           @event-new-number-of-atms-input="$emit('event-new-number-of-atms-input', $event)"
         />
         <LocationMapInput
           @event-new-location-map-input="$emit('event-new-location-map-input', $event)"
         />
+
         <TransactionTypesCheckbox
           :transaction-types="location.transactionTypes"
           @event-transaction-types-checkbox-updated="
