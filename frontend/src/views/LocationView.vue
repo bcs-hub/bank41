@@ -4,12 +4,15 @@ import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
 import TransactionTypeService from '@/services/TransactionTypeService.js'
 import AlertDanger from '@/components/AlertDanger.vue'
+import LocationService from "@/services/LocationService.js";
+import AlertSuccess from "@/components/AlertSuccess.vue";
 
 export default {
   name: 'LocationView',
-  components: { AlertDanger, LocationForm },
+  components: {AlertSuccess, AlertDanger, LocationForm },
   data() {
     return {
+      successMessage: '',
       errorMessage: '',
 
       cities: [
@@ -78,17 +81,30 @@ export default {
       }
     },
 
+    errorMessageIsEmpty() {
+      return this.errorMessage === '';
+    },
+
     addLocation() {
-
       this.resetErrorMessage()
+      this.checkFormForErrors()
 
+      if (this.errorMessageIsEmpty()) {
+      LocationService.postAtmLocationRequest(this.location)
+        .then(() => this.handleAddLocationResponse())
+        .catch()
+
+      }
+    },
+
+    checkFormForErrors() {
       if (this.location.cityId === 0) {
         this.errorMessage = 'Vali linn'
       } else if (this.location.locationName === '') {
         this.errorMessage = 'Lisa asukoha nimi'
       } else if (this.location.numberOfAtms < 1) {
         this.errorMessage = 'Automaatide arv peab olema vähemalt 1'
-      } else if (!this.transactionTypeIsSelected()){
+      } else if (!this.transactionTypeIsSelected()) {
         this.errorMessage = 'Vali vähemalt üks ATM teenus'
       }
     },
@@ -106,6 +122,11 @@ export default {
     resetErrorMessage() {
       this.errorMessage = ''
     },
+
+    handleAddLocationResponse() {
+
+      this.successMessage = 'Pangaautomaadi asukoht "' + this.location.locationName + '" on lisatud'
+    }
   },
   beforeMount() {
     this.getCities()
@@ -118,6 +139,7 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col col-5">
+        <AlertSuccess :success-message="successMessage"/>
         <AlertDanger :error-message="errorMessage" />
         <h1>Lisa asukoht</h1>
       </div>
