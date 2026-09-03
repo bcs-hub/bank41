@@ -42,10 +42,10 @@ export default {
         />
       </div>
       <div class="col col-3">
-        <LocationNameInput
+        <LocationNameInput :location-name="location.locationName"
           @event-new-location-name-input="$emit('event-new-location-name-input', $event)"
         />
-        <NumberOfAtmsInput
+        <NumberOfAtmsInput :number-of-atms="location.numberOfAtms"
           @event-new-number-of-atms-input="$emit('event-new-number-of-atms-input', $event)"
         />
         <LocationMapInput
