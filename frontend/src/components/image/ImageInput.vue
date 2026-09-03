@@ -15,7 +15,6 @@ export default {
     },
   },
   methods: {
-
     handleImage(event) {
       const selectedImage = event.target.files[0]
       this.emitBase64(selectedImage)
@@ -40,10 +39,9 @@ export default {
       }
     },
   },
-  emits: ['event-new-image-selected']
+  emits: ['event-new-image-selected', 'event-chosen-image-cleared'],
 }
 </script>
-
 
 <template>
   <div class="mb-3">

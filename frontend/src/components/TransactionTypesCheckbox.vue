@@ -10,7 +10,6 @@ export default {
         transactionTypeId: transactionTypeId,
         checked: checked,
       }
-      alert(JSON.stringify(updatedCheckbox))
       this.$emit('event-transaction-types-checkbox-updated', updatedCheckbox)
     },
   },
