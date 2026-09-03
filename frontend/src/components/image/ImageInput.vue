@@ -1,20 +1,3 @@
-<template>
-  <div class="mb-3">
-    <div class="input-group">
-      <input
-        ref="fileInput"
-        class="form-control"
-        type="file"
-        @change="handleImage"
-        accept="image/x-png,image/jpeg,image/gif"
-      />
-      <button class="btn btn-outline-danger" type="button" @click="clearFileInput">
-        <PhTrash :size="32" />
-      </button>
-    </div>
-  </div>
-</template>
-
 <script>
 import { PhTrash } from '@phosphor-icons/vue'
 
@@ -24,6 +7,7 @@ export default {
   props: {
     resetImageInput: Boolean,
   },
+  emits: ['event-new-image-selected'],
   watch: {
     resetImageInput(newValue) {
       if (newValue) {
@@ -58,3 +42,20 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div class="mb-3">
+    <div class="input-group">
+      <input
+        ref="fileInput"
+        class="form-control pt-2"
+        type="file"
+        @change="handleImage"
+        accept="image/x-png,image/jpeg,image/gif"
+      />
+      <button class="btn btn-outline-danger p-1" type="button" @click="clearFileInput">
+        <PhTrash :size="32" />
+      </button>
+    </div>
+  </div>
+</template>

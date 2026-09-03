@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-  <div class="form-floating">
+  <div class="form-floating mb-2">
     <input
       @input="$emit('event-new-location-map-input', $event.target.value)"
       type="text"

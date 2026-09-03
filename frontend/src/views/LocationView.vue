@@ -2,10 +2,12 @@
 import LocationForm from '@/components/LocationForm.vue'
 import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
+import TransactionTypeService from '@/services/TransactionTypeService.js'
+import TransactionTypesCheckbox from '@/views/TransactionTypesCheckbox.vue'
 
 export default {
   name: 'LocationView',
-  components: { LocationForm },
+  components: { TransactionTypesCheckbox, LocationForm },
   data() {
     return {
       cities: [
@@ -40,14 +42,28 @@ export default {
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
+    getLocationTransactionTypes() {
+      TransactionTypeService.getTransactionTypesRequest()
+        .then((response) => this.handleGetLocationTransactionTypesResponse(response))
+        .catch()
+    },
+    handleGetLocationTransactionTypesResponse(response) {
+      this.location.transactionTypes = response.data
+    },
     getLocationLongLatValues(values) {
-      const resultArray = values.split(', ');
-      this.location.lat = Number(resultArray[0]);
-      this.location.lng = Number(resultArray[1]);
+      const resultArray = values.split(', ')
+      this.location.lat = Number(resultArray[0])
+      this.location.lng = Number(resultArray[1])
+    },
+    updateLocationTransactionTypes(updatedCheckbox) {
+      // let transactionType = this.location.transactionTypes.find(
+      //   (tType) => tType.transactionTypeId === updatedCheckbox.transactionTypeId,
+      // );
     },
   },
   beforeMount() {
     this.getCities()
+    this.getLocationTransactionTypes()
   },
 }
 </script>
@@ -63,10 +79,14 @@ export default {
       <div class="col">
         <LocationForm
           :cities="cities"
+          :location="location"
           @event-new-city-selected="location.cityId = $event"
           @event-new-location-name-input="location.locationName = $event"
           @event-new-number-of-atms-input="location.numberOfAtms = $event"
           @event-new-location-map-input="getLocationLongLatValues"
+          @event-transaction-type-updated="updateLocationTransactionTypes"
+          @event-new-image-selected="location.imageData = $event"
+          @event-chosen-image-cleared="location.imageData = ''"
         />
       </div>
     </div>

@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-  <div class="form-floating">
+  <div class="form-floating mb-2">
     <input
       @input="$emit('event-new-number-of-atms-input', $event.target.value)"
       type="number"
@@ -15,6 +15,6 @@ export default {
       placeholder=""
       min="1"
     />
-    <label for="floatingInput">Asukoht</label>
+    <label for="floatingInput">Automaatide arv</label>
   </div>
 </template>

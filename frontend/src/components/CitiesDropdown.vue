@@ -11,7 +11,7 @@ export default {
 <template>
   <select
     @change="$emit('event-new-city-selected', Number($event.target.value))"
-    class="form-select"
+    class="form-select mb-2"
     aria-label="Default select example"
   >
     <option :value="0">Kõik linnad</option>

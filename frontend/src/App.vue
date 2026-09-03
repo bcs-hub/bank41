@@ -42,9 +42,9 @@ export default {
       <div class="navbar-nav">
         <RouterLink class="nav-link" to="/">Kodu</RouterLink>
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
-        <div v-if="isLoggedIn">
+        <div v-if="isLoggedIn" class="">
           <RouterLink v-if="isAdmin" class="nav-link" to="/location">Asukoht</RouterLink>
-          <button @click="executeLogout" class="btn btn-dark text-primary" type="submit">
+          <button @click="executeLogout" class="btn btn-dark text-primary d-inline-block" type="submit">
             Logi välja
           </button>
         </div>
