@@ -3,12 +3,15 @@ import LocationForm from '@/components/LocationForm.vue'
 import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
 import TransactionTypeService from '@/services/TransactionTypeService.js'
+import AlertDanger from '@/components/AlertDanger.vue'
 
 export default {
   name: 'LocationView',
-  components: { LocationForm },
+  components: { AlertDanger, LocationForm },
   data() {
     return {
+      errorMessage: '',
+
       cities: [
         {
           cityId: 0,
@@ -74,6 +77,19 @@ export default {
         transactionType.isAvailable = updatedCheckbox.checked
       }
     },
+
+    addLocation() {
+      this.resetErrorMessage()
+
+      if (this.location.cityId === 0) {
+        this.errorMessage = 'Vali linn'
+      }
+
+    },
+
+    resetErrorMessage() {
+      this.errorMessage = ''
+    },
   },
   beforeMount() {
     this.getCities()
@@ -85,7 +101,8 @@ export default {
 <template>
   <div class="container text-center">
     <div class="row justify-content-center">
-      <div class="col">
+      <div class="col col-5">
+        <AlertDanger :error-message="errorMessage" />
         <h1>Lisa asukoht</h1>
       </div>
     </div>
@@ -107,7 +124,7 @@ export default {
     <div class="row justify-content-center">
       <div class="col">
         <button class="btn btn-secondary me-3" type="submit">Tagasi</button>
-        <button class="btn btn-success" type="submit">Lisa</button>
+        <button @click="addLocation" class="btn btn-success" type="submit">Lisa</button>
       </div>
     </div>
   </div>
