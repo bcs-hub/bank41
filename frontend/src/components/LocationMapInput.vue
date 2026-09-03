@@ -12,7 +12,6 @@ export default {
       type="text"
       class="form-control"
       placeholder=""
-
     />
     <label for="floatingInput">Asukoha koordinaadid</label>
   </div>

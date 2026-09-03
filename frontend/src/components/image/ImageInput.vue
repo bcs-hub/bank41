@@ -1,20 +1,3 @@
-<template>
-  <div class="mb-3">
-    <div class="input-group">
-      <input
-        ref="fileInput"
-        class="form-control"
-        type="file"
-        @change="handleImage"
-        accept="image/x-png,image/jpeg,image/gif"
-      />
-      <button class="btn btn-outline-danger" type="button" @click="clearFileInput">
-        <PhTrash :size="32" />
-      </button>
-    </div>
-  </div>
-</template>
-
 <script>
 import { PhTrash } from '@phosphor-icons/vue'
 
@@ -56,5 +39,24 @@ export default {
       }
     },
   },
+  emits:['event-new-image-selected',
+    'event-chosen-image-cleared']
 }
 </script>
+
+<template>
+  <div class="mb-3">
+    <div class="input-group">
+      <input
+        ref="fileInput"
+        class="form-control"
+        type="file"
+        @change="handleImage"
+        accept="image/x-png,image/jpeg,image/gif"
+      />
+      <button class="btn btn-outline-danger" type="button" @click="clearFileInput">
+        <PhTrash :size="32" />
+      </button>
+    </div>
+  </div>
+</template>
