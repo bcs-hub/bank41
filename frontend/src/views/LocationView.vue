@@ -4,12 +4,12 @@ import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
 import TransactionTypeService from '@/services/TransactionTypeService.js'
 import AlertDanger from '@/components/AlertDanger.vue'
-import LocationService from "@/services/LocationService.js";
-import AlertSuccess from "@/components/AlertSuccess.vue";
+import LocationService from '@/services/LocationService.js'
+import AlertSuccess from '@/components/AlertSuccess.vue'
 
 export default {
   name: 'LocationView',
-  components: {AlertSuccess, AlertDanger, LocationForm },
+  components: { AlertSuccess, AlertDanger, LocationForm },
   data() {
     return {
       successMessage: '',
@@ -36,6 +36,11 @@ export default {
             isAvailable: true,
           },
         ],
+      },
+
+      errorResponse: {
+        message: '',
+        errorCode: '',
       },
     }
   },
@@ -82,18 +87,18 @@ export default {
     },
 
     errorMessageIsEmpty() {
-      return this.errorMessage === '';
+      return this.errorMessage === ''
     },
 
     addLocation() {
+      this.resetSuccessMessage()
       this.resetErrorMessage()
       this.checkFormForErrors()
 
       if (this.errorMessageIsEmpty()) {
-      LocationService.postAtmLocationRequest(this.location)
-        .then(() => this.handleAddLocationResponse())
-        .catch()
-
+        LocationService.postAtmLocationRequest(this.location)
+          .then(() => this.handleAddLocationResponse())
+          .catch((error) => this.handleAddLocationErrorResponse(error))
       }
     },
 
@@ -110,7 +115,7 @@ export default {
     },
 
     transactionTypeIsSelected() {
-      for (let transactionType in this.location.transactionTypes) {
+      for (let transactionType of this.location.transactionTypes) {
         if (transactionType.isAvailable) {
           return true
         }
@@ -119,14 +124,43 @@ export default {
       return false
     },
 
+    resetSuccessMessage() {
+      this.successMessage = ''
+    },
+
     resetErrorMessage() {
       this.errorMessage = ''
     },
 
     handleAddLocationResponse() {
-
       this.successMessage = 'Pangaautomaadi asukoht "' + this.location.locationName + '" on lisatud'
-    }
+      this.resetAllFields()
+    },
+
+    resetAllFields() {
+      this.location.cityId = 0
+      this.location.locationName = ''
+      this.location.numberOfAtms = 1
+      this.location.imageData = ''
+      this.location.lat = 0.0
+      this.location.lng = 0.0
+      this.getLocationTransactionTypes()
+    },
+
+    handleAddLocationErrorResponse(error) {
+      this.errorResponse = error.response.data
+
+      if (error.response.status === 403 && this.errorResponse.errorCode === 'LOCATION_UNAVAILABLE'){
+        this.errorMessage = this.errorResponse.message
+      } else {
+        NavigationService.navigateToErrorView()
+      }
+
+      // todo: mitte admin kasutaja tulebe lehele URL abil
+      // todo: meetodite järjekord.
+
+
+    },
   },
   beforeMount() {
     this.getCities()
@@ -139,7 +173,7 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col col-5">
-        <AlertSuccess :success-message="successMessage"/>
+        <AlertSuccess :success-message="successMessage" />
         <AlertDanger :error-message="errorMessage" />
         <h1>Lisa asukoht</h1>
       </div>

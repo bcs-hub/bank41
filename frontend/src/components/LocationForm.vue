@@ -37,6 +37,7 @@ export default {
     <div class="row justify-content-center">
       <div class="col col-2">
         <CitiesDropdown
+          :city-id="location.cityId"
           :cities="cities"
           @event-new-city-selected="$emit('event-new-city-selected', $event)"
         />
