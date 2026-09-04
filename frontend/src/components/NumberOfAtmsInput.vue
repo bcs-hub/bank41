@@ -2,6 +2,9 @@
 export default {
   name: 'NumberOfAtmsInput',
   emits: ['event-new-number-of-atms-input'],
+  props: {
+    numberOfAtms: Number,
+  },
 }
 </script>
 
@@ -14,6 +17,7 @@ export default {
       id="floatingInput"
       placeholder=""
       min="1"
+      :value="numberOfAtms"
     />
     <label for="floatingInput">Automaatide arv</label>
   </div>

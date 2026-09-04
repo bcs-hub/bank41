@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default {
   getAtmLocationsRequest(cityId) {
-    let preferValue;
+    let preferValue
 
     if (cityId === 0) {
       preferValue = 'code=200, example=0'
@@ -20,5 +20,8 @@ export default {
       },
       headers: { Prefer: preferValue },
     })
+  },
+  postAtmLocationRequest(location) {
+    return axios.post('/api/atm/locations', location)
   },
 }

@@ -3,13 +3,27 @@ import LocationForm from '@/components/LocationForm.vue'
 import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
 import TransactionTypeService from '@/services/TransactionTypeService.js'
-import TransactionTypesCheckbox from '@/views/TransactionTypesCheckbox.vue'
+import AlertDanger from '@/components/AlertDanger.vue'
+import AlertSuccess from '@/components/image/AlertSuccess.vue'
+import LocationService from '@/services/LocationService.js'
+import SessionStorageService from '@/services/SessionStorageService.js'
 
 export default {
   name: 'LocationView',
-  components: { TransactionTypesCheckbox, LocationForm },
+  components: { AlertSuccess, AlertDanger, LocationForm },
+  beforeMount() {
+    if (SessionStorageService.userIsAdmin()) {
+      this.getCities()
+      this.getLocationTransactionTypes()
+    } else {
+      NavigationService.navigateToNotAuthorizedView()
+    }
+  },
   data() {
     return {
+      successMessage: '',
+      errorMessage: '',
+
       cities: [
         {
           cityId: 0,
@@ -21,8 +35,8 @@ export default {
         locationName: '',
         numberOfAtms: 1,
         imageData: '',
-        lng: 0.0,
         lat: 0.0,
+        lng: 0.0,
         transactionTypes: [
           {
             transactionTypeId: 0,
@@ -30,6 +44,11 @@ export default {
             isAvailable: true,
           },
         ],
+      },
+
+      errorResponse: {
+        message: '',
+        errorCode: '',
       },
     }
   },
@@ -45,7 +64,8 @@ export default {
     getLocationTransactionTypes() {
       TransactionTypeService.getTransactionTypesRequest()
         .then((response) => this.handleGetLocationTransactionTypesResponse(response))
-        .catch()
+        .catch(() => NavigationService.navigateToErrorView())
+        .finally()
     },
     handleGetLocationTransactionTypesResponse(response) {
       this.location.transactionTypes = response.data
@@ -56,14 +76,83 @@ export default {
       this.location.lng = Number(resultArray[1])
     },
     updateLocationTransactionTypes(updatedCheckbox) {
-      // let transactionType = this.location.transactionTypes.find(
-      //   (tType) => tType.transactionTypeId === updatedCheckbox.transactionTypeId,
-      // );
+      let transactionType = this.location.transactionTypes.find(
+        (tType) => tType.transactionTypeId === updatedCheckbox.transactionTypeId,
+      )
+      transactionType.isAvailable = updatedCheckbox.checked
     },
-  },
-  beforeMount() {
-    this.getCities()
-    this.getLocationTransactionTypes()
+    addLocation() {
+      this.resetErrorMessage()
+      this.resetSuccessMessage()
+      this.checkFormForErrors()
+
+      if (this.errorMessageIsEmpty()) {
+        LocationService.postAtmLocationRequest(this.location)
+          .then(() => this.handleAddLocationResponse())
+          .catch((error) => this.handleAddLocationErrorResponse(error))
+      }
+    },
+    checkFormForErrors() {
+      if (this.location.cityId === 0) {
+        this.errorMessage = 'Vali linn'
+      } else if (this.location.locationName === '') {
+        this.errorMessage = 'Lisa asukoha nimi'
+      } else if (this.location.numberOfAtms < 1) {
+        this.errorMessage = 'Automaatide arv peab olema vähemalt 1'
+      } else if (!this.transactionTypeIsSelected()) {
+        this.errorMessage = 'Vali vähemalt üks ATM teenus'
+      } else {
+        this.successMessage = 'Asukoht edukalt lisatud'
+      }
+    },
+
+    transactionTypeIsSelected() {
+      for (let transactionType of this.location.transactionTypes) {
+        if (transactionType.isAvailable) {
+          return true
+        }
+      }
+
+      return false
+    },
+
+    resetSuccessMessage() {
+      this.successMessage = ''
+    },
+
+    resetErrorMessage() {
+      this.errorMessage = ''
+    },
+
+    handleAddLocationResponse() {
+      this.successMessage = 'Pangaautomaadi asukoht "' + this.location.locationName + '" on lisatud'
+      this.resetAllFields()
+    },
+
+    resetAllFields() {
+      this.location.cityId = 0
+      this.location.locationName = ''
+      this.location.numberOfAtms = 1
+      this.location.imageData = ''
+      this.location.lat = 0.0
+      this.location.lng = 0.0
+      this.getLocationTransactionTypes()
+    },
+
+    handleAddLocationErrorResponse(error) {
+      this.errorResponse = error.response.data
+
+      if (error.response.status === 403 && this.errorResponse.errorCode === 'LOCATION_UNAVAILABLE'){
+        this.errorMessage = this.errorResponse.message
+      } else {
+        NavigationService.navigateToErrorView()
+      }
+
+      // todo: mitte admin kasutaja tulebe lehele URL abil
+      // todo: meetodite järjekord.
+
+
+    },
   },
 }
 </script>
@@ -72,6 +161,8 @@ export default {
   <div class="container text-center row-gap-3 d-grid p-4">
     <div class="row">
       <div class="col">
+        <AlertDanger :errorMessage="errorMessage" />
+        <AlertSuccess :successMessage="successMessage" />
         <h1>Lisa asukoht</h1>
       </div>
     </div>
@@ -93,7 +184,7 @@ export default {
     <div class="row justify-content-center gx-4">
       <div class="col col-12 d-flex gap-2 justify-content-center">
         <button type="button" class="btn btn-secondary">Tagasi</button>
-        <button type="submit" class="btn btn-success">Lisa</button>
+        <button @click="addLocation" type="submit" class="btn btn-success">Lisa</button>
       </div>
     </div>
   </div>

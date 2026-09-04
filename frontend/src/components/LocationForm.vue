@@ -27,6 +27,7 @@ export default {
     'event-new-location-map-input',
     'event-new-image-selected',
     'event-chosen-image-cleared',
+    'event-transaction-type-updated',
   ],
 }
 </script>
@@ -37,6 +38,7 @@ export default {
       <div class="col col-3">
         <CitiesDropdown
           :cities="cities"
+          :city-id="location.cityId"
           @event-new-city-selected="$emit('event-new-city-selected', $event)"
         />
       </div>
@@ -45,6 +47,7 @@ export default {
           @event-new-location-name-input="$emit('event-new-location-name-input', $event)"
         />
         <NumberOfAtmsInput
+          :numberOfAtms="location.numberOfAtms"
           @event-new-number-of-atms-input="$emit('event-new-number-of-atms-input', $event)"
         />
         <LocationMapInput
@@ -52,9 +55,7 @@ export default {
         />
         <TransactionTypesCheckbox
           :transaction-types="location.transactionTypes"
-          @event-transaction-types-checkbox-updated="
-            $emit('event-transaction-types-checkbox-updated', $event)
-          "
+          @event-transaction-type-updated="$emit('event-transaction-type-updated', $event)"
         />
       </div>
       <div class="col">

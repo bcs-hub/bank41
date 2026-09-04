@@ -3,6 +3,10 @@ export default {
   name: 'CitiesDropdown',
   props: {
     cities: Array,
+    cityId: {
+      type: Number,
+      default: 0
+    }
   },
   emits: ['event-new-city-selected'],
 }
