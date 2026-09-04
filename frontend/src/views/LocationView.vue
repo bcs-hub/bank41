@@ -31,7 +31,7 @@ export default {
         },
       ],
 
-      location: {
+      imageData: {
         cityId: 0,
         locationName: '',
         numberOfAtms: 1,

@@ -29,7 +29,7 @@ export default {
         },
       ],
 
-      location: {
+      imageData: {
         locationId: 0,
         cityId: 0,
         locationName: '',
