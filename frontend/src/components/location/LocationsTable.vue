@@ -3,7 +3,8 @@ export default {
   name: 'LocationsTable',
   props: {
     locations: {}
-  }
+  },
+  emits: ['event-location-name-click'],
 }
 </script>
 
@@ -19,7 +20,7 @@ export default {
     <tbody>
     <tr v-for="location in locations" :key="location.locationId">
       <td>{{ location.cityName }}</td>
-      <td>{{ location.locationName }}</td>
+      <td><div @click="$emit('event-location-name-click', location.locationId)" class="green pointer text-pointer-underlined">{{ location.locationName }}</div></td>
       <td>
         <div
             v-for="transactionType in location.transactionTypes"

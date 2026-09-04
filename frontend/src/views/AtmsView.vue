@@ -30,6 +30,35 @@ export default {
         },
       ],
 
+      location: [
+        {
+          locationId: 12,
+          cityId: 2,
+          locationName: 'Sikupilli Prisma',
+          numberOfAtms: 5,
+          imageData: '',
+          lng: 123,
+          lat: 123,
+          transactionTypes: [
+            {
+              transactionTypeId: 1,
+              transactionTypeName: 'raha sisse',
+              isAvailable: true,
+            },
+            {
+              transactionTypeId: 2,
+              transactionTypeName: 'raha välja',
+              isAvailable: true,
+            },
+            {
+              transactionTypeId: 3,
+              transactionTypeName: 'maksed',
+              isAvailable: true,
+            },
+          ],
+        },
+      ],
+
       locations: [
         {
           locationId: 0,
@@ -89,6 +118,16 @@ export default {
         this.locations = []
       }
     },
+
+    handleOpenLocationInfoModal(locationId) {
+      LocationService.getAtmLocationRequest(locationId)
+          .then(response => this.handleGetLocationResponse(response))
+          .catch()
+    },
+    handleGetLocationResponse(response) {
+      this.location = response.data
+      this.locationInfoModalIsOpen = true
+    }
   },
 }
 </script>
@@ -97,7 +136,8 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center mb-4">
       <div class="col col-5">
-        <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen" />
+        <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen"
+        :location="location"/>
         <h1>Pangaautomaadid</h1>
         <AlertDanger :error-message="errorMessage" />
       </div>
@@ -110,7 +150,10 @@ export default {
 
       <div class="col col-5">
         <!-- todo  SIIN ON ASUKOHTADE TABEL     -->
-        <LocationsTable :locations="locations" />
+        <LocationsTable
+          :locations="locations"
+          @event-location-name-click="handleOpenLocationInfoModal"
+        />
       </div>
     </div>
   </div>
