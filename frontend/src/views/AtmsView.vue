@@ -5,10 +5,13 @@ import LocationService from '@/services/LocationService.js'
 import NavigationService from '@/services/NavigationService.js'
 import AlertDanger from '@/components/AlertDanger.vue'
 import LocationsTable from '@/components/LocationsTable.vue'
+import BaseModal from '@/components/BaseModal.vue'
+import { PhProhibit } from '@phosphor-icons/vue'
+import LocationForm from '@/components/LocationForm.vue'
 
 export default {
   name: 'AtmsView',
-  components: { LocationsTable, AlertDanger, CitiesDropdown },
+  components: { LocationForm, PhProhibit, BaseModal, LocationsTable, AlertDanger, CitiesDropdown },
   beforeMount() {
     this.getCities()
     this.getLocations()
@@ -94,6 +97,21 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center mb-4">
       <div class="col col-5">
+        <BaseModal :is-open="true">
+          <template #title>
+            <PhProhibit :size="32" />
+          </template>
+
+          <template #body>
+            <CitiesDropdown />
+          </template>
+
+          <template #buttons>
+            <button type="submit">LISA midagi</button>
+            <button type="submit">Sulge</button>
+          </template>
+        </BaseModal>
+
         <h1>Pangaautomaadid</h1>
         <AlertDanger :error-message="errorMessage" />
       </div>
