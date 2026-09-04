@@ -65,7 +65,7 @@ export default {
         />
       </div>
       <div class="col col-2">
-        <AtmImage :location="location" />
+        <AtmImage :imageData="location.imageData" />
       </div>
     </div>
     <div class="row justify-content-center">
