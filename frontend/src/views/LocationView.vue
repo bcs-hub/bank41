@@ -6,6 +6,7 @@ import TransactionTypeService from '@/services/TransactionTypeService.js'
 import AlertDanger from '@/components/AlertDanger.vue'
 import AlertSuccess from '@/components/AlertSuccess.vue'
 import LocationService from '@/services/LocationService.js'
+import SessionStorageService from '@/services/SessionStorageService.js'
 
 export default {
   name: 'LocationView',
@@ -56,12 +57,6 @@ export default {
       this.cities = response.data
     },
 
-    setLocationLngLat(lngLat) {
-      let resultArray = lngLat.split(', ')
-      this.location.lat = Number(resultArray[0])
-      this.location.lng = Number(resultArray[1])
-    },
-
     getLocationTransactionTypes() {
       TransactionTypeService.getTransactionTypesRequest()
         .then((response) => this.handleGetLocationTransactionTypesResponse(response))
@@ -71,6 +66,12 @@ export default {
 
     handleGetLocationTransactionTypesResponse(response) {
       this.location.transactionTypes = response.data
+    },
+
+    setLocationLngLat(lngLat) {
+      let resultArray = lngLat.split(', ')
+      this.location.lat = Number(resultArray[0])
+      this.location.lng = Number(resultArray[1])
     },
 
     updateLocationTransactionTypesIsAvailableValue(updatedCheckbox) {
@@ -86,37 +87,6 @@ export default {
         transactionType.isAvailable = updatedCheckbox.checked
       }
     },
-
-    errorMessageIsEmpty() {
-      return this.errorMessage === ''
-    },
-
-    addLocation() {
-      this.resetErrorMessage()
-      this.checkFormForErrors()
-
-      if (this.errorMessageIsEmpty()) {
-        LocationService.postAtmLocationRequest(this.location)
-          .then(() => this.handleAddLocationResponse())
-          .catch((error) => this.handleAddLocationErrorResponse(error))
-      }
-    },
-
-    handleAddLocationErrorResponse(error) {
-      this.errorResponse = error.response.data
-
-      if (
-        error.response.status === 403 &&
-        this.errorResponse.errorCode === 'LOCATION_UNAVAILABLE'
-      ) {
-        this.errorMessage = this.errorResponse.message
-      } else {
-        NavigationService.navigateToErrorView()
-      }
-    },
-
-    //todo:mitte admin kasutaja tuleb lehele url abil
-    //meetodite jarjekord
 
     checkFormForErrors() {
       if (this.location.cityId === 0) {
@@ -140,13 +110,42 @@ export default {
       return false
     },
 
-    resetErrorMessage() {
-      this.errorMessage = ''
-      this.successMessage = ''
+    errorMessageIsEmpty() {
+      return this.errorMessage === ''
     },
+
+    addLocation() {
+      this.resetErrorMessage()
+      this.checkFormForErrors()
+
+      if (this.errorMessageIsEmpty()) {
+        LocationService.postAtmLocationRequest(this.location)
+          .then(() => this.handleAddLocationResponse())
+          .catch((error) => this.handleAddLocationErrorResponse(error))
+      }
+    },
+
     handleAddLocationResponse() {
       this.successMessage = 'Pangaautomaadi asukoht ' + this.location.locationName + ' on lisatud'
       this.resetAllFields()
+    },
+
+    handleAddLocationErrorResponse(error) {
+      this.errorResponse = error.response.data
+
+      if (
+        error.response.status === 403 &&
+        this.errorResponse.errorCode === 'LOCATION_UNAVAILABLE'
+      ) {
+        this.errorMessage = this.errorResponse.message
+      } else {
+        NavigationService.navigateToErrorView()
+      }
+    },
+
+    resetErrorMessage() {
+      this.errorMessage = ''
+      this.successMessage = ''
     },
 
     resetAllFields() {
@@ -163,6 +162,12 @@ export default {
   beforeMount() {
     this.getCities()
     this.getLocationTransactionTypes()
+    if (SessionStorageService.userIsAdmin()) {
+      this.getCities()
+      this.getLocationTransactionTypes()
+    } else {
+      NavigationService.navigateToNotAuthorizedView()
+    }
   },
 }
 </script>

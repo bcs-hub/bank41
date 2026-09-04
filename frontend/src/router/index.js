@@ -4,7 +4,7 @@ import AtmsView from '@/views/AtmsView.vue'
 import ErrorView from '@/views/ErrorView.vue'
 import LoginView from '@/views/LoginView.vue'
 import LocationView from '@/views/LocationView.vue'
-import SessionStorageService from '@/services/SessionStorageService.js'
+import NotAuthorizedView from '@/views/NotAuthorizedView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,14 +31,14 @@ const router = createRouter({
     },
 
     {
-      beforeEnter: () => {
-        if (!SessionStorageService.userIsAdmin()) {
-          return '/'
-        }
-      },
       path: '/location',
       name: 'locationRoute',
       component: LocationView,
+    },
+    {
+      path: '/not-authorized',
+      name: 'notAuthorizedRoute',
+      component: NotAuthorizedView,
     },
   ],
 })
