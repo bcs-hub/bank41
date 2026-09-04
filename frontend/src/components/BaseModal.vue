@@ -1,3 +1,21 @@
+<script>
+export default {
+  name: 'BaseModal',
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  emits: ['event-modal-closed'],
+  methods: {
+    close() {
+      this.$emit('event-modal-closed')
+    },
+  },
+}
+</script>
+
 <template>
   <div v-if="isOpen">
     <div class="modal d-block" tabindex="-1" @click.self="close">
@@ -24,20 +42,3 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'BaseModal',
-  props: {
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  emits: ['event-modal-closed'],
-  methods: {
-    close() {
-      this.$emit('event-modal-closed')
-    },
-  },
-}
-</script>
