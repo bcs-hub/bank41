@@ -1,13 +1,6 @@
 <script>
-import button from 'bootstrap/js/src/button.js'
-
 export default {
   name: 'BaseModal',
-  computed: {
-    button() {
-      return button
-    },
-  },
   props: {
     isOpen: {
       type: Boolean,
@@ -32,20 +25,15 @@ export default {
             <h5 class="modal-title">
               <slot name="title"></slot>
             </h5>
-            Mingi pealkiri
             <button type="button" class="btn-close" @click="close" />
           </div>
-          <div class="modal-body"></div>
-
-          <slot name="body"> </slot>
-
+          <div class="modal-body">
+            <slot name="body"></slot>
+          </div>
           <div class="modal-footer">
-
             <slot name="buttons"> </slot>
             <button type="button" class="btn btn-secondary" @click="close">Sulge</button>
-
           </div>
-
         </div>
       </div>
     </div>

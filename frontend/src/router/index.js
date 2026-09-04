@@ -40,7 +40,6 @@ const router = createRouter({
       name: 'notAuthorizedRoute',
       component: NotAuthorizedView,
     },
-
   ],
 })
 
