@@ -1,6 +1,13 @@
 import axios from 'axios'
 
 export default {
+  postAtmLocationRequest(location) {
+    return axios.post('/api/atm/locations', location)
+  },
+  getAtmLocationRequest(locationId) {
+    return axios.get(`/api/atm/locations/${locationId}`)
+  },
+
   getAtmLocationsRequest(cityId) {
     // todo: Kustuta prefer osa ära, kui enam Stoplighti mock backi ei kasuta
     let preferValue
@@ -22,9 +29,5 @@ export default {
         cityId: cityId,
       },
     })
-  },
-  postAtmLocationRequest(location) {
-    return axios.post('/api/atm/locations', location)
-
   },
 }

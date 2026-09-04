@@ -1,14 +1,16 @@
 <script>
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
-import LocationNameInput from '@/components/LocationNameInput.vue'
-import LocationMapInput from '@/components/LocationMapInput.vue'
-import TransactionTypesCheckbox from '@/components/TransactionTypesCheckbox.vue'
-import NumberOfAtmsInput from '@/components/NumberOfAtmsInput.vue'
+import LocationNameInput from '@/components/location/LocationNameInput.vue'
+import LocationMapInput from '@/components/location/LocationMapInput.vue'
+import TransactionTypesCheckbox from '@/components/location/TransactionTypesCheckbox.vue'
+import NumberOfAtmsInput from '@/components/location/NumberOfAtmsInput.vue'
 import ImageInput from '@/components/image/ImageInput.vue'
+import AtmImage from '@/components/location/AtmImage.vue'
 
 export default {
   name: 'LocationForm',
   components: {
+    AtmImage,
     ImageInput,
     NumberOfAtmsInput,
     TransactionTypesCheckbox,
@@ -19,7 +21,6 @@ export default {
   props: {
     cities: Array,
     location: Object,
-
   },
   emits: [
     'event-new-city-selected',
@@ -64,14 +65,15 @@ export default {
         />
       </div>
       <div class="col col-2">
-        <img v-if="location.imageData === ''" src="@/assets/images/atm.png" class="img-thumbnail" alt="Pangaautomaadi pilt">
-        <img v-else :src="location.imageData" class="img-thumbnail" alt="Pangaautomaadi pilt">
+        <AtmImage :location="location" />
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col col-4">
-        <ImageInput @event-new-image-selected="$emit('event-new-image-selected', $event)"
-        @event-chosen-image-cleared="$emit('event-chosen-image-cleared')"/>
+        <ImageInput
+          @event-new-image-selected="$emit('event-new-image-selected', $event)"
+          @event-chosen-image-cleared="$emit('event-chosen-image-cleared')"
+        />
       </div>
     </div>
   </div>

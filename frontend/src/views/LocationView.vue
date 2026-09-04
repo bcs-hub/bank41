@@ -1,11 +1,11 @@
 <script>
-import LocationForm from '@/components/LocationForm.vue'
+import LocationForm from '@/components/location/LocationForm.vue'
 import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
 import TransactionTypeService from '@/services/TransactionTypeService.js'
 import LocationService from '@/services/LocationService.js'
-import AlertDanger from '@/components/AlertDanger.vue'
-import AlertSuccess from '@/components/AlertSuccess.vue'
+import AlertDanger from '@/components/alert/AlertDanger.vue'
+import AlertSuccess from '@/components/alert/AlertSuccess.vue'
 import SessionStorageService from '@/services/SessionStorageService.js'
 
 export default {

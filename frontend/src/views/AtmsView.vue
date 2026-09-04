@@ -3,22 +3,24 @@ import CityService from '@/services/CityService.js'
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
 import LocationService from '@/services/LocationService.js'
 import NavigationService from '@/services/NavigationService.js'
-import AlertDanger from '@/components/AlertDanger.vue'
-import LocationsTable from '@/components/LocationsTable.vue'
+import AlertDanger from '@/components/alert/AlertDanger.vue'
+import LocationsTable from '@/components/location/LocationsTable.vue'
+import LocationInfoModal from '@/components/modal/LocationInfoModal.vue'
 
 export default {
   name: 'AtmsView',
-  components: { LocationsTable, AlertDanger, CitiesDropdown },
+  components: { LocationInfoModal, LocationsTable, AlertDanger, CitiesDropdown },
   beforeMount() {
     this.getCities()
     this.getLocations()
   },
   data() {
     return {
+      locationInfoModalIsOpen: false,
+      errorMessage: '',
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
       cityId: 0,
-      errorMessage: '',
 
       cities: [
         {
@@ -26,6 +28,24 @@ export default {
           cityName: '',
         },
       ],
+
+      location:
+        {
+          locationId: 0,
+          cityId: 0,
+          locationName: '',
+          numberOfAtms: 0,
+          imageData: '',
+          lng: 0.0,
+          lat: 0.0,
+          transactionTypes: [
+            {
+              transactionTypeId: 0,
+              transactionTypeName: '',
+              isAvailable: false
+            }
+          ]
+        },
 
       locations: [
         {
@@ -43,7 +63,6 @@ export default {
           ],
         },
       ],
-
       errorResponse: {
         message: '',
         errorCode: '',
@@ -57,7 +76,6 @@ export default {
         .catch(() => NavigationService.navigateToErrorView())
         .finally()
     },
-
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
@@ -82,6 +100,15 @@ export default {
         this.locations = []
       }
     },
+    handleOpenLocationInfoModal(locationId) {
+      LocationService.getAtmLocationRequest(locationId)
+        .then(response => this.handleGetLocationResponse(response))
+        .catch()
+    },
+    handleGetLocationResponse(response) {
+      this.location = response.data
+      this.locationInfoModalIsOpen = true
+    }
   },
 }
 </script>
@@ -90,19 +117,19 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center mb-4">
       <div class="col col-5">
+        <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen"
+                           :location="location" />
         <h1>Pangaautomaadid</h1>
         <AlertDanger :error-message="errorMessage" />
       </div>
     </div>
-
     <div class="row justify-content-center">
       <div class="col col-2">
         <CitiesDropdown :cities="cities" @event-new-city-selected="reloadLocationsTable" />
       </div>
 
       <div class="col col-4">
-        <!-- todo  SIIN ON ASUKOHTADE TABEL     -->
-        <LocationsTable :locations="locations" />
+        <LocationsTable :locations="locations" @event-location-name-click="handleOpenLocationInfoModal" />
       </div>
     </div>
   </div>

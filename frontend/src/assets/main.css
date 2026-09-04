@@ -9,6 +9,14 @@ a,
   transition: 0.4s;
   padding: 3px;
 }
+.pointer {
+  cursor: pointer;
+}
+
+.text-pointer-underlined:hover {
+  text-decoration: underline;
+
+}
 
 @media (hover: hover) {
   a:hover {
