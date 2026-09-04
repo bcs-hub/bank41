@@ -1,23 +1,22 @@
 <script>
 import CityService from '@/services/CityService.js'
-import CitiesDropdown from '@/components/CitiesDropdown.vue'
+import CitiesDropdown from '@/components/dropdown/CitiesDropdown.vue'
 import LocationService from '@/services/LocationService.js'
 import NavigationService from '@/services/NavigationService.js'
-import AlertDanger from '@/components/AlertDanger.vue'
-import LocationsTable from '@/components/LocationsTable.vue'
-import BaseModal from '@/components/BaseModal.vue'
-import { PhProhibit } from '@phosphor-icons/vue'
-import LocationForm from '@/components/LocationForm.vue'
+import AlertDanger from '@/components/alert/AlertDanger.vue'
+import LocationsTable from '@/components/location/LocationsTable.vue'
+import LocationInfoModal from '@/components/modal/LocationInfoModal.vue'
 
 export default {
   name: 'AtmsView',
-  components: { LocationForm, PhProhibit, BaseModal, LocationsTable, AlertDanger, CitiesDropdown },
+  components: { LocationInfoModal, LocationsTable, AlertDanger, CitiesDropdown },
   beforeMount() {
     this.getCities()
     this.getLocations()
   },
   data() {
     return {
+      locationInfoModalIsOpen: false,
       errorMessage: '',
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
@@ -97,20 +96,7 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center mb-4">
       <div class="col col-5">
-        <BaseModal :is-open="true">
-          <template #title>
-            <PhProhibit :size="32" />
-          </template>
-
-          <template #body>
-            <CitiesDropdown />
-          </template>
-
-          <template #buttons>
-            <button type="submit">LISA midagi</button>
-            <button type="submit">Sulge</button>
-          </template>
-        </BaseModal>
+        <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen" />
 
         <h1>Pangaautomaadid</h1>
         <AlertDanger :error-message="errorMessage" />
