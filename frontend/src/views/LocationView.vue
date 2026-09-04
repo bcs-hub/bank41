@@ -6,10 +6,19 @@ import TransactionTypeService from '@/services/TransactionTypeService.js'
 import AlertDanger from '@/components/AlertDanger.vue'
 import LocationService from '@/services/LocationService.js'
 import AlertSuccess from '@/components/AlertSuccess.vue'
+import SessionStorageService from '@/services/SessionStorageService.js'
 
 export default {
   name: 'LocationView',
   components: { AlertSuccess, AlertDanger, LocationForm },
+  beforeMount() {
+    if (SessionStorageService.userIsAdmin()) {
+      this.getCities()
+      this.getLocationTransactionTypes()
+    } else {
+      NavigationService.navigateToNotAuthorizedView()
+    }
+  },
   data() {
     return {
       successMessage: '',
@@ -150,7 +159,10 @@ export default {
     handleAddLocationErrorResponse(error) {
       this.errorResponse = error.response.data
 
-      if (error.response.status === 403 && this.errorResponse.errorCode === 'LOCATION_UNAVAILABLE'){
+      if (
+        error.response.status === 403 &&
+        this.errorResponse.errorCode === 'LOCATION_UNAVAILABLE'
+      ) {
         this.errorMessage = this.errorResponse.message
       } else {
         NavigationService.navigateToErrorView()
@@ -158,13 +170,7 @@ export default {
 
       // todo: mitte admin kasutaja tulebe lehele URL abil
       // todo: meetodite järjekord.
-
-
     },
-  },
-  beforeMount() {
-    this.getCities()
-    this.getLocationTransactionTypes()
   },
 }
 </script>
