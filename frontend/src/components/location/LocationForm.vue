@@ -5,7 +5,7 @@ import NumberOfAtmsInput from '@/components/location/NumberOfAtmsInput.vue'
 import LocationMapInput from '@/components/location/LocationMapInput.vue'
 import TransactionTypesCheckbox from '@/components/location/TransactionTypesCheckbox.vue'
 import ImageInput from '@/components/image/ImageInput.vue'
-import AtmImage from '@/components/location/AtmImage.vue'
+import AtmImage from '@/components/image/AtmImage.vue'
 
 export default {
   name: 'LocationForm',
