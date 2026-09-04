@@ -41,23 +41,15 @@ export default {
         this.errorMessage = 'Täida kõik väljad'
       }
     },
-
-    allFieldsHaveInput() {
-      return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
-    },
-
-    startSpinner() {
-      this.showSpinner = true
-    },
-
-    stopSpinner() {
-      this.showSpinner = false
-    },
-
     resetErrorMessage() {
       this.errorMessage = ''
     },
-
+    allFieldsHaveInput() {
+      return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
+    },
+    startSpinner() {
+      this.showSpinner = true
+    },
     handleLoginResponse(response) {
       this.loginResponse = response.data
       this.saveLoginResponseInfoToSessionStorage()
@@ -65,21 +57,25 @@ export default {
       this.$emit('event-user-logged-in')
       NavigationService.navigateToAtmsView()
     },
-
     saveLoginResponseInfoToSessionStorage() {
       sessionStorage.setItem('userId', this.loginResponse.userId)
       sessionStorage.setItem('roleName', this.loginResponse.roleName)
     },
-
     handleLoginErrorResponse(error) {
-      console.log("Olen siin")
+      console.log('Olen siin')
       this.errorResponse = error.response.data
 
-      if (error.response.status === 403  && this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS') {
+      if (
+        error.response.status === 403 &&
+        this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS'
+      ) {
         this.errorMessage = this.errorResponse.message
       } else {
         NavigationService.navigateToErrorView()
       }
+    },
+    stopSpinner() {
+      this.showSpinner = false
     },
   },
 }

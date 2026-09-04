@@ -9,6 +9,10 @@ import LocationsTable from '@/components/LocationsTable.vue'
 export default {
   name: 'AtmsView',
   components: { LocationsTable, AlertDanger, CitiesDropdown },
+  beforeMount() {
+    this.getCities()
+    this.getLocations()
+  },
   data() {
     return {
       userId: sessionStorage.getItem('userId'),
@@ -57,7 +61,10 @@ export default {
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
-
+    reloadLocationsTable(cityId) {
+      this.cityId = cityId
+      this.getLocations()
+    },
     getLocations() {
       this.errorMessage = ''
       LocationService.getAtmLocationsRequest(this.cityId)
@@ -65,15 +72,9 @@ export default {
         .catch((error) => this.handleGetLocationsErrorResponse(error))
         .finally()
     },
-
-    reloadLocationsTable(cityId) {
-      this.cityId = cityId
-      this.getLocations()
-    },
     handleGetLocationsResponse(response) {
       this.locations = response.data
     },
-
     handleGetLocationsErrorResponse(error) {
       this.errorResponse = error.response.data
       if (error.response.status === 404 && this.errorResponse.errorCode === 'NO_LOCATION_FOUND') {
@@ -81,10 +82,6 @@ export default {
         this.locations = []
       }
     },
-  },
-  beforeMount() {
-    this.getCities()
-    this.getLocations()
   },
 }
 </script>
@@ -100,9 +97,7 @@ export default {
 
     <div class="row justify-content-center">
       <div class="col col-2">
-        <CitiesDropdown
-          :cities="cities"
-          @event-new-city-selected="reloadLocationsTable" />
+        <CitiesDropdown :cities="cities" @event-new-city-selected="reloadLocationsTable" />
       </div>
 
       <div class="col col-4">

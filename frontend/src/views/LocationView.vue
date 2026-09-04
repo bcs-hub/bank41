@@ -5,11 +5,20 @@ import NavigationService from '@/services/NavigationService.js'
 import TransactionTypeService from '@/services/TransactionTypeService.js'
 import LocationService from '@/services/LocationService.js'
 import AlertDanger from '@/components/AlertDanger.vue'
-import AlertSuccess from "@/components/AlertSuccess.vue";
+import AlertSuccess from '@/components/AlertSuccess.vue'
+import SessionStorageService from '@/services/SessionStorageService.js'
 
 export default {
   name: 'LocationView',
-  components: {AlertSuccess, AlertDanger, LocationForm },
+  components: { AlertSuccess, AlertDanger, LocationForm },
+  beforeMount() {
+    if (SessionStorageService.userIsAdmin()) {
+      this.getCities()
+      this.getLocationTransactionTypes()
+    } else {
+      NavigationService.navigateToNotAuthorizedView()
+    }
+  },
   data() {
     return {
       errorMessage: '',
@@ -44,53 +53,15 @@ export default {
       },
     }
   },
-
   methods: {
-    getCities() {
-      CityService.getCitiesRequest()
-        .then((response) => this.handleGetCitiesResponse(response))
-        .catch(() => NavigationService.navigateToErrorView())
-    },
-    handleGetCitiesResponse(response) {
-      this.cities = response.data
-    },
-    setLocationLngLatValues(lngLat) {
-      let resultArray = lngLat.split(', ')
-      this.location.lat = Number(resultArray[0])
-      this.location.lng = Number(resultArray[1])
-    },
-    getLocationTransactionTypes() {
-      TransactionTypeService.getTransactionTypesRequest()
-        .then((response) => this.handleGetLocationTransactionTypesResponse(response))
-        .catch(() => NavigationService.navigateToErrorView())
-        .finally()
-    },
-    handleGetLocationTransactionTypesResponse(response) {
-      this.location.transactionTypes = response.data
-    },
-    updateLocationTransactionTypesIsAvailableValue(updatedCheckbox) {
-      let transactionType = this.location.transactionTypes.find(
-        (value) => value.transactionTypeId === updatedCheckbox.transactionTypeId,
-      )
-      if (transactionType) {
-        transactionType.isAvailable = updatedCheckbox.checked
-      }
-    },
-    errorMessageIsEmpty() {
-      return this.errorMessage === ''
-    },
-    resetMessage() {
-      this.successMessage === ''
-    },
     addAtmLocation() {
-      this.resetErrorMessage()
+      this.resetSuccessMessage()
       this.resetErrorMessage()
       this.checkFormForErrors()
       if (this.errorMessageIsEmpty()) {
         LocationService.postAtmLocationRequest(this.location)
-            .then(() => this.handleAddLocationResponse())
-            .catch((error) => this.handleAddLocationErrorResponse(error))
-            .finally()
+          .then(() => this.handleAddLocationResponse())
+          .catch((error) => this.handleAddLocationErrorResponse(error))
       }
     },
     checkFormForErrors() {
@@ -98,14 +69,11 @@ export default {
         this.errorMessage = 'Vali linn'
       } else if (this.location.locationName === '') {
         this.errorMessage = 'Lisa asukoha nimi'
-      } else if (this.location.numberOfAtms > 1) {
+      } else if (this.location.numberOfAtms < 1) {
         this.errorMessage = 'Automaatide arv peab olema vähemalt 1'
       } else if (!this.transactionTypeIsSelected()) {
         this.errorMessage = 'Vali vähemalt üks ATM teenus'
       }
-    },
-    resetErrorMessage() {
-      this.errorMessage = ''
     },
     transactionTypeIsSelected() {
       for (let transactionType of this.location.transactionTypes) {
@@ -114,6 +82,13 @@ export default {
         }
       }
       return false
+    },
+    errorMessageIsEmpty() {
+      return this.errorMessage === ''
+    },
+    handleAddLocationResponse() {
+      this.successMessage = 'Pangaautomaadi asukoht ' + this.location.locationName + ' on lisatud'
+      this.resetAllFields()
     },
     resetAllFields() {
       this.location.cityId = 0
@@ -124,27 +99,53 @@ export default {
       this.location.lng = 0.0
       this.getLocationTransactionTypes()
     },
-
-    handleAddLocationResponse() {
-      this.successMessage = 'Pangaautomaadi asukoht ' + this.location.locationName + ' on lisatud'
-      this.resetAllFields();
-    },
     handleAddLocationErrorResponse(error) {
-     this.errorResponse = error.response.data
-      if(error.response.status === 403 && this.errorResponse.errorCode === 'LOCATION_UNAVAILABLE'){
+      this.errorResponse = error.response.data
+      if (
+        error.response.status === 403 &&
+        this.errorResponse.errorCode === 'LOCATION_UNAVAILABLE'
+      ) {
         this.errorMessage = this.errorResponse
-      } else{
+      } else {
         NavigationService.navigateToErrorView()
       }
-
-      //todo: mitte admin kasutaja tuleb lehele url abil
-      //todo: meetodite järjekord
-
-    }
-  },
-  beforeMount() {
-    this.getCities()
-    this.getLocationTransactionTypes()
+    },
+    getCities() {
+      CityService.getCitiesRequest()
+        .then((response) => this.handleGetCitiesResponse(response))
+        .catch(() => NavigationService.navigateToErrorView())
+    },
+    handleGetCitiesResponse(response) {
+      this.cities = response.data
+    },
+    getLocationTransactionTypes() {
+      TransactionTypeService.getTransactionTypesRequest()
+        .then((response) => this.handleGetLocationTransactionTypesResponse(response))
+        .catch(() => NavigationService.navigateToErrorView())
+        .finally()
+    },
+    handleGetLocationTransactionTypesResponse(response) {
+      this.location.transactionTypes = response.data
+    },
+    setLocationLngLatValues(lngLat) {
+      let resultArray = lngLat.split(', ')
+      this.location.lat = Number(resultArray[0])
+      this.location.lng = Number(resultArray[1])
+    },
+    updateLocationTransactionTypesIsAvailableValue(updatedCheckbox) {
+      let transactionType = this.location.transactionTypes.find(
+        (value) => value.transactionTypeId === updatedCheckbox.transactionTypeId,
+      )
+      if (transactionType) {
+        transactionType.isAvailable = updatedCheckbox.checked
+      }
+    },
+    resetSuccessMessage() {
+      this.successMessage === ''
+    },
+    resetErrorMessage() {
+      this.errorMessage = ''
+    },
   },
 }
 </script>
@@ -153,7 +154,7 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col col-6">
-        <AlertSuccess :success-message="successMessage"/>
+        <AlertSuccess :success-message="successMessage" />
         <AlertDanger :error-message="errorMessage" />
         <h1>Lisa asukoht</h1>
       </div>
