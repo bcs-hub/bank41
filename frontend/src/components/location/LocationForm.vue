@@ -5,10 +5,12 @@ import NumberOfAtmsInput from '@/components/location/NumberOfAtmsInput.vue'
 import LocationMapInput from '@/components/location/LocationMapInput.vue'
 import TransactionTypesCheckbox from '@/components/location/TransactionTypesCheckbox.vue'
 import ImageInput from '@/components/image/ImageInput.vue'
+import AtmImage from '@/components/location/AtmImage.vue'
 
 export default {
   name: 'LocationForm',
   components: {
+    AtmImage,
     ImageInput,
     TransactionTypesCheckbox,
     LocationMapInput,
@@ -43,10 +45,12 @@ export default {
         />
       </div>
       <div class="col col-3">
-        <LocationNameInput :location-name="location.locationName"
+        <LocationNameInput
+          :location-name="location.locationName"
           @event-new-location-name-input="$emit('event-new-location-name-input', $event)"
         />
-        <NumberOfAtmsInput :number-of-atms="location.numberOfAtms"
+        <NumberOfAtmsInput
+          :number-of-atms="location.numberOfAtms"
           @event-new-number-of-atms-input="$emit('event-new-number-of-atms-input', $event)"
         />
         <LocationMapInput
@@ -61,13 +65,7 @@ export default {
         />
       </div>
       <div class="col col-2">
-        <img
-          v-if="location.imageData === ''"
-          src="../../assets/images/atm.png"
-          class="img-thumbnail"
-          alt="panga automaadi pilt"
-        />
-        <img v-else :src="location.imageData" class="img-thumbnail" alt="panga automaadi pilt" />
+        <AtmImage :location="location" />
       </div>
     </div>
     <div class="row justify-content-center">

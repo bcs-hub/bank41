@@ -1,6 +1,15 @@
 import axios from 'axios'
 
 export default {
+  postAtmLocationRequest(location) {
+    // todo: muudame URL ainsusesse
+    return axios.post('/api/atm/locations', location)
+  },
+
+  getAtmLocationRequest(locationId) {
+    return axios.get(`/api/atm/locations/${locationId}`)
+  },
+
   getAtmLocationsRequest(cityId) {
     // todo: Kustuta prefer osa ära, kui enam Stolight mock back ei kasuta
     let preferValue
@@ -23,10 +32,5 @@ export default {
         cityId: cityId,
       },
     })
-  },
-
-  postAtmLocationRequest(location) {
-    // todo: muudame URL ainsusesse
-    return axios.post('/api/atm/locations', location)
   },
 }
