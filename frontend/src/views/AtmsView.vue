@@ -88,6 +88,11 @@ export default {
         this.locations = []
       }
     },
+
+    handleOpenLocationInfoModal(locationId) {
+
+    },
+
   },
 }
 </script>
@@ -109,8 +114,7 @@ export default {
       </div>
 
       <div class="col col-5">
-        <!-- todo  SIIN ON ASUKOHTADE TABEL     -->
-        <LocationsTable :locations="locations" />
+        <LocationsTable :locations="locations" @event-location-name-click="handleOpenLocationInfoModal" />
       </div>
     </div>
   </div>
