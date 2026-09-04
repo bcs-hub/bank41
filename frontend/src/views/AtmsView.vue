@@ -96,6 +96,7 @@ export default {
       <div class="col col-5">
         <h1>Pangaautomaadid</h1>
         <AlertDanger :error-message="errorMessage" />
+        //Alert Danger on meetod
       </div>
     </div>
 
