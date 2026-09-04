@@ -31,8 +31,8 @@ export default {
             <slot name="body"></slot>
           </div>
           <div class="modal-footer">
-            <slot name="button"
-              ><button type="button" class="btn btn-secondary" @click="close">Sulge</button></slot>
+            <slot name="button"></slot>
+            <button type="button" class="btn btn-secondary" @click="close">Sulge</button>
           </div>
         </div>
       </div>

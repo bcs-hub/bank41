@@ -1,9 +1,9 @@
 <script>
-import CitiesDropdown from '@/components/CitiesDropdown.vue'
-import LocationNameInput from '@/components/LocationNameInput.vue'
-import NumberOfAtmsInput from '@/components/NumberOfAtmsInput.vue'
-import LocationMapInput from '@/components/LocationMapInput.vue'
-import TransactionTypesCheckbox from '@/components/TransactionTypesCheckbox.vue'
+import CitiesDropdown from '@/components/dropdown/CitiesDropdown.vue'
+import LocationNameInput from '@/components/location/LocationNameInput.vue'
+import NumberOfAtmsInput from '@/components/location/NumberOfAtmsInput.vue'
+import LocationMapInput from '@/components/location/LocationMapInput.vue'
+import TransactionTypesCheckbox from '@/components/location/TransactionTypesCheckbox.vue'
 import ImageInput from '@/components/image/ImageInput.vue'
 
 export default {
@@ -63,7 +63,7 @@ export default {
       <div class="col col-2">
         <img
           v-if="location.imageData === ''"
-          src="@/assets/images/atm.png"
+          src="../../assets/images/atm.png"
           class="img-thumbnail"
           alt="panga automaadi pilt"
         />
