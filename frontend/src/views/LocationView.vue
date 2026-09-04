@@ -167,9 +167,6 @@ export default {
       } else {
         NavigationService.navigateToErrorView()
       }
-
-      // todo: mitte admin kasutaja tulebe lehele URL abil
-      // todo: meetodite järjekord.
     },
   },
 }
