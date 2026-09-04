@@ -3,6 +3,10 @@ export default {
   name: 'TransactionTypesCheckbox',
   props: {
     transactionTypes: Array,
+    switchesDisabled: {
+      type: Boolean,
+      default:false
+    },
   },
   methods: {
     emitEventTransactionTypesCheckboxUpdated(transactionTypeId, checked) {
@@ -25,6 +29,7 @@ export default {
     >
       <input
         :checked="transactionType.isAvailable"
+        :disabled="switchesDisabled"
         @change="
           emitEventTransactionTypesCheckboxUpdated(
             transactionType.transactionTypeId,

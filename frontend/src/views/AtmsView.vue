@@ -1,16 +1,18 @@
 <script>
 import CityService from '@/services/CityService.js'
-import CitiesDropdown from '@/components/CitiesDropdown.vue'
-import AlertDanger from '@/components/AlertDanger.vue'
-import AlertSuccess from '@/components/AlertSuccess.vue'
+import CitiesDropdown from '@/components/forms/CitiesDropdown.vue'
+import AlertDanger from '@/components/alert/AlertDanger.vue'
+import AlertSuccess from '@/components/alert/AlertSuccess.vue'
 import LocationService from '@/services/LocationService.js'
 import navigationService from '@/services/NavigationService.js'
-import LocationsTable from '@/components/LocationsTable.vue'
+import LocationsTable from '@/components/tables/LocationsTable.vue'
+import LocationInfoModal from '@/components/modals/LocationInfoModal.vue'
 
 export default {
   name: 'AtmsView',
 
   components: {
+    LocationInfoModal,
     LocationsTable,
     CitiesDropdown,
     AlertDanger,
@@ -23,6 +25,10 @@ export default {
       roleName: sessionStorage.getItem('roleName'),
 
       cityId: 0,
+      isOpen: false,
+
+      locationInfoModalIsOpen: false,
+      location: null,
 
       errorMessage: '',
       successMessage: '',
@@ -54,6 +60,22 @@ export default {
             },
           ],
         },
+        {
+          locationId: 0,
+          cityId: 0,
+          locationName: '',
+          numberOfAtms: 0,
+          imageData: '',
+          lng: 0,
+          lat: 0,
+          transactionTypes: [
+            {
+              transactionTypeId: 0,
+              transactionTypeName: '',
+              isAvailable: true,
+            },
+          ],
+        },
       ],
     }
   },
@@ -79,7 +101,7 @@ export default {
       alert('cityId: ' + cityId)
     },
 
-    //LSe-location service
+    //LSe-imageData service
     //action---> abimeetod
     getLocations() {
       this.errorMessage = ''
@@ -106,6 +128,19 @@ export default {
         this.locations = []
       }
     },
+    handleOpenLocationInfoModal(locationId) {
+      LocationService.getAtmLocationRequest(locationId)
+        .then(response => this.handleGetLocationResponse(response))
+        .catch()
+        .finally()
+    },
+
+    //seda trigerdas modal
+    handleGetLocationResponse(response) {
+      this.location = response.data
+      this.locationInfoModalIsOpen = true
+
+    }
   },
 
   beforeMount() {
@@ -120,6 +155,12 @@ export default {
   <div class="container text-center">
     <div class="row mb-4">
       <div class="col">
+        <LocationInfoModal
+          :location-info-modal-is-open="locationInfoModalIsOpen"
+          :location="location"
+          @event-location-info-modal-closed="locationInfoModalIsOpen=false"
+        />
+
         <h1>Pangaautomaadid</h1>
       </div>
     </div>
@@ -140,7 +181,10 @@ export default {
         />
       </div>
 
-      <LocationsTable :locations="locations" />
+      <LocationsTable
+        :locations="locations"
+        @event-location-name-click="handleOpenLocationInfoModal"
+      />
     </div>
   </div>
 </template>

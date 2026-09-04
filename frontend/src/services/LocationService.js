@@ -25,6 +25,10 @@ export default {
     })
   },
 
+  getAtmLocationRequest(locationId) {
+    return axios.get(`/api/atm/locations/${locationId}`)
+  },
+
   postAtmLocationRequest(location) {
     // todo: muudame URL ainsusesse
     return axios.post('/api/atm/locations', location)

@@ -1,14 +1,16 @@
 <script>
-import CitiesDropdown from '@/components/CitiesDropdown.vue'
-import LocationNameInput from '@/components/LocationNameInput.vue'
-import NumberOfAtmsInput from '@/components/NumberOfAtmsInput.vue'
-import LocationMapInput from '@/components/LocationMapInput.vue'
-import TransactionTypesCheckbox from '@/components/TransactionTypesCheckbox.vue'
-import ImageInput from '@/components/image/ImageInput.vue'
+import CitiesDropdown from '@/components/forms/CitiesDropdown.vue'
+import LocationNameInput from '@/components/location/LocationNameInput.vue'
+import NumberOfAtmsInput from '@/components/forms/NumberOfAtmsInput.vue'
+import LocationMapInput from '@/components/location/LocationMapInput.vue'
+import TransactionTypesCheckbox from '@/components/forms/TransactionTypesCheckbox.vue'
+import ImageInput from '@/components/forms/ImageInput.vue'
+import AtmImage from '@/components/location/AtmImage.vue'
 
 export default {
   name: 'LocationForm',
   components: {
+    AtmImage,
     ImageInput,
     TransactionTypesCheckbox,
     LocationMapInput,
@@ -63,13 +65,7 @@ export default {
         />
       </div>
       <div class="col col-2">
-        <img
-          v-if="location.imageData === ''"
-          src="@/assets/images/atm.png"
-          class="img-thumbnail"
-          alt="panga automaadi pilt"
-        />
-        <img v-else :src="location.imageData" class="img-thumbnail" alt="panga automaadi pilt" />
+        <AtmImage :image-data="location.imageData" />
       </div>
     </div>
     <div class="row justify-content-center">
