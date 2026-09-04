@@ -14,6 +14,7 @@ export default {
     this.getCities()
     this.getLocations()
   },
+
   data() {
     return {
       locationInfoModalIsOpen: false,
