@@ -42,20 +42,16 @@ export default {
       }
     },
 
+    resetErrorMessage() {
+      this.errorMessage = ''
+    },
+
     allFieldsHaveInput() {
       return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
     },
 
     startSpinner() {
       this.showSpinner = true
-    },
-
-    stopSpinner() {
-      this.showSpinner = false
-    },
-
-    resetErrorMessage() {
-      this.errorMessage = ''
     },
 
     handleLoginResponse(response) {
@@ -72,14 +68,21 @@ export default {
     },
 
     handleLoginErrorResponse(error) {
-      console.log("Olen siin")
+      console.log('Olen siin')
       this.errorResponse = error.response.data
 
-      if (error.response.status === 403  && this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS') {
+      if (
+        error.response.status === 403 &&
+        this.errorResponse.errorCode === 'INCORRECT_CREDENTIALS'
+      ) {
         this.errorMessage = this.errorResponse.message
       } else {
         NavigationService.navigateToErrorView()
       }
+    },
+
+    stopSpinner() {
+      this.showSpinner = false
     },
   },
 }
