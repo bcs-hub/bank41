@@ -5,8 +5,8 @@ export default {
     router.push({ name: 'homeRoute' })
   },
 
-  navigateToAtmsView() {
-    router.push({ name: 'atmsRoute' })
+  navigateToAtmsView(successMessage) {
+    router.push({ name: 'atmsRoute', query: successMessage ? { successMessage } : {} })
   },
 
   navigateToErrorView() {

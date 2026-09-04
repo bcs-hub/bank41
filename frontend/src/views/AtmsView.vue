@@ -2,6 +2,7 @@
 import CityService from '@/services/CityService.js'
 import CitiesDropdown from '@/components/CitiesDropdown.vue'
 import AlertDanger from '@/components/AlertDanger.vue'
+import AlertSuccess from '@/components/AlertSuccess.vue'
 import LocationService from '@/services/LocationService.js'
 import navigationService from '@/services/NavigationService.js'
 import LocationsTable from '@/components/LocationsTable.vue'
@@ -13,6 +14,7 @@ export default {
     LocationsTable,
     CitiesDropdown,
     AlertDanger,
+    AlertSuccess,
   },
 
   data() {
@@ -23,6 +25,7 @@ export default {
       cityId: 0,
 
       errorMessage: '',
+      successMessage: '',
 
       errorResponse: {
         message: '',
@@ -81,7 +84,7 @@ export default {
     getLocations() {
       this.errorMessage = ''
 
-      LocationService.getAtmLocations(this.cityId)
+      LocationService.getAtmLocationsRequest(this.cityId)
         .then((response) => this.handleGetLocationsResponse(response))
         .catch((error) => this.handleGetLocationsErrorResponse(error))
         .finally()
@@ -106,6 +109,7 @@ export default {
   },
 
   beforeMount() {
+    this.successMessage = this.$route.query.successMessage ?? ''
     this.getCities()
     this.getLocations()
   },
@@ -122,6 +126,7 @@ export default {
 
     <div class="row justify-content-center">
       <div class="col col-6">
+        <AlertSuccess :success-message="successMessage" />
         <AlertDanger :error-message="errorMessage" />
       </div>
     </div>
