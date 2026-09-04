@@ -29,7 +29,7 @@ export default {
         },
       ],
 
-      imageData: {
+      location: {
         locationId: 0,
         cityId: 0,
         locationName: '',
@@ -128,6 +128,7 @@ export default {
       <div class="col col-5">
         <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen"
                            :location="location"
+                           @event-location-info-modal-closed="locationInfoModalIsOpen = false"
         />
 
         <h1>Pangaautomaadid</h1>
