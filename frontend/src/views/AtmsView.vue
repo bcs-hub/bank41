@@ -137,7 +137,9 @@ export default {
     <div class="row justify-content-center mb-4">
       <div class="col col-5">
         <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen"
-        :location="location"/>
+        :location="location"
+        @event-location-info-modal-closed="locationInfoModalIsOpen= false"
+        />
         <h1>Pangaautomaadid</h1>
         <AlertDanger :error-message="errorMessage" />
       </div>
