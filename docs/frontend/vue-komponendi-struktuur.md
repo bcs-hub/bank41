@@ -100,32 +100,34 @@ emits: ['event-modal-closed', 'event-location-deleted', 'event-new-city-selected
 `data()` tagastab alati objekti. Keerukamad andmed (API vastused) kirjutatakse välja koos tühja struktuuriga, et Vue saaks reaktiivsuse seadistada:
 
 ```js
-data() {
-  return {
-    successMessage: '',
-    errorMessage: '',
-    selectedCityId: 0,
+data()
+{
+    return {
+        successMessage: '',
+        errorMessage: '',
+        selectedCityId: 0,
 
-    location: {
-      cityId: 0,
-      locationName: '',
-      numberOfAtms: 1,
-      imageData: '',
-      transactionTypes: [
-        {
-          transactionTypeId: 0,
-          transactionTypeName: '',
-          isAvailable: false,
+        imageData: {
+            cityId: 0,
+            locationName: '',
+            numberOfAtms: 1,
+            imageData: '',
+            transactionTypes: [
+                {
+                    transactionTypeId: 0,
+                    transactionTypeName: '',
+                    isAvailable: false,
+                },
+            ],
         },
-      ],
-    },
 
-    errorResponse: {
-      message: '',
-      errorCode: 0,
-    },
-  }
-},
+        errorResponse: {
+            message: '',
+            errorCode: 0,
+        },
+    }
+}
+,
 ```
 
 ---

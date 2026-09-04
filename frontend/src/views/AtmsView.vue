@@ -28,6 +28,22 @@ export default {
           cityName: '',
         },
       ],
+      location: {
+        locationId: 0,
+        cityId: 0,
+        locationName: '',
+        numberOfAtms: 0,
+        imageData: '',
+        lng: 0.0,
+        lat: 0.0,
+        transactionTypes: [
+          {
+            transactionTypeId: 0,
+            transactionTypeName: '',
+            isAvailable: true
+          }
+        ]
+      },
 
       locations: [
         {
@@ -88,6 +104,16 @@ export default {
         this.locations = []
       }
     },
+    handleOpenLocationInfoModal(locationId) {
+      LocationService.getAtmLocationRequest(locationId)
+        .then(response => this.handleGetLocationResponse(response))
+        .catch(() => NavigationService.navigateToErrorView())
+
+    },
+    handleGetLocationResponse(response) {
+      this.location = response.data
+      this.locationInfoModalIsOpen = true
+    }
   },
 }
 </script>
@@ -96,7 +122,11 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center mb-4">
       <div class="col col-5">
-        <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen" />
+        <LocationInfoModal
+          :location-info-modal-is-open="locationInfoModalIsOpen"
+          :location="location"
+          @event-location-info-modal-closed="locationInfoModalIsOpen = false"
+        />
 
         <h1>Pangaautomaadid</h1>
         <AlertDanger :error-message="errorMessage" />
@@ -109,8 +139,7 @@ export default {
       </div>
 
       <div class="col col-5">
-        <!-- todo  SIIN ON ASUKOHTADE TABEL     -->
-        <LocationsTable :locations="locations" />
+        <LocationsTable :locations="locations" @event-location-name-click="handleOpenLocationInfoModal" />
       </div>
     </div>
   </div>

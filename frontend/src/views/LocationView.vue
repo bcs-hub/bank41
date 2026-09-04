@@ -196,6 +196,7 @@ export default {
           @event-transaction-types-checkbox-updated="updateLocationTransactionTypesIsAvailableValue"
           @event-new-image-selected="location.imageData = $event"
           @event-chosen-image-cleared="location.imageData = ''"
+
         />
       </div>
     </div>
