@@ -22,19 +22,16 @@ export default {
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title"><slot name="title"></slot></h5>
+            <h5 class="modal-title">
+              <slot name="title"></slot>
+            </h5>
             <button type="button" class="btn-close" @click="close" />
           </div>
           <div class="modal-body">
-            <slot name="body">
-
-
-            </slot>
+            <slot name="body"></slot>
           </div>
           <div class="modal-footer">
-            <slot name="buttons">
-
-            </slot>
+            <slot name="buttons"> </slot>
             <button type="button" class="btn btn-secondary" @click="close">Sulge</button>
           </div>
         </div>

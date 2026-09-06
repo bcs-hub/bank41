@@ -2,7 +2,7 @@
 export default {
   name: 'NumberOfAtmsInput',
   props: {
-    numberOfAtms: Number
+    numberOfAtms: Number,
   },
   emits: ['event-new-number-of-atms-input'],
 }

@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 import SessionStorageService from '@/services/SessionStorageService.js'
 import NavigationService from '@/services/NavigationService.js'
 import { PhSignOut } from '@phosphor-icons/vue'
-import sessionStorageService from '@/services/SessionStorageService.js'
 
 export default {
   name: 'App',
@@ -17,8 +16,7 @@ export default {
   methods: {
     updateNavMenu() {
       this.isLoggedIn = true
-      this.isAdmin = sessionStorageService.userIsAdmin()
-
+      this.isAdmin = SessionStorageService.userIsAdmin()
     },
 
     executeLogOut() {
@@ -60,5 +58,5 @@ export default {
       </div>
     </div>
   </nav>
-  <RouterView @event-user-logged-in="updateNavMenu" />
+  <RouterView @event-user-logged-in="updateNavMenu"/>
 </template>

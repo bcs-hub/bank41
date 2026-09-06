@@ -3,8 +3,8 @@ import LocationForm from '@/components/location/LocationForm.vue'
 import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
 import TransactionTypeService from '@/services/TransactionTypeService.js'
-import LocationService from '@/services/LocationService.js'
 import AlertDanger from '@/components/alert/AlertDanger.vue'
+import LocationService from '@/services/LocationService.js'
 import AlertSuccess from '@/components/alert/AlertSuccess.vue'
 import SessionStorageService from '@/services/SessionStorageService.js'
 
@@ -21,8 +21,8 @@ export default {
   },
   data() {
     return {
-      errorMessage: '',
       successMessage: '',
+      errorMessage: '',
 
       cities: [
         {
@@ -75,12 +75,14 @@ export default {
         this.errorMessage = 'Vali vähemalt üks ATM teenus'
       }
     },
+
     transactionTypeIsSelected() {
       for (let transactionType of this.location.transactionTypes) {
         if (transactionType.isAvailable) {
           return true
         }
       }
+
       return false
     },
     errorMessageIsEmpty() {
@@ -105,7 +107,7 @@ export default {
         error.response.status === 403 &&
         this.errorResponse.errorCode === 'LOCATION_UNAVAILABLE'
       ) {
-        this.errorMessage = this.errorResponse
+        this.errorMessage = this.errorResponse.message
       } else {
         NavigationService.navigateToErrorView()
       }
@@ -115,15 +117,18 @@ export default {
         .then((response) => this.handleGetCitiesResponse(response))
         .catch(() => NavigationService.navigateToErrorView())
     },
+
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
+
     getLocationTransactionTypes() {
       TransactionTypeService.getTransactionTypesRequest()
         .then((response) => this.handleGetLocationTransactionTypesResponse(response))
         .catch(() => NavigationService.navigateToErrorView())
         .finally()
     },
+
     handleGetLocationTransactionTypesResponse(response) {
       this.location.transactionTypes = response.data
     },
@@ -132,17 +137,22 @@ export default {
       this.location.lat = Number(resultArray[0])
       this.location.lng = Number(resultArray[1])
     },
+
     updateLocationTransactionTypesIsAvailableValue(updatedCheckbox) {
+      // otsib ülesse target objekti arrayst
       let transactionType = this.location.transactionTypes.find(
-        (value) => value.transactionTypeId === updatedCheckbox.transactionTypeId,
+        (transactionType) => transactionType.transactionTypeId === updatedCheckbox.transactionTypeId,
       )
+      // kui objekt on olemas (ei ole null)
       if (transactionType) {
+        // siis muuda selle objekti 'isAvailable' -> nii  nagu on 'updatedCheckbox.checked' väärtus
         transactionType.isAvailable = updatedCheckbox.checked
       }
     },
     resetSuccessMessage() {
-      this.successMessage === ''
+      this.successMessage = ''
     },
+
     resetErrorMessage() {
       this.errorMessage = ''
     },
@@ -182,5 +192,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style scoped></style>

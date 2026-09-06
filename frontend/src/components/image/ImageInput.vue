@@ -39,8 +39,7 @@ export default {
       }
     },
   },
-  emits:['event-new-image-selected',
-    'event-chosen-image-cleared']
+  emits: ['event-new-image-selected', 'event-chosen-image-cleared'],
 }
 </script>
 

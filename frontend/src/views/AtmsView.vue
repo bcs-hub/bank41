@@ -29,15 +29,14 @@ export default {
         },
       ],
 
-      location:
-        {
+      location: {
           locationId: 0,
           cityId: 0,
           locationName: '',
           numberOfAtms: 0,
           imageData: '',
-          lng: 0.0,
-          lat: 0.0,
+          lng: 0,
+          lat: 0,
           transactionTypes: [
             {
               transactionTypeId: 0,
@@ -63,6 +62,7 @@ export default {
           ],
         },
       ],
+
       errorResponse: {
         message: '',
         errorCode: '',
@@ -76,13 +76,16 @@ export default {
         .catch(() => NavigationService.navigateToErrorView())
         .finally()
     },
+
     handleGetCitiesResponse(response) {
       this.cities = response.data
     },
+
     reloadLocationsTable(cityId) {
       this.cityId = cityId
       this.getLocations()
     },
+
     getLocations() {
       this.errorMessage = ''
       LocationService.getAtmLocationsRequest(this.cityId)
@@ -90,9 +93,11 @@ export default {
         .catch((error) => this.handleGetLocationsErrorResponse(error))
         .finally()
     },
+
     handleGetLocationsResponse(response) {
       this.locations = response.data
     },
+
     handleGetLocationsErrorResponse(error) {
       this.errorResponse = error.response.data
       if (error.response.status === 404 && this.errorResponse.errorCode === 'NO_LOCATION_FOUND') {
@@ -100,14 +105,18 @@ export default {
         this.locations = []
       }
     },
+
     handleOpenLocationInfoModal(locationId) {
       LocationService.getAtmLocationRequest(locationId)
-        .then(response => this.handleGetLocationResponse(response))
-        .catch()
+          .then(response => this.handleGetLocationResponse(response))
+          .catch()
     },
+
     handleGetLocationResponse(response) {
       this.location = response.data
       this.locationInfoModalIsOpen = true
+
+
     }
   },
 }
@@ -118,17 +127,21 @@ export default {
     <div class="row justify-content-center mb-4">
       <div class="col col-5">
         <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen"
-                           :location="location" />
+                           :location="location"
+                           @event-location-info-modal-closed="locationInfoModalIsOpen = false"
+        />
+
         <h1>Pangaautomaadid</h1>
         <AlertDanger :error-message="errorMessage" />
       </div>
     </div>
+
     <div class="row justify-content-center">
       <div class="col col-2">
         <CitiesDropdown :cities="cities" @event-new-city-selected="reloadLocationsTable" />
       </div>
 
-      <div class="col col-4">
+      <div class="col col-5">
         <LocationsTable :locations="locations" @event-location-name-click="handleOpenLocationInfoModal" />
       </div>
     </div>

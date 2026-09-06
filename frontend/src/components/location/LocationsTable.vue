@@ -4,7 +4,7 @@ export default {
   props: {
     locations: {},
   },
-  emit: ['event-location-name-click'],
+  emits: ['event-location-name-click'],
 }
 </script>
 
@@ -22,7 +22,7 @@ export default {
         <td>{{ location.cityName }}</td>
         <td>
           <div @click="$emit('event-location-name-click', location.locationId)"
-               class="green text-pointer-underlined">{{ location.locationName }}</div>
+               class="green pointer text-pointer-underlined">{{ location.locationName }}</div>
         </td>
         <td>
           <div
