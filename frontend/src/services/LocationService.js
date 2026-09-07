@@ -21,6 +21,9 @@ export default {
       headers: { Prefer: preferValue },
     })
   },
+  getAtmLocationRequest(locationId) {
+    return axios.get(`/api/atm/locations/${locationId}`)
+  },
   postAtmLocationRequest(location) {
     return axios.post('/api/atm/locations', location)
   },
