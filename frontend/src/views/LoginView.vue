@@ -1,5 +1,5 @@
 <script>
-import AlertDanger from '@/components/AlertDanger.vue'
+import AlertDanger from '@/components/alert/AlertDanger.vue'
 import LoginService from '@/services/LoginService.js'
 import NavigationService from '@/services/NavigationService.js'
 
