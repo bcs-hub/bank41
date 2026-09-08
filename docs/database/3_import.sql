@@ -6,9 +6,9 @@ INSERT INTO bank."user" (id, role_id, username, password, status) VALUES (defaul
 INSERT INTO bank."user" (id, role_id, username, password, status) VALUES (default, 2, 'mitteaktiivne', '123', 'D');
 
 
-INSERT INTO bank.city (id, name) VALUES (default, 'Pärnu');
-INSERT INTO bank.city (id, name) VALUES (default, 'Tallinn');
 INSERT INTO bank.city (id, name) VALUES (default, 'Tartu');
+INSERT INTO bank.city (id, name) VALUES (default, 'Tallinn');
+INSERT INTO bank.city (id, name) VALUES (default, 'Pärnu');
 
 
 INSERT INTO bank.location (id, city_id, name, number_of_atms, status, lng, lat) VALUES (default, 2, 'Sikupilli Prisma', 5, 'A', 24.7795000, 59.4369000);
