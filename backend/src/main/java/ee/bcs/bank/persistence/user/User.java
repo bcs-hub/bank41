@@ -15,18 +15,22 @@ public class User {
     @NotNull
     @Column(name = "status", nullable = false, length = Integer.MAX_VALUE)
     private String status;
+
     @Size(max = 255)
     @NotNull
     @Column(name = "password", nullable = false)
     private String password;
+
     @Size(max = 255)
     @NotNull
     @Column(name = "username", nullable = false)
     private String username;
+
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

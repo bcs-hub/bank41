@@ -15,6 +15,4 @@ public class LoginController {
     public void loginUser(@RequestBody LoginRequest loginRequest) {
         loginService.loginUser(loginRequest);
     }
-
-
 }
