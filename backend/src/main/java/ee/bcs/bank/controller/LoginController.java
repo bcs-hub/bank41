@@ -1,5 +1,6 @@
 package ee.bcs.bank.controller;
 
+import ee.bcs.bank.persistence.user.User;
 import ee.bcs.bank.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,8 +17,9 @@ public class LoginController {
 //    }
 
     @PostMapping("/api/login")
-    public void loginUser(@RequestBody LoginRequest loginRequest) {
-        loginService.loginUser(loginRequest);
+    public LoginResponse loginUser(@RequestBody LoginRequest loginRequest) {
+        LoginResponse loginResponse = loginService.loginUser(loginRequest);
+        return loginResponse;
     }
 
 
