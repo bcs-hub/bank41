@@ -13,7 +13,7 @@ public class LoginService {
     private final UserRepository userRepository;
 
     public void loginUser(LoginRequest loginRequest) {
-        User user = userRepository.findUserByUsernameAndPasswordAndStatus(loginRequest.getUsername(), loginRequest.getPassword(), "A");
+        User user = userRepository.findUserBy(loginRequest.getUsername(), loginRequest.getPassword(), "A");
         System.out.println("userId: " + user.getId() + " roleName: " + user.getRole().getName());
 
 
