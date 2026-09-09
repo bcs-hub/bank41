@@ -3,6 +3,7 @@ package ee.bcs.bank.service;
 import ee.bcs.bank.controller.LoginRequest;
 import ee.bcs.bank.persistence.user.User;
 import ee.bcs.bank.persistence.user.UserRepository;
+import jdk.jshell.Snippet;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +13,12 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class LoginService {
 
+
     private final UserRepository userRepository;
 
     public void loginUser(LoginRequest loginRequest) {
 
-        User user = new User();
-
-        Optional<User> optionalUser = userRepository.findUserBy(loginRequest.getUsername(), loginRequest.getPassword(), "A");
+        Optional<User> optionalUser = userRepository.findUserBy(loginRequest.getUsername(), loginRequest.getPassword(), "D");
 
     }
 

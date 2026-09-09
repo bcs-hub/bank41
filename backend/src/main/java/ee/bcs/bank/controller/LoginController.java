@@ -14,6 +14,7 @@ public class LoginController {
 
     @PostMapping("/api/login")
     public void loginUser(@RequestBody LoginRequest loginRequest) {
+
         loginService.loginUser(loginRequest);
     }
 
