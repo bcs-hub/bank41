@@ -1,0 +1,2926 @@
+WEBVTT
+
+1
+00:00:03.195 --> 00:00:09.419
+Õpetaja: Nii et, ee, tegin siis. Ee. Põhimõtteliselt need
+
+2
+00:00:10.158 --> 00:00:14.749
+Õpetaja: sellise kataloogi, mis meil seal Google Drive S. On? Nelikümmend üks. Tegin Siis kõigile.
+
+3
+00:00:15.346 --> 00:00:16.850
+Õpetaja: Ee, share isin. Ära
+
+4
+00:00:18.811 --> 00:00:24.910
+Õpetaja: nende emaili aadressidega, mis olid Slac is. Võite siis proovida, et kas te saate endiselt sellele
+
+5
+00:00:25.423 --> 00:00:28.109
+Õpetaja: ee lingile ligi. Mis teeb lahti selle?
+
+6
+00:00:29.118 --> 00:00:35.480
+Õpetaja: See on end selles mõttes midagi tingimata. Sa ei muutunud. On sama, mis seal. Padlet i kaudu, näiteks siit avada,
+
+7
+00:00:36.483 --> 00:00:42.290
+Õpetaja: et kas saate ligi? Ma ei tea, kas te peate kuidagi või mitte. Kas teil tuli meili peale midagi või ei tule
+
+8
+00:00:43.982 --> 00:00:59.729
+Õpetaja: et Sa ei küsinud midagi Sulle on ju, et. Et ainukene, kellele ma ligipääsu ei saanud, teha, oli Jaanik ütles seal, et ta ei ole Mingi Google kontot või midagi taolist. Ee, mingil põhjusel see emaili aadress, mis mul Slack is on, Ei sobi, et sellega peab siis veel tegel tegelema veidi.
+
+9
+00:01:00.465 --> 00:01:06.319
+Õpetaja: Hea küll, üritan vahetunnil natukene teha ka neid asju siin kuidagi järgi. Ee, nii kuidas võimalik.
+
+10
+00:01:07.555 --> 00:01:12.440
+Õpetaja: Mm, lähme siis, selle Ee, Back end iga edasi.
+
+11
+00:01:14.040 --> 00:01:22.269
+Õpetaja: Ja järgmine asi, mis ma tahaks rääkida, oleks Ee, see, et ee. Pärilus, et meil on mingisugused klassid
+
+12
+00:01:23.564 --> 00:01:29.000
+Õpetaja: ja siis Need klassid võivad nagu selles mõttes ee. Pärineda kellestki.
+
+13
+00:01:31.318 --> 00:01:36.059
+Õpetaja: Ja mis see pärilus siis taustal annab, et ta annab Ee, siis ee,
+
+14
+00:01:36.610 --> 00:01:42.640
+Õpetaja: ee, juurde, Mingisugused väljad ja potentsiaalsed ka meetodid, mis on niiöelda vanem klassis olemas.
+
+15
+00:01:45.241 --> 00:01:47.199
+Õpetaja: No, Natukene võib mõelda nagu
+
+16
+00:01:48.487 --> 00:01:55.440
+Õpetaja: nagu meil Frontis oli. Vaata, Meil on Mitte natukene, vaid saabki. Nagu mõelda, aga mitte päris. Nagu kõige selle funktsionaalsusega.
+
+17
+00:01:55.975 --> 00:02:05.760
+Õpetaja: Ee esiteks mis ma võiksin korra teha, on see et ma Koristan selle kett meetodi ära. Aa, okei. Kus siin Ma jäin ka kuskil pooleli. Me rääkisime selle public meetodi. Rääkisime ära.
+
+18
+00:02:07.491 --> 00:02:13.979
+Õpetaja: Siin on üks Asi, mis on ee ebavajalik selle meetodi juures. Pakkuge, mida saaks teha lühemaks või lihtsamaks. Või
+
+19
+00:02:14.649 --> 00:02:18.960
+Õpetaja: Ee, mida, mida? Mis on natukene ebavajalik siin Kontekstis.
+
+20
+00:02:20.616 --> 00:02:26.220
+Õpetaja: Dispunkt? Miks siin dispunkt on? Ebavajalik? Et Noh, siin ma ütlen, et on vajalik, aga Siin ta ei ole vajalik, miks,
+
+21
+00:02:30.949 --> 00:02:37.779
+Õpetaja: No siin on ka selle sama klassi sees, et kuidas. Miks siin ei ole vaja? Aga siin on vaja
+
+22
+00:02:39.495 --> 00:02:44.889
+Õpetaja: ja täpselt sisend parameetrit ja siin on Nagu küsimus. Nagu, et ei. Mida sa mõtled, First Name I abil
+
+23
+00:02:45.332 --> 00:02:59.100
+Õpetaja: et siin, on see vältimatu, et kui seda ära võtta, vaata, siis Nagu enam Java ei saa. Ee, sellest kuidagi muud moodi aru. Kui sa tahad First name ile anda uut sel samal sisendil, saad sama väärtust anda. Aga kui siit võtad selle ära,
+
+24
+00:02:59.855 --> 00:03:04.439
+Õpetaja: siis temal tegelikult otseselt Ee, probleemi pole. Ta teab endiselt, mis see First name on,
+
+25
+00:03:05.022 --> 00:03:09.489
+Õpetaja: kuna Siin ei ole defineeritud muutujat. First name. Tal ei ole segadust.
+
+26
+00:03:11.494 --> 00:03:13.959
+Õpetaja: Oota, miks ta veel alla joonib? Ma Arvasite sellepärast joonib välja.
+
+27
+00:03:14.918 --> 00:03:17.569
+Õpetaja: Ahah, okei, Ee, ja ja okei, Fine.
+
+28
+00:03:18.408 --> 00:03:21.650
+Õpetaja: Nii, ee, lähme sellega edasi.
+
+29
+00:03:22.101 --> 00:03:25.420
+Õpetaja: Nüüd Aa, mida? Nüüd Nagu võiks teada on see, et,
+
+30
+00:03:26.970 --> 00:03:31.580
+Õpetaja: ee. Vaadake, ee, need Põhilised meetodid, mis niiöelda juurde kirjutatakse.
+
+31
+00:03:32.357 --> 00:03:35.100
+Õpetaja: Neid idee järgi saab ise ka.
+
+32
+00:03:35.845 --> 00:03:39.180
+Õpetaja: Ee sinna. Intellige abiga juurde genereerida.
+
+33
+00:03:39.674 --> 00:03:49.600
+Õpetaja: Ee, see on vaatamise koht. Et Teil ei ole seda vaja teada. See on ka prügikasti kaup. Et ka see on retro. Ee, et kui mina tuleksin siia,
+
+34
+00:03:50.696 --> 00:03:55.900
+Õpetaja: siis ta Pakub Ee, et kas sina soovid gettermeetodeid näiteks genereerida?
+
+35
+00:03:56.415 --> 00:03:57.540
+Õpetaja: Ma ütlen ja
+
+36
+00:03:58.133 --> 00:04:10.480
+Õpetaja: siis tema küsib, et milliste meetodite kohta sa soovid Ee genereerida, Vabandust, Milliste väljade jutt käib siis nendest onju? Milliste väljade kohta? Et kui ma teen nad kõik niiöelda siniseks ja ütlen ja ja
+
+37
+00:04:10.871 --> 00:04:20.630
+Õpetaja: meetodit tal Ei ole mingit, sest et see muster on väga sarnane. Vaadake, siin ei ole ka, onju? Get, last, name, get, first, name ja see Get First Name on isegi kasutusel. Meil Siin on nii
+
+38
+00:04:21.558 --> 00:04:41.150
+Õpetaja: nii? Noh, samamoodi saaks nüüd settermeetrit. Aga kui mina tahaks teha ühe settermeetodi, et, Ee, need on. Need väljad on Private. See tähendas seda. Vaata, et me ei saa nendele väljedele ligi objekti kaudu kuskilt väljaspoolt. Ma ei saa kirjutada siia Last Name küll aga ma saan kirjutada.
+
+39
+00:04:41.527 --> 00:04:50.689
+Õpetaja: Ega see mitte midagi ei ole nagu keerulisemaks läinud, kui ainult see, et me Ütleme kaine sõna kett igal pool ette ja siis saame asja kätte. Mida me tahame, Onju, et meetodi abil
+
+40
+00:04:51.193 --> 00:04:56.050
+Õpetaja: mina panen get last name, Kui ma lähen vaatan, kuhu ta kukub. Ta kukub siia meetodisse, onju?
+
+41
+00:04:57.710 --> 00:05:04.340
+Õpetaja: Nii? Kui sa kutsud välja mingi meetodi, mis sa midagi tagastab, pane sa muutuasse. Noh, kollane pirn.
+
+42
+00:05:05.472 --> 00:05:10.230
+Õpetaja: Lõpp peab olema olemas. Kollane pirn
+
+43
+00:05:10.712 --> 00:05:16.879
+Õpetaja: teeb koodireale. Vaadake, seal on Kitty Värm mängib rolli. Roheline. Näete, reale kaheksa Tuleb Selline osa ette
+
+44
+00:05:18.878 --> 00:05:21.090
+Õpetaja: teeb selle muuta. Okei, see selleks.
+
+45
+00:05:21.823 --> 00:05:24.709
+Õpetaja: Ee, okei, ee, siis. Mis veel?
+
+46
+00:05:26.687 --> 00:05:36.879
+Õpetaja: Aa siis, Setter Meetodid. Kuidas Setter meetod käib? Tahtsin Just teha set korra et tuleks tagasi, et kui mina tahaks teha üht uut ee meetodit
+
+47
+00:05:37.784 --> 00:05:51.500
+Õpetaja: sellele, et seda last name I on võimalik väärtustada. Sest praegult on nagu ainult konstruktori abil võimalik sisu saada. Aga mis siis, kui ma ei taha isegi seda konstruktorit, Mis siis, Kui ma tahan teha niimoodi, et ma teen kõigepealt objekti.
+
+48
+00:05:53.430 --> 00:06:00.560
+Õpetaja: Nii, ja nüüd üks haaval, hakkan seda studentit niiöelda siis täiendama Mina tahaks siis öelda student,
+
+49
+00:06:01.263 --> 00:06:05.819
+Õpetaja: Kui nüüd. Okei, kui nad oleks meetodid ma korra teen need public uks. Ee, ümber.
+
+50
+00:06:08.768 --> 00:06:22.329
+Õpetaja: Nii, kõik on public. Meetodid on kui Ma tahaks anda, Kui me tegime. Tahan anda last. Name Ile uut väärtust Siis Kirjutadki? Student punkt last, name võrdub. Noh, ja siis mingisugune Väärtus on ju?
+
+51
+00:06:23.628 --> 00:06:26.909
+Õpetaja: Aga nüüd on nagu see, et. Aga need ei ole
+
+52
+00:06:29.236 --> 00:06:31.170
+Õpetaja: saadavad. Siis ma ei saa nii kirjutada.
+
+53
+00:06:31.643 --> 00:06:43.280
+Õpetaja: Nüüd ainukene moodus, kuidas ma seda saan teha, on selle objekti sees käivitada mingi meetod Täpselt sama nagu Getheriga, mis siit võtab väärtust, aga siis Ee väärtustab meil konstruktor. Ka Endal oli sama asi nii öelda,
+
+54
+00:06:43.970 --> 00:06:48.220
+Õpetaja: et, ee. Kui mina tahan Seter meetodit teha, siis ma peaksin tegema, niimoodi et ta on Public.
+
+55
+00:06:48.706 --> 00:06:50.779
+Õpetaja: Mis asi on public ja defineerib ära.
+
+56
+00:06:51.915 --> 00:06:52.350
+Õpetaja: Mille
+
+57
+00:06:53.456 --> 00:07:03.569
+Õpetaja: nähtavuse? Ma tahan, et meetodi struktuur peab olema nagu selge, kui ei, no palun õppematerjal et see on olemas. Kõigepealt, kui ma ütlen, kuidas defineerime meetodit, siis ma ootangi, et ütleb nähtavus
+
+58
+00:07:04.168 --> 00:07:09.749
+Õpetaja: on õige siis ma küsin. Mis See, Nähtavus peaks olema. Te ütlete public, mis tuleb peale nähtavust.
+
+59
+00:07:11.750 --> 00:07:21.670
+Õpetaja: Alati tuleb tüüp. No, kui me hakkame väärtustama siin mingi. See on tegevus. Me Hakkame väärtustama. Ee, seda seda
+
+60
+00:07:22.410 --> 00:07:27.090
+Õpetaja: meil ei ole see olukord. Me tahame saada andmeid. Siis tema tagastatav tüüp.
+
+61
+00:07:28.362 --> 00:07:35.900
+Õpetaja: Tal ei ole midagi sel meetodil, Mina annan sulle väärtuse, mis? Pane siia külge Sinul sellel meetodil. Mul ei ole midagi anda.
+
+62
+00:07:36.768 --> 00:07:37.880
+Õpetaja: Siis Mis ma panen?
+
+63
+00:07:39.450 --> 00:07:43.060
+Õpetaja: Void, aga see alati Tuleb see, nagu nüüd on tühjus.
+
+64
+00:07:43.820 --> 00:07:45.110
+Õpetaja: Tüüp on tühjas.
+
+65
+00:07:45.910 --> 00:07:48.070
+Õpetaja: Tööst tagastab. Te tahaksite midagi? Just,
+
+66
+00:07:48.709 --> 00:07:52.059
+Õpetaja: mis siis, kui meil on nähtavus? Paigas Tagastatav tüüp? Mis Siis tuleb?
+
+67
+00:07:54.376 --> 00:07:56.200
+Õpetaja: Struktuurmeetodi Struktuur, mis tuleb,
+
+68
+00:07:58.911 --> 00:08:05.609
+Õpetaja: ei tuleks Ring ega Interger. Kus Ring või Interger oleks saanud siis ta oleksin selle voidi asemel olnud. Esiteks, see on tagastatav tüüp.
+
+69
+00:08:09.460 --> 00:08:10.440
+Õpetaja: Meetodi nimi.
+
+70
+00:08:11.142 --> 00:08:13.819
+Õpetaja: Tubli evel ütles. Vist. Vä ütles Triin.
+
+71
+00:08:14.390 --> 00:08:17.109
+Õpetaja: Triinu ütles. Ja ma vaatasin Evelini. Nii tark
+
+72
+00:08:19.867 --> 00:08:26.529
+Õpetaja: nähtavus. Tagastatav tüüp, palun. Need on materjalid üldse olemas. Ma ei hakka isegi lahti võtma. Neid? Need on välja joonistatud. Seal.
+
+73
+00:08:27.513 --> 00:08:38.669
+Õpetaja: Nähtavus. Tagastatav tüüp. Meetodi nimi. Kuidas ma saan seda meetodit käivitada? Nime abil? Noh, kui meil siin praegu oleks eesmärk, et see tuleb meetod, mis niiöelda väärtustab
+
+74
+00:08:39.127 --> 00:08:42.070
+Õpetaja: selle First Name i ära. Siis mis võiks selle nimi olla?
+
+75
+00:08:43.591 --> 00:08:47.929
+Õpetaja: Lihtsalt First Name ei saa olla. Miks, mis tüüpi sõna peab? Olema?
+
+76
+00:08:49.264 --> 00:08:56.189
+Õpetaja: Mis tüüpi kärme. Räägi konkreetsest väärtusest. Mis sõna peab olema meetodi Nimes Räägime Eesti keele grammatika ja mingi
+
+77
+00:08:57.410 --> 00:09:02.530
+Õpetaja: tegusõna. Kui lihtsalt First Name, siis siin ei Ole tegusõna.
+
+78
+00:09:03.281 --> 00:09:05.189
+Õpetaja: Meetode nimeks Peaks olema tegusõna.
+
+79
+00:09:05.748 --> 00:09:15.080
+Õpetaja: Noh, teatud juhtudel. Ee, teatud kirjaviisis võib ta ka mitte olla, aga see on nagu erandjuht, onju? Igas meetodi nimes peab olema tegusõna. Set on väärtustav.
+
+80
+00:09:15.815 --> 00:09:22.520
+Õpetaja: Väärtusta First Name nüüd. Eesmärk on see. Et mina. Tahan öelda, et. Kuule, First Name,
+
+81
+00:09:23.215 --> 00:09:26.970
+Õpetaja: Ma praegu ütlen, First name. Ta tuleb ilusti sinna lilla.
+
+82
+00:09:27.585 --> 00:09:30.940
+Õpetaja: Okei, Fine, et minul on, et anna talle uus väärtus.
+
+83
+00:09:31.670 --> 00:09:41.259
+Õpetaja: Nüüd on see, et See meetod ei tea oma välisest elust tööd ega mütsi. Kogu mõte on midagi väärtustada mingisuguse väärtusega. Mul on küsimus, kuidas ma saan selle väärtuse,
+
+84
+00:09:41.982 --> 00:10:01.330
+Õpetaja: kuna ma kuidagi lampi ei saa. Nagu pöörduda, et mine nüüd. Mingi temp jaava klass ei võta sealt mingi väärtust. Nii, see ei toimi. Vaata pealegi, ta peab olema orb niikuinii. Ta ei teagi oma välisest elust Mitte midagi. Selles on kogu see programmeerimise mõte Vaata, et See on Niukene klotš. Mida ma saan mistahes kontekstis kasutada. Konkreetseks tegevuseks. Name siis, mis peab muutma?
+
+85
+00:10:03.950 --> 00:10:06.350
+Õpetaja: No see, et first name
+
+86
+00:10:09.024 --> 00:10:16.710
+Õpetaja: küsimus on See, et kust siis tuleb see väärtus? Selle objekti First Name ile. Kust ta tuleb Väljastpoolt seda faili.
+
+87
+00:10:17.319 --> 00:10:20.610
+Õpetaja: Siis Mida ma pean tegema selle meetodiga, et oleks üldse võimalik,
+
+88
+00:10:22.116 --> 00:10:29.960
+Õpetaja: et siia saab tulla. Siia peab tulema ühel juhul raim teisel juhul, Peeter Kolmandal juhul Joonas student,
+
+89
+00:10:30.500 --> 00:10:33.209
+Õpetaja: Kui ma Kirjutan siia, student, siis see ei tööta kuidagi.
+
+90
+00:10:39.667 --> 00:10:48.130
+Õpetaja: Selle meetodi eesmärk on see, et kuidas on võimalik. See väli, mis on ära kaitstud välismaailma eest. Kuidas on võimalik teda ikkagi väärtustada?
+
+91
+00:10:49.680 --> 00:10:51.269
+Õpetaja: Me loome, kuidas.
+
+92
+00:10:53.338 --> 00:10:57.970
+Õpetaja: Kui sa ütled String First, name, siis ma praegu mõtleks nagu, niimoodi Ee, first Name,
+
+93
+00:10:58.957 --> 00:11:05.170
+Õpetaja: kui sa mõtled ka, et ma kirjutan siia. Ei, mitte mitte sugugi.
+
+94
+00:11:07.053 --> 00:11:10.989
+Õpetaja: See tähendab, mingisugused õiged sõnad on aga väga pooliklik info.
+
+95
+00:11:13.055 --> 00:11:24.120
+Õpetaja: Kuidas Kui see meetod ei tea oma välisest elust ööd ega mütsi. Aga siia on vaja mingeid andmeid. Kuidas me saame seda muuta selle meetodi struktuuri niimoodi, et ta saaks mingid andmed kusagilt.
+
+96
+00:11:26.319 --> 00:11:26.750
+Õpetaja: Kuidas
+
+97
+00:11:29.702 --> 00:11:46.850
+Õpetaja: muutujasse? Ei, see ei ole see, koht. Kui sa kutsud välja meetodid, mis midagi tagastab Pane muutujasse. Siia. Ühel juhul peab tulema Rain, aga mitte sisse programmeeritud kujul või nii Teinekord peab tulema siia Peeter. See on meetod, mis väärtustab seda, mis meil on siin üleval.
+
+98
+00:11:47.489 --> 00:12:00.430
+Õpetaja: Ühel juhul tuleb siia. Rain Teisel juhul tuleb peeter, Aga mitte niiöelda, et ma kirjutan selle siia väärtuse sisse. Vaid see peab kusagilt väljaspoolt siia kaasa tulema. See meetod ei tea oma elust ööd ega mütsi.
+
+99
+00:12:01.185 --> 00:12:06.519
+Õpetaja: Nüüd ma juba andsin vihje ära. Igatepidi parameetrid on.
+
+100
+00:12:07.093 --> 00:12:17.750
+Õpetaja: Vot seda ma ootangi. Parameeter. Noh, kas kuidas, teil nagu. Mida Kaua me teeme seda Staffi? Nagu teeme lahti, siis Teen lahti Services.
+
+101
+00:12:19.375 --> 00:12:20.860
+Õpetaja: Võtame Location Service.
+
+102
+00:12:23.097 --> 00:12:29.060
+Õpetaja: Otsi mulle Atm Location City Id järgi. Päeva lõpus peab City Id minema kaasa Sõnumile
+
+103
+00:12:29.709 --> 00:12:42.889
+Õpetaja: see Meetod ei tea oma välisest elust ööd ega mütsi. Ta peab olema taaskasutatav. Siia on vaja mingeid andmeid tegevuseks. Too mulle location Id ära vastava linna kohta. Log in service. Vaatame seda,
+
+104
+00:12:43.397 --> 00:12:48.050
+Õpetaja: sa pead postitama. Peab Sõnum peab Back and serverile minema koos nende andmetega,
+
+105
+00:12:48.796 --> 00:13:01.290
+Õpetaja: mis tulevad kuskilt kastist. See Meetod ei tea oma välisest elust ööd ega mütsi. Kui sa soovid siin mingisuguseid andmeid, millega toimetada, siis sa pead looma selle võimekuse Siin me Ei, kirjuta niimoodi lahti. Lett,
+
+106
+00:13:02.050 --> 00:13:09.669
+Õpetaja: Aga see on sildikene. See on sildikene. Seda meetodit on võimalik käivitada, niimoodi et siia sisse kukub mingisugune informatsioon
+
+107
+00:13:10.202 --> 00:13:26.060
+Õpetaja: mida saad siis kasutada hiljem? Kuskil selles koodilõigus, kus sul vaja on, siis? Kui seda võimalust poleks, siis ma lihtsalt istuks siin nagu loll. Mõtlen nagu. Et kust ma saan siis selle kasutajanime ja parooli, millega kasutaja tahab sisse logida. Mitte midagi ei ole muutunud.
+
+108
+00:13:26.886 --> 00:13:34.360
+Õpetaja: Noh, vaatame siis mingit teistsugust konteksti. Aga sarnane mõtlemine. Sellegipoolest võtan lahti mõne viewelemendi. Näiteks
+
+109
+00:13:36.006 --> 00:13:42.680
+Õpetaja: kus me kasutame. Näiteks Aa, näiteks. Aa, me kasutame. Aa, S,
+
+110
+00:13:46.606 --> 00:13:50.920
+Õpetaja: Me tahame näha. Me tahame rippmenüüst Kuvada,
+
+111
+00:13:51.905 --> 00:13:57.230
+Õpetaja: aga need andmed? City S on meil siin selles Atms failis. Close Other Tabs. Näed,
+
+112
+00:13:59.254 --> 00:14:02.969
+Õpetaja: meil on Andmed siin, mis tulevad kuskilt sõnumiga.
+
+113
+00:14:04.596 --> 00:14:06.930
+Õpetaja: Meie tahame kuvada neid rippmenüüs.
+
+114
+00:14:07.655 --> 00:14:13.529
+Õpetaja: Me kutsume välja. See on sama asi, nagu see Klots on tehtud niimoodi et tema andmetena saab
+
+115
+00:14:15.623 --> 00:14:21.979
+Õpetaja: andmed. Mis on talle vaja? See on parameeter. Parameeter? Parameeter? Siin on lihtsalt nimi. Props on selles komponendis
+
+116
+00:14:23.378 --> 00:14:25.830
+Õpetaja: sama mõte, Ta vajab mingit infot.
+
+117
+00:14:26.663 --> 00:14:35.240
+Õpetaja: Siis sa pead looma selle võimekuse, et sida seda Citystrop Town I On võimalik välja kutsuda niimoodi et, sa annad talle andmeid kaasa. Vocation Stable.
+
+118
+00:14:35.725 --> 00:14:42.119
+Õpetaja: Väga lihtne asi. Tee mulle tabel Vastavalt Location itele. Tema ei tea oma välisest elust ööd ega mütsi,
+
+119
+00:14:42.828 --> 00:14:45.830
+Õpetaja: et saaks joonistada tabeli. Ta vajab andmeid
+
+120
+00:14:46.333 --> 00:14:54.929
+Õpetaja: siin. Siis selles kontekstis on Props. Vaata, see on nagu see sisend. Me vaatame, kus seda välja kutsutakse. Ee, vaatame. Ilmselt on ju.
+
+121
+00:14:56.029 --> 00:14:59.530
+Õpetaja: No kustmujalt ma leidsin selle. Palun joonista mulle tabel.
+
+122
+00:15:00.550 --> 00:15:07.169
+Õpetaja: Siin on see kood olemas. Kuidas seda tabelit joonistada, aga Anna alla kaasa. Andmed, mis elavad mu siin. Failis. Näed
+
+123
+00:15:07.684 --> 00:15:11.230
+Õpetaja: Location tabelit. Ee location. Seda table komponenti ei katsu. Ka.
+
+124
+00:15:11.886 --> 00:15:13.469
+Õpetaja: Siin on mingisugused andmed,
+
+125
+00:15:14.249 --> 00:15:29.039
+Õpetaja: Mida on vaja. Kuvada teises failis. Tema ei tea oma välisest elust ööd ega mütsi. Ta ei peagi teadma, aga temal on võimalik anda kaasa anda. Lihtsalt tuleb see võimekus luua. Noh, kui tulla tagasi meie näidisesse. Siin student.
+
+126
+00:15:30.275 --> 00:15:33.740
+Õpetaja: Me tahame teha meetodid, mis väärtustaks ära,
+
+127
+00:15:34.184 --> 00:15:45.550
+Õpetaja: mis on Nagu see on peidetud vä. Seda seda ei saa otse katsuda. Väljaspoolt seda faili panen kinni väljaspoolt. Seda faili ei saa kuidagi otse viidata sellele sellele sellele, Sest nad on peidus
+
+128
+00:15:46.459 --> 00:15:50.559
+Õpetaja: küll. Aga me teeme sellise meetodi, mis on võimeline küsima.
+
+129
+00:15:51.298 --> 00:15:56.229
+Õpetaja: Näed, First Name ja Turn First Name Tema saab, sest, et see on siin samas koodifailis.
+
+130
+00:15:56.895 --> 00:16:03.450
+Õpetaja: Nüüd on lihtsalt vaja meetod, mis lihtsalt igal korral lihtsalt väärtustakse ära First name I Mingisuguse väärtusega.
+
+131
+00:16:03.888 --> 00:16:06.620
+Õpetaja: Noh, olgu, see rain näiteks, onju? Aga see ei ole Rain.
+
+132
+00:16:07.107 --> 00:16:09.050
+Õpetaja: Võibolla Rain. Sa võibolla peeter mida iganes.
+
+133
+00:16:09.405 --> 00:16:23.590
+Õpetaja: See meetod ei tea oma välisest elust ööde ega mütsi. Ta ei tea mitte midagi. Ta Ei, peagi Teadma. Ei tahagi seda teha. Niimoodi ei tahagi seda, et See on kuidagi seotud niimoodi, et siin ongi alati lihtsalt. Mida ma teen selle klassiga? Student, kus alati First Name.
+
+134
+00:16:23.888 --> 00:16:29.550
+Õpetaja: Mul ei ole mitte midagi. Sa tuled internetisse. Need andmed kuskilt ee. Kastikesest. Lõpuks peavad voolama Siia On ju
+
+135
+00:16:30.770 --> 00:16:33.089
+Õpetaja: siis ongi see, kuidas me saame seda teha,
+
+136
+00:16:33.928 --> 00:16:46.739
+Õpetaja: okei? Sellel sellel meetodil on ligipääs kõikidele välistele asjadele, millele tal on ligipääs. Tal ei ole nagu lampi. Nagu näiteks. Ee, Nagu et kui siin Oleks See nimi Rain või Peeter on Peeter.
+
+137
+00:16:47.781 --> 00:16:50.829
+Õpetaja: Kuidas Peeter jõuab siia Objekti on erinevad failid.
+
+138
+00:16:51.384 --> 00:16:56.069
+Õpetaja: See student ei ole kuidagi seotud selle temp Failiga. Ma kustutan ära selle tempfili.
+
+139
+00:16:56.873 --> 00:16:57.500
+Õpetaja: Ma tahan.
+
+140
+00:16:58.103 --> 00:17:07.640
+Õpetaja: Ta ei peagi midagi teadma, aga peab olema võimalus, et kui mina, loon, näiteks siin student objekti. Ma saan sellel student objektil väärtustada ükshaaval ära need väärtused
+
+141
+00:17:08.428 --> 00:17:15.999
+Õpetaja: First Name Last name image ja siis seda saabki ainult programmeerida. Siin siis Ongi lihtsalt parameeter.
+
+142
+00:17:16.572 --> 00:17:20.220
+Õpetaja: Ma ei tea, miks see on. Ma annan nii palju vihjeid ja tegelikult ta peaks juba teadma seda.
+
+143
+00:17:20.671 --> 00:17:21.929
+Õpetaja: Me oleme teinud Seda ju.
+
+144
+00:17:22.643 --> 00:17:27.979
+Õpetaja: Ma olen teinud seda komponentidega. Ma olen teinud seda nüüd. Me teeme seda varsti Jaavaga, et nagu
+
+145
+00:17:28.587 --> 00:17:35.570
+Õpetaja: meie mängumaa lihtsalt hetkel nagu meie mängumaa. Vaata, hetkel ongi kõik asjad, mis on meil siinsamas failis olemas,
+
+146
+00:17:36.132 --> 00:17:39.240
+Õpetaja: mis meid ei aita. Siin kuskil ei ole rain ega peetrit,
+
+147
+00:17:40.225 --> 00:17:44.580
+Õpetaja: Panin ee. Väärtus. Peeter on meil. Siin Siin on missioon.
+
+148
+00:17:48.215 --> 00:17:48.750
+Õpetaja: Student.
+
+149
+00:17:54.615 --> 00:18:00.060
+Õpetaja: See on missioon Student I nime. Peame saama sellel objektil peetriks.
+
+150
+00:18:00.770 --> 00:18:03.790
+Õpetaja: Meil on vaja siis seter meetodit.
+
+151
+00:18:04.473 --> 00:18:07.759
+Õpetaja: Tema nüüd võtab sisse. Mida ta võtab sisse? Noh, seda on vaja
+
+152
+00:18:08.533 --> 00:18:12.200
+Õpetaja: niimoodi. Ära seda Private It võta loomulikult
+
+153
+00:18:14.012 --> 00:18:18.550
+Õpetaja: Nii, Nüüd on niimoodi, et ta nüüd selle first name pani valgeks. See on valge.
+
+154
+00:18:18.943 --> 00:18:20.810
+Õpetaja: Ma Tahaks nagu öelda, et. Kuule, oot, oot,
+
+155
+00:18:21.519 --> 00:18:26.339
+Õpetaja: et see Mis sisse tuleb Selle väärtus on ju siin? Aga nüüd ta nagu. Wow, ma ei saa enne midagi aru
+
+156
+00:18:26.851 --> 00:18:36.249
+Õpetaja: Ta mõtleb nagu, et sellele Samale asjale. Sel selle objekt selle sildi taga on objekt. Ee, Peeter siin. Ütled? Peeter, palun saa uus nimi
+
+157
+00:18:36.985 --> 00:18:38.560
+Õpetaja: Peeter. Aa, okei.
+
+158
+00:18:38.974 --> 00:18:40.260
+Õpetaja: Noh, siin on Siis see, et.
+
+159
+00:18:40.730 --> 00:18:44.250
+Õpetaja: No ütleme, siin on lihtsalt. Siis on nagu see, et. Ei, ei, ei,
+
+160
+00:18:45.520 --> 00:18:54.329
+Õpetaja: see siin, mis alguses on, muidu lihtsalt Halvväärtusega saab selle väärtuse, mis siia sisse antakse. Nüüd on olemas siis missioon.
+
+161
+00:18:55.755 --> 00:19:00.230
+Õpetaja: Student set First Name, mida ta ootab sisse.
+
+162
+00:19:01.392 --> 00:19:05.720
+Õpetaja: Stringi ootab sisse Vihjeks. Mis seal sees? Mis seal stringi sees võiks olla?
+
+163
+00:19:06.585 --> 00:19:08.630
+Õpetaja: Eesnimi, mida ta tagastab.
+
+164
+00:19:10.684 --> 00:19:12.989
+Õpetaja: No siin öeldakse ära. Tühjus tagastab.
+
+165
+00:19:13.435 --> 00:19:22.549
+Õpetaja: See Meetod ei ole Disainitud, niimoodi, et ta midagi vastu annab. Meile See ei ole see koht, et tulen siia vasakule poole. Panen võrdusmärgi. Mõtlen siia mingi string,
+
+166
+00:19:25.389 --> 00:19:26.569
+Õpetaja: Mingi name.
+
+167
+00:19:28.505 --> 00:19:34.869
+Õpetaja: See Ei, see selleks, et temal on nagu see, ei tagasta midagi. See meetod ei tagasta midagi.
+
+168
+00:19:35.408 --> 00:19:54.840
+Õpetaja: Ta ei peagi tagastama, sest Ta teeb midagi. Ta teeb. Midagi. Tema temal on seekord nagu see, et ta ei loo midagi uut, ei anna meile vastu. Vaata, mind ei huvita see. Me tahame seda, et sina võta siit sisse. Näed, tema ütleb, et mina ootan Sisendit String First Name väga si nüüd seda söö nagu väga halb. Nagu kirjutab siia mingi string.
+
+169
+00:19:55.844 --> 00:19:57.360
+Õpetaja: Mingi name, Mingisugune.
+
+170
+00:19:57.785 --> 00:20:01.610
+Õpetaja: Me ei loo mingit silti. Ta ei taha Silti Ta tahab,
+
+171
+00:20:03.445 --> 00:20:07.729
+Õpetaja: Ta tahab Stringi kujul väärtust ta tahab anda. Ta tahab objekti. Ta tahab õiget objekti.
+
+172
+00:20:08.361 --> 00:20:10.410
+Õpetaja: No anname siia. Tuleb see peeter.
+
+173
+00:20:11.638 --> 00:20:14.919
+Õpetaja: Noh, palun kõik olemas. Ja see meetod ei tagasta midagi.
+
+174
+00:20:16.111 --> 00:20:21.460
+Õpetaja: Punane joon on all. Ta lihtsalt ütleb, et. Kuule, mis sa teed, Vot
+
+175
+00:20:26.643 --> 00:20:33.489
+Õpetaja: no siis ta pakub Et tee korda, et tee, niimoodi, et First name, tagastab stringi, nagu. Ei, mul ei ole vaja siin Kontekstis Ei olegi vaja
+
+176
+00:20:33.902 --> 00:20:40.630
+Õpetaja: sellepärast, et Siin on hoopis selline, et me teeme mingit tegevust. Aga me ei taha mingit uut infot. Mina annan sulle info. Peeter,
+
+177
+00:20:41.576 --> 00:20:43.509
+Õpetaja: siin on lihtsalt Ole nii bye, poiss.
+
+178
+00:20:44.754 --> 00:20:45.769
+Õpetaja: Ole nii, pai, poiss.
+
+179
+00:20:47.038 --> 00:20:50.169
+Õpetaja: Pane see peeter selle sildi taha nimega First Name.
+
+180
+00:20:50.576 --> 00:20:51.560
+Õpetaja: Siin Me ütleme, et
+
+181
+00:20:52.672 --> 00:20:59.860
+Õpetaja: siin klassi objektis on niuke väli nagu First name. Anna see Peeter sinna sisse. Noh, polegi midagi keerulist Käivitan korra selle ka. Siis
+
+182
+00:21:00.554 --> 00:21:01.810
+Õpetaja: saame selle läbi mängida,
+
+183
+00:21:02.309 --> 00:21:11.500
+Õpetaja: Kui kui te vaataksite materjale seal. Eriti need minu videod. Meetodid räägitakse ära. Sisu lendab mingi Mari ja Grete mingi minu perekonnaliikmete nimed
+
+184
+00:21:11.976 --> 00:21:16.219
+Õpetaja: näitad Ühes kohas käivitad. Siin on väärtus ränd ja siin on väärtus. Mari,
+
+185
+00:21:16.847 --> 00:21:19.910
+Õpetaja: käivitad Meetodi tullakse siia selle ümbriku sees.
+
+186
+00:21:20.759 --> 00:21:24.709
+Õpetaja: Ee, selle ümbriku sees on on Näiteks Mari, See on all.
+
+187
+00:21:25.105 --> 00:21:31.370
+Õpetaja: Kõik on nagu must valgelt ära tehtud. Kas ei ole või Räägin a mingi jama vä noh,
+
+188
+00:21:31.725 --> 00:21:35.719
+Õpetaja: mida, Kui keegi ütleks, niimoodi, siis ma kohe ütlen, et nagu. No mina nüüd arvan küll, et.
+
+189
+00:21:40.075 --> 00:21:44.569
+Õpetaja: Noh, tähendab, et see saab keegi vähegi vaataks
+
+190
+00:21:53.617 --> 00:21:56.770
+Õpetaja: Üks, kolm, D seters.
+
+191
+00:21:58.977 --> 00:22:05.270
+Õpetaja: Ma ei tea, aga kes vähegi seda vaatab. Okei, kui te te näete, et minu mingi video on, kas kui Te kõiki asju siin ei ole. On ikka vä.
+
+192
+00:22:07.010 --> 00:22:10.510
+Õpetaja: Kuskil oli. Vaata, Aa, ma nagu mäletaks.
+
+193
+00:22:11.667 --> 00:22:13.010
+Õpetaja: Teate põhjuste teemadest.
+
+194
+00:22:16.719 --> 00:22:21.400
+Õpetaja: Ma arvan, et ta video mõttes vist on. Ee. Kuskil siin. Palun väga
+
+195
+00:22:22.194 --> 00:22:25.369
+Õpetaja: kasutaja poolt loodavad klassid. Ma arvan, et see on siin selles ühes.
+
+196
+00:22:31.150 --> 00:22:37.680
+Õpetaja: Noh, on väga ideaalne, Vaata ülevalt.
+
+197
+00:22:40.005 --> 00:22:40.340
+Õpetaja: Mhmh.
+
+198
+00:22:44.988 --> 00:22:52.720
+Õpetaja: Näete, objekti abil käivitatakse meetod Set Year Publish kaasa läheb Väärtus kaks tuhat üheksa, läheb, Käivitanud hetkel
+
+199
+00:22:59.190 --> 00:23:05.869
+Õpetaja: ja ja korra läheb See kakstuhat üheksa ülesse nurka. Kõigu muude koodi faili.
+
+200
+00:23:12.213 --> 00:23:16.660
+Õpetaja: See on see info. On nagu kaine. Seal. Nagu mälus puudu kukub.
+
+201
+00:23:19.795 --> 00:23:23.810
+Õpetaja: Põmm siia kukkus Eelmisest kohast väärtus.
+
+202
+00:23:24.960 --> 00:23:27.459
+Õpetaja: Baithal on on all.
+
+203
+00:23:28.096 --> 00:23:30.100
+Õpetaja: On info et tema väärtus on null.
+
+204
+00:23:41.580 --> 00:23:50.940
+Õpetaja: Noh, Noh, noh, no ei saa enam ee paremini tegelikult seda asja Ära vaadata. Palun.
+
+205
+00:23:51.595 --> 00:24:08.730
+Õpetaja: Ee, kui need asjad on teie jaoks keerulised, siis te peate tööd tegema. Te peate veel vaatama, aga need Asjad peavad paikadel loksuma. Need. See on A, B, C. See ei ole lihtsalt jaava. Vahet pole, Olgu, see püüt on olgu see mingisugune muu keel. Eriti kui on objektorienteeritud. Ee, keel.
+
+206
+00:24:09.366 --> 00:24:10.220
+Õpetaja: Same stuff.
+
+207
+00:24:11.707 --> 00:24:20.160
+Õpetaja: Meetod Sisend Kas on väljund? Ei ole, mis ta teeb? Seal? Vaata, mis asi on parameeter. Miks ta on? Need asjad on universaalsed.
+
+208
+00:24:20.651 --> 00:24:30.220
+Õpetaja: Vahet pole, Java Script. Ee Java hüüton. Ma ütlen ka seal ei ole vahet, vaata Nagu, aga need asjad, nagu peavad nagu pähe loksuma paika. Kui te tahate
+
+209
+00:24:30.857 --> 00:24:33.659
+Õpetaja: ee teha objekti orienteerimis programmeerimist, vähemalt
+
+210
+00:24:34.131 --> 00:24:38.330
+Õpetaja: ma võin siin seda samamoodi käima panna, Aga ma isegi. Ma isegi. Ei viitsi. No ma panen ühe korra.
+
+211
+00:24:38.913 --> 00:24:46.949
+Õpetaja: Teeme siis vaikselt pikemalt. Muidugi ma panen selle peetri eraldi Muutujasse Endast. Muutuja on Ee. First. Name
+
+212
+00:24:49.197 --> 00:24:50.629
+Õpetaja: on first. Name.
+
+213
+00:24:51.285 --> 00:24:53.179
+Õpetaja: Ma panen siin student First Name
+
+214
+00:24:59.793 --> 00:25:08.620
+Õpetaja: Student First Name, palun väga. Nii, kasutan ülejäänud Staffi, ära siit. Ee, mis siin on, on student. Objekt.
+
+215
+00:25:10.202 --> 00:25:16.260
+Õpetaja: On First Name objekt. Ma ainult Äkki ei muutu sellepärast, et ma saaks seda objekti Lihtsalt väärtust ka veel näidata. Mis tegelikult toimub, on ju?
+
+216
+00:25:17.033 --> 00:25:18.100
+Õpetaja: Mina ütlen,
+
+217
+00:25:21.329 --> 00:25:24.739
+Õpetaja: Punkt set. First Name ootab Sisse Stringi First. Name
+
+218
+00:25:25.410 --> 00:25:38.319
+Õpetaja: ootab kontroll. B Ootab. Mina viitan. Objektile. Student First Name meelega on pandud teistsugune nimi, et saaksite aru, et nad ei pea omavahel kattuma, Kuidagi me Ei, anna. Me ei anna silti edasi tegelt. Anname ainult mälu. Viite edasi?
+
+219
+00:25:38.965 --> 00:25:41.139
+Õpetaja: Noh, tuleme siis siit teepugeriga
+
+220
+00:25:46.822 --> 00:25:58.860
+Õpetaja: Käime sellest tudentist läbi. Tekkis objekt Ee, üheksasada. Kuuskümmend siin. Mitte mingit väärtust pole. Tekib Ee, String objekt. Vaatame, mis tema tema väärtus on. Tema on
+
+221
+00:26:00.036 --> 00:26:12.330
+Õpetaja: koodiga üheksa kuus neli, Vabandus, üheksa, kuus, kolm üheksa, kuus, kolm, üheksa, kuus, kolm, üheksa, kuus, kolm. Käivitas. Mis on üheksa kuus null. Anna talle objekt kaasa. Mäluviide Üheksa, kuus, null.
+
+222
+00:26:12.720 --> 00:26:21.129
+Õpetaja: Nüüd see, see. Me ei anna seda silti. Nad ei ole. Isegi. Me ei anna silti. Me anname isegi päriselt objekti isegi ei anna. Tegelikult me anname ainult mäluviite.
+
+223
+00:26:21.832 --> 00:26:24.309
+Õpetaja: Noh, kui ma käivitan selle meetodi,
+
+224
+00:26:25.635 --> 00:26:35.300
+Õpetaja: nüüd see objekt siin seoti selle väärtusega peeter tema taga Tegelikult on siis hetkel praegu. Seesama
+
+225
+00:26:36.562 --> 00:26:40.360
+Õpetaja: üheksa, kuus, Kolm Mäluviide siibol on üheksa, kuus, kolm,
+
+226
+00:26:40.870 --> 00:26:43.219
+Õpetaja: Siin pole hetkel tegelikult mitte midagi. See on all,
+
+227
+00:26:44.003 --> 00:26:46.899
+Õpetaja: ei tea, kas objektina ta üldse eksisteerib või ei eksisteeri praegult.
+
+228
+00:26:47.368 --> 00:26:54.589
+Õpetaja: Kas tal on nagu oma mäluviide või mitte? Kohe ma vaatan, Hetkel ei Ole mäluviidet. Aga kui ma panen F. Kaheksa põmm.
+
+229
+00:26:55.433 --> 00:26:56.949
+Õpetaja: First Name on nüüd olemas.
+
+230
+00:26:58.133 --> 00:27:01.829
+Õpetaja: Ja see first name, Mis on nüüd selle studenti sees Pc sees. Vaadake, siin
+
+231
+00:27:02.307 --> 00:27:04.610
+Õpetaja: nüüd. On objekt taga. Vaata, sama objekt on.
+
+232
+00:27:05.934 --> 00:27:09.109
+Õpetaja: Me ei mõtle. Me mõtleme lihtsalt lihtsamalt. Me mõtleme väärtus või info,
+
+233
+00:27:09.798 --> 00:27:11.760
+Õpetaja: Aga päeva. Lõpuks on see sama asi. Vaata, et
+
+234
+00:27:12.278 --> 00:27:14.579
+Õpetaja: kui siia nagu midagi sisse ei tule,
+
+235
+00:27:15.608 --> 00:27:20.389
+Õpetaja: sest see objekt, mis asub kuskil mujal, ei saa. See info ei saa kuidagi edasi liikuda.
+
+236
+00:27:21.158 --> 00:27:35.179
+Õpetaja: Me ei saa. Me ei saa nagu siin teha mingisugust tegevust Infoga, mida meil ei ole olemas. Ja ainukene koht, kus me saame seda võimekust luua, on need parameetrid. Sa teed nimelise koodilõigu? Siis parameetrid. On see, kuidas siia koodilõiku saab mingi info tulla?
+
+237
+00:27:36.336 --> 00:27:39.310
+Õpetaja: No nii, okei,
+
+238
+00:27:40.487 --> 00:27:46.320
+Õpetaja: nüüd. Ee. Mis on nagu mõnus on see, et siis me nagu nägime, Vaata, et need meetodid, mis on
+
+239
+00:27:47.540 --> 00:27:50.960
+Õpetaja: neid tegelikult saab genereerida. Neid ei pea käsitsi tegema.
+
+240
+00:27:52.040 --> 00:27:55.669
+Õpetaja: Ütled, et soovin kõikide väljade kohta.
+
+241
+00:27:56.203 --> 00:28:03.389
+Õpetaja: Tegi põmm meile need meetodid. Ära vaata, et taustal on need Olemas Nüüd on meil konstruktoreid,
+
+242
+00:28:03.975 --> 00:28:13.220
+Õpetaja: et praegult vaikimisi. Hetkel kompilaator. Kui Ühtegi konstruktorit ei ole tehtud, siis tema ise vaikimisi Loob selle tühja konstruktori. Ei võta midagi sisse ega loob objekti
+
+243
+00:28:14.160 --> 00:28:15.000
+Õpetaja: Latin sert.
+
+244
+00:28:15.949 --> 00:28:21.909
+Õpetaja: Konstruktor siin. Ta palub, et vali nagu väljad, Vaata mille kohta, Konstruktor tuleb. Ma meelega. Teil on. Praegu
+
+245
+00:28:22.746 --> 00:28:25.920
+Õpetaja: tegi niukse. Konstruktori? Ei Võta ta midagi sisse.
+
+246
+00:28:26.695 --> 00:28:34.400
+Õpetaja: Aga minu Option hoopis just on teha niimoodi. Äkki Ma toon niukest konstruktorit, mis võtab sisse eesnime ja perekonnanime, Aga vanust ei võta
+
+247
+00:28:34.812 --> 00:28:38.219
+Õpetaja: Varsti võta. Võibolla see selgub hiljem Palun väga
+
+248
+00:28:38.883 --> 00:28:42.419
+Õpetaja: Saan teha Niimoodi või ma tahan ikkagi niukest konstruktorit ka.
+
+249
+00:28:44.593 --> 00:28:47.139
+Õpetaja: Millega on võimalik niiöelda öelda? New student.
+
+250
+00:28:48.030 --> 00:28:54.229
+Õpetaja: Ütlen Konstruktor Ütlen. Niukene Konstruktor, mis võtab kõik väljad sisse
+
+251
+00:28:55.040 --> 00:28:58.400
+Õpetaja: müüma. Variandid, et mitte midagi kaks välja,
+
+252
+00:28:58.951 --> 00:29:03.040
+Õpetaja: Kolm välja. On Nii kolm varianti. Mina Tulen siia studenti juurde.
+
+253
+00:29:03.575 --> 00:29:05.920
+Õpetaja: Minu variant on teha Niukene Objekt, mis?
+
+254
+00:29:07.082 --> 00:29:08.650
+Õpetaja: Ei võta ühtegi parameetrit.
+
+255
+00:29:09.477 --> 00:29:13.099
+Õpetaja: Võtab kaks parameetrit. Võtab. Ee, Kolm parameetrit
+
+256
+00:29:13.960 --> 00:29:27.599
+Õpetaja: nüüd. Mis kuradi asi see on? Meetodi signatuur. Seda tasub ka Vaadata video ära. Selline klots, nagu siis Suur kuubiku saab panna eri kujundusega klotse, mis käivitub ja nii edasi vastavalt sellele nüüd ongi teada, et see on Jaava värk. Seda javasket vist pole.
+
+257
+00:29:28.075 --> 00:29:30.140
+Õpetaja: Mina panen siia. Minu variandid on tühjus.
+
+258
+00:29:31.110 --> 00:29:34.800
+Õpetaja: Tulen siia, student. Ütlen Set First Name, panen, Rain.
+
+259
+00:29:36.307 --> 00:29:40.420
+Õpetaja: Saan öelda. Student. Ee, set last name. Panen tüür.
+
+260
+00:29:42.972 --> 00:29:49.630
+Õpetaja: Ee, Saan öelda. Student. Panen, mida ta ootab. Ootab sisse. Panen nelikümmend. Kaks
+
+261
+00:29:50.438 --> 00:29:52.189
+Õpetaja: See on üks variant. Kuidas see objekt teha
+
+262
+00:29:54.067 --> 00:29:56.809
+Õpetaja: Kõigepealt objekt ja siis setter meetoditega.
+
+263
+00:29:57.573 --> 00:30:03.170
+Õpetaja: Mina ei saa kuidagi puudutada otse neid väljasid, aga ma saan kasutada neid public meetodeid.
+
+264
+00:30:04.340 --> 00:30:06.619
+Õpetaja: Nii teine variant on see,
+
+265
+00:30:07.321 --> 00:30:17.630
+Õpetaja: et ma ütlen New Student Ma kirjutan parema poole ennem ja ütlen, et ee, mis Su teine variant on, et kaks nime. Vaata. Ahah, et kaks sisendit
+
+266
+00:30:19.344 --> 00:30:21.800
+Õpetaja: fine koma.
+
+267
+00:30:24.340 --> 00:30:25.910
+Õpetaja: Noh, tüür,
+
+268
+00:30:30.530 --> 00:30:35.570
+Õpetaja: see on variant. Kuidas saab seda objekti teha? Sellisel juhul vaatan, kuhu ma kukun. Kuhu ma vajutan? Siia, Kuhu ma kukun?
+
+269
+00:30:36.050 --> 00:30:36.749
+Õpetaja: Kukun siia.
+
+270
+00:30:37.723 --> 00:30:38.650
+Õpetaja: Vajutan siia.
+
+271
+00:30:39.162 --> 00:30:47.850
+Õpetaja: Kukun siia meetodisse. Kus on first name Last Name. Miks saab aru praegu, et kui sa käivitad seda ilma ühegi sisendita siis kood teab.
+
+272
+00:30:48.455 --> 00:30:54.169
+Õpetaja: See meetod tuleb käivitada, kui käivitad meetodid, Kus on kaks sisendit? Siis ta teab, et ta peab käivitama selle meetodi,
+
+273
+00:30:55.326 --> 00:30:56.350
+Õpetaja: Kus on kaks sisendit.
+
+274
+00:30:57.414 --> 00:31:04.889
+Õpetaja: No viimane variant ka student, Ütlen siia. Noh, kopin selle esimese osa oma, et säästa aega.
+
+275
+00:31:05.953 --> 00:31:11.969
+Õpetaja: Nii ütlen, on ka niisugune praegu. Ta näitaks, et rohelisega, et praegu käivituks selline konstruktor, on nii?
+
+276
+00:31:12.598 --> 00:31:15.310
+Õpetaja: Panen koma juurde. Nüüd ta ütleb, et Niukene,
+
+277
+00:31:15.853 --> 00:31:18.050
+Õpetaja: Kui ma võtan praegu näiteks siukse variandi,
+
+278
+00:31:19.627 --> 00:31:22.090
+Õpetaja: siis on üldse probleem. Mis probleem tal on.
+
+279
+00:31:22.470 --> 00:31:23.430
+Õpetaja: Vaata, mis ta ütleb.
+
+280
+00:31:24.321 --> 00:31:27.539
+Õpetaja: Mul ei ole niukest konstruktorit, mis võtab. Vaadake sisse stringi.
+
+281
+00:31:28.853 --> 00:31:34.719
+Õpetaja: Need siin on veel üks asi ka Tähtis asi Saada see on ülisavi. Mida, Kuidas need asjad need nimed on?
+
+282
+00:31:36.587 --> 00:31:42.619
+Õpetaja: Selles mõttes on Savi. Vaata, et selles osas, et mis meetod käivitub, otsustatakse Puhtalt tüüpide pealt.
+
+283
+00:31:43.170 --> 00:31:47.970
+Õpetaja: Kas ilma ühegi sisendita? String ja String või String. String ja integer.
+
+284
+00:31:48.728 --> 00:31:50.959
+Õpetaja: See on tema jaoks. Nagu määrava tähtsusega,
+
+285
+00:31:51.818 --> 00:32:01.610
+Õpetaja: kui ma Ütlen siin, et üks dring läheb sisse, siis ta ütleb, et kuule. Aga sul ei ole niukest. Mul on ilma parameetriteta. Ma tegin katkisi midagi või? Teinud. Võtsin kogemata maha selle viimase
+
+286
+00:32:02.197 --> 00:32:04.639
+Õpetaja: ee. Ütlen, et konstruktor keegi väljadega.
+
+287
+00:32:09.407 --> 00:32:17.309
+Õpetaja: Nii et ee, need on Minu variandid, on ju kui Ma ütlen, ee, et läheb selline.
+
+288
+00:32:17.947 --> 00:32:19.850
+Õpetaja: Kus on kaks ringi ja üks.
+
+289
+00:32:21.568 --> 00:32:23.010
+Õpetaja: Sul on see konstruktor olemas?
+
+290
+00:32:25.943 --> 00:32:26.790
+Õpetaja: Viimane sobib,
+
+291
+00:32:29.868 --> 00:32:36.829
+Õpetaja: kui ma tahaks nüüd saada, Nüüd ongi see, et kui mul on erinevad nimed, et. Ee, see siin on Rain tüür. Siin. Ma panen Peeter
+
+292
+00:32:38.810 --> 00:32:39.280
+Õpetaja: Paan.
+
+293
+00:32:41.814 --> 00:32:45.060
+Õpetaja: Noh, viimane Panen Siis Juku
+
+294
+00:32:48.650 --> 00:32:54.969
+Õpetaja: Juhan uku. Juhan, ma ei tea. Võibolla Niuke nimi Juba Viiekümne aastane vana nali.
+
+295
+00:32:55.955 --> 00:32:57.849
+Õpetaja: Meil nüüd on kolm erinevat objekti
+
+296
+00:32:58.372 --> 00:33:04.449
+Õpetaja: ja nende Sees on erinevad väärtused, et kui mina näiteks vaataksin, nagu seda, et If.
+
+297
+00:33:05.594 --> 00:33:07.130
+Õpetaja: Ee, nii ma paneks.
+
+298
+00:33:09.750 --> 00:33:10.340
+Õpetaja: Student
+
+299
+00:33:13.383 --> 00:33:14.670
+Õpetaja: Get Age
+
+300
+00:33:18.810 --> 00:33:29.360
+Õpetaja: on, ee, väiksem kui Student Kaks punkt, et küsimus. Kas Tule nihvi sisse.
+
+301
+00:33:31.808 --> 00:33:33.279
+Õpetaja: Kas kood tuleks sisse?
+
+302
+00:33:42.656 --> 00:33:49.629
+Õpetaja: Aga mul on praegu ju. Ahah, mul on kogemata pandud student, onju? Okei, teeme selle ka. Ma tegelikult mõtlesin. Ee, siis niimoodi,
+
+303
+00:33:52.605 --> 00:34:01.770
+Õpetaja: et student studentil on age. Nelikümmend Kaks H, viiskümmend.
+
+304
+00:34:02.909 --> 00:34:07.000
+Õpetaja: Kas see rehkendub? Nelikümmend Kaks on väiksem kui viiskümmend kaks.
+
+305
+00:34:08.000 --> 00:34:11.089
+Õpetaja: Proovime, Vaatame, kas me tuleme siia või ei tule? On ju?
+
+306
+00:34:11.737 --> 00:34:15.609
+Õpetaja: Ma panen selle teepugeriga käima, Kohe Teeme Null Point Reception I ka ära
+
+307
+00:34:18.282 --> 00:34:24.430
+Õpetaja: tuleb siia. No ta juba ütleb. Vaata, rehkendab. Ära Vaata, Truu on, on ju? Sest miks tema teab et See rehkendub.
+
+308
+00:34:25.639 --> 00:34:28.849
+Õpetaja: Selline asi rehkendub neljakümne kaheks.
+
+309
+00:34:29.929 --> 00:34:31.849
+Õpetaja: Teine pool rehkendub
+
+310
+00:34:34.313 --> 00:34:43.129
+Õpetaja: viiekümneks. Järelikult kogu see asi nii. Öelda tervikuna. Kasutame siis kalkulaator Tuuliation It See töötab ainult teepugeri ajal. Päriselt on vaja andmeid. Vaata
+
+311
+00:34:43.710 --> 00:34:50.719
+Õpetaja: kui praegu, kuidas. Mis see kood? Nagu Milleks ta Nagu rehkendus. Rehkendus truuks. Kui Ee, paneme kinni ka Siis näeme
+
+312
+00:34:51.283 --> 00:34:58.000
+Õpetaja: kaheksaga. Tulen siia sisse, onju? Okei, laseme minna. Aga teeme nüüd selle näite. Vaata kus. Kas Peetril on Vanust
+
+313
+00:34:59.053 --> 00:35:01.060
+Õpetaja: süütan tähele ei ole.
+
+314
+00:35:03.025 --> 00:35:05.090
+Õpetaja: Vaatame, mis nüüd juhtub. Paneme uuesti käima.
+
+315
+00:35:06.462 --> 00:35:07.830
+Õpetaja: Peeteril ei ole vanust.
+
+316
+00:35:12.462 --> 00:35:17.229
+Õpetaja: Mis nüüd juhtub, Nullpainto Reception.
+
+317
+00:35:18.140 --> 00:35:20.220
+Õpetaja: Sellepärast, et ee Getage
+
+318
+00:35:21.250 --> 00:35:27.010
+Õpetaja: ei saagi tagastada midagi. Kui Ainult nal, et nal ei ole võimalik võrrelda mingi numbri vastu,
+
+319
+00:35:28.382 --> 00:35:31.369
+Õpetaja: sest nullil ei ole. Null ei ole Null onju
+
+320
+00:35:32.264 --> 00:35:39.610
+Õpetaja: on tühjus, onju, et ma ei saa. Nagu ei saa öelda ühte pidi ega teistpidi. Ei saa öelda, et on vanem kui Viiskümmend kaks. Aga ei saa ka öelda, et ta on noorem kui viiskümmend, kaks.
+
+321
+00:35:46.511 --> 00:35:51.570
+Õpetaja: Ja kui ma. Kui ma paneksin selle vanuse siin praegu vaikimisi hint.
+
+322
+00:35:52.739 --> 00:35:57.130
+Õpetaja: Kui me teda kunagi ei väärtusta, siis ta on alati null. Nagu Päris null.
+
+323
+00:35:58.112 --> 00:36:04.160
+Õpetaja: Aga praegult oli objekt objekti objekti omavahel vaadates selle võrdlusega. Noh, ta oskaks ka enda Ära teha. Vaata, on ju?
+
+324
+00:36:04.754 --> 00:36:07.669
+Õpetaja: Okei, No eriti kui me vaatame seda vanust. Vaata, onju nii
+
+325
+00:36:12.825 --> 00:36:18.749
+Õpetaja: nii Okei, ee, nüüd. Selline asi lööb siin. Ee, silme ees lööb. Kirjuks vastab tõele,
+
+326
+00:36:19.860 --> 00:36:32.299
+Õpetaja: Kui ma panen. Näiteks, ma teen korra uuesti. Vaata, on ju, et vaatame. Meil on klass, Kus on kolm väljakäigast. Kujutage ette nüüd päriselt. Tahaks ka ise programmeerida. Võibolla Mingit meetodid. Näiteks mingi meetod. Näiteks ma saan teha niukse meetodi.
+
+327
+00:36:33.130 --> 00:36:38.330
+Õpetaja: Public tagastab Stringi Get pull name.
+
+328
+00:36:40.142 --> 00:36:45.590
+Õpetaja: Kuidas saaks? Mida? Mis? Ma peaksin siia progema, et ee, et Full Lind oleks nagu mingi viisakal kujul.
+
+329
+00:36:49.031 --> 00:36:52.190
+Õpetaja: Ei, Miks see on selle objekti kohta
+
+330
+00:36:55.305 --> 00:37:02.859
+Õpetaja: See. See on täiesti teine mure. Vaata, onju, Ma mõtlen nagu, et full name I. Me saame teki. Ei, ma ei pea full name I tekitama. Seda ei ole vaja teha, et ma teen string
+
+331
+00:37:04.165 --> 00:37:05.740
+Õpetaja: Ja full name.
+
+332
+00:37:06.660 --> 00:37:07.760
+Õpetaja: Mul Ei, ole vaja seda
+
+333
+00:37:18.560 --> 00:37:18.970
+Õpetaja: siia.
+
+334
+00:37:19.755 --> 00:37:20.680
+Õpetaja: No mis ma teen? Siin
+
+335
+00:37:24.860 --> 00:37:25.620
+Õpetaja: Kirjutav full.
+
+336
+00:37:27.953 --> 00:37:37.389
+Õpetaja: Sa oled õigel teel. Noh, fakt, vaata, missioon on see. Vaata, missioon on see, et selline asi annaks. Kasutaja täisnime. Siis ma kirjutan siia.
+
+337
+00:37:38.531 --> 00:37:43.189
+Õpetaja: Retörne on see. Vaata sellepärast, et retör peab igal juhul olema, mida peab ta retornima Lõpuks
+
+338
+00:37:43.859 --> 00:37:48.139
+Õpetaja: stringi. Sest et ma ei saa jätta seda tühjaks. Vaata, return tuleb niikuinii.
+
+339
+00:37:49.165 --> 00:37:54.430
+Õpetaja: Mi Mis Mis Dring String.
+
+340
+00:37:55.445 --> 00:38:02.980
+Õpetaja: Ei. Mis on minu mängumaa praegult. Mis on minu mängumaa ketta? Student First.
+
+341
+00:38:04.775 --> 00:38:13.029
+Õpetaja: Mis on minu mängumaa praegult. Mis on? Ma olen siin praegult. Minu mängumaa on praegult kõik, mis on olnud enne seda koodirida. Oleme nõus selle meetodi sees.
+
+342
+00:38:13.520 --> 00:38:18.209
+Õpetaja: Kõik, mis tuleb sisse ja kõik, Mis on välised asjad, mis on kättesaadavad
+
+343
+00:38:18.987 --> 00:38:22.559
+Õpetaja: minule, mis on sellest meetodist väljaspool, aga siiski kättesaadavad.
+
+344
+00:38:25.838 --> 00:38:29.370
+Õpetaja: Väga hea, First Name, mis edasi?
+
+345
+00:38:31.279 --> 00:38:40.760
+Õpetaja: Pluss tühiku võiks ka panna, on ju edasi nii?
+
+346
+00:38:41.701 --> 00:38:45.879
+Õpetaja: Kas meil on siin niukest välja Nagu, ee, nagu Full name. Ei ole,
+
+347
+00:38:46.819 --> 00:38:54.629
+Õpetaja: aga see, on. See on objekt. Vaata sellel hetkel. Kui me siia tuleme, siis saab eeldada, et siin on mingisugused andmed. No vähemalt see meetod eeldaks, vaata on ju,
+
+348
+00:38:55.514 --> 00:39:00.620
+Õpetaja: et selles mõttes, et ta töötaks. Sest ta on meetod, mida saad välja kutsuda.
+
+349
+00:39:01.034 --> 00:39:17.089
+Õpetaja: Kõik, mis talle vajalik on, tegelikult siin juba olemas, Aga point on see, et Vaadake, kui me mõtleme näiteks niukest meetodit ja setter Id. Need on mingid standardmeetodid, mille me üldse saame objektile ligi. Aga me saame ise kirjutada ka siia mida iganes, mis nende andmetega toimetab ja midagi. Näiteks, teeb,
+
+350
+00:39:17.540 --> 00:39:20.520
+Õpetaja: mida iganes, kui mina tulen praegu siia. No ma teen siis
+
+351
+00:39:21.121 --> 00:39:27.080
+Õpetaja: see korra ühe konstruktori ka. Ma olen siia selle jälle ära nagu teinud, et ma teen niukse konstruktori,
+
+352
+00:39:27.872 --> 00:39:30.350
+Õpetaja: mis Kõik Väljad võtab sisse. Okei,
+
+353
+00:39:30.808 --> 00:39:34.989
+Õpetaja: ma tulen siia meetodisse. Kus mul on See see viimane student onju?
+
+354
+00:39:37.417 --> 00:39:41.459
+Õpetaja: Kas meil on niimoodi New student Juku Juhan. Viiskümmend on nii?
+
+355
+00:39:42.326 --> 00:39:44.029
+Õpetaja: Mina kirjutan praegult siia.
+
+356
+00:39:45.467 --> 00:39:51.229
+Õpetaja: Kirjutan student. Kaks Get Full name, mis mul konsooli prinditakse.
+
+357
+00:39:53.920 --> 00:39:55.420
+Õpetaja: Jah, no viitekümmend
+
+358
+00:39:56.116 --> 00:40:09.169
+Õpetaja: ei prindita. Miks Sellepärast, et siin seda ei ole, onju? Aga see on meie enda tehtud meetod. Selles mõttes, et ta ei vasta selle, see ei ole Nagu see, et too mulle mingisuguse niiöelda peidetud välja. Niiöelda andmed. Ära vaata, sest full name I siin pole. Vaata, on ju
+
+359
+00:40:09.800 --> 00:40:11.720
+Õpetaja: nii? No Kui ma käivitan selle.
+
+360
+00:40:12.296 --> 00:40:13.129
+Õpetaja: Noh, käivitame.
+
+361
+00:40:16.360 --> 00:40:19.720
+Õpetaja: No ma ei hakka seda konstruktorit isegi idee pugima. Tulema. Kohe siia.
+
+362
+00:40:20.782 --> 00:40:24.110
+Õpetaja: Oleme siin studenti Sees, on objektid olemas Need väärtused olemas.
+
+363
+00:40:25.635 --> 00:40:39.820
+Õpetaja: Siia ma korra. Noh, ma ei pea. Ma ei oska vajutada, sest F seitse tuleb vajutada, et siia tahan minna, Kukkusime siia sisse. Oleme selles objektis Üheksasada. Kuuskümmend on see First Name ja lääs. Name, Juku ja Juhan Ja viiskümmend on
+
+364
+00:40:40.777 --> 00:40:46.970
+Õpetaja: konkreetselt selles kontekstis, Siin on juku tühik, Juhan.
+
+365
+00:40:48.295 --> 00:40:58.259
+Õpetaja: Ehk siis, kui mina praegu siin selles kontekstis, kus mul on nendel muutujatel väärtus olemas, Kui ma ütleks, et kalkulaatorile, Et milleks Praegult see siin Selles kohas rehkenduks.
+
+366
+00:40:58.830 --> 00:41:00.229
+Õpetaja: Siis Tuleks juku Juhan onju?
+
+367
+00:41:00.947 --> 00:41:02.790
+Õpetaja: Nüüd see tuleb uus dringi objekt.
+
+368
+00:41:03.906 --> 00:41:05.609
+Õpetaja: See tagastatakse sinna kohta,
+
+369
+00:41:06.130 --> 00:41:11.579
+Õpetaja: Kus seda välja kutsutakse? Noh, muutujasse ei pane vaid. Prindime otse konsooli, vaid ta on F. Üheksa
+
+370
+00:41:12.430 --> 00:41:19.340
+Õpetaja: tulikonsooli juku, Juhan, nii nüüd, millest mina Tahan nüüd järgmisena rääkida.
+
+371
+00:41:19.922 --> 00:41:20.829
+Õpetaja: On see, et
+
+372
+00:41:21.630 --> 00:41:39.879
+Õpetaja: kõik see asi, et kui ma teeksin iga kord alti inserte, et tee mulle konstruktor kõikide väljadega Miinimum igaks juhuks tuleks siis juba. Kui ühe konstruktori teed, siis tuleb arvestada et ühte konstruktorit. Ee, enam kompilaator ise meile ei tee. Tal on niimoodi. Kas sina teed konstruktorid või mina? Aga mitte mõlemad
+
+373
+00:41:40.754 --> 00:41:45.149
+Õpetaja: sinna Pipe koodi. Muidu kui ei ole ühtegi konstruktorit, ma niukest asja ei Kirjuta
+
+374
+00:41:45.571 --> 00:41:52.639
+Õpetaja: Siis ee. Kui ma praegu seda koodi jooksutan, pilditakse praegult sinna. See niiöelda.
+
+375
+00:41:53.049 --> 00:41:55.739
+Õpetaja: Mul on siin praegu, mis ei saa niiöelda käivitada onju
+
+376
+00:42:00.017 --> 00:42:07.559
+Õpetaja: Noh, korra siis lihtsalt kombi. Kommenteerime välja, et kui mina käivitan selle koodi, vaata siis see sama sama fail.
+
+377
+00:42:09.240 --> 00:42:12.389
+Õpetaja: See samas temp class. Vabandust, Student Class.
+
+378
+00:42:13.287 --> 00:42:16.089
+Õpetaja: See kood. Kas siin on konstruktor?
+
+379
+00:42:16.693 --> 00:42:19.519
+Õpetaja: Praegult on näha kuskil nagu Public student.
+
+380
+00:42:20.050 --> 00:42:24.369
+Õpetaja: Ei ole, aga ometi, kui tuleks, vaataks seda, et Mis on ee. Bitcodist?
+
+381
+00:42:24.946 --> 00:42:26.680
+Õpetaja: On siin. See tüügikonstruktor olemas?
+
+382
+00:42:27.226 --> 00:42:28.370
+Õpetaja: See on sellepärast, et
+
+383
+00:42:28.935 --> 00:42:41.619
+Õpetaja: ta teeb selle meie eest ära. Igal pool saaks öelda New Student New Student, New Student New Student ilma sisendita ja teeb selle ise ära. See on selle jaoks, et ma siin saaks juba kohe alguses öelda New student.
+
+384
+00:42:43.060 --> 00:42:44.739
+Õpetaja: Tal ei ole mingit probleemi Praegult
+
+385
+00:42:46.078 --> 00:42:52.969
+Õpetaja: mingit probleemi tal ei ole, sest et see, vaikimise konstruktor on olemas. Kui aga Mina tulen, teen siia ise Vaata konstruktori.
+
+386
+00:42:53.689 --> 00:42:57.400
+Õpetaja: Ütleme konstruktor, mis võtab kõik kolm sisendit, et saaks objekti kohe luua.
+
+387
+00:42:58.202 --> 00:42:59.730
+Õpetaja: Nüüd tegelikult on probleem.
+
+388
+00:43:00.144 --> 00:43:01.790
+Õpetaja: Nüüd Ta ütleb, et kuule, aga
+
+389
+00:43:02.268 --> 00:43:05.549
+Õpetaja: mul on ainult nihukene konstruktor, mis võtab sisse kolm sisendit
+
+390
+00:43:06.127 --> 00:43:16.310
+Õpetaja: Sellepärast, et siin on lihtsalt kokkulepe. Kas kompilaator teeb selle vaikimisi teeb või meie ise. Kas Kas meie teeme konstruktorid või tema? Aga me ei.
+
+391
+00:43:17.274 --> 00:43:31.250
+Õpetaja: Et tema teeb ainult siis, kui me ei ole defineerinud ühtegi konstruktorit nii pea, kui me ise defineerime konstruktori, siis talle enam see värk ei sobi. Noh, siis tegelikult viisakas oleks, see et kui sa teed mis tahes konstruktori ja küll sina võibolla ise kuskile ei ütle ühtegi korda. New student,
+
+392
+00:43:31.899 --> 00:43:42.089
+Õpetaja: Ee ja sisenditeta, aga tegelikult Mingisugune tehnoloogia taustal võib teha seda üritada teha. Siis ta saab teha jänni Kui teed. Nagu niukse konstruktori, siis oleks juba mõistlik ka teha Niukene
+
+393
+00:43:42.602 --> 00:43:45.280
+Õpetaja: konstruktor, kus ei ole ühtegi välja valitud.
+
+394
+00:43:45.869 --> 00:43:57.079
+Õpetaja: Noh, siis kui tekiks selline, olukord, siis ei teki viga. Vähemalt sina võibolla ise ei kirjuta niukest koodilõiku. Aga mingi Library taustal mingi teatud kontekstis võib proovida seda teha Ja siis tal on jama.
+
+395
+00:43:58.173 --> 00:44:03.419
+Õpetaja: Noh, siis oleks mõistlik et, iga välja kohta tuleks. Ee, Getherid ja Setter It.
+
+396
+00:44:06.675 --> 00:44:09.829
+Õpetaja: Nii, nüüd on juba
+
+397
+00:44:10.316 --> 00:44:17.970
+Õpetaja: päris palju asju siin. Kui nüüd oleks veel juures kuskil ka mingi Meie enda meetod. Get full names upub kõikide nende sekka ära. Olete nõus
+
+398
+00:44:18.931 --> 00:44:25.980
+Õpetaja: nüüd, kus tuleb Ee, appi. Nagu normaalne progemine. Meil on pandud Siin pilk Rail is. Selline asi nagu Lombok.
+
+399
+00:44:27.960 --> 00:44:36.500
+Õpetaja: Ahaa, väike Fun Fact ka. Kust tuleb? Ee, Kust tuleb? Selle keele jaava nimi, kus tuleb Jaava nimi,
+
+400
+00:44:37.280 --> 00:44:42.819
+Õpetaja: kust nad võtsid nagu kuskilt. Nad pidid selle nime välja mõelma. See sõna Java oli ennem olemas Igal juhul kui see keel Oli olemas
+
+401
+00:44:44.640 --> 00:44:47.440
+Õpetaja: Bingo Indoneesia. Vaatame, maps.
+
+402
+00:44:49.746 --> 00:44:50.860
+Õpetaja: Vaatame java.
+
+403
+00:44:54.933 --> 00:44:57.189
+Õpetaja: Oh Hoida. Nüüd üritad.
+
+404
+00:45:03.390 --> 00:45:07.890
+Õpetaja: Ee, jaava ja vasi olete kuulnud?
+
+405
+00:45:08.818 --> 00:45:10.010
+Õpetaja: See siin on jaava.
+
+406
+00:45:10.613 --> 00:45:11.339
+Õpetaja: Jaava, saar.
+
+407
+00:45:17.670 --> 00:45:20.849
+Õpetaja: Jah, ma koran siin. Üritan leida kohe ühte asja
+
+408
+00:45:25.593 --> 00:45:28.060
+Õpetaja: Ja üks lemmikumaid. Ee, tsaari.
+
+409
+00:45:28.652 --> 00:45:30.649
+Õpetaja: Ee, Tema Ei, ainult jaama maailmas.
+
+410
+00:45:32.490 --> 00:45:33.449
+Õpetaja: Näete seda saart?
+
+411
+00:45:35.928 --> 00:45:42.599
+Õpetaja: Tundub, Et, Ee, keegi on veel saanud inspiratsiooni Indoneesia saartest saartest.
+
+412
+00:45:44.881 --> 00:45:50.790
+Õpetaja: Vaadake, väga tüütu oleks iga kord kirjutada neid gettereid ja setteraid tõmbab silme ees täiesti Kirjaks ei ole. Ka
+
+413
+00:45:51.500 --> 00:45:56.600
+Õpetaja: Meil on olemas selline raamistik või mitte. Raamistik Lombok.
+
+414
+00:45:58.025 --> 00:46:03.740
+Õpetaja: Tema mõte on nagu see kõik need default meetodid, mis Nagu ise nagu välja kirjutada.
+
+415
+00:46:04.872 --> 00:46:06.289
+Õpetaja: Saadame need pensionile.
+
+416
+00:46:07.614 --> 00:46:09.470
+Õpetaja: Kirjutame siia hoopis ätt.
+
+417
+00:46:10.385 --> 00:46:10.920
+Õpetaja: Getter.
+
+418
+00:46:13.397 --> 00:46:15.600
+Õpetaja: Nii, jooksutan koodi. Vaatan, mis juhtub.
+
+419
+00:46:19.935 --> 00:46:25.590
+Õpetaja: Jooksutad selle koodi ära, mul Oli Tegelt see savi. Ma tahtsin lihtsalt näha seda, et. Kuidas ta nüüd on teinud Bike koodi. Sellest
+
+420
+00:46:29.262 --> 00:46:38.020
+Õpetaja: selle tegi kompilaator ja ülejäänud asjad on generated by hoo
+
+421
+00:46:40.498 --> 00:46:48.789
+Õpetaja: lombok. Ehk siis meil on tehtud lahendus, nagu mis taustal enne kompileerimist meie eest kirjutab need meetodid ära
+
+422
+00:46:49.455 --> 00:46:54.819
+Õpetaja: päris koodi, Mis meie saavutame sellega, on see, et enam vist ei tõmba silme eest nii kirjaks.
+
+423
+00:46:55.912 --> 00:46:57.040
+Õpetaja: Sul on olemas getterid,
+
+424
+00:47:01.038 --> 00:47:02.870
+Õpetaja: Setter. Noh, kui käivitan,
+
+425
+00:47:04.929 --> 00:47:23.050
+Õpetaja: kui Mõnus on koodi lisada. Ma ei tea, see ongi see, mis ta vahepeal küsib. Kas Enable Lombok Intelligenci näeb, et meil on siin pildfailis Ära määratud, Lombok. Varem või hiljem, ta saab aru, et Lombok on. Siis Ta teeb küsib, et kas teeme niimoodi, et mina arvestan, et Need meetodid on tänu Lombokile olemas.
+
+426
+00:47:23.698 --> 00:47:26.410
+Õpetaja: Kui sa koodis kutsud välja meetodeid, mida siin
+
+427
+00:47:26.875 --> 00:47:29.010
+Õpetaja: füüsiliselt siia koodi ei ole Kirjutatud.
+
+428
+00:47:30.154 --> 00:47:45.329
+Õpetaja: Et see ei lä See, need Getherid ja seterid, kus sa näed neid ei ole siin ega ei ole neid. Aga kui seal server käivitub, siis tema on Samamoodi Lombok ehitab igale klassile. Kus on juures need meetodid? Vaatame korra seda. Student Class I.
+
+429
+00:47:45.801 --> 00:47:49.290
+Õpetaja: Nüüd on siin ketket C, Zc Z,
+
+430
+00:47:51.017 --> 00:47:58.139
+Õpetaja: kui Ma vahetan need kaks omavahel järjekorra mõttes Ära Vaatame, siis on Zc
+
+431
+00:48:04.946 --> 00:48:07.240
+Õpetaja: Z, Z.
+
+432
+00:48:08.241 --> 00:48:10.500
+Õpetaja: Tänu nendele. Vot on mõnus,
+
+433
+00:48:11.279 --> 00:48:17.479
+Õpetaja: ei peagi tegelikult eriti vaeva nägema. Aga see on see, et nagu võiks olla, võiks olla ju tegelikult siis konstruktor
+
+434
+00:48:18.130 --> 00:48:19.529
+Õpetaja: kõikide väljadega võiks olla.
+
+435
+00:48:20.339 --> 00:48:27.049
+Õpetaja: Aga kui sa teed sellise asja siis enam kompilaator ei tee seda. Tühikonstruktorit võiks olla see vaikimisi tühikonstruktor ka on ju
+
+436
+00:48:27.899 --> 00:48:29.619
+Õpetaja: konstruktor ilma ühegi väljata,
+
+437
+00:48:30.262 --> 00:48:36.960
+Õpetaja: et on vaja lihtsalt öelda Ükshaaval või New student Ja annad kohe väärtused. Rain, tüür ja nelikümmend, kaks
+
+438
+00:48:38.689 --> 00:48:41.650
+Õpetaja: No no, problem, ät.
+
+439
+00:48:42.867 --> 00:48:52.199
+Õpetaja: Kõigepealt Default konstruktor Nowars Constructor, ilma Argumentide konstruktor. Noh, nimi on selline.
+
+440
+00:48:52.875 --> 00:48:56.079
+Õpetaja: Ei usu. Käivitame, Käivitame koodi.
+
+441
+00:48:57.122 --> 00:49:01.550
+Õpetaja: Näeme, et on Ja konstruktorid. Konstruktor võiks loomulikult olla üleval pool.
+
+442
+00:49:01.890 --> 00:49:07.180
+Õpetaja: Ma Ei, tea, kas ta äkki on nii palju Tark on, et ta topib selle siia alla. Vaata onju? Tulevad samas järjekorras nagu notatsioonid.
+
+443
+00:49:07.553 --> 00:49:12.210
+Õpetaja: Noh, võibolla siis ka enda, Nagu isegi oleks ilusam nagu niimoodi panna, Et ta jääks sinna ülesse,
+
+444
+00:49:12.963 --> 00:49:18.700
+Õpetaja: et ilma ühegi argumendita. Konstruktor, palun väga, on
+
+445
+00:49:19.942 --> 00:49:29.639
+Õpetaja: tuled siia. No aga ma tahtsin tegelikult niukest konstruktorit, mis võtab kõik väljad sisse, et eesmärk on nüüd see, et kui ma siin ütlen lihtsalt Siis kõik toimib ja kukub siia.
+
+446
+00:49:30.155 --> 00:49:34.560
+Õpetaja: Kuhu ta kukkus? Praegult Sest meetodeid pole. Aga pange tähele. Ma panen oma tiki siia praegu.
+
+447
+00:49:35.611 --> 00:49:37.959
+Õpetaja: Kui mina Tulen, vajutan. New Student. Kuhu ta kukub?
+
+448
+00:49:40.310 --> 00:49:52.089
+Õpetaja: Ta kukub sinna reale ülesse. Üritab ka enda märku anda, nagu et Aa, et. Okei, mul ei Ole siin konstruktorit. Aga näed Lomboks Jälle teeb selle konstruktori tegelt. Sul on see olemas konstruktor Kui ma teeksin siin ee,
+
+449
+00:49:53.361 --> 00:49:55.769
+Õpetaja: student ja Get First Name.
+
+450
+00:49:56.687 --> 00:49:58.820
+Õpetaja: Noh, kui ma siis kukun, Kui ma siia vajutan,
+
+451
+00:49:59.466 --> 00:50:02.180
+Õpetaja: kukub seal first name i peale. Tal ei ole midagi muud kuvada,
+
+452
+00:50:02.661 --> 00:50:04.829
+Õpetaja: tegelikult on meetod. Get First Name,
+
+453
+00:50:05.516 --> 00:50:10.790
+Õpetaja: et kui ma koodis tahan välja kutsuda, Ma pean ikka ütlema. Get first name, onju nii,
+
+454
+00:50:12.307 --> 00:50:20.369
+Õpetaja: siis muidugi võiks olla ju kõikide kõikide väljade konstruktor. Et ma saaksin teha nelikümmend kaks,
+
+455
+00:50:21.260 --> 00:50:24.260
+Õpetaja: Siis ma ütleksin All Arks Constructor.
+
+456
+00:50:26.090 --> 00:50:27.050
+Õpetaja: Käivitan koodi.
+
+457
+00:50:28.416 --> 00:50:31.180
+Õpetaja: Vaatame seda Student Class I. Kohe, kui ta valmis saab.
+
+458
+00:50:32.451 --> 00:50:35.190
+Õpetaja: Juba on tehtud, on kõikide väljade konstruktor.
+
+459
+00:50:36.565 --> 00:50:43.340
+Õpetaja: Noh, jaava ja Lombok Noh, Bali on muidugi nende vahel. Siin Niimoodi üritab kiilu lüüa.
+
+460
+00:50:45.770 --> 00:50:48.160
+Õpetaja: Nii sai niuksed asjad tehtud.
+
+461
+00:50:49.584 --> 00:50:53.259
+Õpetaja: Lihtsalt, mis meil nagu säilib, on see, et meil on väga
+
+462
+00:50:53.728 --> 00:51:01.500
+Õpetaja: ja loetav kood, kui Ma nüüd ise tahaks siia teha ühe meetodi. Public String Getfull name.
+
+463
+00:51:02.312 --> 00:51:18.079
+Õpetaja: See on nii triviaalne näide. Lihtsalt see, nagu ei ole kuidagi eriti Miiningful. Aga isegi siis võiks olla, et tahan teha niukest kuskil full name I kasutada Ma ei hakka iga kord ütlema. Student Get first Name pluss tühik last name. Tuled. Defineerid lihtsalt siia sellesse klassi niukse meetodi, Mis saab toimetada nende andmetega
+
+464
+00:51:18.494 --> 00:51:23.840
+Õpetaja: Proged selle siin ära Edaspidi muudkui Ütled, student? Get full Name. Ja kohe saad, Vaata, onju?
+
+465
+00:51:25.065 --> 00:51:30.919
+Õpetaja: Ee, mis seal on? Siis First Name. Tühik, tühik, name.
+
+466
+00:51:32.167 --> 00:51:37.239
+Õpetaja: Kui kiirelt leiab praegult üle, kui tuled siia faili, näed tegelikult neid, asju mis on tähtsad,
+
+467
+00:51:38.780 --> 00:51:47.710
+Õpetaja: kellel on vaja neid meetodeid näha. Siin nagu first name ja konstruktorid Ja kogu see mudru on nagu olemas. Kui ma nüüd jooksutan koodi Aga siia, tekib ka see sama meetod Full name
+
+468
+00:51:48.080 --> 00:51:49.519
+Õpetaja: kuskile ta ei saa peaks tekkima.
+
+469
+00:51:50.779 --> 00:51:57.379
+Õpetaja: Näed, Public string ee get full name return. Lihtsalt Mingid värvid on paigast ära. Aga idee on olemas. Vahet pole,
+
+470
+00:51:57.961 --> 00:52:01.620
+Õpetaja: et See on ka siin olemas. Aga meie jaoks on tähtis seda nagu näha.
+
+471
+00:52:03.545 --> 00:52:08.559
+Õpetaja: Nii Nüüd ma tahan rääkida. Veel. Päris ei saa. Varsti Kohe Lähme päris arenduse juurde ka.
+
+472
+00:52:08.967 --> 00:52:10.629
+Õpetaja: Me saame kõik koos asju teha.
+
+473
+00:52:12.025 --> 00:52:15.450
+Õpetaja: Nüüd on vaja aru saada seda, et meil on ee, Niukene süsteem.
+
+474
+00:52:21.919 --> 00:52:25.689
+Õpetaja: Ee Studentil on ee, first name last. Name on.
+
+475
+00:52:28.123 --> 00:52:31.580
+Õpetaja: Okei, mina tahan. Teen ühe klassi juurde.
+
+476
+00:52:32.433 --> 00:52:33.300
+Õpetaja: Jaava, Glass.
+
+477
+00:52:45.733 --> 00:52:53.169
+Õpetaja: Mina tahan, et minul on Niukene Ee, Objekt nagu High School student. Mina tahan, et loomulikult temal on first name last name, Age,
+
+478
+00:52:53.873 --> 00:53:00.779
+Õpetaja: aga infokilluna mind tegelikult huvitab ka näiteks tema Ee, mis sa primeris kuul? Mis on nagu Nhi School I
+
+479
+00:53:02.258 --> 00:53:03.410
+Õpetaja: Millal School? On? Ju?
+
+480
+00:53:04.014 --> 00:53:05.470
+Õpetaja: Ma panen näiteks. Ee.
+
+481
+00:53:06.785 --> 00:53:07.399
+Õpetaja: Private,
+
+482
+00:53:07.881 --> 00:53:13.850
+Õpetaja: Ma mõtlen mingi lampi asja välja praegu, et account. Iga oleks hea lihtne teha seda nagu panga account. I ka. Ee, Private.
+
+483
+00:53:14.617 --> 00:53:18.410
+Õpetaja: Ee, Ma panen Paneme. Double.
+
+484
+00:53:23.638 --> 00:53:25.129
+Õpetaja: Tabel on ka oma kohaga arv.
+
+485
+00:53:26.713 --> 00:53:28.029
+Õpetaja: Ee, mis oli minutes kuulaja.
+
+486
+00:53:34.637 --> 00:53:48.149
+Õpetaja: Noh, et kui ee õpilane jõuab High School Id, siis tal on ka põhikooli Keskmine hinne on ta Niukene Hea õpilane või halb hinne. Rohkem Usa teema nagu. Vaata või mingi sate skoor või ma ei tea mingid Niuksed asjad.
+
+487
+00:53:48.641 --> 00:54:02.399
+Õpetaja: Nüüd mõte on nagu see. Vaata, et mina tahaks niukest. Ee, studentit, kellel on natukene nagu rohkem informatsiooni kui lihtsalt first name Ja last Name loomulikult. Mu variant oleks see, et Ma Teeksin need väljad ka siia.
+
+488
+00:54:03.253 --> 00:54:04.000
+Õpetaja: Selline variant.
+
+489
+00:54:05.164 --> 00:54:16.070
+Õpetaja: Aga lihtsam oleks öelda seda. Vaata, et Aga teeme hoopis niimoodi, Vaata, et selle klassi parent on. Ja see on Child, kes laiendab
+
+490
+00:54:17.470 --> 00:54:23.170
+Õpetaja: oma parenti mingisuguseid omadusi, andmeid, mida iganes, kuidas mõelda,
+
+491
+00:54:23.672 --> 00:54:25.370
+Õpetaja: siia saab panna niukse sõna Extens.
+
+492
+00:54:26.257 --> 00:54:29.310
+Õpetaja: Ma ütlen, et mida? Highschool Student Extend Id. Mida ta laiendab?
+
+493
+00:54:30.045 --> 00:54:33.219
+Õpetaja: Objekti student. Panen suure tähega.
+
+494
+00:54:34.315 --> 00:54:42.950
+Õpetaja: Nii Lähme proovime, Lähme vaatame, mis juhtub, kui ma tempis Ütlen Näiteks, et New I School student.
+
+495
+00:54:48.118 --> 00:54:49.389
+Õpetaja: No vaatame, mis juhtub.
+
+496
+00:54:54.236 --> 00:54:57.339
+Õpetaja: Mul ei ole seal andmeid, aga see on savi. See ei ole küll üldse eesmärk.
+
+497
+00:54:57.712 --> 00:54:59.549
+Õpetaja: Panen siin High School student I pealt.
+
+498
+00:55:00.066 --> 00:55:04.050
+Õpetaja: Kui ma vajutan F kaheksa, tekkis See objekt. Vaatame korra selle objekti sisse.
+
+499
+00:55:05.610 --> 00:55:06.690
+Õpetaja: Mis väljad tal on?
+
+500
+00:55:09.565 --> 00:55:14.190
+Õpetaja: Tal on see, mis on pärandklassil, Aga on ka Mingi Ekstraväli vastab tõele.
+
+501
+00:55:16.093 --> 00:55:22.999
+Õpetaja: Okei, proovime seda natukene veel mõelda. Ee, mina teen. Read Only. Ee, mina lähen korra siia. Student Class I
+
+502
+00:55:25.670 --> 00:55:30.789
+Õpetaja: Kui mina teen siia jälle Selle Ee, string.
+
+503
+00:55:31.350 --> 00:55:38.570
+Õpetaja: Mm, get full name turn.
+
+504
+00:55:47.785 --> 00:55:52.870
+Õpetaja: Nii kui mina tulen siia kohta, kus ma selle objekti loon?
+
+505
+00:55:55.250 --> 00:55:57.770
+Õpetaja: Noh, teeme siis Ee, mingisuguse asja. Ka.
+
+506
+00:56:00.250 --> 00:56:05.289
+Õpetaja: Ee, kas tal on konstruktor on või ei ole, ei ole,
+
+507
+00:56:09.016 --> 00:56:17.690
+Õpetaja: Noh, Tulen peale. Panen siia. Vaadake seda. Ee, Lähme korra tagasi studenti juurde. Mitte see, vaid see java klass.
+
+508
+00:56:18.862 --> 00:56:27.579
+Õpetaja: Siia paneme Ennem Panime peale. Mis me panime ilma argumentide konstruktor ät allars. Konstruktor.
+
+509
+00:56:29.617 --> 00:56:38.850
+Õpetaja: See klass on oma. Olemuselt Mäletan, ma rääkisin. On kahte tüüpi klassi, Mis me teeme Ühed on see, mis hoiavad sees. Mingeid tegevusi. Teine on see, mis hoiavad oma sees
+
+510
+00:56:40.805 --> 00:56:41.310
+Õpetaja: andmeid
+
+511
+00:56:46.726 --> 00:56:47.519
+Õpetaja: at dota.
+
+512
+00:56:48.866 --> 00:56:50.289
+Õpetaja: Mm, ja see on.
+
+513
+00:56:50.786 --> 00:56:53.349
+Õpetaja: Lähme Vaatame, mis asi see on. Ma lähen sinna sisse.
+
+514
+00:56:54.702 --> 00:57:05.799
+Õpetaja: Siin on üleval dokumentatsioon Temal on põhimõtteliselt Getter Sethter ja mõned asjad veel.
+
+515
+00:57:06.310 --> 00:57:12.200
+Õpetaja: Põhimõtteliselt. Tal on juba mingisugused asjad. Mida ma ei pea enam uuesti kirjutama, isegi Nii
+
+516
+00:57:12.723 --> 00:57:14.990
+Õpetaja: kui ma tulen praegu siia tagasi koodi,
+
+517
+00:57:16.797 --> 00:57:30.659
+Õpetaja: Temal peaks olema. See on. Ma korra muudan Noh, ma ei viitsi, Ma panen lihtsalt juurde. Ee, ma ei hakka praegu ühte kontseptsiooni siia juurde viskama. Ma panen ise ät all Arks Constructor juurde.
+
+518
+00:57:31.150 --> 00:57:34.279
+Õpetaja: Igaks juhuks panen ka, No ja Ei tea, kas on või ei ole
+
+519
+00:57:34.871 --> 00:57:40.000
+Õpetaja: nii. Ee, et mul on nagu progemise mõttes on võimalik siin teada. Üks objekt nüüd on nagu.
+
+520
+00:57:40.960 --> 00:57:42.520
+Õpetaja: Aa, see on High Schools student.
+
+521
+00:57:43.225 --> 00:57:51.080
+Õpetaja: Mm, student. Huvitav, Ma ei saa first name i last name I ma nagu kas Ma ei saa Tõesti,
+
+522
+00:57:51.640 --> 00:57:55.429
+Õpetaja: Aa, Sest et ma sellel haiskustudentil ei ole konstruktorit
+
+523
+00:57:56.281 --> 00:57:59.620
+Õpetaja: siia. Ma pean ikkagi panema, peale et ka siin
+
+524
+00:58:01.073 --> 00:58:05.440
+Õpetaja: ma panen vähemalt konstruktori vaata Ma niikuinii midagi muud sinna ei pane
+
+525
+00:58:07.106 --> 00:58:14.610
+Õpetaja: Konstruktor, Nüüd ta räägib seda. Ma ei tea mingit jama, et mul lihtsalt oleks korra võimalik natukene mängida. Vaata, onju? Ma panen kinni.
+
+526
+00:58:15.155 --> 00:58:20.139
+Õpetaja: Ee, et ma annan siis mis ta tahab, saada? Aga on ainult
+
+527
+00:58:22.245 --> 00:58:28.620
+Õpetaja: High school I kohta, Vaata, onju? Avg, ma panen. Ma ei tea, ee, viis punkt. Null. Niuke vend, vaata.
+
+528
+00:58:29.227 --> 00:58:32.500
+Õpetaja: Oo, string. Vale viis punkt null.
+
+529
+00:58:34.821 --> 00:58:40.100
+Õpetaja: Aga ma tegelikult tahan üldse näidata seda, et. Ee, jah.
+
+530
+00:58:40.743 --> 00:58:41.730
+Õpetaja: Kas ma.
+
+531
+00:58:42.941 --> 00:58:47.000
+Õpetaja: Ma ei mäletagi, kuidas? Kuidas ma saan ka siis?
+
+532
+00:58:47.728 --> 00:58:59.369
+Õpetaja: Mul on vaja siia luua eraldi konstruktor. Ma ei viitsi seda näidata. Pigem Põhimõtteliselt asi, mis ma tahtsin näidata, on seda, et sellel kas vastab tõele, et studentil on meetod,
+
+533
+00:59:00.526 --> 00:59:04.590
+Õpetaja: aga High School Studentil ei ole gatfull. Name ei ole nii.
+
+534
+00:59:05.567 --> 00:59:12.100
+Õpetaja: Aga kui mina tulen ja otsin nagu selle High School student i pealt, panen punkti,
+
+535
+00:59:13.366 --> 00:59:15.489
+Õpetaja: Kas vastab tõele, et Get Full name on olemas,
+
+536
+00:59:17.755 --> 00:59:27.860
+Õpetaja: See tähendab seda. Vaata, et ma Tahan rääkida. Sellest pärilussuhtest. Vaata, kui me pärime, nagu Kui me nii öelda oleme klass, mis pärineb mingist teisest klassist, siis meil on kõik tema väljad
+
+537
+00:59:28.720 --> 00:59:33.440
+Õpetaja: ja omadused, mis on niiöelda.
+
+538
+00:59:34.108 --> 00:59:42.319
+Õpetaja: Ee, nüüd Ma tahan rääkida, miks ma sellest tahtsin rääkida. Sellisel kujul on see, et te peate saama aru, et kõik klassid, mis me loome,
+
+539
+00:59:45.940 --> 00:59:50.910
+Õpetaja: pärinevad klassist nimega objekt.
+
+540
+00:59:53.986 --> 00:59:57.350
+Õpetaja: Ta ütleb seda, et seda ei ole vaja eraldi rõhutada.
+
+541
+00:59:59.283 --> 01:00:06.899
+Õpetaja: Ta ütleb, et sa spetsiifiliselt praegult. Aa, ütled, et ma pärinen klassist objekt, aga tegelikult seda pole vaja
+
+542
+01:00:07.884 --> 01:00:09.940
+Õpetaja: Taustal selline asi toimubki.
+
+543
+01:00:10.769 --> 01:00:14.920
+Õpetaja: See student Class peab kellestki pärinema. Kui me. Lähme, vaatame Object Class I
+
+544
+01:00:15.708 --> 01:00:18.660
+Õpetaja: Ja siin, ee. Kõrval meil Niukene tööriist. Nagu Structure
+
+545
+01:00:19.395 --> 01:00:23.740
+Õpetaja: näitab. Ee, siin erinevaid asju. Ee, mis meid huvitab, on meetodid,
+
+546
+01:00:24.291 --> 01:00:32.510
+Õpetaja: mis on olemas selle Klassi sees. Näete, siin on Niukene meetod. Näiteks. Too string, kloun, hash. Code
+
+547
+01:00:33.116 --> 01:00:35.510
+Õpetaja: ja Wait. Ja mingid muud asjad ka on ju?
+
+548
+01:00:36.737 --> 01:00:40.509
+Õpetaja: Kui mina Korraks tulen ja võtan lahti selle templas. I
+
+549
+01:00:43.840 --> 01:00:45.160
+Õpetaja: ma võtan selle sama.
+
+550
+01:00:45.764 --> 01:00:56.450
+Õpetaja: Noh, kas ma võtsin selle ekstendi ära? Sealt ma võtan, Selle ekstendi ära, on ju? Seda pole vaja. Ma sain sinna kiirelt vaadata, kui mina ütlen. Ee, et. Ee. Oih. Nüüd on natukene liiga hulluks läinud Kus on see sisu? Kadus ära.
+
+551
+01:00:56.875 --> 01:00:59.259
+Õpetaja: Vot see seda. Ma ei tahtnud, et ära kaoks.
+
+552
+01:00:59.786 --> 01:01:05.660
+Õpetaja: See käib full name. Ma tahan, et oleks ka Näiteks alles, kui mina tulen tempklassi ja mina ütlen, et New Student Class.
+
+553
+01:01:06.785 --> 01:01:08.180
+Õpetaja: Ee, loom muutuja.
+
+554
+01:01:10.041 --> 01:01:18.800
+Õpetaja: Siis kui ma kirjutan student, viitan sellele objektile, Mul on kõik need meetodid, mis on mul siin olemas.
+
+555
+01:01:19.477 --> 01:01:27.819
+Õpetaja: Getterid ja setterid. Konstruktorid, kes tulevad nendega. Ma võtan korra praegult natukene vähemaks, et jääks. Lihtsalt ainult see Get full name.
+
+556
+01:01:29.774 --> 01:01:37.509
+Õpetaja: Kui ma panen punkti, näidatakse mulle Gat Full name on niimoodi. Ee, Boldilt tagastab stringi.
+
+557
+01:01:38.066 --> 01:01:43.329
+Õpetaja: Kas te Näete neid koode? Hash code gat class. Näete neid meetodeid?
+
+558
+01:01:43.981 --> 01:01:48.149
+Õpetaja: Neid meetodeid me nägime, on defineeritud objekt klassi sees.
+
+559
+01:01:48.830 --> 01:01:54.520
+Õpetaja: No Kui ei usu, siis ongi siin. No vaatame, et uus tring. Näiteks uus drink on asi, mis on hea vaadata.
+
+560
+01:01:55.032 --> 01:01:59.610
+Õpetaja: Ee, siin on sees Tous trend. Kus sa oled siin,
+
+561
+01:02:01.011 --> 01:02:04.099
+Õpetaja: Ütleb, et sina tagas ka klassi nimi.
+
+562
+01:02:07.360 --> 01:02:08.410
+Õpetaja: Siis tuleb ät.
+
+563
+01:02:10.110 --> 01:02:16.010
+Õpetaja: Ja siis tuleb. Mingisugune on. Ee, kuueteistkümnendik süsteemis. Ee, numbreid.
+
+564
+01:02:16.623 --> 01:02:22.220
+Õpetaja: Ee, üks Null, üks, kaks, kolm, neli, viis, kuus, seitse, kaheksa, üheksa, A, D, F.
+
+565
+01:02:22.783 --> 01:02:29.970
+Õpetaja: See on niuksed. Väärtused saavad olla. Nii on Niukene Meetod
+
+566
+01:02:31.569 --> 01:02:34.719
+Õpetaja: See on igal objektil olemas. Ja objektiklassides ongi olemas.
+
+567
+01:02:35.555 --> 01:02:41.560
+Õpetaja: Kui mina tulen. Ee, siia. Esiteks, ma näen. Vaata, et Niukene asi nagu saan välja kutsuda
+
+568
+01:02:43.036 --> 01:02:47.910
+Õpetaja: Kui ma tulen, nagu vaatan. Student Isse, nagu siin Ei ole mingeid siukseid, meetodit. Uus trenn vastutajale.
+
+569
+01:02:48.640 --> 01:02:51.429
+Õpetaja: Ometi. Tal on see, sellepärast, et tema Pärandil on
+
+570
+01:02:51.936 --> 01:02:56.920
+Õpetaja: on selline. No ma võin panna selle muutujasse. Panen mingi result, näiteks selle nimeks
+
+571
+01:02:58.428 --> 01:03:01.360
+Õpetaja: ja tulen ja panen näiteks siia.
+
+572
+01:03:02.160 --> 01:03:09.800
+Õpetaja: Ee, as Out Ütlen. Student, palun.
+
+573
+01:03:11.445 --> 01:03:17.740
+Õpetaja: Võta siit. Tead, mis asja? Ma võtan Selle resalti siit ülevalt. Lihtsalt on. Niimoodi. On klass
+
+574
+01:03:18.420 --> 01:03:28.540
+Õpetaja: teava nimi. Ma võin seal panna ka ruttu mingisuguse. Ma teen korra Ühe Konstruktori. Konstruktor? Ma teen. Ma ei tea midagi taolist,
+
+575
+01:03:28.863 --> 01:03:33.549
+Õpetaja: et ma saan öelda, nagu siin Rain tüür. Ma tahan, et. Et te näeksite, mis siin on ja mis siin ei ole.
+
+576
+01:03:34.022 --> 01:03:37.570
+Õpetaja: Vot mina teen. Uue Objekti, Kus on rain Tüür on olemas.
+
+577
+01:03:39.726 --> 01:03:41.070
+Õpetaja: Nii, paneme selle käima.
+
+578
+01:03:47.351 --> 01:03:50.650
+Õpetaja: Ahh, ee, mis sinuga. Mine ära. Lihtsalt
+
+579
+01:03:58.745 --> 01:04:03.440
+Õpetaja: nii tuli objekt. Ee, Rain. Tüür on nii?
+
+580
+01:04:04.156 --> 01:04:07.329
+Õpetaja: Nüüd siit Öeldakse, et võta nüüd sellest küljest.
+
+581
+01:04:07.804 --> 01:04:16.770
+Õpetaja: Käivita meetod. Uus drink on nii? Võibolla praegu. Lähen korra sinna meetodisse, Mis on jaaklass? Ma panen siia Break Point I. Panen selle üldse kinni. Niimoodi
+
+582
+01:04:17.826 --> 01:04:25.290
+Õpetaja: mina vajutan nüüd F. Kaheksa, et mine lase koodil edasi minna. Kui kood jõuab kuskile Break Point ini. Ma just panin praegu sinna meelde. Siis me näeme, et
+
+583
+01:04:25.974 --> 01:04:35.710
+Õpetaja: käivitub objekt klassis. See meetod, Uus drink võetakse Klassi nimi pannakse ätt otsa Siis tuleb mingi H kood. Kui ma võtaksin praegult selle siit niimoodi Kalkulaatorisse
+
+584
+01:04:36.977 --> 01:04:38.430
+Õpetaja: Vist Siin ei saa seda teha. Või?
+
+585
+01:04:42.182 --> 01:04:47.679
+Õpetaja: Tule meelde, Ee, Mis on, see kaheksa? Saan aru, milleks sa pead rehkenduks.
+
+586
+01:04:48.359 --> 01:04:54.229
+Õpetaja: Siis ta võtab kõigepealt selle Packeti aadressi. Ebcs Pank Studenty klassi nimi.
+
+587
+01:04:54.930 --> 01:05:00.129
+Õpetaja: Näe, vaata Get class koos package name. Iga ätt. Siis tuleb mingi Hex kood
+
+588
+01:05:01.016 --> 01:05:08.920
+Õpetaja: numbrid, kuni nullist üheksani. Ja siis tulevad viimase kuueteistkümne viie kohta tuleb A, B, C, D, Eka. Ma ei mäleta enam.
+
+589
+01:05:09.531 --> 01:05:15.330
+Õpetaja: Nii et kui kui mina vajutan nüüd f kaheksat, tuleme siia tagasi.
+
+590
+01:05:16.065 --> 01:05:18.320
+Õpetaja: See resalt sai endale niukse väärtuse
+
+591
+01:05:19.990 --> 01:05:23.269
+Õpetaja: Ebcs. Mis iganes konsooli, saan seda printida ka.
+
+592
+01:05:23.847 --> 01:05:30.970
+Õpetaja: Võtan F. Üheksa tuli. Mingi niukene. Imelik asi. Ebcs Pank student, üks, kaks, Kolm saate. Ma lihtsalt aru
+
+593
+01:05:32.528 --> 01:05:46.429
+Õpetaja: nüüd, mida veel on vaja. Nagu teada on see, et jaavas tõesti ongi olemas. Nagu mingisugused meetodid, mis kuuluvad sellele objektile. Ega tema ei tea. Nagu see objektil võib olla first name ja last name sees. Selle objektil võib olla hoopis mingid muud väljad sees.
+
+594
+01:05:46.904 --> 01:05:56.380
+Õpetaja: See on lihtsalt kõige geneerilisem. Niiöelda tõlgendus ühest teavaklassist ee koos selle klassi sisu tõlgendamise hekkoodiks ja lihtsalt nagu tema viitamine, kus sa asud,
+
+595
+01:05:56.843 --> 01:06:03.140
+Õpetaja: Aga nüüd on näiteks see, et. Aga mis siis, kui mina tahaksin, et siin student is, kus on nagu need kolm väärtust First name ja last Name,
+
+596
+01:06:03.863 --> 01:06:12.369
+Õpetaja: et iga kord kui mina panen. Näiteks ma teen nüüd niimoodi. Ma võtan korra selle siit ära. Ma panen Kohe selle student objekti taustal. Ma panen siia konsoli Print I,
+
+597
+01:06:13.038 --> 01:06:24.400
+Õpetaja: Mida taustal toimub. On see et ta üritab teha seda nüüd stringiks, sellepärast Konsool suudab ainult Stringi kujul informatsiooni konsooli panna, et taustal. Ta üritab ise vaiklemisi kohe käivitada meetod.
+
+598
+01:06:24.820 --> 01:06:26.710
+Õpetaja: Aga see Hall siin näitab, et kuule,
+
+599
+01:06:27.565 --> 01:06:36.880
+Õpetaja: et ta niikuinii taustal kutsutab selle meetodi välja. Mina tahaksin näiteks mingit objekti võrrelda omavahel. Näiteks, kas on sama sisuga,
+
+600
+01:06:37.272 --> 01:06:45.759
+Õpetaja: kui ma tahan mingit lihtsalt võrdlust teha, et kui ma vaatan. Ee, muidu ta vaatab neid Ee, mälukoha viiteid. Vaata, et kus sina asud ja kus tema asub. Vaata, kas sul on üks sama objekt.
+
+601
+01:06:46.269 --> 01:06:51.190
+Õpetaja: No kui ma tahaksin nagu põhimõtteliselt idee järgi, justkui sisuliselt vaadata, et kas nad on samaväärse infoga,
+
+602
+01:06:51.846 --> 01:06:56.420
+Õpetaja: Siis kui süsteem saab sellest asjast aru. Ainult niimoodi. Kui Ma käivitan praegu selle,
+
+603
+01:06:58.665 --> 01:07:03.549
+Õpetaja: on mingisugune niisugune asi, siis ta ei ole eriti esiteks Nagu kasutajale. Mitte mingi miiningfull asi.
+
+604
+01:07:04.777 --> 01:07:11.439
+Õpetaja: Pluss. Ee, noh, päris päriselt. Meil on veel vaja vaadata niukest meetodit nagu Equest. Ma ei tea, kas See tuleb ka objektist või mitte.
+
+605
+01:07:12.495 --> 01:07:18.879
+Õpetaja: Ee, peast. Jah, parajast võib vaadata. Põhiline point on see, et et minul oleks tegelikult väga hea,
+
+606
+01:07:20.976 --> 01:07:30.569
+Õpetaja: kui Kõik need meetodid, mis on objektiklassis või vähemalt meetodid, mis mind huvitavad, saavad nüüd selle student klassi mõttes nagu tähendusrikka tõlgenduse,
+
+607
+01:07:31.315 --> 01:07:38.850
+Õpetaja: mis siin on on alt Incert. Genereerime too string meetodi, mis kirjutab üle.
+
+608
+01:07:39.431 --> 01:07:44.890
+Õpetaja: Või siis nagu võib mõelda, et läheb käiku selle objektid uuste ringmeetodi asemel vaid on? Entrid
+
+609
+01:07:45.462 --> 01:07:51.800
+Õpetaja: küsib, et kas sina tahad. Kuidas sa tahad sellest objektist saada? Nagu teksti kujulist väljendust,
+
+610
+01:07:52.259 --> 01:07:58.840
+Õpetaja: Mis siin sees on, Kas kõikide väljade kohta First name I kohta, kohta, et kui ma ütlen nagu. Et. Hei,
+
+611
+01:07:59.237 --> 01:08:04.410
+Õpetaja: vali kõik, et siin on ka veel Niukene, väikene asi, et Insert at Override Kohe räägime sellest ka.
+
+612
+01:08:07.250 --> 01:08:11.810
+Õpetaja: Siis, mis tema teeb? Nüüd on ütleb seda. Vaata, et hei, minu
+
+613
+01:08:12.774 --> 01:08:14.909
+Õpetaja: on olemas niisugune meetod nagu Too String.
+
+614
+01:08:15.649 --> 01:08:22.040
+Õpetaja: Kui ma praegu siia klikin, siis vaatan, kuhu me satume. Me satume objektiklassi meetodile. Vastab tõele.
+
+615
+01:08:22.756 --> 01:08:37.409
+Õpetaja: Siin öeldakse et Kuule, mina, see on lihtsalt ainult kompilaatoril. See ei ole otseselt kohustuslik, Aga tegelikult naisto Hea, Mis alati võiks olla. See lihtsalt ütleb kompilaatorile Kuule, ole lihtsalt Ekstra teadlik, et. Ee, Jah, minu meetod.
+
+616
+01:08:37.995 --> 01:08:46.499
+Õpetaja: Aga kuna see on siin ka defineeritud, siis käiku läheb student objekti puhul Alati see meetod, mitte See meetod
+
+617
+01:08:47.033 --> 01:08:50.849
+Õpetaja: Näed, siin on break Point on. Ma panen siia ka Break Point I,
+
+618
+01:08:51.562 --> 01:08:58.450
+Õpetaja: et kui mina nüüd hakkan seda, ee, siis kuidas Tema teeb. On see, et ta tagas tast ring.
+
+619
+01:08:59.253 --> 01:09:03.090
+Õpetaja: Ütle, student on selle klassi nimi. Pane siia loogilised sulud.
+
+620
+01:09:03.656 --> 01:09:06.950
+Õpetaja: Siis ütle, Age võrdub ja Võta age seest väärtus.
+
+621
+01:09:07.415 --> 01:09:15.939
+Õpetaja: Siis pane koma, tühik. Lääsname mõrdub. Siis Võta lääs. Name. Väärtus. Saate aru, et ta paneb kokku ühe Stringi rea vahetused ka siin veel.
+
+622
+01:09:16.845 --> 01:09:19.129
+Õpetaja: Kui ma nüüd jooksutan selle sama asja uuesti.
+
+623
+01:09:22.306 --> 01:09:27.660
+Õpetaja: Ta tegi seda konsooli Ma teen ikka. Panen tee Pugeriga, et teeme Selle objekti student.
+
+624
+01:09:28.694 --> 01:09:38.050
+Õpetaja: Vaatame, kui ta hakkab nüüd seda studentit printima, käivitub taustalt uus dring meetod. Kui ma võtan F kaheksa, mind ma seekord ei sattunud sinna java
+
+625
+01:09:38.906 --> 01:09:52.079
+Õpetaja: ringi ei satu, vaid hoopis käivitub see meetod, mis kirjutab selle meetodi üle, Öeldakse, niimoodi, et ta kirjutab Overrights Override, Sõida tast üle. Mis ta nüüd hakkab tegema. Ta hakkab, et siit saad tast ringi
+
+626
+01:09:52.651 --> 01:09:56.849
+Õpetaja: ja võtad sellisest ringi. See on lihtsalt reavahetus ja see väärtus.
+
+627
+01:09:57.510 --> 01:10:00.010
+Õpetaja: Mina võtan kogu selle sisu
+
+628
+01:10:00.666 --> 01:10:07.599
+Õpetaja: ja panen selle kalkulaatorisse ja pean panema veel. Ee, ei peagi rohkem, et vaatame, milleks see nagu Justkui peaks rehkenduma,
+
+629
+01:10:08.483 --> 01:10:11.800
+Õpetaja: siis tema rehkendub niisuguseks. Osaks on null.
+
+630
+01:10:12.518 --> 01:10:21.280
+Õpetaja: Ma paneks kohe siia otsa. Pluss korra Vist on see autotöökaas ja hallo kuidas ära panna. Helistan tagasi.
+
+631
+01:10:21.714 --> 01:10:28.100
+Õpetaja: Ee, kui mina panen siia. Näiteks veel Ee First Name võrdub.
+
+632
+01:10:30.912 --> 01:10:32.480
+Õpetaja: Panen siia tühike panen.
+
+633
+01:10:33.427 --> 01:10:38.790
+Õpetaja: Viitan sellisele muuta nagu last Name Search Name Milleks see rehkenduks?
+
+634
+01:10:39.803 --> 01:10:47.020
+Õpetaja: Student Age null, First Name. Saate aru? See on lihtsalt string, onju? Ja tema paneb seda lihtsalt ise Suht hästi kokku. On ju,
+
+635
+01:10:47.491 --> 01:10:49.530
+Õpetaja: et kui mina nüüd lähen järgmisele reale,
+
+636
+01:10:50.310 --> 01:10:51.930
+Õpetaja: siis vaatame, mis selle Salti tuli.
+
+637
+01:10:53.597 --> 01:11:07.220
+Õpetaja: Saate aru selles mõttes ega ei saa kirjutada universaalselt. Ära vaata, et et tee objekt stringiks kuidagi universaalselt universaalne viis on ainult see, et
+
+638
+01:11:07.793 --> 01:11:13.560
+Õpetaja: kus sa asud, mis failiga on tegemist ja kogu sisu. Ee, hashkoodina.
+
+639
+01:11:14.209 --> 01:11:23.120
+Õpetaja: Ee, lihtsalt nagu representib andmeid, Ta tuleb iga kord sama Hash Cold põhimõtteliselt sama sisu peale Nii järjekorras
+
+640
+01:11:24.546 --> 01:11:25.159
+Õpetaja: Laste infot.
+
+641
+01:11:26.283 --> 01:11:37.589
+Õpetaja: Ee, ma arvan, et see sõltus sellest, kui ma vajutasin seda asja, et ja ee, panin, et teemule, et ma arvan, et Siin mängis rolli See järjekord. Kuidas,
+
+642
+01:11:38.055 --> 01:11:43.969
+Õpetaja: et kui ma panen näiteks siin last, name, first, name, age Siis äkki ta tuleb last Name first, name.
+
+643
+01:11:44.812 --> 01:11:48.139
+Õpetaja: Aga nüüd on jällegi. Ega seda asja ei pea ise tegema.
+
+644
+01:11:49.014 --> 01:11:50.349
+Õpetaja: Palun Väga Lombok.
+
+645
+01:11:51.886 --> 01:11:58.820
+Õpetaja: Uus drink teeb ise meile. Selle meetodi ka umbes Mitte umbes täpselt sama ringiga.
+
+646
+01:12:00.176 --> 01:12:05.220
+Õpetaja: Nüüd, mis meil huvitaks oleks see. Vaata, et ee, kui mina tahaks teha niukest asja,
+
+647
+01:12:08.075 --> 01:12:09.670
+Õpetaja: kui mina tahaks teha Student üks.
+
+648
+01:12:12.722 --> 01:12:19.740
+Õpetaja: Ma teen New student. Ma panen siia uuesti. Rain tüür.
+
+649
+01:12:23.332 --> 01:12:25.449
+Õpetaja: Ma panen tema nimeks Objekti. Nimeks
+
+650
+01:12:29.670 --> 01:12:30.490
+Õpetaja: Student Kaks,
+
+651
+01:12:32.397 --> 01:12:45.400
+Õpetaja: nüüd. Minul on vaja Vaata niukest asja. Vaata, et kuidas mina, nagu kindlalt tean, kas üks on võrdne teisega. Esiteks, tegemist on objektiga. Vaata, et kui ma teeksin If Lause, Siis ma ei taha teha niukest asja, sest üks võrdub võrdub
+
+652
+01:12:45.953 --> 01:12:51.900
+Õpetaja: student, kaks objektidega jaavas nii ei käi. Objekte võrreldatakse meetodiga Equals,
+
+653
+01:12:52.375 --> 01:12:54.579
+Õpetaja: et ma saaks öelda, kas student Üks
+
+654
+01:12:58.005 --> 01:13:00.799
+Õpetaja: nad tagastab. Võtab sisse mingisuguse objekti.
+
+655
+01:13:01.822 --> 01:13:04.719
+Õpetaja: Kas student? Üks võrdub student Kahega on küsimus.
+
+656
+01:13:07.846 --> 01:13:17.370
+Õpetaja: Noh, võime korra proovida. Vaata, panen Jah, Elsa, Panen.
+
+657
+01:13:18.605 --> 01:13:23.389
+Õpetaja: Ei, noh, väga ei.
+
+658
+01:13:24.055 --> 01:13:25.910
+Õpetaja: No Mis te arvate, kumba ta kukub?
+
+659
+01:13:30.227 --> 01:13:38.950
+Õpetaja: No ma isegi peast ei tea, ma Arvan, et ta võiks tegelikult jõuda samale tulemusele. Aga vaatame, tuli. Ei,
+
+660
+01:13:41.774 --> 01:13:45.329
+Õpetaja: siiski see meetod. Uus ring tuleb neil erinev.
+
+661
+01:13:46.607 --> 01:13:47.830
+Õpetaja: Praegult käivitub see.
+
+662
+01:13:48.671 --> 01:13:51.659
+Õpetaja: Aa, Oota korra, aga mul on juba uus drink olemas ju.
+
+663
+01:13:56.785 --> 01:13:57.799
+Õpetaja: Ee
+
+664
+01:13:58.539 --> 01:14:16.169
+Õpetaja: Aa, okei, ee, loomulikult. Praegult ei käivitud uus ringmeetod, vaid on ju käivitud Meetod to Equest on nii? Kui ma lähen selle peale, vaata siis. Ta käivitab selle meetodi, mis on ee niiöelda Java spide default ja Tema vaatab, kas üks objekti mäluviide viitab teisele. Vaata, kas nüüd on üks sama objekt,
+
+665
+01:14:16.548 --> 01:14:25.500
+Õpetaja: Aga meie tegelikult ikkagi Tahame vaadata selles võtmes, et Kas Nad on võrdväärsed? Siis ongi see. Vaata, et meil on vaja samamoodi. Nagu see Tuustring Oli meil siin eraldi.
+
+666
+01:14:26.374 --> 01:14:32.249
+Õpetaja: Meil on vaja samamoodi teha meetodile Equals, Equals ja käivad käsikäes.
+
+667
+01:14:32.891 --> 01:14:44.640
+Õpetaja: Valin siit kõik variandid, mis on kõik väljad, mida iganes Siin ta vaatab niimoodi, et anna üks objekt sisse ja vaata nende väärtuste vastu. Siin on mingid võrdlused. Vaata, objekt.
+
+668
+01:14:45.018 --> 01:14:52.660
+Õpetaja: Kas nad on Samad Siin on See kood on keeruline, aga Me vaatame sissetulenud objekti vastu kõiki neid väljasid, mis mina ära nagu defineerisin.
+
+669
+01:14:53.314 --> 01:14:58.210
+Õpetaja: Kui ma nüüd selle käivitaks uuesti, siis peaks tulema siia, Jah,
+
+670
+01:15:00.820 --> 01:15:14.609
+Õpetaja: et Siin on nagu mõningad, asjad, mida on vaja teada. Aga jällegi, meil ei ole tegelikult väga palju vaja teada sellepärast, et näiteks nii, Nagu on siin. Two. String On ka ta. Teeb kaks tükki asja korraga ära need. On ka enda vajalikud
+
+671
+01:15:19.031 --> 01:15:22.970
+Õpetaja: nad. Ütlevad juba vaata. Need See hash Code meetod ja Equals on olemas. Vaata
+
+672
+01:15:24.107 --> 01:15:26.960
+Õpetaja: tajunnis. Vaata, sa tahad kaks korda nagu seda defineerida.
+
+673
+01:15:27.798 --> 01:15:31.160
+Õpetaja: No ja kui kui vaadata üldse Või vaata, mis äpp data üldse tegi.
+
+674
+01:15:32.168 --> 01:15:34.720
+Õpetaja: Kas ta tegi ka neid meetodeid või mitte,
+
+675
+01:15:36.022 --> 01:15:53.650
+Õpetaja: et vaikimisi. Kui paned Kui me toimetame nende andmeobjektidega, Siis tegelikult me ei peagi ise nagu väga palju seal toimetama Me teeme, paneme tata peale ja ja Põhimõtteliselt on olemas Ee, ja on olemas tuus representatsioon ka siin, onju
+
+676
+01:15:54.349 --> 01:16:11.399
+Õpetaja: Ja on olemas. Ee, selle järgi Ta teeb. Siis nagu päris niiöelda koodilahenduse, kus vaadatakse kas kahe objekti nagu väljad on nagu sama ja First Name on sama ja nii edasi. Ja kõik tehakse põhimõtteliselt meie eest ära. No ma ei tea, Mul on niuke, tunne, et järgmine kord, kui Indoneesiasse lähen, siis ma lähen igaljuhul Lombokile.
+
+677
+01:16:12.010 --> 01:16:12.930
+Õpetaja: Aa, Lavet
+
+678
+01:16:21.410 --> 01:16:24.139
+Õpetaja: tegelikult kordab peab.
+
+679
+01:16:25.286 --> 01:16:29.559
+Õpetaja: Proovime, Ee, vaatame, mida ta kindlalt teeb. Ta teeb uut ringmeetodi. Onju,
+
+680
+01:16:30.099 --> 01:16:37.759
+Õpetaja: et kui mina nagu tulen siia student Classi ja ütlen, et noh, justkui oleks ise kirjutanud, onju Ütlen. Et tee, mulle et uus meetod.
+
+681
+01:16:40.580 --> 01:16:55.339
+Õpetaja: Ta ütleb To string meetod. No vahet pole. Las siis on. Vaatame, mis siis, nagu sinna Ma teen mingisuguse triki siia. Nagu mis meil peale jääb, onju? Kui ma panen nüüd selle käima ja me läheme, vaatame seda klassi, mis on siis nagu Bike koodis olemas.
+
+682
+01:16:56.011 --> 01:16:58.629
+Õpetaja: Ee, siis, ee. Ma nagu peast seda vastust ei teaks.
+
+683
+01:17:01.451 --> 01:17:03.379
+Õpetaja: Ta võtab selle meetodi, mis on
+
+684
+01:17:04.777 --> 01:17:07.039
+Õpetaja: minu kirjutatud Ja Library oma ignoreerib
+
+685
+01:17:09.295 --> 01:17:12.000
+Õpetaja: Kahte meetodit. Ei ole siin tuust ringi. Seda ei saa olla.
+
+686
+01:17:12.511 --> 01:17:25.109
+Õpetaja: Ta ei saaks midagi hävitada. No vaadake ka, nüüd, Me näeme. Vaata siin, kui korralikult vaadata. See on nüüd Lombok, Mis on ülimalt ära optimeeritud. Veakindlaks tehtud. Miljonid triljonid kasutavad seda Ee Lomboket
+
+687
+01:17:25.836 --> 01:17:35.750
+Õpetaja: Ma Ei, kujuta seda keegi enam peast. Noh, jaava puhul käsitsi teeks, kui tal on springpuud ja see, see Lomboke ei ole kuidagi seotud Springbuudiga
+
+688
+01:17:36.341 --> 01:17:39.999
+Õpetaja: ka. Vanilja ajavaga saab seda panna. Tõmba sisse ja kasuta. Vaata, No probleem.
+
+689
+01:17:41.094 --> 01:17:51.140
+Õpetaja: Vaadake, kui keeruline on see meetod, mida kõike vaadatakse mingid Hullud If Id. Värgid iga nurga pealt. Põhimõtteliselt vaadatakse, et lihtsalt returnide truu ainult ühel tingimustel. Teistel juhtudel on kõik.
+
+690
+01:17:52.582 --> 01:18:00.010
+Õpetaja: Noh, ise vist ei viitsiks kirjutada. Nii põhjalikku asja on ju Isegi intellige. Ei pannud niisuguse põhjalikkuse. Aga nagu Lombok paneb, on ju
+
+691
+01:18:01.248 --> 01:18:04.479
+Õpetaja: ja nagu näha, siis on see ka vaata, et see, mis on. Ee,
+
+692
+01:18:05.010 --> 01:18:10.539
+Õpetaja: see, mis on ise kirjutatud versus Lombok, Et siis ta on ära disainitud niimoodi, et mis Läheb nii öelda ka enda nagu topelt,
+
+693
+01:18:12.374 --> 01:18:16.630
+Õpetaja: Siis ta arvestab seda. Mis on ikka koodi lähtekoodis olemas? Endas jääb see peale.
+
+694
+01:18:23.179 --> 01:18:26.779
+Õpetaja: Ei, see oli Intelligence osas. See on projekti osa
+
+695
+01:18:32.860 --> 01:18:40.920
+Õpetaja: see siin, mis on meie. Ma panen korra kõik kokku. Vaata, mis on siis meie
+
+696
+01:18:41.540 --> 01:18:45.340
+Õpetaja: siin projektis olemas Vaadake, Backendi taustal on kohe Niukene Fail
+
+697
+01:18:46.028 --> 01:18:59.289
+Õpetaja: Niipea, kui projekt mäletad. Alguses oli see probleem, et vaata, Siin pidi tulema Niukene asi mingi kui sa selle nagu maha magasid? Nurgast vaadata. Siis pidi korra uuesti midagi kustutama tegema. Vaata, see oligi see, et,
+
+698
+01:18:59.662 --> 01:19:10.849
+Õpetaja: ee, ta pidi tundma Ära Vaata, et siin on, ee, niiöelda definitsioon. Ja ta siis arvestas, et ta refresh Ib ja laeb selle kogu projekti ehitab üles, et on Kasutusel
+
+699
+01:19:11.626 --> 01:19:16.530
+Õpetaja: Intelligence. Ei, seda ei tee, pai Raisk.
+
+700
+01:19:17.916 --> 01:19:19.490
+Õpetaja: Arvutisse otsustada.
+
+701
+01:19:21.428 --> 01:19:27.359
+Õpetaja: Ee, see ei tule kummagiga kaasa.
+
+702
+01:19:28.472 --> 01:19:33.829
+Õpetaja: Ei tule kummagagi kaasa. Need downloaditakse tegelikult ikkagi kuskilt päris serverist, kuskilt repositorist.
+
+703
+01:19:34.650 --> 01:19:44.549
+Õpetaja: Nii, Aga miks nad niiöelda downloaditakse või kes neid Download Ib on? Sellepärast et see konkreetselt Backendi projekt on Defineeritud kui projekt,
+
+704
+01:19:45.006 --> 01:19:54.830
+Õpetaja: et mis tahes server, nagu nad on juba üles ehitatud, nad näevad, et kui on Niukene Fail siis seda on võimalik käivitada. Vaata, kas elevant siin kõrval näete. Seda nupu refreshing
+
+705
+01:19:55.735 --> 01:19:56.240
+Õpetaja: üleval.
+
+706
+01:19:56.937 --> 01:20:09.270
+Õpetaja: See põhimõtteliselt ongi, et esimest korda, kui teie projekti laadisite, aitab nii palju Vaata ta nagu saab aru, et siin on sees, onju? Ta ütleb, kas sa tahad laadida, palun? Nagu
+
+707
+01:20:09.676 --> 01:20:18.410
+Õpetaja: siis seal taustal. Intellige käsu. Real Ta käivitab mingi käsu Või Ma ei tea load või mida iganes, Run Bu Mida iganes
+
+708
+01:20:18.814 --> 01:20:24.430
+Õpetaja: taustal intellis ja tõmbab selle käima, vaata, onju Ja sisse on kirjutatud. Ole nii nunnu.
+
+709
+01:20:25.014 --> 01:20:30.950
+Õpetaja: Tõmba alla. Kogu see staff, mis on dependent, Siis bloki Vahel näed seda siin.
+
+710
+01:20:32.051 --> 01:20:35.840
+Õpetaja: Kõik need asjad tõmmatakse välja. Kust need download itakse?
+
+711
+01:20:38.070 --> 01:20:38.490
+Õpetaja: Jah,
+
+712
+01:20:39.074 --> 01:20:51.800
+Õpetaja: need, Kust need tõmmatakse, on konkreetne. Kui seda hakata kuidagi lahti pookima siis taustal ta läheb kuskile serverisse ja tõmbab õiged asjad alla. Kuidas ta teab, mida tuleb alla tõmmata. On see osa siin?
+
+713
+01:20:54.049 --> 01:20:57.740
+Õpetaja: Ma lähen otsin näiteks Ee Spring Pood Ee, starter V.
+
+714
+01:20:58.860 --> 01:21:03.060
+Õpetaja: Lähen otsin näiteks siit sellest, mis on Niukene? Visuaalne pool.
+
+715
+01:21:04.486 --> 01:21:09.339
+Õpetaja: Noh, ei taha, et ee. Robot saaks siia tulla, Tuli see Sama asi.
+
+716
+01:21:10.132 --> 01:21:11.379
+Õpetaja: Ma teen selle lahti.
+
+717
+01:21:15.065 --> 01:21:16.070
+Õpetaja: Seda tahtsin avada.
+
+718
+01:21:17.081 --> 01:21:21.600
+Õpetaja: Ma tulen vaatan, et, ee, Kõige uuem versioon. Noh, mingi stabiilne versioon, Neli, üks, üks,
+
+719
+01:21:22.437 --> 01:21:32.590
+Õpetaja: tulen. Ütlen, et. Ee. Kas mina kasutan Mavenit? See on Niukene Definitsioon. On See rida siin
+
+720
+01:21:32.999 --> 01:21:37.240
+Õpetaja: noh, meil on praegu öeldud, et meil on Ilma versioonita, aga ta võtab selle versiooni siit ülevalt.
+
+721
+01:21:39.311 --> 01:21:41.640
+Õpetaja: No see pole. See pole tähtis. On hästi mingi pisike detail
+
+722
+01:21:43.024 --> 01:21:46.259
+Õpetaja: Põhiline, Mis Te põhiline, Mis teie peate teadma on see, et
+
+723
+01:21:46.939 --> 01:21:54.509
+Õpetaja: miks asjad siin on meil nagu olemas. Miks on olemas siin See Lombok on tänu sellele reale siin. Või Noh, ütleme nendele ridadele,
+
+724
+01:21:55.684 --> 01:21:59.639
+Õpetaja: miks meil on sväger küljes? Tänu sellele, et siin, on niuke asi küljes,
+
+725
+01:22:03.450 --> 01:22:03.860
+Õpetaja: nii
+
+726
+01:22:06.458 --> 01:22:15.740
+Õpetaja: me kogu aeg rääkisime praegu siin. Ee, me rääkisime siin kogu aeg nagu klass. Kui Ee, klass. Kui andmeobjekt.
+
+727
+01:22:18.818 --> 01:22:19.930
+Õpetaja: Käime nüüd pausil ära
+
+728
+01:22:20.540 --> 01:22:29.550
+Õpetaja: ja siis vaatame selle variandi. Ee, kus me mõtleme, kui klass, kus sees mitte ei käi, andmed meil, vaid kus käivad meetodid, mis midagi teevad
+
+729
+01:22:30.042 --> 01:22:46.130
+Õpetaja: kui eesmärkide järgi jagada Kaheks suures pildis, mis me kirjutame ja avas neid koodifaile kuskil koodifaili sees. Hoiame tegevusi kuskil koodi sees Hoiame siis niiöelda Malli niiöelda andmeobjektist, Millest saab kuskil? Ma ei tea triljon objekti teha. Kui raud välja veab,
+
+730
+01:22:49.960 --> 01:22:54.119
+Õpetaja: teeme gaasi kümme sest, et läheme siis jälle veidi varem
+
+731
+01:22:54.648 --> 01:22:56.139
+Õpetaja: ja Veidi varem võib. Palju Varem.
+
