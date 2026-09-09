@@ -16,6 +16,8 @@ public class LoginService {
 
     public void loginUser(LoginRequest loginRequest) {
 
+        User user = new User();
+
         Optional<User> optionalUser = userRepository.findUserBy(loginRequest.getUsername(), loginRequest.getPassword(), "A");
 
     }
