@@ -1,0 +1,5242 @@
+WEBVTT
+
+1
+00:00:02.560 --> 00:00:03.880
+Õpetaja: Päeva teine video.
+
+2
+00:00:04.585 --> 00:00:05.080
+Õpetaja: Nii,
+
+3
+00:00:11.747 --> 00:00:15.249
+Õpetaja: ühesõnaga jõudsime siis, ee, nii kaugele, et, ee.
+
+4
+00:00:16.468 --> 00:00:18.740
+Õpetaja: Näeme, et me oleme võimelised seda
+
+5
+00:00:19.476 --> 00:00:25.439
+Õpetaja: Pacemudelit niiöelda välja kutsuma ja siis talle ka mingisugust uut sisu niiöelda saama anda.
+
+6
+00:00:26.863 --> 00:00:32.119
+Õpetaja: Nüüd, Aa, see on tegelikult saaks olla nüüd kaks lähenemist,
+
+7
+00:00:34.485 --> 00:00:38.940
+Õpetaja: et Ee, Seal, Kus meil seda mudelit on niiöelda vaja kasutada.
+
+8
+00:00:40.019 --> 00:00:41.519
+Õpetaja: Kui me tuleme vaatame sisse.
+
+9
+00:00:43.088 --> 00:00:52.460
+Õpetaja: Siis me saaksimegi teha, niimoodi, et me kutsume välja selle Ja Siis niimoodi anname koodi tasandil otse nagu selle sisu.
+
+10
+00:00:56.083 --> 00:01:01.170
+Õpetaja: Mm, sellele Base Madalile Ja et see kood jääkski, siis niiöelda vaatesse sellisel kujul
+
+11
+00:01:01.862 --> 00:01:17.000
+Õpetaja: Aga võibolla parem lahendus ja mõistlikum lahendus oleks ikkagi see et, meil on iga konkreetne modal on, ikka mingi temaatiline modal ja täidab mingit konkreetset ülesannet, et sellest samast asjast endast võiks teha Hoopis komponendi
+
+12
+00:01:19.550 --> 00:01:23.690
+Õpetaja: ja siis siia sellesse vaatesse.
+
+13
+00:01:24.368 --> 00:01:36.099
+Õpetaja: Selle ei jääks nagu sellest midagi, alles vaid Siis uusloodav komponent, et kui vaadata ka taask. Ma ei tea, kas taaskis siin oli kirjas või mitte. Kohe. Vaatame
+
+14
+00:01:39.835 --> 00:01:44.390
+Õpetaja: siin. Ta räägib niisugust asja, et võiks olla Niukene madal nagu location info modal
+
+15
+00:01:45.297 --> 00:01:46.839
+Õpetaja: Ehk siis mõte on see, et.
+
+16
+00:01:47.352 --> 00:01:52.190
+Õpetaja: Ja ei tule siia Atm, S View Le Ja Siis näed siin mingi mingisugune kood.
+
+17
+00:01:54.002 --> 00:01:57.889
+Õpetaja: Vaid näeksin lihtsalt Location info Madal.
+
+18
+00:01:58.502 --> 00:01:59.469
+Õpetaja: Saate mõttest aru.
+
+19
+00:02:00.179 --> 00:02:14.739
+Õpetaja: Meil tekib siis selles mõttes Ee, selline jälle, Onju, et hakkab olema, ee. Niiöelda meie pärand loodav Location info modal saab olema Child või Pacemodal saab olema,
+
+20
+00:02:15.503 --> 00:02:18.229
+Õpetaja: et, ee, see oleks nagu Märksa puhtam lahendus, et
+
+21
+00:02:18.858 --> 00:02:35.300
+Õpetaja: kui ka ütleme, keegi arendaja tuleb siia midagi arendama midagi tegema, siis ta saab kohe pildi ette, et ee, mis Asju siin võib näha, onju? Ja tal ei ole võibolla vaja absoluutselt mitte midagi teha. Selle location info mudeli osas tuleb üldse midagi muud vaatama. Ja siis ongi see, et
+
+22
+00:02:36.000 --> 00:02:40.250
+Õpetaja: ta lihtsalt, ee, näeb, et siin on info madal. See teda ei huvitada. Vaata mingeid muid asju
+
+23
+00:02:40.984 --> 00:02:42.409
+Õpetaja: ja See on jälle eraldatud.
+
+24
+00:02:43.612 --> 00:02:48.590
+Õpetaja: Ja siis võikski tekkida siukene süsteem. Vaata, et kõik need madalid on eraldi.
+
+25
+00:02:49.285 --> 00:02:55.989
+Õpetaja: Ee, niiöelda failid eraldi, Ee, niiöelda ee, komponendid.
+
+26
+00:02:57.026 --> 00:03:00.179
+Õpetaja: Ja kui kunagi on vaja midagi muuta ühes või teises madalis.
+
+27
+00:03:01.054 --> 00:03:03.300
+Õpetaja: Väga minu otse vastav madal ülesse.
+
+28
+00:03:04.232 --> 00:03:05.869
+Õpetaja: Ma ei tea, seal mingid muudatused,
+
+29
+00:03:07.873 --> 00:03:11.100
+Õpetaja: Aga tegelikult saabki ju sisuliselt kasutada seda sama.
+
+30
+00:03:13.760 --> 00:03:16.399
+Õpetaja: Seda sama asja saabki kasutada. Põhjana
+
+31
+00:03:18.675 --> 00:03:31.550
+Õpetaja: mm. Võibolla enne kui seda, kui niimoodi tarkus targalt seda asja teha, et ee, ennem kui see asi niimoodi ära Ee, niiöelda ekstraktida ja teha komponent,
+
+32
+00:03:31.932 --> 00:03:39.830
+Õpetaja: siis praegult. On Meil siin. Noh, see sisu vajab ka loomulikult muutmist, onju, et see selles mõttes me ei tee. Siin antikooni ja mingi. Ja kõik. See on ju,
+
+33
+00:03:40.480 --> 00:03:48.029
+Õpetaja: et meil ei Ole nagu mõistlik mm. Seda, niimoodi teha ee. Et, ee
+
+34
+00:03:48.715 --> 00:03:52.080
+Õpetaja: sisu muudame ka varsti ära. Vastavalt siis sellele mis, vaja on
+
+35
+00:03:53.675 --> 00:03:56.920
+Õpetaja: aga. Praegult on siin siis konkreetselt üks osa,
+
+36
+00:03:58.053 --> 00:04:01.390
+Õpetaja: mis on staatiliselt ära määratud. Ja mis läheb sellele mudalile
+
+37
+00:04:02.450 --> 00:04:06.200
+Õpetaja: kaasa, On see eas, open ja staatiliselt on ta Väärtus true.
+
+38
+00:04:07.912 --> 00:04:11.139
+Õpetaja: Mina pakun, et mis on See punane on Location form.
+
+39
+00:04:13.677 --> 00:04:14.780
+Õpetaja: Korra Kasutasin siin.
+
+40
+00:04:15.833 --> 00:04:24.249
+Õpetaja: Võtan ära. Osutan, et Ee, mõte oli see, et Ee, teeks niimoodi, et see asi siis ka reageerib mingisuguse
+
+41
+00:04:24.869 --> 00:04:30.259
+Õpetaja: muutuja pealt. Mis on siin Atm S vihus, sest et meil niikuinii on vaja mingit niukest asja Kasutada.
+
+42
+00:04:31.040 --> 00:04:32.000
+Õpetaja: Ehk siis, ee.
+
+43
+00:04:33.457 --> 00:04:35.749
+Õpetaja: Selle asja nimi tuleb Location Info modal.
+
+44
+00:04:36.634 --> 00:04:39.480
+Õpetaja: Ma pakun, et, ee. Teeme siis data bloki õue muuta.
+
+45
+00:04:41.370 --> 00:04:46.300
+Õpetaja: Temal tuleb niuke üherealine muutuja. Siis ma paneks võibolla see kuskile siia.
+
+46
+00:04:46.942 --> 00:04:52.040
+Õpetaja: Vahest ikkagi pigem ülesse poole, kuna templeid ist tasub siin pigem kuskil ülevalpool
+
+47
+00:04:53.568 --> 00:05:00.309
+Õpetaja: ja ma ei paneks. Ee, selle kuigi selles Base modelis on eas open.
+
+48
+00:05:00.890 --> 00:05:06.720
+Õpetaja: Ja ma paneks selle muute nimeks hoopis Location info modal Is open
+
+49
+00:05:07.921 --> 00:05:11.009
+Õpetaja: midagi taolist, et oleks natukene rohkem niiöelda,
+
+50
+00:05:12.070 --> 00:05:20.280
+Õpetaja: et, Ee, teame siis sellise asja on ise. Jah ütleme Location info madal.
+
+51
+00:05:22.333 --> 00:05:28.320
+Õpetaja: Siis open, Noh, mis tema väike väärtus võiks olla?
+
+52
+00:05:31.020 --> 00:05:35.100
+Õpetaja: No ikka, False. Muidugi, et ega seda mudalit kohe ei ole vaja näha,
+
+53
+00:05:36.122 --> 00:05:44.790
+Õpetaja: aga nagu. Ikka, et Kuskil scriptis. Miks seda on vaja kuskil Scriptis Ju me mingil hetkel ju tahame seda, et kasutajale
+
+54
+00:05:45.328 --> 00:05:49.510
+Õpetaja: kuvada, siis seda mudalit ja mitte midagi ei ole muutunud siin meie,
+
+55
+00:05:49.965 --> 00:05:56.149
+Õpetaja: ee, niiöelda lähenemises selles osas, et kuidas me manipuleerime seda, et mida on näha ja mida ei ole näha,
+
+56
+00:05:56.724 --> 00:05:58.459
+Õpetaja: Ei, programmeeri me otse
+
+57
+00:05:59.721 --> 00:06:11.500
+Õpetaja: ee vastu. Ee, Html elemente. Ee, referentside abil. Näiteks, et me, ei katsu neid elemente ise, vaid ikka andmete pealt. Läheb Kogu, ee. Kogu niiöelda
+
+58
+00:06:12.820 --> 00:06:16.180
+Õpetaja: joonistamine. Niiöelda on automatiseeritud, et ikka see mõte.
+
+59
+00:06:16.680 --> 00:06:20.370
+Õpetaja: Miks meil on seda muutujat vaja? Meil varem või hiljem on seda modalit vaja lahti saada.
+
+60
+00:06:20.942 --> 00:06:24.270
+Õpetaja: Kuidas me kontrollime käitumist, Mida me näeme, mida me ei näe?
+
+61
+00:06:25.360 --> 00:06:30.010
+Õpetaja: Noh, ikka läbi selle ei tööta see muud moodi.
+
+62
+00:06:30.620 --> 00:06:38.250
+Õpetaja: Okei, ee, see on meil olemas? Ei jäägi midagi muud üle. Kui lihtsalt siis tulla siia, ee, base modalisse
+
+63
+00:06:38.789 --> 00:06:43.280
+Õpetaja: ja ei ütle niimoodi, et see väärtus tuleb enam eas open ist. Vaid see tuleb.
+
+64
+00:06:45.741 --> 00:06:48.949
+Õpetaja: No mis? Oli mingi location info modalis Open.
+
+65
+00:06:51.479 --> 00:07:02.370
+Õpetaja: Ja nüüd tema saab siin selle väärtuse poole truu ja Fools. Ja see siis niiöelda seda niiöelda mõjutab.
+
+66
+00:07:05.620 --> 00:07:10.570
+Õpetaja: No Nüüd võiks olla siis see, koht kus me ütleme, et Kuule, Madal.
+
+67
+00:07:11.543 --> 00:07:18.249
+Õpetaja: Teeme hoopis sinust uue komponendi alt. Enter, Näiteks
+
+68
+00:07:21.426 --> 00:07:26.180
+Õpetaja: ka seda sa ennem küsisidki. Vaata, kuidas see aken lahti tuleb või kuidas see menüü lahti tuleb. Kas sa mõtlesid seda
+
+69
+00:07:27.250 --> 00:07:32.389
+Õpetaja: Andrus Pirni Alati Alati Abstract Component
+
+70
+00:07:34.717 --> 00:07:40.920
+Õpetaja: noh, selle komponendi nimeks tuleb. Ee, see mis seal, ee, öeldi.
+
+71
+00:07:42.900 --> 00:07:47.690
+Õpetaja: Mhmh, okei. See on info madal.
+
+72
+00:07:49.304 --> 00:07:51.579
+Õpetaja: Ja nüüd ta tegi selle komponendi sellisel kujul.
+
+73
+00:07:52.525 --> 00:07:54.050
+Õpetaja: Ad kit to file. Loomulikult,
+
+74
+00:07:55.083 --> 00:08:03.559
+Õpetaja: et siia, Tuli Niukene props Location info mudeli. Aga see sisu jäi templetis. Ikka samaks, onju? Täpselt nii, nagu me selle ära ekstraktisime. Nii ta sinna läks,
+
+75
+00:08:04.112 --> 00:08:07.070
+Õpetaja: Antakse kaasa, Aga nüüd on siis meil
+
+76
+00:08:07.678 --> 00:08:10.670
+Õpetaja: võimalik seda kontrollida, et siit sellest
+
+77
+00:08:11.215 --> 00:08:16.110
+Õpetaja: päeva lõpuks iga võrku. Me tahame madalit lahti teha, Me ei saa seda teha siitkih ist
+
+78
+00:08:17.042 --> 00:08:21.109
+Õpetaja: Sest et need divid ja asjad, mida me tahame kasutajale näidata, on siin
+
+79
+00:08:21.940 --> 00:08:28.279
+Õpetaja: Childis Runchildis. Paneme nad järjekorda. Siin on ju Noh, et kõigepealt on pärand.
+
+80
+00:08:29.605 --> 00:08:32.049
+Õpetaja: Child Crunchild on nii?
+
+81
+00:08:34.424 --> 00:08:39.289
+Õpetaja: Kui tahaks juba vaadata, siis saab Ee, tegelikult, ee, ka siin Atms lehel vaadata, isegi Praegult
+
+82
+00:08:39.722 --> 00:08:42.620
+Õpetaja: seda mudalit ei ole näha. Ei peagi olema näha.
+
+83
+00:08:43.528 --> 00:08:47.580
+Õpetaja: Näitab Atms. Il on nihukene Child Nagu location Info Madal on
+
+84
+00:08:48.474 --> 00:08:50.750
+Õpetaja: minna veel, alla, Siis on tal paste model.
+
+85
+00:08:51.358 --> 00:08:57.119
+Õpetaja: Ja nüüd ongi see, et parentes on tatablokk, kus on väärtus, On nii?
+
+86
+00:08:57.937 --> 00:09:05.800
+Õpetaja: See voolab kõigepealt location info madalisse alla ropsina ja voolab omakorda mudalini välja.
+
+87
+00:09:07.089 --> 00:09:13.789
+Õpetaja: Noh, ma saan siin Props I ka muuta, aga see ei ole viisakas, onju et tatablokis saab Ainult väärtused selles mõttes niimoodi ise muuta.
+
+88
+00:09:14.572 --> 00:09:22.300
+Õpetaja: Meie teeksime seda loomulikult programmiliselt. Mitte läbi selle tools I, Aga mõttest saite aru, nii väga hea
+
+89
+00:09:23.830 --> 00:09:29.610
+Õpetaja: Nüüd võiks minna siis selle asja nagu, ee, päris poole peale.
+
+90
+00:09:34.706 --> 00:09:39.169
+Õpetaja: Mis on siis see, et, ee, see sisuline pool, et hetkel see
+
+91
+00:09:40.459 --> 00:09:43.739
+Õpetaja: sisuline Pool ei vasta. Nagu selle taski ootusele
+
+92
+00:09:44.607 --> 00:09:47.310
+Õpetaja: Taask ootab, et ee. Oleks mingi niukene asi.
+
+93
+00:09:50.854 --> 00:09:55.909
+Õpetaja: Aga meil hetkel on siin Praegu võib olla kaks
+
+94
+00:09:56.800 --> 00:09:58.689
+Õpetaja: Jah, nii jama on. Siin on ju,
+
+95
+00:09:59.335 --> 00:10:01.300
+Õpetaja: et. Noh, see asi tuleb siis korda teha.
+
+96
+00:10:01.873 --> 00:10:08.950
+Õpetaja: See oli ainult see, et me lihtsalt veits harjutasime, Eks esialgu need slotid täitsa nagu puhtaks. Kustutame ära kõik ebavajaliku.
+
+97
+00:10:14.576 --> 00:10:16.859
+Õpetaja: Ahah, ma nüüd, mäleta kuidas ma Pacemodalis
+
+98
+00:10:18.319 --> 00:10:24.069
+Õpetaja: aa, siis on ka see, et ta automaatselt. Kui me kustutame. Ta ei eemalda seda, et siin Kasutati
+
+99
+00:10:24.835 --> 00:10:29.269
+Õpetaja: tuleb see komponent. Saate ise ära kustutada ja siis saab selle impordi ka ära kustutada.
+
+100
+00:10:30.321 --> 00:10:33.120
+Õpetaja: Kuidas veel saab impordist lahti, Mis ei ole kasutusel?
+
+101
+00:10:36.689 --> 00:10:42.439
+Õpetaja: No kui te vajutate. I love optimising on Control alt E idents
+
+102
+00:10:43.560 --> 00:10:52.040
+Õpetaja: Ee, Reade Readevahetused asjad online. Format L võttis sealt mingi ridu vähemaks.
+
+103
+00:10:52.484 --> 00:10:54.130
+Õpetaja: No mida see o siis teeb?
+
+104
+00:10:55.288 --> 00:11:00.180
+Õpetaja: Control Aligho Optimized Imports mida ei ole kasutusel.
+
+105
+00:11:00.712 --> 00:11:04.330
+Õpetaja: Sa ei naera nii.
+
+106
+00:11:05.526 --> 00:11:12.929
+Õpetaja: Nüüd on meil see template täiesti tühi. Tegime siis siukse lahenduse, et sulge nupp on osa sellest modelist, Ta võib ka jääda
+
+107
+00:11:13.523 --> 00:11:17.469
+Õpetaja: korra. Peaks vaatama, kummale poole nuppi jääb. Muidugi, Aa, okei. Tal on slot I sees.
+
+108
+00:11:18.211 --> 00:11:26.479
+Õpetaja: Ee, meie lahendusest saaks tegelikult Ee, väga edukalt teha niimoodi, et see nupp on niiöelda ee, osa niiöelda sellest.
+
+109
+00:11:29.290 --> 00:11:33.360
+Õpetaja: Osa Niiöelda sellest ee mudalist, et igal pool kus saad, Midagi
+
+110
+00:11:34.376 --> 00:11:37.810
+Õpetaja: Ei tea kah. Kurat, see on Niukene. Nii ja naa nagu. Jah.
+
+111
+00:11:38.813 --> 00:11:42.619
+Õpetaja: No las ta jääb siis siia Sloti sisse. Aga et kui vaja uuesti. Siis kirjutame
+
+112
+00:11:43.294 --> 00:11:45.409
+Õpetaja: ka enda nagu üle. Või ma ei teagi.
+
+113
+00:11:48.067 --> 00:11:51.469
+Õpetaja: Jah, Sulge nupp. Las ta jääb.
+
+114
+00:11:52.077 --> 00:11:57.770
+Õpetaja: Ei, paneme ikkagi, öelda, et ta on seal kõige lõpus alati viimane Control Xest. Not ist välja.
+
+115
+00:11:59.064 --> 00:12:00.160
+Õpetaja: Niisugune nupp on olemas.
+
+116
+00:12:02.370 --> 00:12:10.220
+Õpetaja: Võibolla kõige esimene asi, mis funktsionaalsuse mõttes, et me ei lähegi lahendama seda asja kohe, et. Ee, seda, et mida siin näeb ja mida siin ei näe,
+
+117
+00:12:11.503 --> 00:12:13.979
+Õpetaja: lahendaks Ee praegult selle asja ära, Et
+
+118
+00:12:15.236 --> 00:12:18.199
+Õpetaja: Mm, Kuidas on seda võimalik Ee. Lahti teha ja avada.
+
+119
+00:12:20.717 --> 00:12:24.970
+Õpetaja: Ja siis on meil mõnus mängida, kinni lahti panna ja vaadata seda disaini.
+
+120
+00:12:27.520 --> 00:12:32.989
+Õpetaja: Alustatakse sellest, et kuidas seda nagu lahti teha. Et mina praegu ju kasutasin seda tööriista, et kui ma Refresh iga tulen
+
+121
+00:12:33.493 --> 00:12:36.179
+Õpetaja: vaikimisi, ta on Ee, ei ole nähtav.
+
+122
+00:12:36.732 --> 00:12:39.809
+Õpetaja: Mis taskis öeldi, millal. Millal ta peaks nähtavale tulema?
+
+123
+00:12:42.699 --> 00:12:53.339
+Õpetaja: Keegi mäletab, Jäi meelde, kuidas saab seda lahti teha kuupäev, See peaks muutuma lingiks.
+
+124
+00:12:53.878 --> 00:12:55.870
+Õpetaja: Ja kui klikid selle peale, siis tuleb lahti.
+
+125
+00:12:57.110 --> 00:12:58.390
+Õpetaja: Taaskis oli see niimoodi?
+
+126
+00:13:00.910 --> 00:13:01.340
+Õpetaja: Mm,
+
+127
+00:13:08.925 --> 00:13:09.389
+Õpetaja: okei,
+
+128
+00:13:12.009 --> 00:13:19.690
+Õpetaja: Mm. See on ju mitu varianti aidar Vee tuleks saada, aru, et kus kohas asub, kus kohas saab manipuleerida üldse seda asja.
+
+129
+00:13:20.786 --> 00:13:23.939
+Õpetaja: Noh, Annan teile väikse ülesanne, et kust üldse on Võimalik nagu
+
+130
+00:13:24.626 --> 00:13:29.529
+Õpetaja: midagi. Et. Kus kohast see info tuleb? Kus koodifailist? Mis real? Me nagu peaks vaatama,
+
+131
+00:13:30.223 --> 00:13:32.040
+Õpetaja: et üldse hakata mudima seda
+
+132
+00:13:39.220 --> 00:13:42.600
+Õpetaja: Ei, ei ole.
+
+133
+00:13:46.475 --> 00:13:58.500
+Õpetaja: Vot see on juba parem. Noh, kui tahaks seda võiks korra teha selle komponendi lahti ja siis vaadata, mis View on kogu see asi, et hetkel võiks mõelda, et. Okei, see on.
+
+134
+00:13:59.014 --> 00:14:02.580
+Õpetaja: Aga kui me hakkame vaatama, et siin on elemendid, siis tuleb välja et
+
+135
+00:14:03.319 --> 00:14:11.789
+Õpetaja: madal, mida me hetkel ei näe, mida me hetkel ei näe. On. Siin hüppab siin. Järelikult
+
+136
+00:14:12.822 --> 00:14:17.170
+Õpetaja: Location Stable Sees peab olema kuskil koht, kus siis saab manipuleerida seda.
+
+137
+00:14:18.950 --> 00:14:19.400
+Õpetaja: Okei,
+
+138
+00:14:22.247 --> 00:14:28.789
+Õpetaja: noh, teeme siit lahti. Komponents. Ohh, okei. See vajab ka nagu korda tegemist. See hakkab siin veits juba loppasse minema.
+
+139
+00:14:29.524 --> 00:14:36.889
+Õpetaja: Hakkame grupeerima asju. Veits onju? Mis võiks kui siit ülevalt alla hakata niimoodi tulema, mida võiks nagu eraldi grupeerida eraldi ka osta
+
+140
+00:14:38.793 --> 00:14:48.370
+Õpetaja: allergid, näiteks Onju Alert Success kausta juurde. Kuna see image on siin ainsuses, siis paneme selle ka ainsuses
+
+141
+00:14:51.111 --> 00:14:56.250
+Õpetaja: tegelt. See on alerts Ikkagi jätame mitmesse komponents assets
+
+142
+00:14:57.132 --> 00:15:00.430
+Õpetaja: siin kontekstis. Ee, jätame mitmesse selle image I
+
+143
+00:15:01.876 --> 00:15:04.370
+Õpetaja: Jumal, käime ka temaga. Tegeleme ka kohe.
+
+144
+00:15:08.800 --> 00:15:11.009
+Õpetaja: Mm, midagi on nagu, puudu.
+
+145
+00:15:17.464 --> 00:15:20.619
+Õpetaja: Ahah. Praegult tabasin ära, et meil on, ee,
+
+146
+00:15:21.319 --> 00:15:27.069
+Õpetaja: ee, Asper taaskord midagi tegemata. Aga jõuame selleni ka Selle võime rename ida.
+
+147
+00:15:30.113 --> 00:15:41.299
+Õpetaja: Aga tegelikult lasteaiad. Image Ib, seda võib ka nii mõelda. Vaata, Isegi selle ikkagi. Paneme ainsusesse.
+
+148
+00:15:42.775 --> 00:15:44.849
+Õpetaja: Control Shift. Või Noh, parema klõps.
+
+149
+00:15:45.595 --> 00:15:52.160
+Õpetaja: Shift kuus pakub Stari name, saab ka parema klõpsuga panna või nii.
+
+150
+00:15:52.995 --> 00:16:02.749
+Õpetaja: No see sama shortcut on siin ka olemas. Tehke korrale. Nii, Okei meetodil. Valime selle. Hoiame shift i all või kontrollit Vahet pole, valime ka. Selle
+
+151
+00:16:03.677 --> 00:16:06.140
+Õpetaja: Siniseks võib ka ükshaaval neid tirida. Vahet pole,
+
+152
+00:16:06.991 --> 00:16:10.690
+Õpetaja: Tirime siia kausta. Põmm küsib, kas sobib. Sobib, sobib,
+
+153
+00:16:14.892 --> 00:16:18.220
+Õpetaja: kui nüüd veel vaadata siia alla poole, Mida, võiks ee, grupeerida.
+
+154
+00:16:23.743 --> 00:16:31.540
+Õpetaja: Location Id inputid ka võib mõelda.
+
+155
+00:16:34.706 --> 00:16:40.200
+Õpetaja: Mul on niuke tunne, et need kanda. Need asjad Võiksid kõik käia Location i all
+
+156
+00:16:40.798 --> 00:16:49.050
+Õpetaja: Nagu selle mõte on ühes kohas. Mingid asjad on teises kohas. Me saame igatepidi mõelda. Teeme niimoodi, et
+
+157
+00:16:49.567 --> 00:16:51.710
+Õpetaja: Ee, teeme, et Location related Stuff.
+
+158
+00:16:52.588 --> 00:16:58.940
+Õpetaja: Ja see, kuidas me praegu seda teeme, ei tähenda jälle ka mingi absoluutne tõde. Vaata, kuidas grupeerida asju ja kaustadesse panna, et
+
+159
+00:16:59.728 --> 00:17:03.890
+Õpetaja: ma olen löönud erinevates rakendustes erinevatest projektidest. Nagu mingeid erinevaid lähenemisi.
+
+160
+00:17:05.569 --> 00:17:09.049
+Õpetaja: Peaasi, et on mingi süsteem, mis on arusaadav, vahet Pole Mis süsteem?
+
+161
+00:17:11.722 --> 00:17:13.959
+Õpetaja: Ee, tõstame siis kõik need asjad
+
+162
+00:17:16.181 --> 00:17:20.060
+Õpetaja: ja number Of Input on ka Tegelikult location Alated
+
+163
+00:17:22.184 --> 00:17:24.489
+Õpetaja: selle. Tõstame siia Location I alla.
+
+164
+00:17:30.341 --> 00:17:36.440
+Õpetaja: Nüüd, kui mul oleks päris süsteem kus on ee, juba mitmeid vorme Vaata, mida saab taaskasutada.
+
+165
+00:17:37.660 --> 00:17:44.350
+Õpetaja: Ma teeksin vormidele eraldi kaotus kausta. Meil hetkel Ei, tule praegult midagi. Aga ma võiks panna forum.
+
+166
+00:17:45.870 --> 00:17:48.299
+Õpetaja: Jah, ma paneksin vahele. Võibolla mitmes osas. Ma isegi ei tea.
+
+167
+00:17:54.441 --> 00:18:00.409
+Õpetaja: No okei, see nagu Päris Ei, oleks see, et. Vaata, kõik on location i temaatiline. Ee, et, ee,
+
+168
+00:18:01.239 --> 00:18:15.490
+Õpetaja: ee. Kui mina tegin mingit viimast projekti, tegin siis mul Ikkagi olid vormid ja alerdid ja mudelid. Mul päris nii ei olnud nii, et siin võiks natukene segadust tulla, et kui sa Location Il Lead. Kui palju Vorme Location Il ikka tuleb?
+
+169
+00:18:15.917 --> 00:18:23.430
+Õpetaja: Pigem ikkagi tõstaks selle tagasi. Ei, Teeks seda vormi, et see pole siis see süsteem niiöelda Ee, mida võib ka kasutada,
+
+170
+00:18:26.121 --> 00:18:29.009
+Õpetaja: siis võibolla Location võib siia jääda.
+
+171
+00:18:31.665 --> 00:18:39.050
+Õpetaja: Nii, siis on mul küsimus, et mina üldse ei näe. Kus kuradi kohas on Location info. Modals on siin.
+
+172
+00:18:40.133 --> 00:18:45.289
+Õpetaja: Me Võime ta tirida see komponents alla ja siis meil võiks tekkida kohe üks mõte, nagu et
+
+173
+00:18:47.194 --> 00:18:48.650
+Õpetaja: mida veel saaks grupeerida.
+
+174
+00:18:51.867 --> 00:18:52.880
+Õpetaja: Madalid on ju.
+
+175
+00:18:53.856 --> 00:18:54.870
+Õpetaja: Teeme. Lihtsalt.
+
+176
+00:18:57.176 --> 00:19:03.410
+Õpetaja: Paneme ka siis ainsusest. Kui juba selle süsteemi valisime. Vahet pole, kumb ainsas mitmeses valija ei Otsustaja kindlaks.
+
+177
+00:19:04.476 --> 00:19:07.249
+Õpetaja: Võtame siis selle Ja selle Control ja Klikk
+
+178
+00:19:08.108 --> 00:19:11.729
+Õpetaja: Niimoodi võite ükshaaval ka neid tirida et pole
+
+179
+00:19:12.678 --> 00:19:19.909
+Õpetaja: see transaction type checkbox tegelikult oli ka Location I all, põhimõtteliselt. Ja ma tõstaks selle ka ära kuidagi. Nii
+
+180
+00:19:20.880 --> 00:19:24.010
+Õpetaja: Ja nagu ma ütlesin, juba et siin ei ole nagu mingit Absoluutset tõde.
+
+181
+00:19:26.821 --> 00:19:30.140
+Õpetaja: Noh, võibolla kui päris süsteemis oleks mitmeid erinevaid rop. Down E.
+
+182
+00:19:30.868 --> 00:19:37.490
+Õpetaja: Äkki selle järgi on eraldi või või mis iganes, vahet pole, Mis süsteem Teeme siis? Dropdown,
+
+183
+00:19:43.419 --> 00:19:47.109
+Õpetaja: et ee, teid äärmusi ongi. Mõned on nagu üsna nagu
+
+184
+00:19:47.900 --> 00:19:52.700
+Õpetaja: koodi lähedased Teised on pigem nagu domeeni lähedased, et, Noh, mis valdkonna?
+
+185
+00:19:53.786 --> 00:19:59.140
+Õpetaja: Mis nagu temaatiline Niiöelda ee faili osa on Nüüd saab igatepidi teha
+
+186
+00:20:00.574 --> 00:20:15.960
+Õpetaja: View Sal ka. Näiteks kui ikka tuleb ka väga Palju View, Sid. Äkki mingid on admini vaated? Mingi customer I vaated. Äkki on mingi üldised vaated. Ma ei tea kõike. Sa grupeerid, et Millal see vajadus tavaliselt tekib, on see, et kui sul tekib juba kümme pluss. Faili tekib
+
+187
+00:20:16.803 --> 00:20:28.619
+Õpetaja: no. Jumal hoidku kakskümmend, pluss faili no. Siis Kuidagi peaks nagu hakkama, et. Noh, kui need ongi mingi asjad, See on mingi täiesti teine teema. Kui me räägime nagu koodifailide osas, siis Ikka pigem mingid struktuur. Kuidagi tuleb kataloogidega.
+
+188
+00:20:31.911 --> 00:20:34.020
+Õpetaja: Mulle tegelikult päk käib nii suuresti.
+
+189
+00:20:35.235 --> 00:20:37.790
+Õpetaja: Väga meeldis selline struktuur, mis oli
+
+190
+00:20:38.644 --> 00:20:41.310
+Õpetaja: Mm, Lhv S oli maksete rakenduses.
+
+191
+00:20:41.765 --> 00:20:48.869
+Õpetaja: Mingi aeg. Isegi tegin seda hiljem. Nägin ee. Mingis teises projektis. Kuskil nägin ühte teist struktuuri. Täna meeldib pigem. See
+
+192
+00:20:49.576 --> 00:20:56.460
+Õpetaja: See on Niukene, Et Siin ei ole nagu mingisuguseid õiged ega valesid. Vastuseid Siin ei ole võimalik, nagu väga palju õpetada Kuidas peaks tegema,
+
+193
+00:20:57.481 --> 00:21:02.469
+Õpetaja: peaasi, et ee, Kogu meeskond saab aru, nagu kus miski asub ja rohkem ei olegi tähtis.
+
+194
+00:21:05.043 --> 00:21:14.489
+Õpetaja: Mingi on mul siin jäänud tema. Ma saada nüüd pensionile personal Quality S. Õpetaja Rain. On väga tore õpetaja. Võibolla ikka peaks alles jätma. Selle tempfaili
+
+195
+00:21:15.916 --> 00:21:19.079
+Õpetaja: ei ole teda. Vaja. Te olete niigi ilma selle kirjata.
+
+196
+00:21:20.159 --> 00:21:21.609
+Õpetaja: Nii, ee, kuhu me jäime?
+
+197
+00:21:23.830 --> 00:21:25.129
+Õpetaja: Commeti? Aa, täna. On Miti
+
+198
+00:21:28.389 --> 00:21:33.610
+Õpetaja: nii palju muudatusi Hobune all. Back
+
+199
+00:21:37.732 --> 00:21:38.909
+Õpetaja: kohe kukkus. Jõuab
+
+200
+00:21:47.802 --> 00:21:48.830
+Õpetaja: põmm Vist läks.
+
+201
+00:21:50.110 --> 00:21:51.009
+Õpetaja: Või? Mis oli,
+
+202
+00:21:54.096 --> 00:21:55.930
+Õpetaja: väike poiss Kogu aeg teeb?
+
+203
+00:22:01.020 --> 00:22:08.819
+Õpetaja: Ma ei loonud kausta, vaid ma lõin faili või kittida.
+
+204
+00:22:09.865 --> 00:22:16.929
+Õpetaja: Kustutad ära ja sa saad ikka ära kustutada. Ja lihtsalt siis pead komiti otsa tegema. Pliit on ikka,
+
+205
+00:22:18.047 --> 00:22:23.969
+Õpetaja: et kui sul on mingi koodifail, mida enam ei ole vaja, siis sa Kustutad selle ära ja ütled. Enam ei ole teda pilves
+
+206
+00:22:24.956 --> 00:22:39.509
+Õpetaja: ajaloos. Ta säilib ja ta on ülesleitav tekstina Vaata ja nii edasi, et selles mõttes. Ee, sellega natukene on see asi, mis te peate meeles hoidma. Näiteks kui te teete mingit arendust ja seal on näiteks mingi mingisugused Teenuste ja kõik asjad.
+
+207
+00:22:39.840 --> 00:22:49.749
+Õpetaja: Ärge neid asju kommit ige kunagi Nagu kuskile koodi. Ja kui ekslikult juhtub, siis Tegelikult oleks pigem vaja mõelda, et Okei, kas ma saan oma parooli või apikiid ära muuta,
+
+208
+00:22:50.527 --> 00:22:52.370
+Õpetaja: et kui sa juba koodibaasi läheb
+
+209
+00:22:52.871 --> 00:23:01.629
+Õpetaja: ja te selle ära kustutate, siis ta visuaalselt Keegi, kes tuleb sul tänasele Branchile, ei leia seda niimoodi. Aga kogu see ajalugu on kuskil Alles seda on võimalik vaadata.
+
+210
+00:23:02.043 --> 00:23:13.359
+Õpetaja: Siin failis oli Näiteks, ee. Mingi properti failis oli mingi Ma ei tea. Google Maps mingi kee. Vaata, keegi saab selle. Noh, et see on nagu sellised Asjad ei peaks olema osapoolest kunagi üldse niikuinii
+
+211
+00:23:14.652 --> 00:23:17.260
+Õpetaja: olla. Päris asju või?
+
+212
+00:23:18.141 --> 00:23:24.959
+Õpetaja: Ee, see on mingi soov mingi saada, et mingid paroolid ja asjad on kuidagi ee. Osa koolist
+
+213
+00:23:26.510 --> 00:23:32.220
+Õpetaja: on niuksed. Välised. Ee, lahendused. Ee, näiteks, et sellest endast saad sa muuta keskkonna muutujat,
+
+214
+00:23:32.911 --> 00:23:36.099
+Õpetaja: mingi noh, mingi Mypass Word. Või
+
+215
+00:23:36.526 --> 00:23:42.069
+Õpetaja: et ee, koodi osad saavad viidata nagu niukestele võtmetele, mille sisu nad saavad koodi käivitamisel ka enda.
+
+216
+00:23:42.535 --> 00:23:45.460
+Õpetaja: Ja siis tavaliselt need ei Ole kunagi koodiga koos.
+
+217
+00:23:46.404 --> 00:23:47.740
+Õpetaja: Ee, ärge seda tehke.
+
+218
+00:23:48.576 --> 00:23:56.160
+Õpetaja: Või noh, kui te teete, vaata, siis nad võivad olla mingid niuksed. Ee, mingid mõttetud foroolid Ja asjad, mis tal kuidagi lokaalselt on. Vaata, et nagu, noh, et savi on, Vaata, onju.
+
+219
+00:23:56.633 --> 00:24:11.980
+Õpetaja: Noh, enda mingisugust Paned mingi enda mingi standard parooli. Vaata, millega oskad. Igal pool Aa sisse logimiseks. Nagu et Milleks see vajalik on ka natuke niimoodi ja ai isegi on ka apigiid Ja niukeste asjade suhtes. Üsna tundlik, et isegi
+
+220
+00:24:12.689 --> 00:24:24.089
+Õpetaja: kui ta on. Näiteks. Mul on olnud seiku, et kui sa ei loe mingit faili ja Siis Ta ütleb, et kuule, et sorry. Vaata, et ma nüüd nagu lugesin seda faili. Siin on napig. Vaata, et palun, noh, resetti see ära või midagi taolist.
+
+221
+00:24:24.499 --> 00:24:28.390
+Õpetaja: Ma nagu nägin. Kuigi see tõenäoliselt see kuhugi satub, on. Ma arvan, mingi kodu, väike.
+
+222
+00:24:28.992 --> 00:24:40.239
+Õpetaja: Ja, noh, see on kontekst on ka Vaata, kui kellegil mudelist tuleb minu abikivi. Vaata, mis on mingi numbrid ja. Ja tähtede jada. Vaata, mis iganes onju, aga ta Ei tea, võibolla miski see selline on.
+
+223
+00:24:40.841 --> 00:24:54.999
+Õpetaja: Kui sa muidugi on juures näiteks mingi teenuse nimi Google Maps ja mingi appi keegi no siis pildi kokku panna. Ja siis võib juhtuda palju ja paha, et, ee. Ja kui te kui muidugi kunagi kuskil oma krediitkaarti panete nagu teenuste suhtes, kus on mingi tüüpi lahendused
+
+224
+00:24:55.452 --> 00:25:04.159
+Õpetaja: esimesel võimalusel. Uurige, et kas seal on mingist ka. Vaata, et nagu alati, pange mingi number sinna igaks Juhuks nagu. Et kui kui ka juhtub kuidagi lekkima
+
+225
+00:25:05.352 --> 00:25:15.249
+Õpetaja: olete kunagi. Olete mingi pettuse või või interneti ostuga või on järsku tulnud krediitkaardiga mingisugune Mingi kulu, mis ei ole teie ema on juhtunud.
+
+226
+00:25:16.116 --> 00:25:26.420
+Õpetaja: Mul tuli pangast kohe sõnum. Uurisin ja õnneks see raha kandi tagasi ja kohe panin kaardi kinni.
+
+227
+00:25:27.118 --> 00:25:30.620
+Õpetaja: See on nagu suht hea variant. Kui ee. Lähed krediitkaardi pealt
+
+228
+00:25:31.110 --> 00:25:38.479
+Õpetaja: nagu raha. Sellepärast, et sa peaaegu alati näinud tagasi on inimesi, Kellel on olnud nagu mingi stiilis identity tehtud. Vaata, põhimõtteliselt
+
+229
+00:25:38.849 --> 00:25:54.800
+Õpetaja: on varastatud inimesel mingid nagu, väga, Noh, mingid isikuandmed ära ja selle konkreetse inimese Alt on võetud laene ja asju. See on Niuke. Päris Nightmäe. Vaata, on ju Aga krediitkaardiga Vähemalt enamus ajast on kirjutatud oma panka, et Kuulge, midagi toimub ja mina ei ole seda näinud.
+
+230
+00:25:55.210 --> 00:25:59.799
+Õpetaja: Aa, vot Muidugi raha. Pead ootama. Onju, et selles mõttes, et sa kohe võibolla ei Tule, onju?
+
+231
+00:26:02.355 --> 00:26:04.680
+Õpetaja: Jah,
+
+232
+00:26:05.987 --> 00:26:15.369
+Õpetaja: siis on täpselt see. Vaata Ära vaatad, Mingi hetk ei saa. Ei saa, See toiming on keelatud. See on nagu võtagi õige parool.
+
+233
+00:26:16.100 --> 00:26:27.869
+Õpetaja: Ja näete, kuidas tegelikult võidetakse ka nüüd nende nende pinnepetturitega? Vaata, et, noh, põhimõtteliselt, No, vanade inimestega või noortega, vahet pole tegelikult Kõik langevad seal. Riburada pidi. Ohvriks
+
+234
+00:26:28.256 --> 00:26:40.249
+Õpetaja: on see, et telefoniga audendid ära mingisuguse rahaülekande või sisse logimise ja nii edasi. Ee, Lhv Ee sisse, Lhv D kasutab keegi käsi püsti, kui logite sisse. Kuidas nüüd peab audentina
+
+235
+00:26:41.503 --> 00:26:48.129
+Õpetaja: ostad inimesed kasutajanimi küll. Aga kuidas näiteks? Noh, ma räägin Smart Id St. Nagu praegu eelkõige
+
+236
+00:26:48.576 --> 00:27:11.809
+Õpetaja: ei kasuta. Ja nüüd on nagu see. Vaata, et nad on kavalalt teinud selle. Vaata, et kui muidu on Niimoodi, et saad kellegi telefoninumbri või Smart Id, või mis iganes. Mingi mingid logini andmed saad, kätte, on ju? Aga sa tead, et nagu Mingi tädi maalile maal läheb nagu mingisugune sõnum, onju
+
+237
+00:27:12.176 --> 00:27:18.780
+Õpetaja: hüppab Smart Id lahti, et ole hea. Sisesta see pin, Vaata ja mingi kontrolltegevus seal kirjas. Mis iganes
+
+238
+00:27:19.120 --> 00:27:31.480
+Õpetaja: Ee, nad on teinud sellevõrra. Nad on päris kaval lahendus. Tegelikult see qr Kood sest, Et, nüüd on nagu selline probleem Vaata, et enam ei saa nagu toksida. Ta ei saada sulle lihtsalt sinna Smart Id peale. Vaata, ole hea, pane nüüd oma pin,
+
+239
+00:27:31.820 --> 00:27:41.110
+Õpetaja: vaid Nüüd on, see, et ta ütleb, et ole hea. Vaata, et kui sa tahad nüüd sinna sisse logida, siis sa pead telefoniga ee scan Ima seda qr Koodi
+
+240
+00:27:41.591 --> 00:27:48.649
+Õpetaja: ehk siis, tähendab seda et, nüüd on nagu see et, vaata kuidas, tädi maali nüüd nagu kellel on mingi vaevu saab oma telefoniga hakkama. Et Kuidas sa
+
+241
+00:27:49.273 --> 00:27:59.609
+Õpetaja: talle siis mingi valemiga sebid? Qr? Koodi mida? Ta oma telefonikaameraga peab filmima noh? Arvuti, taga ta saab seda ikka teha. Kuidas sa filmid talle, Saad, et päris. Ee, päris nutikas.
+
+242
+00:28:00.660 --> 00:28:05.949
+Õpetaja: Kuidas Ma ei teegi väga.
+
+243
+00:28:06.687 --> 00:28:16.190
+Õpetaja: Kui sul on telefon, siis Sul on üldse Lhv panga äpp. Vaata, sa tuled nagu seda teed pidi.
+
+244
+00:28:16.768 --> 00:28:17.840
+Õpetaja: Ei, no ma mõtlen,
+
+245
+00:28:18.782 --> 00:28:31.460
+Õpetaja: selles mõttes, seal on see vaikimise mood on kindlasti veel kuidagi alla tuleb telefonile sa teada. Vaata, on ju, et. No minule isiklikult meeldib see Mardi idee, et mis te siis Kasutate mobiili? Ideed või?
+
+246
+00:28:32.047 --> 00:28:49.919
+Õpetaja: Jah, aga mina näiteks selles mõttes Tegelikult, Mis Peamine vahe tuleb sisse, kus te saate? Vaata, tappa, vaata, nagu, ja Te mõtlete Ktm, et oleks võinud ikka Smart Id olla. On teatud olukord, kus Ee. Olete. Lihtsalt ventage. Ee, Smart Mobiili idee töötavad läbi mobiilivõrgu
+
+247
+00:28:51.170 --> 00:29:10.720
+Õpetaja: kui mu kui võrku. Kui mingil põhjusel levi pole, või mis iganes, vaata, siis on nagu tuuga. Vaata, et ei saa seda autentida. Eelkõige näiteks välismaal. Reisimine väljapool Eu riiki. Või mida iganes. Vaata, et lihtsalt ei tööta. Telefoniliinid. Sul võib ka mingeid tõrkeid. Võibolla Smart idee Töötab puhtalt interneti pealt. Kui sellele saate näpud taha, siis te saate ära autentida. Vaata, et
+
+248
+00:29:11.311 --> 00:29:15.450
+Õpetaja: objektidega. Isegi siis, kui sul näiteks telefonikõige
+
+249
+00:29:16.280 --> 00:29:28.379
+Õpetaja: koolid Unustad ära. Aa, sa saad ju minna telefoniga sisse ja sul seda levi ei ole. Siis Sa näed ju kohalikku. Näiteks mingi Wifi võrku Ja sealt kaudu sealt saavad vahele.
+
+250
+00:29:28.617 --> 00:29:40.949
+Õpetaja: Kas arvutis saad ka audientida? Ta ei ole otseselt telefoniga seotud ju, Vaata, et kui sa kuidagi ei, Ta on telefoniga selles mõttes seotud. Aga point on ka see, et sa saad mitmes seadmes ja nii edasi, et, noh, ta on pluss Ja miinused. Vaata, igal asjal on miinus plussid. Ega see
+
+251
+00:29:41.298 --> 00:29:50.010
+Õpetaja: Smart Id ka, pole, Aga tegelikult ma ütlen, no üldiselt müts maariigi ees, Vaata, et see selle asja Nad on hästi teinud üldse üleüldse. Kuidas
+
+252
+00:29:50.447 --> 00:30:14.969
+Õpetaja: ei ole, aga. No jah, arendatud ei ole, aga jah okei, see on Tegelt teenus Ju see on teenus. Sellest teenuse niiöelda Kasutaja maksab. Olete näinud? Rimis on nüüd see. Vaata, et ee, et siis kui oskad seal algseid. Vaata enam ootama. Mingid mammid sealt kuskilt oma. Mingi Selle vaata. Saad sporditöö abil saad ära valideerida.
+
+253
+00:30:15.400 --> 00:30:16.260
+Õpetaja: See täiskasvanu.
+
+254
+00:30:16.761 --> 00:30:33.499
+Õpetaja: Ikka teed qr Koodiga võtad, on ju? Selle lingi tuleb lahti. Paned oma pinkoodi ja sealt. Ta saab ju panna, et isikukoodi mis iganes võtab su vanuse välja. Ja. Aga loomulikult see maksab nagu sellele rimile pappi. Sest iga iga sisse logimine maksab ee raha.
+
+255
+00:30:35.098 --> 00:30:46.079
+Õpetaja: Teenus ise on, ee. Niiöelda lubatakse püsida.
+
+256
+00:30:47.123 --> 00:31:08.769
+Õpetaja: Aga üleüldiselt see üldiselt üldse Eestis. Vaata, see Id kaardi süsteemi autentimine. Integratsioon. Enamus süsteemides igale poole Noh, enam. Ei olegi, nagu seda tobedust. Vaata igasse kohta mingi loo konto. Pane mingi email ja mõtle mingi välja Mingi parool ja asjad vaatad kõik avalikud teenused, Isegi erasektori Teenused on juba Vaata sellega ligipääsetavad tegelt. See on nagu päris
+
+257
+00:31:09.311 --> 00:31:12.559
+Õpetaja: ee. Päris muljetavaldav süsteem et Ee,
+
+258
+00:31:12.821 --> 00:31:18.060
+Õpetaja: te mõtlete, et igas riigis on mingi Niuke asi, siis unustage ära. Vaata, et mis tahes suurriik ette on ju?
+
+259
+00:31:18.387 --> 00:31:34.099
+Õpetaja: Ee, seal on veel vana Hea Nagu Soomes. Kurat, saadab postiga asju nagu tigu postiga. Ee, Tahad midagi seal ajada? Nagu niimoodi, Et kohale ja lähe, et see on nagu nats nats nagu Inglismaa ka, Ma läksin Inglismaale. Noh, see on nii palju aastaid tagasi. Ma läksin ajal.
+
+260
+00:31:34.543 --> 00:31:50.920
+Õpetaja: Pangakontot Oli vaja. Tead, läksin. Tegin konto. Mõtlesin, et mul mingi Tšekiraamatud värgi ma nendega teen. Nagu mis asi see on? Nagu et milleks? Mul on Niukene jama, nagu kuidas nad on siiamaani no suurte Riikidel ongi see, et neil on keeruline muudatusi teha, sest noh, nagu ikka, Taavet ja koljat on ju et
+
+261
+00:31:51.311 --> 00:32:05.780
+Õpetaja: suur ja tugev väike ka Väle. Vaata, onju, et, noh, väiksuses on omad. Noh, plussid miinused on, ju et igal asjal on omad eelised, et ee, Eestis on nagu lihtne. Võibolla teha mingisuguseid üleriigilisi muudatusi. Sellepärast, et
+
+262
+00:32:06.065 --> 00:32:11.489
+Õpetaja: seda infot ei ole. Nagu nii palju, mida sa pead seal nagu taustal, võibolla siis hakkama tuunima ja tegema
+
+263
+00:32:12.760 --> 00:32:26.699
+Õpetaja: see, mis iganes. Ja ei, see on meeldiv. Ma, ausalt, ma ei tea, kuidas teie on, aga
+
+264
+00:32:27.087 --> 00:32:46.619
+Õpetaja: kui mul on nagu Mingi uude keskkonda. Võimalus konto teha, et on kaks valikut, et kas nagu, emailiga või Googliga, siis ma ei mõtle ka, nagu ma ei Viitsi ma ei taha, ma ei. Ma ei soovi, et. Ee, Noh, seal on muidugi omad riskid ka. Vaata, see on. Noh, kui keegi kaaperdab sinu selle need Google niiöelda logimises See võib olla üsna nagu nutune lugu. On ju.
+
+265
+00:32:46.965 --> 00:32:59.509
+Õpetaja: Aa, see selleks on nagu. See on nagu rist nagu. Aga samas on see mugavus. Ja. Ja kuidas, Kuidas Mina, Iga kord nagu. Kas ma hakkan jälle jagama mingisuguse X kohaga andmeid Kui hästi neil seal turvatud on ja nii edasi ja nii edasi.
+
+266
+00:33:00.109 --> 00:33:06.580
+Õpetaja: Et siin, on nagu on nagu mingid mugavusaspektid ja mingisugused turvalisuse aspektid ka, Mida Tegelikult saab alati mõelda.
+
+267
+00:33:07.048 --> 00:33:14.850
+Õpetaja: Ee ainukene aeg, kus mulle meeldib teha. Emailiga kontosi on. See kui on mingi keskkond, kus on trial, on. Ma ei tea, üks või kaks nädalat. Ja.
+
+268
+00:33:15.285 --> 00:33:22.710
+Õpetaja: Ja kui neil on nagu see, et nad. Neil ei ole seal piisavalt head teenuste tagamist. Ei saa aru, et kui sul on nagu Niukene või email aadress,
+
+269
+00:33:23.379 --> 00:33:37.289
+Õpetaja: et sa saad ära regada ennast, Saad selle mingi lingi asja kätte ja logid sisse. Aga tegelikult see ei ole sinu email üldse. Vaata, onju? Jah, tempmile. Näiteks on ka. Siin. Vaatame ka seda.
+
+270
+00:33:37.770 --> 00:33:41.069
+Õpetaja: Okei, Kuulge, aga lähme edasi. Kuidagi Läksime jälle mõtetega uitama.
+
+271
+00:33:41.969 --> 00:33:50.810
+Õpetaja: Mm, kui me kuidagi see jäime. Igal juhul onju Location info, kuidas
+
+272
+00:33:52.062 --> 00:33:56.889
+Õpetaja: Aa asukohal info Väga hea, tubli, Ee. Saime aru, et see on,
+
+273
+00:33:57.509 --> 00:34:01.920
+Õpetaja: et vanast ajast on too kommentaar. Seda enam pole vaja. Oma locations table
+
+274
+00:34:04.240 --> 00:34:10.200
+Õpetaja: nii ja Kui nüüd otsida siit ülesse, vaata, kus täna seda location name. I kuvatakse koodi tasandil.
+
+275
+00:34:10.908 --> 00:34:15.989
+Õpetaja: No isegi et seda, kust see tuleb, mis reas Käib jutt, kui vaadata minu ekraanile.
+
+276
+00:34:19.914 --> 00:34:35.239
+Õpetaja: Kakskümmend kaks. On õige vastus, et neid ridu korratakse nii palju, kui on, antakse, kaasa, et oleks korralik Ee, renderdamine. Ja siin on siis See teine. Tulp on Location name teine Tulpallocation Name.
+
+277
+00:34:37.151 --> 00:34:39.310
+Õpetaja: Nüüd see peab muutuma klikitavaks.
+
+278
+00:34:40.719 --> 00:34:44.210
+Õpetaja: Niukene. Odav, lahendus. Odav Lahendus on siis selline, et. Ee,
+
+279
+00:34:44.891 --> 00:34:50.730
+Õpetaja: ee, korra. Lööme siia alla. Lihtsalt ee, ruumi. Vaata, et teeme siia korra kõrvale. Seal ka, et teeme Ühe lingi
+
+280
+00:34:51.488 --> 00:34:54.060
+Õpetaja: link on Arf A ja tab
+
+281
+00:34:56.478 --> 00:34:58.849
+Õpetaja: selle sisu Võime toppida Siis sinna lingi.
+
+282
+00:35:00.142 --> 00:35:01.789
+Õpetaja: Mingi nimeks ehk siia
+
+283
+00:35:05.170 --> 00:35:05.660
+Õpetaja: Niimoodi,
+
+284
+00:35:08.808 --> 00:35:11.689
+Õpetaja: et me ei näita Enam Tavalist teksti, vaid on Niukene.
+
+285
+00:35:12.182 --> 00:35:18.480
+Õpetaja: No ta ei ole nagu parim valik. Vaata, kui nad on vaikimisi on sinist värvi ja siis kuidas ta siit välja paistab. Aga printsiibis?
+
+286
+00:35:30.390 --> 00:35:30.960
+Õpetaja: Ee,
+
+287
+00:35:31.663 --> 00:35:46.830
+Õpetaja: kui me nüüd tahame seda teha, point on see, et kuhu see link Ee, link viib. Vaata, Me tegelikult ei taha, et ta üldse kuhugi viib. Ee, kui me sellist asja tahaks, siis see on
+
+288
+00:35:48.084 --> 00:35:50.140
+Õpetaja: target blank, parent Topself
+
+289
+00:35:50.562 --> 00:35:59.029
+Õpetaja: Ee Siin on vaja nagu kuidagi. Nagu see välja lülitada, et ta ei oleks. Ärme tee niimoodi. Ee, Kustutame selle tag I siit eest ära ja Selle tagumise ka.
+
+290
+00:36:02.168 --> 00:36:05.659
+Õpetaja: Teeme sellest Ee, ikka custom värgi. Teeme Tv siia.
+
+291
+00:36:06.871 --> 00:36:16.010
+Õpetaja: Ja topime selle Dv sisse. Kõigepealt, Miks Tv sisse Sellepärast ma tahan seda kujundust hakata tegema. Ma tahan visuaalselt teha, et ta näeks välja justkui link.
+
+292
+00:36:18.045 --> 00:36:30.130
+Õpetaja: Mm, ma kuidas kõigepealt käpakes siia peale saada, Hover mingi efekt. Ma ei viitsi seda päris nullist Seekord mõelda.
+
+293
+00:36:30.557 --> 00:36:38.539
+Õpetaja: Lähen korra. Aa, see tegelt on tähtis. Ka Ma niikuinii varem või hiljem oleks jõudnud sinna samasse kohta, et kuidas saab oma Cssi siia juurde lisada?
+
+294
+00:36:39.307 --> 00:36:50.320
+Õpetaja: Et Teeme Css faili. Aga seal on üks väike konks ka. Vaata, kogu Projekt peab olema sellest Css ist teadlik. Ee, ma teen korra lahti ja lähen vaatan varasemast lahendusest.
+
+295
+00:36:51.953 --> 00:37:05.299
+Õpetaja: Ee, mingisuguse cssi. Ahah, ei, ee, kindlasti Ei, Aa, over ring on pointer.
+
+296
+00:37:09.292 --> 00:37:10.380
+Õpetaja: Kanta Kantor kantor.
+
+297
+00:37:11.047 --> 00:37:21.179
+Õpetaja: Aa, Okei, ma ei viitsi. Ee, ma teen niimoodi. Ma, palun. Ee, Teeme niimoodi. Ühe asja teeme ära. Vaata, Panen siis selle näite kinni. Lasen teha. Ma kopli teistin teile.
+
+298
+00:37:23.109 --> 00:37:28.799
+Õpetaja: Ee, Läheme, teeme lahti. Kata Project View ja võtame Assets.
+
+299
+00:37:30.020 --> 00:37:32.659
+Õpetaja: Aa, siin on ka mingi. Mis on Green?
+
+300
+00:37:33.512 --> 00:37:36.830
+Õpetaja: Mingi värv on isegi olemas. Okei,
+
+301
+00:37:40.646 --> 00:37:45.029
+Õpetaja: ee, okei, ütleme tähele. Ma ise ütlen,
+
+302
+00:37:45.764 --> 00:37:57.420
+Õpetaja: see vist juba. See on üldse tegelikult viidatud ka. Vaadake, kui te tahate mingisugust asja lisada, mida kogu projekt näeb ja need Cs failid on vajavad Siis tal on niukene koht. Nagu
+
+303
+00:37:58.616 --> 00:38:02.000
+Õpetaja: Frontis. Nagu Soursi all on.
+
+304
+00:38:05.346 --> 00:38:08.919
+Õpetaja: Vaata, praegult on siin importitud asset. Main Cs, Ss,
+
+305
+00:38:10.108 --> 00:38:20.410
+Õpetaja: Ainult siis need Csss Säted on üldse nagu kättesaadavad ja kuvavad sinna. Näiteks mingi värv. Green, me alustame sellega. Punkt Green Tähendab,
+
+306
+00:38:20.910 --> 00:38:22.110
+Õpetaja: Ju Klassi on ju?
+
+307
+00:38:22.736 --> 00:38:35.240
+Õpetaja: Hashtag oli Ee, Id. Ehk Siis lähme korra sinna. Location stabilisse. Tuleme, otsime selle Tv ülesse. Mis me just tegime? Ütleme Class. Ja näiteks See sama. Green võiks sobida. Küll
+
+308
+00:38:36.413 --> 00:38:44.500
+Õpetaja: on Triin, Nii et tema saab sellise värvuse, et ta erineb.
+
+309
+00:38:52.555 --> 00:38:57.650
+Õpetaja: Ja huvitav, mille jaoks see on vajalik?
+
+310
+00:38:58.554 --> 00:39:02.770
+Õpetaja: Ee, ma korra pulli pärast proovin. Mis siis juhtuks kui ma panen selle
+
+311
+00:39:05.895 --> 00:39:07.259
+Õpetaja: punkt liinja Haver?
+
+312
+00:39:08.953 --> 00:39:10.620
+Õpetaja: Siis tuleb see kastikene. Niimoodi.
+
+313
+00:39:14.336 --> 00:39:24.320
+Õpetaja: Ei, see pole päris see, Mida ma ütlesin? Ee, tahaks pointerit kuidagi huvitav, kuidas. Ee, ma proovin korra peast, aga teeme niukse klassifikatsiooni. Nagu
+
+314
+00:39:25.752 --> 00:39:29.550
+Õpetaja: Ee, et kui mina ütlen Class Pointer. Ma Tahan seda, et käpake tuleks.
+
+315
+00:39:30.098 --> 00:39:32.690
+Õpetaja: See on mingi pointer. Lihtsalt see, mida ma ütlesin.
+
+316
+00:39:33.747 --> 00:39:36.549
+Õpetaja: Pointer. Ee, ei, ma ei oska.
+
+317
+00:39:37.033 --> 00:39:38.250
+Õpetaja: Ee, Siis ma ütlen, et
+
+318
+00:39:41.251 --> 00:39:47.179
+Õpetaja: võtan korra selle. Ütlen Chatile Lihtsalt Pursel pointerv.
+
+319
+00:39:48.895 --> 00:39:49.760
+Õpetaja: Ursaar.
+
+320
+00:39:51.821 --> 00:39:53.230
+Õpetaja: Ee, kool on äkki vä.
+
+321
+00:39:54.950 --> 00:39:55.470
+Õpetaja: Pointer.
+
+322
+00:39:56.847 --> 00:40:06.299
+Õpetaja: Aa, okei, võibolla juba saaks Ehk kui me nüüd ütleme sellele, et et ole Green, Aga ole ka Pointer.
+
+323
+00:40:06.989 --> 00:40:13.189
+Õpetaja: Ee, siis, äkki kui ma tema peale lähen. Muidugi seal On see Howeri asi? Vaata, ma ei tea, Vaatame, ma. Ma ei mäleta.
+
+324
+00:40:13.581 --> 00:40:20.870
+Õpetaja: Aga kui ma tulen, ütlen siia ka pointer, siis kas ta saab näpu Sai on ju nii?
+
+325
+00:40:24.019 --> 00:40:38.379
+Õpetaja: Võibolla üks asi veel võiks olla ka, et siis see tekst võiks tulla. Vaata, kui nagu tuled siia peale, et veelgi rohkem tagasisidet saada. Päriselus. Võibolla võiks ka värvus muutuda. Siis ma kainda Mõtlesin, et see sama ongi, onju, aga see tegi Kogu background I.
+
+326
+00:40:39.482 --> 00:40:48.989
+Õpetaja: See siin on. Põhimõtteliselt peaks olema ee, mingi varjundi loomine, nähtavus. Ja see on lihtsalt mingi stiil kuidas lihtsalt värv võiks muutuda.
+
+327
+00:40:50.165 --> 00:40:52.519
+Õpetaja: Ee, nii, nii.
+
+328
+00:40:54.227 --> 00:41:02.890
+Õpetaja: Ütleme, et kui meil on see, mis ta sisuliselt ma ei tea, võib ju olla seal mingi selle saja.
+
+329
+00:41:05.334 --> 00:41:13.160
+Õpetaja: Sa Räägid sellest sina Jah, meil on ju veel, mis tulevad. Me käime ikka võtmed asju.
+
+330
+00:41:17.867 --> 00:41:22.310
+Õpetaja: Ta peab mingi alusel sisse kogema, mis nii öelda, mingi asja nagu üle. Niiöelda.
+
+331
+00:41:22.863 --> 00:41:40.519
+Õpetaja: No ma tahaks uskuda suures pildis niimoodi, et, ee, see on, ee, et see raamistik on piisavalt targalt tehtud et need, mis on meil siin libraritena, tulevad Esimesena süüakse sisse Need, mis on meie enda Css Failid tulevad nagu viimasena, et siis on võimalik üles heita.
+
+332
+00:41:41.095 --> 00:41:45.179
+Õpetaja: Aga kuidas on hierarhia seal sees on? Siis ma ei tea, kuidas see on välja progetud.
+
+333
+00:41:46.373 --> 00:41:53.180
+Õpetaja: Okei, ee, põhimõtteliselt. Ee. Saime midagi justkui tehtud. Aga
+
+334
+00:41:54.259 --> 00:41:58.980
+Õpetaja: ma tahaks ikkagi öelda. Vaata, et kui on see classification Pointer,
+
+335
+00:42:00.016 --> 00:42:07.740
+Õpetaja: et me. See on nagu enda välja mõeldud, et Siis Ka ühtlasi tekst underligitakse. Aga mul ei ole õrna aimu, kuidas seda teha. Äkki on mingi font?
+
+336
+00:42:09.970 --> 00:42:14.999
+Õpetaja: Ee, ma vaatan korra kõigepealt Fond Underline on siin kuskil vä.
+
+337
+00:42:20.370 --> 00:42:22.880
+Õpetaja: Ma võin korra lihtsalt Boldiga proovida. Vaata, et kas see.
+
+338
+00:42:23.751 --> 00:42:31.040
+Õpetaja: See vist ei ole veel lõplik. Isegi Fond Style, Äkki Fond style?
+
+339
+00:42:37.203 --> 00:42:41.340
+Õpetaja: Ma korra polen italik. Vaata, et kas see on nagu printsiibis, aga siis ta. On kohe. Vaata
+
+340
+00:42:42.442 --> 00:42:50.089
+Õpetaja: aga ma tahan Aa, Okei, aga siin. Tuleb Nüüd on nagu vaja juurde panna hover, et, ee, teeme Niukse asja sellest teeb tublikaadi.
+
+341
+00:42:50.969 --> 00:42:56.420
+Õpetaja: Selle sisu võib ära kustutada Aga kooloniga saab öelda, et ükstapuha, mis klass on?
+
+342
+00:42:59.184 --> 00:43:12.520
+Õpetaja: Mm, ma nii ei taha teha sellepärast, et kui ma pärast tahaksin seda kasutada ikoonidele, Siis ma seal underline ei taha. Niikuinii. Pigem sellele Green Ile. Ütleme, et see on
+
+343
+00:43:13.265 --> 00:43:16.480
+Õpetaja: Green Under
+
+344
+00:43:21.136 --> 00:43:22.750
+Õpetaja: Under Line
+
+345
+00:43:36.855 --> 00:43:44.170
+Õpetaja: Ee Teeme siis ikkagi nii Nagu ma korraks hakkasin minema. Ma ütlen seal, et kui kasutad seda. Green i
+
+346
+00:43:45.886 --> 00:43:46.840
+Õpetaja: niiöelda. Hover,
+
+347
+00:43:56.881 --> 00:44:10.159
+Õpetaja: ma korra vaatan, kas Niukene Niukene Css on Vaba nagu link ning klink. Link, Light Id, Aa ning Underline.
+
+348
+00:44:13.189 --> 00:44:17.380
+Õpetaja: Aga visuaale ei anna, on ju No ma oleks ka ise tahtnud teha Niukest.
+
+349
+00:44:18.674 --> 00:44:21.729
+Õpetaja: Aa, tekst. Aa, värv on vale. Vä on jah.
+
+350
+00:44:23.035 --> 00:44:29.239
+Õpetaja: Ahah, okei ee, see Juba meile annab. Ee, aga miks Ee, siis screen seda üle Ei, värvi.
+
+351
+00:44:30.632 --> 00:44:39.270
+Õpetaja: Vaatame, kuidas link underline üldse Css is välja näeb. Kulutab mõttetut aega või? Siin on Jumal teab, mis asi Seda ma Enam ei julge isegi puudutada.
+
+352
+00:44:40.550 --> 00:44:46.260
+Õpetaja: Mhmh, tahtsin sealt teada, aga ma tahtnud tahtsin. Mis asi?
+
+353
+00:44:47.665 --> 00:44:52.770
+Õpetaja: Mm vaata seda minified. Vaid Seda tavalist
+
+354
+00:44:55.922 --> 00:44:58.949
+Õpetaja: ei oska veel vääri üldse küünnaid.
+
+355
+00:45:02.907 --> 00:45:04.069
+Õpetaja: Text Decoration vä
+
+356
+00:45:07.471 --> 00:45:11.719
+Õpetaja: Davai. Teeme niimoodi. Ee, et ikkagi mul saaks.
+
+357
+00:45:12.411 --> 00:45:19.339
+Õpetaja: Ja ta pointer eraldi. Ee, mis on alati ainult Ta teeb näpu teeme, uue klassi.
+
+358
+00:45:20.120 --> 00:45:21.829
+Õpetaja: Ee, siis panen
+
+359
+00:45:25.090 --> 00:45:25.510
+Õpetaja: tekst.
+
+360
+00:45:28.395 --> 00:45:30.890
+Õpetaja: Mitte pigem. Siin kebab Case tekst.
+
+361
+00:45:36.790 --> 00:45:37.350
+Õpetaja: Pointer.
+
+362
+00:45:41.960 --> 00:45:42.550
+Õpetaja: Underline
+
+363
+00:45:46.886 --> 00:45:52.279
+Õpetaja: kuidagi. Nii nii ee siis see Oi, Point
+
+364
+00:45:52.857 --> 00:45:56.310
+Õpetaja: R Seda ei ole kuskil kasutanud. Mis on see Text Decoration vä?
+
+365
+00:45:58.890 --> 00:46:02.920
+Õpetaja: Tekst Decoration
+
+366
+00:46:06.075 --> 00:46:07.350
+Õpetaja: annab värvi valida
+
+367
+00:46:10.676 --> 00:46:11.710
+Õpetaja: siia samasse.
+
+368
+00:46:12.351 --> 00:46:16.930
+Õpetaja: Ahah Underline Aa, Okei, okei, Sa saad värve ja mingeid omadusi, onju
+
+369
+00:46:17.415 --> 00:46:21.179
+Õpetaja: Ee, nüüd on ainukene asi seda veel pole kuskil veel kasutanud. Siin on mul Taipo Ka
+
+370
+00:46:22.060 --> 00:46:25.360
+Õpetaja: Ee, aga see võiks tulla ainult siis, kui on hover, Onju,
+
+371
+00:46:25.856 --> 00:46:33.350
+Õpetaja: et ma teeksin niimoodi et siia see kool on, siis ütleb, et Kui kuskil sina markeerid klassi tekst. Point är runderline.
+
+372
+00:46:33.912 --> 00:46:39.270
+Õpetaja: Siis See stiil talle sätendub. Aga ainult siis, kui sa hooverdad selle peal,
+
+373
+00:46:39.775 --> 00:46:49.100
+Õpetaja: eks see Siis on nüüd arvatavasti Äkki Niukene asi, mis võiks töötada. Meil on see Green. Meil on pointer. Ja mis Me panime veel tekst Pointer Underline
+
+374
+00:46:50.755 --> 00:46:51.880
+Õpetaja: Voh, Midagi taolist.
+
+375
+00:46:52.448 --> 00:46:53.559
+Õpetaja: Saime oma lingi kätte.
+
+376
+00:46:57.360 --> 00:46:57.860
+Õpetaja: Aitäh,
+
+377
+00:47:01.516 --> 00:47:05.880
+Õpetaja: Noh, kui Green I võtad ära vaata siis ta on valge, onju saate mõttest aru
+
+378
+00:47:07.917 --> 00:47:11.789
+Õpetaja: Noh, võib ka valge olla, aga mulle ka enda. Meeldib see Green juba.
+
+379
+00:47:13.095 --> 00:47:15.260
+Õpetaja: Nii, kuidas?
+
+380
+00:47:16.245 --> 00:47:18.370
+Õpetaja: See on pärisma roheline? Jah,
+
+381
+00:47:19.434 --> 00:47:29.820
+Õpetaja: väike salajaline viis, kuidas Ee, meelitada inimest. Ee, automaati Kasutamas sikupilliprismas. Et Aa, seda ma tean. See on see roheline pood.
+
+382
+00:47:31.156 --> 00:47:36.059
+Õpetaja: Nii okei, jah Tahtsingi roheliseks.
+
+383
+00:47:36.577 --> 00:47:47.339
+Õpetaja: Te võite mingi muu värvi panna või ei pea üldse värvi panema. Võib ka olla lihtsalt valge, aga, noh, kuni järgmise järgi järgi tulemiseni eksole Ee Ma panen ta praegu Greeniks. Mulle meeldib see, Green.
+
+384
+00:47:48.086 --> 00:47:53.309
+Õpetaja: Siin on ka mingid üleval. Mingid rohelised varjundid. Vaata, sealt need selle selle Ccs säted ongi.
+
+385
+00:47:54.051 --> 00:47:56.439
+Õpetaja: Need on kuskil siin selle menüü tegemiseks.
+
+386
+00:47:57.170 --> 00:48:08.809
+Õpetaja: See menüü on by The Way Selles. Mõttes custom Et, kui Te täiesti nullist uue projektiga Alustate siis seal. See menüü on täiesti Seal On üldse. Said menüü Vasakul Pool on mingi. Vanasti oli üleval mingi, mis oli kõige lihtsam.
+
+387
+00:48:09.230 --> 00:48:17.510
+Õpetaja: Siis ma nagu selle Ee projekti jaoks lihtsalt lasin Cloudil teha. Nagu mingi. Ma ei tea mingisuguse menüü siia ülesse, mis oleks üleval
+
+388
+00:48:18.417 --> 00:48:24.160
+Õpetaja: nii, Lähme tagasi, et saime nagu selle divi nüüd paika. Aga nüüd on siis vaja, seda. Et Ee,
+
+389
+00:48:24.770 --> 00:48:26.270
+Õpetaja: ee, Esimene asi
+
+390
+00:48:27.774 --> 00:48:35.059
+Õpetaja: on see, et mingi Tegevus peaks käivituma ja see tegevus peaks siis ee näitama. Tegelikult meile selle asukoha.
+
+391
+00:48:35.853 --> 00:48:37.159
+Õpetaja: Ee infomudalit.
+
+392
+00:48:37.783 --> 00:48:40.869
+Õpetaja: Meil on vaja kõigepealt meetodit. Tegime ju selle, uhke.
+
+393
+00:48:41.840 --> 00:48:49.559
+Õpetaja: Ahaa, siin on see konks. Vaata, et kus asub praegult see nupukene või see tekst Ise ta asub meil siin, on nii
+
+394
+00:48:51.107 --> 00:48:57.489
+Õpetaja: aga Kus meil kogu tegevus asub? Ei asu mitte siin, vaid parentes on. Meil Siis ju
+
+395
+00:48:59.392 --> 00:49:07.410
+Õpetaja: vastab tõele. Location Stable Siin on meil ju see modal. See tähendab seda, et kui Action saab alguse siit,
+
+396
+00:49:08.045 --> 00:49:11.499
+Õpetaja: siis seal all ei olegi midagi. Progeda Vaid sealt peab tulema. Mis asi,
+
+397
+00:49:16.525 --> 00:49:26.650
+Õpetaja: kui Location Info modal on siin. Ainult siin on tema. Niiöelda see location info Modal is open, mis seda tegelikult mõjutab, kas Modalit näidatakse või Mitte et
+
+398
+00:49:27.795 --> 00:49:34.240
+Õpetaja: nupp, mille peale saab nüüd klikkida. Ma pole veel midagi teinud Oleks Siin mis see tegevus on?
+
+399
+00:49:38.055 --> 00:49:43.229
+Õpetaja: Event tuleb üles saata, ehk siis Ja mitte, onju? Siis siin peaks panema ät click.
+
+400
+00:49:45.798 --> 00:49:50.570
+Õpetaja: No, me saame kohe siit ja mitte sealt samalt joonelt panna. Meil ei ole mõtet mingit eraldi meetodit selleks teha.
+
+401
+00:49:51.708 --> 00:49:53.750
+Õpetaja: Ee, on vaja mingisugust. Ee.
+
+402
+00:49:55.138 --> 00:49:58.560
+Õpetaja: Selle asja nimi on location name, onju Event.
+
+403
+00:50:00.502 --> 00:50:07.530
+Õpetaja: Oi, oi, oi, aivar tiris. Mul Siin monitori. Oi, pilt läks ära. Tuli tagasi ja kõik on hästi.
+
+404
+00:50:09.151 --> 00:50:15.009
+Õpetaja: Nii, nüüd Ei, Jah, ma siia istuma. Siia, sinna
+
+405
+00:50:17.067 --> 00:50:22.300
+Õpetaja: pikad jalad. Jah, ma pean natukene eemal karjutamata ennast, sest see on. Mõlemal on piisavalt ruumid.
+
+406
+00:50:22.738 --> 00:50:38.999
+Õpetaja: Nii, ee, nüüd on sul vaja Event ile nimi mõelda, Aga Jällegi. Vaata, kui te võtate Event ile nime, siis see peab kõnetama. Mis all korrusel toimub? Mitte mida ma siin näen, et mida Ma tahan näha nagu, ee, siin selle kohal, et mis see vend siit tuleb?
+
+407
+00:50:42.585 --> 00:50:44.889
+Õpetaja: Ei ei,
+
+408
+00:50:45.470 --> 00:50:53.250
+Õpetaja: miks, kui. Kui sa. Mida on selle tegelikult Otseselt nagu seost. Vaata, tema ei tea oma barentist ja elust mitte midagi.
+
+409
+00:50:53.976 --> 00:50:58.670
+Õpetaja: Me tahame teha midagi, mis meil siin kõnetaks, et kui ma tulen. Loen seda. Atms View D.
+
+410
+00:50:59.400 --> 00:51:02.440
+Õpetaja: Tulen vaatan siia, siis siit tuleb mingisugune event.
+
+411
+00:51:03.658 --> 00:51:11.110
+Õpetaja: Kui siin oleks, nagu räägiks juba Location info mudalist, siis Kahjuks juhtub see. Vaata, et enam seal laps ei ole meil nii väga orb midagi.
+
+412
+00:51:11.454 --> 00:51:14.689
+Õpetaja: Ta teab oma päris palju. Ta teab, et siin on mingi,
+
+413
+00:51:15.040 --> 00:51:31.860
+Õpetaja: ee, mida tuleb avada. See alumine korrus ei saa kirjeldada, Mis üleval peab toimuma. Alumine korrus peab kirjeldama lihtsalt sõna otseses mõttes, Mis Siin, all korrusel toimus? Noh, kui meil City Strop Townil oli New City Selected, vaata. Ja mis meil olid seal mingid muud asjad ka, onju
+
+414
+00:51:32.466 --> 00:51:37.470
+Õpetaja: midagi taolist Ja et see on nagu pigem. Vaata,
+
+415
+00:51:42.006 --> 00:51:43.339
+Õpetaja: Location Name
+
+416
+00:51:49.706 --> 00:51:50.480
+Õpetaja: paneks klikk
+
+417
+00:51:52.618 --> 00:52:02.290
+Õpetaja: ja see on ka nagu me räägime, see on Vaata, et mis see nagu võiks täpselt olla. Nagu sinna kanti Kuhugi võiks minna mingit fuckikest. Ee, ahaa.
+
+418
+00:52:02.986 --> 00:52:05.440
+Õpetaja: Kas oleks vaja mingit pakikest saata või mitte,
+
+419
+00:52:09.362 --> 00:52:22.580
+Õpetaja: ideed oleks vaja. Muidugi sellepärast, et kuidas mina tean, mida? Mis see mulle lihtsalt annab, et ta toimus klikk, sest et tegevus on see, et me peame kuvama selle asukoha infot. See tähendab seda, et seda infot on meil vaja saada.
+
+420
+00:52:22.992 --> 00:52:31.250
+Õpetaja: Kuidas me selle saame tema Id abil. No taaskis oli see ka tegelikult kenasti kirjeldatud. Vaata, et andmed saadakse teenusega.
+
+421
+00:52:31.763 --> 00:52:32.769
+Õpetaja: Location Id.
+
+422
+00:52:33.558 --> 00:52:38.340
+Õpetaja: Ehk siis meil on seda vaja teada, et tema teab meedia. Sellisel juhul me paneme koma.
+
+423
+00:52:42.761 --> 00:52:44.009
+Õpetaja: Noh, ma siia kirjutan.
+
+424
+00:52:47.860 --> 00:52:49.560
+Õpetaja: Vaatame, palju te midagi mäletate?
+
+425
+00:52:52.530 --> 00:52:54.930
+Õpetaja: Topelt loogilised surud. Kas me asume tagide vahel.
+
+426
+00:52:58.339 --> 00:53:08.890
+Õpetaja: Aga siin ei ole Event. Siin ei ole Event. Kas me oleme mingi interaktiivsel elemendil, millel on mingid erilised atribuudid, mida me Tagajame ei ole. See on täiesti tavaline tiiv. Kus me oleme?
+
+427
+00:53:09.650 --> 00:53:11.330
+Õpetaja: Mis meil siin roll ei mängib.
+
+428
+00:53:11.838 --> 00:53:13.689
+Õpetaja: No kuidas seda nime näiteks kuvatakse?
+
+429
+00:53:15.715 --> 00:53:18.170
+Õpetaja: Mis sul Siin toimub? Tuletame Meelde Mis see siin on,
+
+430
+00:53:22.084 --> 00:53:30.790
+Õpetaja: Tsükliga Teeme uusi, Rose. Ütleme, et näita kuskil City Name I näita kuskil Location Name I
+
+431
+00:53:31.373 --> 00:53:37.899
+Õpetaja: Võta transaction Type D. Käi need läbi. Kui on is available, saate mõttest aru. Ghee on siin, Mis asi?
+
+432
+00:53:39.518 --> 00:53:43.630
+Õpetaja: Noh, seda vist olekski Nagu vaja, on Ju ma sinna kirjutan.
+
+433
+00:53:44.468 --> 00:53:45.540
+Õpetaja: Keegi juba ütles Sealt.
+
+434
+00:53:47.880 --> 00:53:48.430
+Õpetaja: Location
+
+435
+00:53:54.222 --> 00:53:58.010
+Õpetaja: alati ei paku, kuna see on propsist, tuleb kogu see info. Vaata, Tal Pole mudelit.
+
+436
+00:54:00.402 --> 00:54:01.520
+Õpetaja: Location ei tee.
+
+437
+00:54:03.895 --> 00:54:12.440
+Õpetaja: Jah, nüüd nüüd. Ee. Pärend. Saab ka seda midagi teada teada. Vaata, Location Name Event Event Location Name Click
+
+438
+00:54:14.162 --> 00:54:16.159
+Õpetaja: selle Evendi ja Miki alla kunagi
+
+439
+00:54:17.142 --> 00:54:26.499
+Õpetaja: Ja väga hea mõte. Ee, siin all. Ee, on. Meil polegi. Vaata, sa oled siiamaani pole ühtegi Event I siit läinud. Vaata, on. Ju. Teeme selle eraldi selle bloki.
+
+440
+00:54:27.732 --> 00:54:32.710
+Õpetaja: Ee, miks? Ja keegi tuleb seda siin kunagi lugema. Ta on kohe pilt, selge? Enne kui ta koodigi loeb.
+
+441
+00:54:34.051 --> 00:54:41.679
+Õpetaja: Siin on mingisugused Event Id. Ee, mis siit teele lähevad? Pluss see juures saame progedes teha mõnusalt, Kui vajutad ätt,
+
+442
+00:54:42.586 --> 00:54:59.079
+Õpetaja: siis ta pakub seda, mis ee, Child niiöelda saadab, et see see peamine väärtus tegelikult Niuke, praktiline, mitte peamine praktiline väärtus, Meile on juba see, et me saame. Ee, me ei pea Copy Based ima seda siia järgmisse. Vaatesse. On ju ta Vaatasse, vaid faili.
+
+443
+00:54:59.673 --> 00:55:02.510
+Õpetaja: No väga hea, nüüd on Ee close to the right.
+
+444
+00:55:03.508 --> 00:55:11.160
+Õpetaja: Panen siit asju kinni. Ee, nüüd Siin, kus kutsume Location Tablet. Meil on Niukene süsteem olnud, et mis läheb kõigepealt nagu alla on eespool
+
+445
+00:55:11.823 --> 00:55:13.739
+Õpetaja: Ja siis, ee, Kõik, mis tuleb niiöelda
+
+446
+00:55:16.344 --> 00:55:22.030
+Õpetaja: alt ülesse, siis on ee, sündakse mõttes niimoodi all. Ja nüüd juba hakkabki. Event Location name click.
+
+447
+00:55:27.526 --> 00:55:31.900
+Õpetaja: Nii, nüüd selles mõttes, et mis tegevus peab selle peale niiöelda käima minema
+
+448
+00:55:36.556 --> 00:55:49.029
+Õpetaja: Meil ei ole veel praegult ühtegi sobilikku meetodit, mida praegu saaks välja kutsuda. Vaata, mis meil siin on, aga tuleb üks uus meetod. Niikuinii mõtleme korra nagu suures pildis. Vaata, et, noh. Mis selle kliki peale siin selle saate, mis peaks juhtuma?
+
+449
+00:55:55.830 --> 00:56:09.170
+Õpetaja: Okei, okei, okei, ee, see oleks üks mõte. Vaata, et, ee. Noh, sinu mõte oli praegult. See on Ju Location info Modal Is open ja panna see näiteks truuks.
+
+450
+00:56:11.525 --> 00:56:17.859
+Õpetaja: Jah, bingo. Aa, nüüd tuli välja juba, et meil on vaja põhimõtteliselt kahte tegevust. On ju?
+
+451
+00:56:18.483 --> 00:56:22.270
+Õpetaja: Et siis sellisel juhul me teame, ee, et
+
+452
+00:56:22.789 --> 00:56:29.069
+Õpetaja: meil on vaja siis mingisugust meetodit. Meil tuleb siis nagu mingi natukene. Nagu progemist. Et seda, siia me ära ei suru,
+
+453
+00:56:29.584 --> 00:56:37.529
+Õpetaja: siis on vaja ainult mõelda siia. Noh, siin ei olegi vaja mõelda. Praegult selle võime niimoodi siia tühjaks jätta. Aga me teame, et me peame nüüd metsas blokki minema.
+
+454
+00:56:38.465 --> 00:56:40.600
+Õpetaja: Me mõtleme välja mingisuguse meetodi nime.
+
+455
+00:56:44.347 --> 00:56:50.039
+Õpetaja: Õudsalt oleks tahtmine lihtsalt panna nagu äri loogiliselt et Open location info madal.
+
+456
+00:56:51.604 --> 00:56:54.440
+Õpetaja: Aga sellega on natuke see Konks, Vaata, kuna
+
+457
+00:56:55.440 --> 00:57:13.679
+Õpetaja: me tegelikult ainult seda Ei, tee. Ee, me teeme natukene rohkemat. Siis Peame seda hägusemaks tegema. Sest kui see olekski täpselt, et tee modal lihtsalt lahti. See on ju tegevus. Aga me ei tee seda. Ainult Me teeme ju ka. Toome info ära, siis ma Pakun, et äkki me niimoodi. Üsna kavalalt
+
+458
+00:57:14.338 --> 00:57:18.609
+Õpetaja: Mõtlesin siia alla poole Mingisuguse koha siia. Näiteks kus error lõpeb?
+
+459
+00:57:19.278 --> 00:57:21.220
+Õpetaja: Äkki? Oi, kui vale asi.
+
+460
+00:57:21.966 --> 00:57:30.629
+Õpetaja: Ee, Siin me oleme juba järjekorda pannud, Onju, et ma otsin viimase meetodi. Mina arvan, et äkki võiks olla Niukene nägune sõna juures nagu handel
+
+461
+00:57:34.366 --> 00:57:44.350
+Õpetaja: Ja Siis tuleb see andel Open Location Info
+
+462
+00:57:45.245 --> 00:57:49.600
+Õpetaja: mudal. Siis ta selles mõttes nagu, ee, midagi ei valeta. Otseselt
+
+463
+00:57:50.723 --> 00:57:54.689
+Õpetaja: valetamine selles kontekstis, et ta Ütleb, et ta, teeb midagi. Ta tegelt ei tee.
+
+464
+00:57:55.175 --> 00:58:05.229
+Õpetaja: Ee, ta ei ole ka liiga pikk. Ta. Ta annab meile nagu vihjeks, et toimub Location info. Mudeli avamine Aga seal on mingi tingimuslik või midagi. Seal nagu toimub veel
+
+465
+00:58:06.767 --> 00:58:15.979
+Õpetaja: sellepärast, et me tahaksime, kui me tahaks teha meetodit Nagu konkreetselt. Tee see modal lahti, et ma tahaks niukest meetodit. Kui ma selle nime praegu ära võtan, siis sellega on kõik
+
+466
+00:58:16.630 --> 00:58:21.910
+Õpetaja: ja ta Pealkiri valetab ka. Ta Õudsalt viitab, et ma teen ühte asja äriloogiliselt. See on korrektne.
+
+467
+00:58:23.958 --> 00:58:29.909
+Õpetaja: Noh, kui ma oleks tahtnud niimoodi teha, ma ei ole seda kuskil kasutanud. Vaata, et ma oleks tahtnud öelda Open Location info modal.
+
+468
+00:58:30.623 --> 00:58:39.989
+Õpetaja: Siis ma oleks pannud näiteks, et et, okei, see on Nagu mingi konkreetse asukoha. Ee, avamine on ju Open,
+
+469
+00:58:45.951 --> 00:58:47.639
+Õpetaja: Me. Me ei lähe sellega muidugi.
+
+470
+00:58:53.062 --> 00:59:00.460
+Õpetaja: Või? No näiteks, Kas see sõna võiks sobida siia Ka Open Selected Location
+
+471
+00:59:02.297 --> 00:59:14.119
+Õpetaja: Location Info modal. Sest et ma ei, saa ka öelda, nagu selline tunne, et neid location info madaleid on mitu Vaata, ma nagu isiklikult arvan, et lihtsalt.
+
+472
+00:59:15.286 --> 00:59:16.630
+Õpetaja: See oleks kõige lihtsam
+
+473
+00:59:21.141 --> 00:59:23.880
+Õpetaja: Nii edasi. Selle raha kinni ei jää.
+
+474
+00:59:24.380 --> 00:59:35.900
+Õpetaja: Ee, siis ongi need tegevused, mis võiks olla siis. Ee, esimene tegevus. Ahaa, praegult on siis ikkagi Nad seome kõigepealt selle ära ka. Ee, lähme siis sinna kohta, kus ee, Event tuleb
+
+475
+00:59:37.518 --> 00:59:40.029
+Õpetaja: mingi. Mis see oli? Handel oli Onju
+
+476
+00:59:41.599 --> 00:59:46.100
+Õpetaja: and. Ee, meil on. Teises on handel Open Location info madal.
+
+477
+00:59:47.432 --> 00:59:53.069
+Õpetaja: Nüüd on omavahel seotud Kui kontroll B, vajutate, siis niimoodi edasi tagasi. Saate siin Ee, liikuda.
+
+478
+00:59:54.772 --> 01:00:01.760
+Õpetaja: Nüüd Eventsle avab mäletatavasti Event Tegelikult siis saatis ka Pakikese
+
+479
+01:00:02.896 --> 01:00:05.600
+Õpetaja: Location Id näol. Kuidas selle kätte saan?
+
+480
+01:00:09.257 --> 01:00:11.129
+Õpetaja: Kuidas siin on? Siin on väike abstraktsioon.
+
+481
+01:00:16.290 --> 01:00:22.179
+Õpetaja: Ee, kaasa See Id tuleb niikuinii kaasa. Aga minu küsimus on, kuidas ma siit selle kätte saan.
+
+482
+01:00:22.694 --> 01:00:27.170
+Õpetaja: See meetod ei tea oma välisest elust töödega mütsi Tatablokis seda. Ka pole.
+
+483
+01:00:32.290 --> 01:00:33.220
+Õpetaja: Muidugi,
+
+484
+01:00:40.531 --> 01:00:45.350
+Õpetaja: siin on ju maitse asi. Vaata, mida me kirjutame. No, kõige lihtsam variant oleks Location Id.
+
+485
+01:00:49.692 --> 01:00:51.629
+Õpetaja: Ma ei tea, see võiks ka mõelda. Clicked
+
+486
+01:00:52.835 --> 01:01:03.540
+Õpetaja: Location Id ja nii edasi. Mingi Kui see siin kontekstis nii hästi kuidagi mulle üle keele ei paindu. Ma jätaks selle lihtsalt niimoodi. Aga Võib ka olla mingi selgitav sõna juures.
+
+487
+01:01:04.214 --> 01:01:10.529
+Õpetaja: Kui oleks Selectbox, siis on õudsalt mõnus. Mingi näiteks võib olla muuta märkamist, millega on tegemist.
+
+488
+01:01:11.425 --> 01:01:15.379
+Õpetaja: Okei, väga tore,
+
+489
+01:01:17.889 --> 01:01:24.690
+Õpetaja: selle info saame kätte. Noh, kui ei usu, siis väike Alert ja location ideed. Lihtsalt korra vaadata, et see asi töötab printsiibis.
+
+490
+01:01:25.856 --> 01:01:30.210
+Õpetaja: Tulen siia klikin peale kaksteist, Kolmteist
+
+491
+01:01:31.234 --> 01:01:36.840
+Õpetaja: üksteist Siin taga. On see info olemas. Ma lihtsalt teen näite seda seal tabelis ei ole vajalik.
+
+492
+01:01:38.976 --> 01:01:40.040
+Õpetaja: Kätte me ta saame.
+
+493
+01:01:45.201 --> 01:01:49.139
+Õpetaja: Mis nüüd Siis edasi ei pea siin koodi najal ütlema. Aga mis ma edasi siis võiks teha?
+
+494
+01:01:51.454 --> 01:01:55.740
+Õpetaja: Ee, kokkulepe oli ju? Kokkulepe, oli
+
+495
+01:02:03.299 --> 01:02:07.580
+Õpetaja: nii, Aidan, Ootame, Aga mitte Anyway.
+
+496
+01:02:09.430 --> 01:02:09.820
+Õpetaja: Ushh.
+
+497
+01:02:16.843 --> 01:02:25.360
+Õpetaja: Aa okei, ee, Vaatame kohe.
+
+498
+01:02:26.665 --> 01:02:27.700
+Õpetaja: S.
+
+499
+01:02:29.876 --> 01:02:37.520
+Õpetaja: Siin oli see Text Pointer, Underline ja siis ee, tuli
+
+500
+01:02:42.147 --> 01:02:43.779
+Õpetaja: Kas keegi veel ootab?
+
+501
+01:02:48.340 --> 01:02:48.830
+Õpetaja: Mhmh,
+
+502
+01:02:52.867 --> 01:02:57.680
+Õpetaja: Aga sellega saab arutada, et mis siis? See tegevus on? Nagu siin, et It on käes Väga tore
+
+503
+01:02:58.334 --> 01:02:59.269
+Õpetaja: Me teeme Selle liiga.
+
+504
+01:03:00.546 --> 01:03:05.310
+Õpetaja: Oleks vaja saada. Andmebaasist. Oleks vaja saada andmebaasist andmed kätte.
+
+505
+01:03:05.904 --> 01:03:12.750
+Õpetaja: No jah. Kuidas me saame siis ee. Oma fronten süsteemis andmeid kätte Ee,
+
+506
+01:03:13.320 --> 01:03:20.600
+Õpetaja: jah, aga Seal ei ole veel hetkel seda. Muidugi, aga idee on. Õige, Vaata, et, ee, Meil on vaja mingit Teenust, mis? Ee, toob ära Location
+
+507
+01:03:21.138 --> 01:03:29.369
+Õpetaja: Location. Iga seotud andmeid siia alla on plaanis midagi teha. Hetkel on Kett Atm Location request Et Ee, Saad
+
+508
+01:03:30.488 --> 01:03:37.659
+Õpetaja: asukohta, siis City Id järgi Saame lisada Location It Aga nüüd oleks vaja midagi, mis taaskis, on ka öeldud, et.
+
+509
+01:03:38.423 --> 01:03:49.989
+Õpetaja: Ee, meil on Ee up ketup i locations location Id, Aga minule meeldiks Ainsuses. Me praegu progeme selle ära selle mitmuse vastu, Kuna Stop Light is nii, on
+
+510
+01:03:50.514 --> 01:03:55.519
+Õpetaja: aga oma back endast teeks Selle tegelt ainsuses. Mulle meeldib ikkagi niimoodi. Ma ei saa midagi teha
+
+511
+01:03:56.277 --> 01:03:57.080
+Õpetaja: niimoodi. On parem.
+
+512
+01:03:58.363 --> 01:04:03.319
+Õpetaja: Okei, ee. Noh, siis on põhimõtteliselt see, et läheme Siia Location Servicesse.
+
+513
+01:04:05.011 --> 01:04:06.820
+Õpetaja: Ee, võtame lahti oma piibli.
+
+514
+01:04:07.630 --> 01:04:13.890
+Õpetaja: Mis on meie piibel Svager, See on meie abi. Contract.
+
+515
+01:04:19.764 --> 01:04:27.049
+Õpetaja: Näete, see oli see, mis tagastab pangaautomaatide asu kohta. Tee infot mitmuses. Siin oleks Jumala mõnus atm Locations
+
+516
+01:04:27.689 --> 01:04:37.580
+Õpetaja: Ja siin. See tähendab Locations aga ma tahan ainult ühte, Aga ma Ütlen, nagu ma tean, et see on see standardmudel, aga minule ikkagi ilmselt meeldib see, et kui see urla oleks ainsus,
+
+517
+01:04:38.149 --> 01:04:49.319
+Õpetaja: sest et Url määrab ressursi, millest sa räägid, Räägib endiselt. Ega ma ei saa Location Said tuua ühe Id järgi. Selles mõttes onju ma ei, saa, no See Ei ole nagu loogiline. Vaata onju, et
+
+518
+01:04:49.807 --> 01:05:02.729
+Õpetaja: too mulle Id Ga Location Id kaksteist ära. Kõik location Id ei saa, sest see on See ressurss, et ma tean, et see tava on niimoodi, aga mina. Kui sa näpu panen ette, siis minu jaoks on ta nagu Get Atm Location.
+
+519
+01:05:04.572 --> 01:05:10.659
+Õpetaja: Minule meeldib ikkagi. Neid Põhimõtteliselt tahad. Okei, tuleme siia sisse. Vaatame ka
+
+520
+01:05:12.295 --> 01:05:18.639
+Õpetaja: Ee, Võibolla võiks kohe teha selle osa ära, et, ee, see mudel.
+
+521
+01:05:27.776 --> 01:05:31.839
+Õpetaja: Vaatame korra. Mul Vot ma Hästi, natuke Olen praegu ee.
+
+522
+01:05:32.488 --> 01:05:36.160
+Õpetaja: Siin on see Rework. Niiöelda nende asjade päästmisel
+
+523
+01:05:37.227 --> 01:05:40.729
+Õpetaja: vaataks. Hästi, korraks. Ee, Miuke see visuaalvälja nägi?
+
+524
+01:05:41.501 --> 01:05:54.290
+Õpetaja: Mul on niuke tunne et midagi, ei klapi, aga ei ole seda siin. Okei, ee, ma mõtlesin seda, et ma Näen, et seal on City Id. On seal osa sellest sõnumist ja Mul on mida selle City Id ga nagu teha,
+
+525
+01:05:54.715 --> 01:06:04.450
+Õpetaja: kui me kasutame Sama nagu ttod kaks korda. Okei, seda ka. Ma tahtsin näha, kas siin on kirjas ka Tallinn. No, seda infot siin niikuinii ei ole Nii et puudu midagi ei ole.
+
+526
+01:06:06.240 --> 01:06:08.740
+Õpetaja: Ee, mm,
+
+527
+01:06:11.848 --> 01:06:18.190
+Õpetaja: no jah, Vaatame kui me jõuame. Mul on nagu küsimus. Lihtsalt ma korra tahan vaadata. Hästi, Ruttu, Kas Ahh. Kurat, läks kinni.
+
+528
+01:06:19.267 --> 01:06:25.170
+Õpetaja: Ee, siin saab ka. Ma tahan korra vaadata.
+
+529
+01:06:25.713 --> 01:06:28.459
+Õpetaja: Ma tahan korra vaadata. Seda Sama asja uuesti.
+
+530
+01:06:30.425 --> 01:06:32.550
+Õpetaja: Väga Reddit on ka isegi siin kenasti olemas.
+
+531
+01:06:33.196 --> 01:06:37.360
+Õpetaja: Ma teen kaks sõda lahti ja kõrvuti. Ee, split screen.
+
+532
+01:06:38.380 --> 01:06:40.080
+Õpetaja: Kuidas siin seda šašlitti teha?
+
+533
+01:06:40.743 --> 01:06:41.430
+Õpetaja: Selle Peal
+
+534
+01:06:44.536 --> 01:06:46.080
+Õpetaja: teie peal, siis plet.
+
+535
+01:06:49.585 --> 01:06:53.450
+Õpetaja: Nii, tookord seda mudelit vaadata.
+
+536
+01:06:57.660 --> 01:06:59.739
+Õpetaja: Postli juures oli Meil see. Mudel, on ju?
+
+537
+01:07:07.794 --> 01:07:14.710
+Õpetaja: Noh, seda mitmekordselt. Vaata, sa isegi ei muuda Nagu tegelikult, nagu siin on küsimus, et Location Id saab ka.
+
+538
+01:07:15.441 --> 01:07:19.519
+Õpetaja: Aga äkki see on sama mudel, mis on see, mis toob kõik location Id,
+
+539
+01:07:28.041 --> 01:07:33.880
+Õpetaja: aga seal tuuakse Location It location name Cityne
+
+540
+01:07:34.605 --> 01:07:38.399
+Õpetaja: Image Data D siin, võibolla. Ahah, okei, hea küll, Fair enough
+
+541
+01:07:40.826 --> 01:07:47.580
+Õpetaja: minu jaoks, kui üldse Nagu see kuidagi oleks nagu selgitatav minu jaoks. Siis mina eeldaks et siin võiks olla ka City name.
+
+542
+01:07:48.133 --> 01:07:53.770
+Õpetaja: Mida ma selle It ga teen selles kontekstis. Ee, selle ma teeks tegelikult mingi hetk. Pigem teeks korda
+
+543
+01:07:55.466 --> 01:08:02.649
+Õpetaja: väikse pausi Praegult äkki. Ja siis meil läheb lõpus see sutsakas, Me Teeme täna kuskil. Ma pakun, et kell neli teeme. Lõpparve
+
+544
+01:08:03.326 --> 01:08:04.020
+Õpetaja: soovib teile,
+
+545
+01:08:05.032 --> 01:08:10.649
+Õpetaja: aga lasen teid suht vara ära. Üldse terve nädala teid. See on väga vara ära lasknud. Kogu aeg
+
+546
+01:08:11.362 --> 01:08:20.010
+Õpetaja: olete õnnega koos. Ee, teeme siis sellise kokkulepe olete saanud siin? Ee, tegelikult arvestades, kuidas see nagu maht on ette nähtud saanud varem kotse minna. Küll.
+
+547
+01:08:20.761 --> 01:08:29.060
+Õpetaja: Ma panen käsi käe südamele südamele, teile et, ee, selle nädalavahetuse jooksul prooviksite vaadata neid java tähtsamaid teemasid.
+
+548
+01:08:32.308 --> 01:08:39.480
+Õpetaja: Ma panen lausa selles mõttes nagu mul. Oli see nagu tähtsamatest Tähtsamad teemad olid ära toodud aga ma paneks täitsa.
+
+549
+01:08:39.979 --> 01:08:47.319
+Õpetaja: Kas ma Panin juba siia Ka Selle korra ei pannud iga kord. Ma otsin seda siit. Ee, no ma lähen korra kuskile kohta.
+
+550
+01:08:50.595 --> 01:09:00.620
+Õpetaja: Ma tahan Ee, Ma panen ta ikkagi ühe korra veel siis Ta on nagu niimoodi. Ta ei ole selle Space all. Ta on vali It Space all, ta lahti.
+
+551
+01:09:02.420 --> 01:09:04.430
+Õpetaja: Ootan siin kannatamatult.
+
+552
+01:09:05.011 --> 01:09:11.899
+Õpetaja: Jah, teeme kümme metsa ee. Space, Space Space Spaces Valige.
+
+553
+01:09:15.718 --> 01:09:21.139
+Õpetaja: Ee. Siin, On palju teemasid ee. Pange, Nii kaugele Lihtsalt kui saate aga alustada ka algusest.
+
+554
+01:09:22.419 --> 01:09:28.890
+Õpetaja: Ee, te võite seda teha. Niimoodi Silmad diagonaalis, Kus kohas on mingid videod asjad. Need pigem, vaadake ära.
+
+555
+01:09:31.716 --> 01:09:33.369
+Õpetaja: Need on kõik A, B, C, asjad
+
+556
+01:09:34.963 --> 01:09:37.879
+Õpetaja: ja nii kaugele, kui jaksate minna. Ma võin öelda kohe ära, et
+
+557
+01:09:38.591 --> 01:09:42.089
+Õpetaja: kogu see asi, mis Siit alt tuleb. Nagu on ka nagu ülimalt
+
+558
+01:09:42.746 --> 01:09:49.150
+Õpetaja: importante. No kõik Springi asjad juba. Kui te on mingi teema lahti, siis on kohe näha ka, et teema kaupa. Nad vist on siin kõrval.
+
+559
+01:09:49.984 --> 01:09:52.459
+Õpetaja: Ee, pandud Ee, Springi alla.
+
+560
+01:09:53.956 --> 01:09:59.089
+Õpetaja: Jpa ja Spring muud asjad siin ka, et. Ee,
+
+561
+01:10:00.902 --> 01:10:06.789
+Õpetaja: ee, Vaadake, palun. Ee, teie enda elu on selle võrra lihtsam. Panen siia Ad Channel.
+
+562
+01:10:10.470 --> 01:10:16.869
+Õpetaja: Vaadake siin nädalavahetusel tähtsamad teemad. Paneme Lingina.
+
+563
+01:10:21.134 --> 01:10:27.440
+Õpetaja: Hakake sealt kuskilt ülevalt poolt pihta. Nii kui te jaksate ja jõuate. Ee, kõik ei pea ära vaatama. Kui jõuate, siis on hästi.
+
+564
+01:10:28.522 --> 01:10:39.079
+Õpetaja: Ee, pange käsku teie kanalist. Paneme siis praegu pausi ja siis, ee, kümne, minuti pärast andmed. Selle Pole üldse
+
+565
+01:10:42.156 --> 01:10:47.359
+Õpetaja: vaata. Ma, panen pildi ette endale mis, Me tegime Ime pidime Madalisse panema.
+
+566
+01:10:48.344 --> 01:10:48.939
+Õpetaja: Asukohanime?
+
+567
+01:10:50.375 --> 01:10:50.810
+Õpetaja: Jah,
+
+568
+01:10:54.370 --> 01:10:54.910
+Õpetaja: Mhmh,
+
+569
+01:11:00.216 --> 01:11:10.980
+Õpetaja: Mitte ainult. Ee. Kogu ülejäänud info. Ee, peame hoopis selle päringu. Me jäime sinna niimoodi meelde. Ee, Me jäime sinna et me hakkasime oma piiblit vaatama. Ja Mul korra endal tekkis nagu, küsimus.
+
+570
+01:11:12.009 --> 01:11:18.240
+Õpetaja: Ee, selle sõnumi infos. Eelkõige mind lihtsalt, ee, pani mõtlema niuksed. Asjad mis ma siin näen.
+
+571
+01:11:20.200 --> 01:11:27.020
+Õpetaja: Location Id ja City Id on minu jaoks nagu. Natuke. Kas sa tahad kinni saab kuidagi panna. Huvitav, kuidas see käib. Close
+
+572
+01:11:29.965 --> 01:11:30.900
+Õpetaja: plussplitzgreen.
+
+573
+01:11:40.463 --> 01:11:41.549
+Õpetaja: Vot nii,
+
+574
+01:11:43.692 --> 01:11:57.109
+Õpetaja: ee, hästi natukene. Minu jaoks on Siin Ütlen, et see Reworkiga on need ee läinud. Võibolla pärast. Kui me jõuame otsapidi päris arenduseni, siis minu küsimus on seda, et
+
+575
+01:11:58.624 --> 01:12:11.390
+Õpetaja: miks Mul on vaja seda Location Id D. Selles sõnumis Oleks minu küsimus, kui sa ise kutsud välja, et anna mulle informatsiooni ühe panga kohta, Mis on kaksteist. Mis sa ikka, mulle vastab, tagasi Kaksteist.
+
+576
+01:12:12.098 --> 01:12:27.799
+Õpetaja: Mm, taaskasutus on muidugi mõeldav asi, et seda kuskil mujal kasutatakse. Aga siis mul on küsimus. Nagu et mis kuradi teine teenus vajab Ee, võibolla seda ta täpselt. Miks ta peaks seda vajama? Ja Miks seal? On see City Id? Ee, ma nagu näeks, et
+
+577
+01:12:29.249 --> 01:12:44.189
+Õpetaja: mis data Siin on, ee. Minu arvates siin võiks olla hoopis City name. Ja seda ei, peaks olema. Aga teeme selle korda. Me niikuinii praegult kasutame neid asju, mis meil siin olemas on. Ühesõnaga, pikad pead sellega juurde. See on meie piibel. Igal juhul
+
+578
+01:12:45.508 --> 01:12:53.949
+Õpetaja: selle vastu tuleb ee sõnum saata, Nii, ee, siis. Ee.
+
+579
+01:12:54.577 --> 01:12:55.710
+Õpetaja: Hakkamegi seda tegema.
+
+580
+01:12:57.175 --> 01:13:09.570
+Õpetaja: Noh, siin on ka. Vaata, siin on ee. Mitu meetodit on siin? Tegelikult ka võiks mingit süsteemi jälgida, et mina teeksin ka niukest. Vaata, et see postitamise teenus võiks olla siin üleval pool.
+
+581
+01:13:09.952 --> 01:13:21.430
+Õpetaja: Me lihtsalt oleme kirjutanud seda koodi kirjutamise ajal. Vaata, väga palju panna. Sinna Pole mõelnud pannud, Aga idee järgi siis ma. Mul meeldib backendis teha nagu siin võiks ka teha,
+
+582
+01:13:22.015 --> 01:13:35.730
+Õpetaja: Ee, on Päriselt niiöelda mitmus. Mulle meeldib teha niimoodi, et kõigepealt üksikobjekt küsitakse. Ja siis sellest tuleb see ühesõnaga. Siia on meil vaja ühte uut meetodi nime selle me paneme kokku. Üsna tehniliselt
+
+583
+01:13:37.030 --> 01:13:37.490
+Õpetaja: Get
+
+584
+01:13:38.348 --> 01:13:51.889
+Õpetaja: Atm Locations Id. Või teeme Location urleb selliseks. Aga me kavatseme teha teistpidi No Davai, Teeme Ee, mis ma kirjutan? Mis Ma kirjutan?
+
+585
+01:13:52.889 --> 01:13:55.909
+Õpetaja: Aa, teem Location Ja mis sinna lõppu võiks panna?
+
+586
+01:13:56.875 --> 01:13:59.090
+Õpetaja: Jah, sa saad kohe aru.
+
+587
+01:14:00.545 --> 01:14:05.200
+Õpetaja: See on Niukene Hästi tehniline. Ta on niuke tehniline Pool hinnad.
+
+588
+01:14:06.135 --> 01:14:08.570
+Õpetaja: Oi, kus sai küsida?
+
+589
+01:14:12.420 --> 01:14:18.030
+Õpetaja: Aga näed, siin tulebki nüüd see välja, on ju? Mis see erinev on okei,
+
+590
+01:14:18.809 --> 01:14:22.540
+Õpetaja: mitmes Just sellepärast, nagu et see on ka ehe hea näide
+
+591
+01:14:22.895 --> 01:14:39.629
+Õpetaja: Aa, et mul vähemalt nüüd praegult see olemas, Kui oleks tulnud Täpselt sama nimi. Siis oleks pidanud jah panema mingi pai. Vaata juurde, või mis iganes, et kuidagi eristada neid kahte ee, ei toeta niukest asja Nagu meetodi signatuuri. Ma kohe ruttu vaatan ära Kas meetodi signatuur on selles listis või ei ole?
+
+592
+01:14:41.250 --> 01:14:43.489
+Õpetaja: Kus Me just tegime lahti, et Teil jääks
+
+593
+01:14:44.795 --> 01:14:50.429
+Õpetaja: method. Signature and overloading. Hästi, kiirelt, Ee. Lihtsalt panen selle peale, et see tuleb teemaks.
+
+594
+01:14:50.977 --> 01:14:54.459
+Õpetaja: Siin on Niukene video, mille järgi ta tuleb kohe meelde Pärast see asi.
+
+595
+01:14:55.213 --> 01:14:58.199
+Õpetaja: Meetodi signatuur, Javascript seda ei toeta. Jaava toetab
+
+596
+01:14:59.274 --> 01:15:08.899
+Õpetaja: niuke vahemärkus. Ee, lähme siis siia. Tagasi. Ee, nii location Request
+
+597
+01:15:11.110 --> 01:15:15.429
+Õpetaja: nüüd siin. Parameetrite all Öeldakse et tegemist on. Ee.
+
+598
+01:15:16.786 --> 01:15:21.980
+Õpetaja: Mis see on see, et see, on osa urlist, Nii,
+
+599
+01:15:23.293 --> 01:15:29.830
+Õpetaja: aga juba see peaks meile. Noh, nagu idee andma, et see info nagu Backendile peab minema. Location Id.
+
+600
+01:15:30.385 --> 01:15:36.299
+Õpetaja: No mis, mis siin siis peaks ee toimetama, mis peaks tegema. See meetmed ei töö oma välisest elust töödega mütsi
+
+601
+01:15:38.148 --> 01:15:43.239
+Õpetaja: andma. Talle parameetri. Vaata, et et seda meetodit oleks võimalik, mis võiks selle parameetri nimeks minna.
+
+602
+01:15:44.597 --> 01:15:53.220
+Õpetaja: No for sure location id, et ee, täpselt see sama nimi. Muidugi, et seda infot tal ei ole. Aga seda infot talle vaja et oma tegevuse ära teha.
+
+603
+01:15:56.895 --> 01:16:07.489
+Õpetaja: No kohe võib selle return I ära panna Seda objekti promiss. Objekti on vaja tarbijal niikuinii, kes on meil see abitehnoloogia, kes nüüd aitab seda sõnumit browserist teele panna.
+
+604
+01:16:08.446 --> 01:16:14.509
+Õpetaja: Aktsias taustal on aktsias, aga veel veel rohkem taustal tema all. On Tegelikult Fetch. Api Fetch Programm.
+
+605
+01:16:15.237 --> 01:16:16.460
+Õpetaja: Ee, kes toimetab.
+
+606
+01:16:17.166 --> 01:16:21.390
+Õpetaja: Millist teenust siin käivitada? Kett, loomulikult.
+
+607
+01:16:21.986 --> 01:16:26.310
+Õpetaja: Mida ta ootab sisse mingi.
+
+608
+01:16:27.537 --> 01:16:40.300
+Õpetaja: Jah, aga pange tähele. Vaata mis ta nüüd. Tegelikult, kui ma panen korra kopi, ma vaatan, kuidas ta selle võtab. Mul pole õrna aimu, kuidas ta siit selle võtab. Urli Panite tähele, et see Location Id on osa urlist.
+
+609
+01:16:40.918 --> 01:16:51.389
+Õpetaja: Iga kord, kui on copy based. Vaata, kui on mingi parameeter, see, mis tuleb, peale küsimärki. Nimeline parameeter siia. Tegelikult ta ootab mingisugust sisulist numbrit.
+
+610
+01:16:55.025 --> 01:16:59.000
+Õpetaja: Nii kuna praegult asub siin selle urli lõpus,
+
+611
+01:16:59.892 --> 01:17:03.639
+Õpetaja: Kuna praegult asub siin urli lõpus Siis on üli lihtne teha niimoodi,
+
+612
+01:17:04.041 --> 01:17:08.899
+Õpetaja: et me ütleme, et. Ja. Ja mis ma siia kirjutan, läheb suurel pluss.
+
+613
+01:17:10.844 --> 01:17:11.240
+Õpetaja: Noh,
+
+614
+01:17:12.320 --> 01:17:21.580
+Õpetaja: Location Id mis tuleb, sisse, aga korra mängime. No tee tee. Jätke nii, nagu ma just kirjutasin, onju? Ee, aga oletame,
+
+615
+01:17:23.796 --> 01:17:27.690
+Õpetaja: et siin oleks tulnud. Veel midagi. Edasi, midagi.
+
+616
+01:17:28.316 --> 01:17:30.340
+Õpetaja: Midagi. Saate mõttest aru.
+
+617
+01:17:30.846 --> 01:17:32.779
+Õpetaja: Siis on küsimus, kuidas seda teha, onju?
+
+618
+01:17:33.734 --> 01:17:43.179
+Õpetaja: Ee, no igast variante on, Mida ma näiteks õpetasin teile, on see Vaata, et teeme sellest eraldi muutu ja paneme siia plusside ka vahele. Ee, ärge tehke kaasa seda praegult,
+
+619
+01:17:44.518 --> 01:17:51.970
+Õpetaja: et tuleb üks osa urlist, siis Tuleb sisen. Mis on Location Id, Siis tuleb ülejäänud osa võrdleest.
+
+620
+01:17:52.756 --> 01:17:59.890
+Õpetaja: See oleks ka mõeldav ja see on võimalus, aga see tegelikult ko selle Loetavuse mõttes on natukene tüütu.
+
+621
+01:18:00.858 --> 01:18:02.290
+Õpetaja: Nüüd kuidas saab teha,
+
+622
+01:18:05.802 --> 01:18:23.010
+Õpetaja: kuidas saab teha, on see, et siia saab teha eraldi spetsiifilise markeeringu, et ee, siia Sisse tuleb mingisugune sisend. See on jälle nagu lihtsalt ee siin kohas. Tehniline viis kuidas. An anda. Põhimõtteliselt siis sellele, voele või kellele iganes, Nagu märku. Vaatad, ma tahan sisendit.
+
+623
+01:18:23.474 --> 01:18:39.929
+Õpetaja: Ei ole siin. Ee, sellist asja, nagu võiks kohe mõelda, et äkki on tope topelt loogilised sulud Ei, ole Siin on üks, ee, üks paganama keeruline külaga oma. Mida mina näiteks Never ei oska kunagi pihta saada. Ei ole vist see. Ma Võin korra proovida. Ma visuaalselt tunnen ta ära, Kui midagi justkui oleks,
+
+624
+01:18:40.424 --> 01:18:45.300
+Õpetaja: ei ole. See on mingi kuradi Back Tick. Mis on mingi maailma Kõige raskem asi üldse.
+
+625
+01:18:45.798 --> 01:18:46.989
+Õpetaja: Kas on samasugune vä?
+
+626
+01:18:48.948 --> 01:18:51.810
+Õpetaja: Ahah, võibolla. Äkki siis äkki see. Võibolla,
+
+627
+01:18:56.092 --> 01:19:18.379
+Õpetaja: kuidas sind saab? Ma iga kord otsin siin ma Tegelt ma ei ole nii kindel. Süntaksis ka. Äkki see pidi üldse tekkima üldse siia. Vaata, nagu ma ei mäleta, kus, keda moodi see on. Ühesõnaga ma praegult ee Küsin. Nüüd Chat I käest. Lihtsalt abi Esiteks, ma ei ole sada protsenti kindel sündaksis, et mismoodi, aga ma Tean muidugi seda, et on mingi maru. Raske
+
+628
+01:19:18.737 --> 01:19:24.459
+Õpetaja: Ee, niiöelda trikk, mida leida Oma Keyboard. Ilt normaalne inimene seda ei leiagi üles, on aga,
+
+629
+01:19:24.793 --> 01:19:27.459
+Õpetaja: Ee, ma vaatan siis, mida üldse kõigepealt ütleb?
+
+630
+01:19:27.839 --> 01:19:30.709
+Õpetaja: Kas ta praegult saab aru? Controlört, kast ka midagi,
+
+631
+01:19:31.275 --> 01:19:34.360
+Õpetaja: et, ee, Oleme siin Controllerilt, K Ahah saab,
+
+632
+01:19:35.712 --> 01:19:48.000
+Õpetaja: on lingitud. Ma ütlen, et ee, kuidas ee. Saab Back Digi stiilis anda. Sisend.
+
+633
+01:19:56.923 --> 01:19:58.639
+Õpetaja: Ee, vaata, mis ta räägib.
+
+634
+01:19:59.917 --> 01:20:12.029
+Õpetaja: Templeid literal Practic stiilis kirjutatud vahele pead panema. Aa, dollari Märk oli. Esiteks, vaata ja. Ja. Ja. Ja. Okei. Vajab ikka. Vaadake, see kogu asi peab olema teistsuguse Vahel
+
+635
+01:20:14.532 --> 01:20:23.309
+Õpetaja: see siin vaata. Ja siis peab tulema dollari märk. Vaata, et me peame juba alustama seda teistsuguse stiiliga. Ma korra üritan aru saada, Et Kuidas minult see keyboard Id tuleb?
+
+636
+01:20:23.990 --> 01:20:24.459
+Õpetaja: Ahah,
+
+637
+01:20:27.600 --> 01:20:28.260
+Õpetaja: mis asi?
+
+638
+01:20:30.132 --> 01:20:31.279
+Õpetaja: Ainult Üheksakümmend kuus.
+
+639
+01:20:37.280 --> 01:20:44.030
+Õpetaja: No ma ei tea, mina juba ütlen lihtsalt Shift I ja Backspace I juures on need tikid. Igaljuhul hoian shift i peal ja siis seda Back Ticki
+
+640
+01:20:45.021 --> 01:20:49.430
+Õpetaja: ainult öösel koos töötab. Töötame aga Nonbadil vä.
+
+641
+01:20:49.916 --> 01:20:59.380
+Õpetaja: Ma proovin alt. Üheksakümmend kuus. Äkki tulebki. Ma lihtsalt saan aru. Vaata, nüüd tuli vist Aa ja tuli. Jah,
+
+642
+01:21:01.545 --> 01:21:07.209
+Õpetaja: Mhmh aga kui proovi. Kas Teil see muidu backspace I juures kohe on. Vaata, ka mingi.
+
+643
+01:21:07.838 --> 01:21:10.950
+Õpetaja: See peaks olema ka shiftiga variant.
+
+644
+01:21:11.491 --> 01:21:14.260
+Õpetaja: Aga ma ütlen, et see, kas te Saite sellise asja valmis?
+
+645
+01:21:17.111 --> 01:21:19.819
+Õpetaja: Üks peab olema neid mõlemal pool. Üks ühega algab.
+
+646
+01:21:20.390 --> 01:21:28.220
+Õpetaja: Siis Peab minema nagu Vaata algusesse tegema. Siniseks. Vaata, Ennem oli siin niimoodi ise muudab. Ära siis teed siniseks shift ja siis Ee
+
+647
+01:21:28.572 --> 01:21:32.449
+Õpetaja: Practic Laadne asi. Aga mina pean seda tavaliselt alati kaks korda vajutama Ta Ei, tule, muide.
+
+648
+01:21:34.180 --> 01:21:34.610
+Õpetaja: Jah,
+
+649
+01:21:35.700 --> 01:21:41.469
+Õpetaja: kuidas iganes te saate? Vaata, nüüd on niimoodi, et ta saab. Vaata, kui ma lähen siia peale, siis see Location Id läheb põlema, onju?
+
+650
+01:21:42.876 --> 01:21:49.729
+Õpetaja: Aga praegult oleks saanud ka tegelikult väga edukalt siis niimoodi, et kustub, et lõpeb see ära ja plussiga paned Location Id,
+
+651
+01:21:50.243 --> 01:21:57.909
+Õpetaja: Sest et ta lihtsalt asub mugavalt. Lõpus on ju. Aga No jätame ikka selle näite. Vaata, see on midagi. Midagi peab ära siit kaduma. See on mul plaanis.
+
+652
+01:22:00.132 --> 01:22:04.059
+Õpetaja: No siis ta kindlasti sarnaneb. Niimoodi Nagu on ka selles piiblis on ju
+
+653
+01:22:04.826 --> 01:22:08.870
+Õpetaja: on ju nii dollari märk, oli siis muidugi ka osa sellest kombinatsioonist.
+
+654
+01:22:10.079 --> 01:22:20.599
+Õpetaja: See siis saadab sõnumi niimoodi et läheb appi Atm Slow. See mingi number. No kui ma proovin Mingit testi. Vaata, lihtsalt vaatamise mõttes saaksite aru. Mina panen, et Id on üks.
+
+655
+01:22:21.871 --> 01:22:34.899
+Õpetaja: Siis. See Url, mis läheb, on üks, saate aru, see on osa urlist. Siin ei ole nimelist parameetrit. Selle saab rahulikult saata Ka niiöelda Brauserist.
+
+656
+01:22:35.905 --> 01:22:36.999
+Õpetaja: Saad seda vaadata.
+
+657
+01:22:38.088 --> 01:22:42.360
+Õpetaja: Nii, see on Siis Sõnumi saatmine. Saime selle nagu printsiibist tööle.
+
+658
+01:22:43.098 --> 01:22:57.030
+Õpetaja: Ärge nüüd seda ära unustage, et ta saadab igakord sikupilli prisma. Me seda ei hakka ka kuskilt progema, et Ta Saadaks mingeid teisi näiteid või asju. Vaata, et ülisavi, aga lihtsalt klõpsamegi sikupilli prisma peale. Kui töötab, siis nagu meie jaoks ka India nagu Töötab, onju? See on Stop Light.
+
+659
+01:22:57.736 --> 01:23:01.599
+Õpetaja: Ee, seda meetodit ei ole kuskile välja kutsutud. No kus Tahame seda välja kutsuda.
+
+660
+01:23:04.474 --> 01:23:06.599
+Õpetaja: No, seal, kus Pooleli ennem jäime.
+
+661
+01:23:08.248 --> 01:23:11.729
+Õpetaja: Vaatame, saime siia Handle Open Location Info madal on nii
+
+662
+01:23:12.509 --> 01:23:21.460
+Õpetaja: nüüd natukene ette rutates. Ee, võiks ikkagi teha selle mudeli ära, Et, ee. Kui veel see brauser siin kuskil lahti on ja sväger ees on, et meil on niikuinii vaja seda mudelit,
+
+663
+01:23:23.170 --> 01:23:23.620
+Õpetaja: seda
+
+664
+01:23:29.905 --> 01:23:34.300
+Õpetaja: copy hästi ettevaatlikult siit Copida,
+
+665
+01:23:38.088 --> 01:23:44.060
+Õpetaja: et seda sõnumit niikuinii peab kuskile salvestama, et teeme selle eeltöö ära ja siis tuleme tagasi selle teenuse väljakutsumise juurde
+
+666
+01:23:44.746 --> 01:23:48.490
+Õpetaja: ma Ütlesime selle databloki ülesse. Meil on siin Locations.
+
+667
+01:23:49.093 --> 01:23:57.869
+Õpetaja: No mis võiks olla selle muuta? Nimi ainsuses on ju, sellepärast et see on.
+
+668
+01:23:58.702 --> 01:24:03.540
+Õpetaja: Paneme selle siia plõraki maha Koma. Lõppu
+
+669
+01:24:04.064 --> 01:24:08.019
+Õpetaja: Ka minul Te seekord. Ee, ei võtmeid. Ma ei tea, kuidas teil läheks.
+
+670
+01:24:08.692 --> 01:24:13.059
+Õpetaja: Ee, mul jäid nad streng ideks, Nii nagu Jasonis on Mitte nii, nagu avascriptis
+
+671
+01:24:13.671 --> 01:24:15.779
+Õpetaja: ei ole midagi. Tõmban selle siniseks.
+
+672
+01:24:16.786 --> 01:24:23.990
+Õpetaja: Kollane pirn ja näitad. Vaata ka, et ei, ma võtan igalt poolt ära. Need jutumärgid.
+
+673
+01:24:25.334 --> 01:24:29.170
+Õpetaja: Uncode siin. Vot põmm, põmm.
+
+674
+01:24:30.272 --> 01:24:40.589
+Õpetaja: Nüüd need näited. Siin on. Ee. No need on selles Stoplight I puhul niimoodi Ee Stoplight I peegeldus Jasonist. Muidu meie süsteemis Nad olekski olnud niimoodi. Null,
+
+675
+01:24:41.836 --> 01:24:46.430
+Õpetaja: null, null, null, null, null.
+
+676
+01:24:47.130 --> 01:24:51.619
+Õpetaja: No siin ei ole vaja kõiki Kolme näidet. Meil on mudeli mõttes. Piisab ainult
+
+677
+01:24:52.587 --> 01:25:01.340
+Õpetaja: ühest. Aga nüüd te kustutage väga ettevaatlikult. Näed kaks viimast objekti, pluss ee, koma nii
+
+678
+01:25:02.247 --> 01:25:07.329
+Õpetaja: ja Nüüd teha siis kõik ülejäänud stringid korda, et String. Kustuta lihtsalt ära. Panen üksikülaga oma,
+
+679
+01:25:08.546 --> 01:25:09.930
+Õpetaja: nii et kustutan ära.
+
+680
+01:25:11.117 --> 01:25:12.430
+Õpetaja: Paneme üksiküla koma.
+
+681
+01:25:13.423 --> 01:25:18.779
+Õpetaja: Kustutan ära, Panen ükskõlaga oma tavalised Ei ole. Need Special Practic Id.
+
+682
+01:25:19.717 --> 01:25:25.510
+Õpetaja: Kuidas teid kutsutakse Vaatama korra ta vestlus ka meiega, et seda templeid literal,
+
+683
+01:25:27.270 --> 01:25:30.280
+Õpetaja: Jah, Mida iganes kuskil on mul viga. Muidugi. Ma vaatan.
+
+684
+01:25:31.205 --> 01:25:36.319
+Õpetaja: Kui see punane on, lähme Scroll ime alla poole. Aa, mul jäi siia, Jäi lihtsalt Pooleli pastakas kukkus on ju,
+
+685
+01:25:38.154 --> 01:25:45.200
+Õpetaja: et eesmärk on, et oleks selline mudel olemas. Location peab edaspidi eriti ettevaatlik olema. Hakkasin Location Locations
+
+686
+01:25:45.886 --> 01:25:54.660
+Õpetaja: Ee arendades Peab olema ettevaatlik teised kinni panna Üldse praegult neid niimoodi kainda nagu ainsana
+
+687
+01:25:55.695 --> 01:26:00.129
+Õpetaja: suuremal määral. Nähtavalt, et selle objekti vastu siis toimetame, et sinna Peab see vastus tulema.
+
+688
+01:26:01.479 --> 01:26:08.860
+Õpetaja: Paneks pigem vaikimisi. False. Ma ei tea, mis iganes see on, Sisu tuleb niikuinii mõelda. Sellepärast muretsema ei pea Okei,
+
+689
+01:26:09.346 --> 01:26:17.989
+Õpetaja: Ee, sõidame sellega edasi ja ma ütlen, et mul pikem plaan on see, et siin võiks olla. Hoopis City Name saaks siis järgi kuvada Ja Mida seal Location Id ga teha? Mul pole õrna aega.
+
+690
+01:26:19.317 --> 01:26:21.880
+Õpetaja: Ee, lähme otsime selle meetodi ülesse.
+
+691
+01:26:22.819 --> 01:26:27.399
+Õpetaja: Nüüd me saame siis teha seda, et Meil on vaja kutsuda välja see meetod, mis on siin.
+
+692
+01:26:29.426 --> 01:26:32.090
+Õpetaja: Kuidas saab seda meetodit välja kutsuda? Mis on teises failis?
+
+693
+01:26:35.162 --> 01:26:39.899
+Õpetaja: Faili? Nimi? Jah, Location Serve L. Zr Location Service
+
+694
+01:26:41.455 --> 01:26:43.449
+Õpetaja: meetodid. Sa välja kutsuda punkti. Ja veel.
+
+695
+01:26:44.746 --> 01:26:50.129
+Õpetaja: Nüüd vaatame, milline on see, mis on Ainsuses, mis ta sisse Võtab. Location Id. Ahah, Ahah.
+
+696
+01:26:51.601 --> 01:26:54.980
+Õpetaja: Kui ta võtab siia sisse Location Id, siis mis ma siia kirjutan?
+
+697
+01:26:58.705 --> 01:26:59.160
+Õpetaja: Mm,
+
+698
+01:27:02.488 --> 01:27:10.380
+Õpetaja: mängumaa on nagu retsilt lühikene, et kõik, Mis on enne seda rida toimunud, mis on me progenud, pluss kõik sisse tulnud. Info
+
+699
+01:27:13.036 --> 01:27:18.319
+Õpetaja: ehk siis ju tuli sisse, onju? See tuleb algselt Selle ee, on ju.
+
+700
+01:27:24.604 --> 01:27:34.200
+Õpetaja: Noh, kui sa kutsud välja meetodid, mis midagi tagastab. Pane see muutujasse. Aga siin seda ei Ole, vaja. Vaata, et See asi ise rehkendub. Ee, niiöelda objektiks. Objekti küljes on meetodid. Mis meetodid meid huvitavad?
+
+701
+01:27:34.672 --> 01:27:35.800
+Õpetaja: Promise objekt. See on
+
+702
+01:27:40.252 --> 01:27:41.369
+Õpetaja: õnn ja onju?
+
+703
+01:27:42.448 --> 01:27:49.849
+Õpetaja: Noh, päris Päris Projektis. Võibolla võiks just finali ka olla, kui rakendaks mingeid spinnerid ja asju Ja need võiks tegelikult nagu. Isegi olla pigem
+
+704
+01:27:55.195 --> 01:27:55.709
+Õpetaja: nii,
+
+705
+01:28:03.182 --> 01:28:04.589
+Õpetaja: mis ma siia teen,
+
+706
+01:28:07.701 --> 01:28:17.990
+Õpetaja: pakub meile mingit varianti sellest tamda. Funktsioon välju ja siis mingi action. Meile see nimi ei meeldi. Meile meeldib,
+
+707
+01:28:18.895 --> 01:28:27.110
+Õpetaja: mis on See siin siis toimub? Tegevus, Tegevus siin pikalt progema ei hakka. See tegelikult muidugi vist.
+
+708
+01:28:27.987 --> 01:28:44.840
+Õpetaja: Ee, Jah, siin siin isegi ei saa teha niimoodi, et paneme lihtsalt selle ideergi. Ühel real teeks, et paneme andmed sinna Ee, konkreetsesse data alla elama Sellepärast, et seal tuleb, järele et niikuinii Nüüd Siin on isegi lausa õigustatud. Aga värk, et niikuinii tuleb Action Id siin. Et siis seda kuskile mujale viia.
+
+709
+01:28:47.875 --> 01:28:50.010
+Õpetaja: No mis võiks olla Siis selle nimi.
+
+710
+01:28:52.047 --> 01:28:53.029
+Õpetaja: Mingi sämbol jälle.
+
+711
+01:28:53.861 --> 01:28:56.949
+Õpetaja: Võibolla reaalt. Üheksakümmend seitse. Saame natukene inspiratsiooni.
+
+712
+01:28:59.820 --> 01:29:01.719
+Õpetaja: Jah,
+
+713
+01:29:14.475 --> 01:29:20.850
+Õpetaja: kas nüüd võiks teha uue meetodi? Aga midagi on veel Totaalselt valesti. Ma arvan, et ei paku isegi, et meetodit teha. No ta pakub. Aga
+
+714
+01:29:21.454 --> 01:29:28.569
+Õpetaja: see skoop Ee, läheb nüüd kuskil kas Top Level Või funktsiooni enda sees, aga ei paku. Meetod blokis. Miks
+
+715
+01:29:29.418 --> 01:29:35.429
+Õpetaja: võiks. Võiks? Okei, ma panen selle response ka ära.
+
+716
+01:29:36.015 --> 01:29:40.200
+Õpetaja: Ei, mina tahan praegu öelda, et Ei, tee mulle see meetod.
+
+717
+01:29:40.785 --> 01:29:46.500
+Õpetaja: Jah, täpselt. Ta ei saa aru, et see peaks olema siin Methods Bloki sees. This annab talle kohe märku, et
+
+718
+01:29:46.853 --> 01:29:54.810
+Õpetaja: see on mingi kohalik meetod. No nüüd tuli kollane. Joon alla, et et see ka Jah, ise kirjutasin, Aga
+
+719
+01:29:55.710 --> 01:30:03.749
+Õpetaja: Jah, Balt enter Teos meetod hoopis olla kuskile siia alla.
+
+720
+01:30:04.532 --> 01:30:09.320
+Õpetaja: Tegin niukse meetodi, mis Midagi hakkaks justkui midagi tagastama. Ka tema ei tea, kas ma tahan tagastada või mitte.
+
+721
+01:30:09.980 --> 01:30:13.830
+Õpetaja: Noh, esimene tegevus oli see, et. Noh, see informatsioon, mis kõik tuleb,
+
+722
+01:30:14.409 --> 01:30:19.350
+Õpetaja: oleks vaja toppida siia ära, et me saaksime sellega edaspidi toimetada ja tegeleda on nii?
+
+723
+01:30:22.226 --> 01:30:23.489
+Õpetaja: Siis mis ma kirjutan?
+
+724
+01:30:27.340 --> 01:30:38.370
+Õpetaja: Jah, nüüd peab natukene olema ettevaatlik. Siin kaks varianti on ju Location.
+
+725
+01:30:39.171 --> 01:30:40.580
+Õpetaja: Kuidas saab uut sisu anda.
+
+726
+01:30:44.680 --> 01:30:52.619
+Õpetaja: Mm, kus me selle kätte saame? Response on kogu vastus, mis tuleb serverilt koos sulgede karjudega. Meedame ainult ühte osa, mis osa Me tahame
+
+727
+01:30:53.816 --> 01:31:02.429
+Õpetaja: andmeid. See võtab selle konkreetse. Osa. Ei taha seda, ei taha mingeid muid asju. Ainult Seda tahan,
+
+728
+01:31:04.264 --> 01:31:09.950
+Õpetaja: okei? See on väga tore. Ee, kui me üldse mingi vastuse saime. Vaata, onju, siis Blokki saabume.
+
+729
+01:31:11.445 --> 01:31:12.669
+Õpetaja: Mis nüüd siis võiks teha?
+
+730
+01:31:18.780 --> 01:31:21.790
+Õpetaja: Noh, mis meid üldse Trigeldada Location Response.
+
+731
+01:31:22.454 --> 01:31:26.829
+Õpetaja: Ee, mis meid Triggerdas Handle Open Location info modal.
+
+732
+01:31:27.753 --> 01:31:31.719
+Õpetaja: See nagu see suur missioon andmete ära toomine on ainult üks osa.
+
+733
+01:31:33.558 --> 01:31:35.110
+Õpetaja: Mis nüüd siin siis peaks tegema.
+
+734
+01:31:37.592 --> 01:31:38.290
+Õpetaja: See on plaan.
+
+735
+01:31:42.736 --> 01:31:47.469
+Õpetaja: Andmed on olemas. Mida need andmetega teha tahame Panna Kuhugi.
+
+736
+01:31:48.434 --> 01:31:53.780
+Õpetaja: Aga me panime kuhugi, kus me tahame Kuvada neid modalis.
+
+737
+01:31:54.308 --> 01:31:55.499
+Õpetaja: Kas madal on nähtav
+
+738
+01:32:01.084 --> 01:32:09.529
+Õpetaja: Vaikimisi? Vaikimisi Vaikimisi ei ole küll. Mille pealt? Noh, kui lähme vaatame oma mudalit siin all Location info Madal.
+
+739
+01:32:10.895 --> 01:32:13.680
+Õpetaja: Kuidas teda on võimalik avada Läbi
+
+740
+01:32:15.435 --> 01:32:23.049
+Õpetaja: Jah, et see. See info peab jõudma All the Way Alla sinna baasmodalisse
+
+741
+01:32:23.927 --> 01:32:27.030
+Õpetaja: siia Eis. Open isse Siis näidatakse,
+
+742
+01:32:27.856 --> 01:32:34.680
+Õpetaja: et nüüd on vaja see, et see info nagu ujuks alla siis meil on siin tehtud, niimoodi et alla hakkab see info Ujuma
+
+743
+01:32:35.388 --> 01:32:38.560
+Õpetaja: Location info location infomodalis. Open kaudu.
+
+744
+01:32:39.297 --> 01:32:45.210
+Õpetaja: Ee, ainult siis, kui see on true meil ta vaikimisi in false. Järelikult ta ei ole nähtav.
+
+745
+01:32:45.893 --> 01:32:50.459
+Õpetaja: Okei, teeme siis selle korda, mis ma kirjutan siis siia
+
+746
+01:32:55.340 --> 01:32:58.319
+Õpetaja: just ei kirjuta Ifi.
+
+747
+01:33:00.565 --> 01:33:03.779
+Õpetaja: Jah, disse. Mis iganes seal muuta nimi. Oli
+
+748
+01:33:08.610 --> 01:33:12.929
+Õpetaja: ma korra East Open Vaata, Location Info modal.
+
+749
+01:33:13.754 --> 01:33:17.850
+Õpetaja: Open tuleb panna truuks.
+
+750
+01:33:19.047 --> 01:33:22.980
+Õpetaja: Noh, printsiibis, et jupi kaupa seda proovida. Võib Kohe ära proovida,
+
+751
+01:33:23.906 --> 01:33:25.960
+Õpetaja: et, Ee, kas Siis töötab või ei tööta.
+
+752
+01:33:32.936 --> 01:33:34.359
+Õpetaja: Vajutan siia Lingi peale.
+
+753
+01:33:35.186 --> 01:33:35.959
+Õpetaja: Tuleb lahti,
+
+754
+01:33:37.360 --> 01:33:43.580
+Õpetaja: tuleb. Noh, siin ei ole veel midagi Sulgeda. Ka ei saa, Refresh, iga saab selle minema siit. Aga printsiibis töötab.
+
+755
+01:33:44.096 --> 01:33:45.400
+Õpetaja: Mis tausta veel toimub?
+
+756
+01:33:46.168 --> 01:33:55.319
+Õpetaja: Kui vaadata andmeid, Ma võin aitada Tondi Selver, aga tegelikult, ee, sel ei Ole vahet. Vastus tuleb alati sama, kui vaadata, et kas on tekkinud mingi sisu
+
+757
+01:33:55.983 --> 01:34:00.920
+Õpetaja: prisma aktsia koguse muusika, tundub et on olemas nii
+
+758
+01:34:02.419 --> 01:34:06.110
+Õpetaja: noh, Kui praegu juba visuaalselt vaadata selles, mis probleeme on
+
+759
+01:34:07.585 --> 01:34:13.259
+Õpetaja: tühi on. Aga nüüd tahaks selle info ära täita. Kus me selle info saame?
+
+760
+01:34:16.272 --> 01:34:19.599
+Õpetaja: Just Vaatasime ja praegu siin, isegi visuaalselt. Kus see info elab?
+
+761
+01:34:25.902 --> 01:34:30.750
+Õpetaja: No, kui mõelda sellele reale siin, vaata, et saame kätte ühe asukoha andmed,
+
+762
+01:34:31.558 --> 01:34:35.860
+Õpetaja: mis me ära tõime. Need elavad siin. Location I sees vastab tõele.
+
+763
+01:34:36.690 --> 01:34:38.489
+Õpetaja: Location elab Atm ses.
+
+764
+01:34:39.768 --> 01:34:45.650
+Õpetaja: Aga infot saame Kuvada Location infomadali. Sees, mis on vaja teha.
+
+765
+01:34:51.362 --> 01:34:56.519
+Õpetaja: Jah, sul on õigus, Ei ole info vaja alla saata. See on meie Child Selles kontekstis.
+
+766
+01:34:57.476 --> 01:35:00.950
+Õpetaja: Temal on seda vaja. Pacemodelis Ei, ei ole vaja
+
+767
+01:35:01.467 --> 01:35:05.269
+Õpetaja: Facebookis. See ujub välja ainult Dis Open. Status on ju,
+
+768
+01:35:08.195 --> 01:35:09.980
+Õpetaja: et meil on vaja üks propsia teha.
+
+769
+01:35:12.486 --> 01:35:17.539
+Õpetaja: Ee võibolla võiks võiks seda uuendada. Vaata, ma ei tea, kuidas see tekkis, aga tüüp on määratud. Kui objekt
+
+770
+01:35:18.062 --> 01:35:24.059
+Õpetaja: Location Info modalis. Open ei ole tegelikult objekt, me ekstraktis on, siis see niimoodi tuli Mis tüüpi ta on?
+
+771
+01:35:24.998 --> 01:35:28.689
+Õpetaja: Siis niimoodi kirjutamegi suure tähega.
+
+772
+01:35:30.243 --> 01:35:31.759
+Õpetaja: No nüüd tuleme siia alla.
+
+773
+01:35:33.131 --> 01:35:36.430
+Õpetaja: Tahaks hirmsasti seda informatsiooni Seal all ka.
+
+774
+01:35:37.355 --> 01:35:39.140
+Õpetaja: Noh, mis see muutuja nimi võiks olla
+
+775
+01:35:42.556 --> 01:35:43.429
+Õpetaja: selles modalis?
+
+776
+01:35:44.914 --> 01:35:51.519
+Õpetaja: No muidugi, miks me kuidagi teistmoodi nimetada? Sama info ju, Ja mis Tema tüüp on.
+
+777
+01:35:58.100 --> 01:35:59.340
+Õpetaja: Mis? Tema tüüp on?
+
+778
+01:36:01.105 --> 01:36:01.699
+Õpetaja: Objekt?
+
+779
+01:36:07.370 --> 01:36:12.119
+Õpetaja: Nii, noh, siis lihtsalt Flow mõttes võib vaadata, onju? Ma teen korra siin Refresh. I
+
+780
+01:36:13.061 --> 01:36:21.369
+Õpetaja: vajutan Selle sikupiili prisma. Ee, modal tuleb lahti. Vaatan korra siis seda objekti. Atms Viol. On Ee, Niukene.
+
+781
+01:36:22.322 --> 01:36:28.839
+Õpetaja: Vaatan. Et hetkel on location on Under Find. Ahah, Okei, võimekuse tegime. Aga tundub, et midagi alla ei Voola
+
+782
+01:36:30.886 --> 01:36:33.950
+Õpetaja: peaks minema. Vist sinna kohta, kus seda asja välja kutsutakse.
+
+783
+01:36:34.478 --> 01:36:37.439
+Õpetaja: Hetkel Vo Voolab sinna alla ainult See Trueway false.
+
+784
+01:36:38.942 --> 01:36:41.200
+Õpetaja: Meil oleks hea, kui voolaks alla ka
+
+785
+01:36:44.366 --> 01:36:46.749
+Õpetaja: Location objekt Sinna Propsi.
+
+786
+01:36:49.038 --> 01:36:50.580
+Õpetaja: Nüüd voolab see sinna ka.
+
+787
+01:36:54.855 --> 01:37:02.160
+Õpetaja: Noh, teha. See refresh, onju? Vajutan sikupilli prisma. Vaatan korra. Location Info Modal Location Info on sinna jõudnud
+
+788
+01:37:02.678 --> 01:37:12.249
+Õpetaja: Nüüd see informatsioon on siin olemas. Aga Visuaal, visualisolatsioon ja seda kuidagi ei kasuta. Vaata, onju? Pole Jõudnud nii kaugele. Alles. Lõime selle Propsi sinna. Location.
+
+789
+01:37:13.915 --> 01:37:14.340
+Õpetaja: Nii,
+
+790
+01:37:14.746 --> 01:37:19.049
+Õpetaja: nüüd me teame, et Meil on siin see info olemas. Selle Propsi sees. Nüüd on siis ainult küsimus, et
+
+791
+01:37:19.690 --> 01:37:23.119
+Õpetaja: mida Pacemodal vajab Ta vajab Titleit Vajab,
+
+792
+01:37:24.898 --> 01:37:26.930
+Õpetaja: kus oleme Tagide sees tagide vahel.
+
+793
+01:37:27.825 --> 01:37:28.190
+Õpetaja: Palun
+
+794
+01:37:28.980 --> 01:37:37.869
+Õpetaja: vahel. Ee. Noh, meil. Kui me vaatame korra Base modalit, siis ma vaatan, kuhu sisse kas ta tuleb? Ta Tuleb H viie sisse, onju?
+
+795
+01:37:38.253 --> 01:37:43.639
+Õpetaja: Sellisel juhul on meil vaja ainult sinna tegelikult anda tekst ise Kuidas Ma. Saan nüüd siin järsku teksti panna?
+
+796
+01:37:47.285 --> 01:38:01.410
+Õpetaja: Ee, jah, kus sellest nüüd saame Location I seest teinud? Noh, mis? Ta oli niimoodi. Küll Location Name
+
+797
+01:38:02.637 --> 01:38:05.420
+Õpetaja: kiirelt piiluda ka sikupilli prisma tuli ette, küll.
+
+798
+01:38:07.230 --> 01:38:18.719
+Õpetaja: Okei, See oli nüüd see lihtne osa, sest on lihtsalt tekst, onju? Läheb sinna alla. Aga Nüüd me peame vaatama korra taaski, et. Oota aga mis siis? Sinna Bodysse peab minema, Et mis See mis. Miks see madal välja peab nägema?
+
+799
+01:38:19.655 --> 01:38:25.140
+Õpetaja: Kui me läheme, vaatame, kas See mudel peab välja nägema selle. Lahendasime ära. Location Name.
+
+800
+01:38:25.904 --> 01:38:30.170
+Õpetaja: Järgmisena peaks olema tekstautomaatide arv ja siis väärtus. Number,
+
+801
+01:38:32.130 --> 01:38:37.150
+Õpetaja: Noh, oleme nüüd siis Selles Bodi osas. Teeme selle niimoodi lahti.
+
+802
+01:38:38.732 --> 01:38:45.090
+Õpetaja: Siia peab tulema tekst, millele järgneb Väärtus ühel samal. Real.
+
+803
+01:38:46.016 --> 01:38:47.160
+Õpetaja: Mis mõtted siin on
+
+804
+01:38:56.525 --> 01:39:05.290
+Õpetaja: No lihtsalt numbrina sisse. Noh, ee, kuidas numbriline väärtus on? Jah, ja siis lihtsalt.
+
+805
+01:39:10.341 --> 01:39:16.670
+Õpetaja: No, sul on juba mingisugune mõte. Vaata, kus ta siin enamvähem mingi pealkiri justkui on?
+
+806
+01:39:17.249 --> 01:39:23.440
+Õpetaja: No mustamäe Prisma oli H Viis juba. Meil vist läheb hästi. Keeruliseks. Aga võime proovida H. Kuus vist on viimane
+
+807
+01:39:24.800 --> 01:39:25.480
+Õpetaja: A viis.
+
+808
+01:39:25.981 --> 01:39:34.020
+Õpetaja: Vaatan korra. Mis Pacemodal paneb pealkirja? Slot D. H. Viiega. Aga ta tuleb sama suur. Aga mõte vähemalt on õige. Mingi asja vahel ta on
+
+809
+01:39:36.371 --> 01:39:38.900
+Õpetaja: Aa, viis Vähemalt ei ole. Lihtsalt tekstina.
+
+810
+01:39:39.295 --> 01:39:57.260
+Õpetaja: Point on see, et me saaksime siia ka lihtsalt kirjutada praegu tekstautomaatide arv ja siis panna selle muutujast. Aga siis me võtame edaspidi, kui ta ei ole mitte millegi sees. No ta praegult ju on Body sees. Vaatame see osa, mis me praegu defineerime On Body sisse tuleb, onju, et kui tuleme based Modalisse ja vaatame, onju.
+
+811
+01:39:57.643 --> 01:40:14.270
+Õpetaja: Ee, see Body osa on siin, et kui Sa paned lihtsalt teksti, siis ta lihtsalt tekst. Ja sa ei saa seda kuidagi stiliseerida enam. Kui sa selle paned mistahes tag I sisse, Siis vastavalt sellele niiöelda. Elemendile, endale on tal mingisugune stiil ja välimus mis iganes Pluss meil on iga kell võimalik kirjutada,
+
+812
+01:40:14.627 --> 01:40:24.099
+Õpetaja: võrdub ja panda Mingit stiili mõte on see, et me ei taha praegu teha niimoodi vaata, et ma arvan, et isegi seda veel ei tahtnud, me ei taha kirjutada. Lihtsalt siia. Automaatide arv.
+
+813
+01:40:24.650 --> 01:40:29.380
+Õpetaja: See tehniliselt töötaks, Aga see tekst tegelikult ei. Ole Nüüd ühegi elemendi sees.
+
+814
+01:40:32.082 --> 01:40:35.849
+Õpetaja: Ta visuaalselt toimib, aga ma ei saa mitte kunagi teda kujundada.
+
+815
+01:40:36.943 --> 01:40:37.770
+Õpetaja: Css iga.
+
+816
+01:40:38.581 --> 01:40:49.840
+Õpetaja: No ma saaks läbi selle ja mingi väga keerulise Ee, Csi. Ma saaks aga palju parem on see, et ta on alati mingisuguse elemendi sees. Noh, proovime selle. H viis on see viimane on, ju
+
+817
+01:40:50.664 --> 01:40:55.530
+Õpetaja: et siia on iga kell võimalik kirjutada Class ja anda mingi kujundus vastatajale.
+
+818
+01:40:57.489 --> 01:41:05.400
+Õpetaja: Kui mul seda ei ole, siis ei ole kuhugi midagi kirjutada. No siia tuleb automaatide arv. Pool on, mis ma siia edastan.
+
+819
+01:41:06.727 --> 01:41:11.800
+Õpetaja: Tõenäoliselt me oleme tagide vahel, on ju? Ma siia kirjutan?
+
+820
+01:41:14.060 --> 01:41:20.670
+Õpetaja: Jah, nagu paistab. Siin on nu. Võib ära panna, siis võib kohe piiluda.
+
+821
+01:41:22.172 --> 01:41:26.619
+Õpetaja: Noh, ta on natuke suurem. Väiksem nagu kama. Juhita meie mingit piksleid taga
+
+822
+01:41:27.584 --> 01:41:32.029
+Õpetaja: Saan alati teada tavalise dvadele väärtuse Spänni saab kasutada,
+
+823
+01:41:33.100 --> 01:41:39.450
+Õpetaja: Näiteks onju. Ja nii edasi paragrahv. Võibolla head head ja Automaatide arv.
+
+824
+01:41:45.160 --> 01:41:49.359
+Õpetaja: Mm, Kohe tekib üks väikene probleem juba, aga võibolla Ennetame seda.
+
+825
+01:41:50.026 --> 01:41:51.609
+Õpetaja: Me tegelt jõuame probleemini.
+
+826
+01:41:52.585 --> 01:42:00.390
+Õpetaja: Siis ee teeme vahepeal niimoodi arendust ka, et me ei ole nagu mingid. Väga teadlikud arendajad et ikka veel Komistame siin seal kohtade vastu
+
+827
+01:42:00.875 --> 01:42:06.210
+Õpetaja: Ee, mina juba näen. Mis probleem meil on? Mis edasi? Ee, Vaatame siis peaks tulema.
+
+828
+01:42:07.117 --> 01:42:08.469
+Õpetaja: Mis järgmisena peaks tulema.
+
+829
+01:42:14.211 --> 01:42:23.649
+Õpetaja: Okei? Okei, jah, vot. Vot see ongi see, mis ma tahtsin öelda, et nüüd on nagu see, et. Aga, noh,
+
+830
+01:42:23.987 --> 01:42:37.820
+Õpetaja: kuidas me nüüd Loomulikult me saame ikka teha nad ise ka kuidagi paiknevad ja Nii, edasi. Aga kui me näeme niukest asja, vaata, et siin on nagu mingisugust paiknemist vaja. Siis teades tööriistasid, mida meie teame ja tunneme ja oskame kasutada Mis mõte siin on
+
+831
+01:42:44.945 --> 01:42:47.759
+Õpetaja: Kuusteist Woods trap?
+
+832
+01:42:48.579 --> 01:42:56.169
+Õpetaja: Sellepärast, et me ju teame. Tööriista Grid, millega on võimalik väga lihtsalt kontrollida, rida kolumn ja nii edasi paigutas, teame
+
+833
+01:42:56.967 --> 01:43:07.379
+Õpetaja: ma siin kain isegi veel. Vaatad niimoodi, Et et see automaatide arv on nagu samal tasemel nagu see pilt. Vaata, et see tähendab seda, et peaks ka kindlasti ühe rohu sees olema, onju? Mida iganes.
+
+834
+01:43:09.149 --> 01:43:20.470
+Õpetaja: Noh, võtab siis lahti. Ee, läheme Gridlehele. Võtamegi selle konteineri. See konteiner ei pea olema nagu, ee, nagu ainult selles Views
+
+835
+01:43:20.815 --> 01:43:29.039
+Õpetaja: nagu vaatas. Niiöelda, onju? Vaid seda võib kuhu iganes toppida. Kus tahad jälle mingisugust nagu paiknevust teha, et sina oled minu kõrval, mina Olen sinu all ja kõik see on ju.
+
+836
+01:43:29.992 --> 01:43:31.619
+Õpetaja: Võtame selle kopinupuga.
+
+837
+01:43:33.450 --> 01:43:42.269
+Õpetaja: Automaatide arv. Ee, noh, seda otsustame. Kas jääb ülesse või mitte, Vahet pole, Võibolla võibki jääda. Teeme siis siia. Alla. Paneme maha.
+
+838
+01:43:46.020 --> 01:43:49.060
+Õpetaja: Noh, nüüd tuleme korra. Vaatame seda. View D.
+
+839
+01:43:52.333 --> 01:43:57.610
+Õpetaja: Meil ei ole vaja kolme kolumnit, Meil On vaja kahte Ühe kustutame ära.
+
+840
+01:44:03.573 --> 01:44:08.050
+Õpetaja: No kas hakkame nüüd seda vasakpoolset kolumnit lahendama ja parempoolset kolumnit. Ükstaspuha
+
+841
+01:44:09.978 --> 01:44:15.390
+Õpetaja: Alustame. Kuidas tahate nagu mida me Hakkame vaatama. Nüüd. See on, et korraga ei saa niikuinii teha
+
+842
+01:44:21.637 --> 01:44:35.220
+Õpetaja: Jah, kui seda pilti hästi jäljendada. Vaata siis. Automaatide arv peaks tulema siia Vasakpoolsesse kolonis on nii korra vaadata. Võibolla läheb väga kokkupressituks et. Ee mõte. Hea küll, võibolla see H Viis on grammi võrra suur
+
+843
+01:44:36.093 --> 01:44:40.000
+Õpetaja: vaatame korra, ah? Ma ei tea, sobib ka.
+
+844
+01:44:41.796 --> 01:44:44.010
+Õpetaja: Las ta siis olla seal Ära mahub Igal juhul.
+
+845
+01:44:44.834 --> 01:44:46.250
+Õpetaja: Ee, Mis siis edasi?
+
+846
+01:44:50.733 --> 01:44:53.649
+Õpetaja: Kas ee, teeme selle Või selle kumma tahate, onju?
+
+847
+01:44:55.521 --> 01:44:58.010
+Õpetaja: Pilt on lihtsam. Teeme siis nagu soojenduseks niukse
+
+848
+01:44:58.655 --> 01:45:00.610
+Õpetaja: pildi. Kus see pilt peab tulema?
+
+849
+01:45:02.030 --> 01:45:04.710
+Õpetaja: Inglise kaupa Kuidas
+
+850
+01:45:08.212 --> 01:45:10.210
+Õpetaja: paremasse kolumisse ehk siia, on nii?
+
+851
+01:45:12.015 --> 01:45:21.679
+Õpetaja: Noh, nüüd on küsimus. Vaata selles, et. Ee, Taxis räägib ka selle. Kohta. Ma ei hakka seda praegu siit üles otsima, Aga mäletate, Pilt ei olnud kohustuslik element
+
+852
+01:45:22.703 --> 01:45:36.800
+Õpetaja: nagu auto pangaautomaatide lisamise juures oli valikuline. Kas lisad pildi või mitte? Seal oli veel niimoodi, et kui pilti ei ole, siis näidati seda. Kus on mingi pangaautomaat? Oli seal Mingi rahatähega, on ju? Ee, siis, kui pilt oli, siis näidati.
+
+853
+01:45:37.500 --> 01:45:39.139
+Õpetaja: Mm, mis mõtted on?
+
+854
+01:45:47.577 --> 01:45:50.630
+Õpetaja: Ahah, mida? Mm,
+
+855
+01:45:54.142 --> 01:45:58.990
+Õpetaja: Kontrolli pangapak Kas on olemas? Ei ole?
+
+856
+01:46:00.282 --> 01:46:07.459
+Õpetaja: Saime seda vaadata nagu uut ühistringu ja ühtsust, mitte tühist ring, Sest see kokkulepe on see, et see on tühistring, aga. No jah,
+
+857
+01:46:08.462 --> 01:46:15.559
+Õpetaja: Vaata, kas taaskis. Tegelikult on ka. See on hea küsimus, Kas taask paneks veits Ee, veits vaja? Täpsustust
+
+858
+01:46:17.371 --> 01:46:22.440
+Õpetaja: Pildi kohta ei räägita. Vaata aga, tegelikult on mõte. On nagu see, sama et, noh, kuidas
+
+859
+01:46:24.548 --> 01:46:29.740
+Õpetaja: Location View alt. Võibolla võiks saada mingit inspiratsiooni.
+
+860
+01:46:31.278 --> 01:46:42.519
+Õpetaja: No sealt ei saa seda pilti saata kuidagi. Tegelikult, see on täiesti eraldi vaade aga sealt võib Saada inspiratsiooni. Vaata, et mõte on see. Vaata, et kas me hakkame mitu korda uuesti progema. Seda sama funktsionaalsust, et ei ole
+
+861
+01:46:44.713 --> 01:46:48.490
+Õpetaja: kõige Mõtle kuidas.
+
+862
+01:46:50.443 --> 01:46:53.509
+Õpetaja: No me ei saa Location Formist midagi võtta.
+
+863
+01:46:54.569 --> 01:47:04.429
+Õpetaja: On. Ee Komponent on ju? Saaksime Location Formi kasutada, kui me tahaks, aga me ei saa sealt midagi võtta, aga võibolla sealt. Siis saab ee inspiratsiooni.
+
+864
+01:47:05.238 --> 01:47:07.470
+Õpetaja: Nüüd on Nüüd Te olete juba natuke lähemal.
+
+865
+01:47:10.730 --> 01:47:11.389
+Õpetaja: Väga lihtsust.
+
+866
+01:47:16.371 --> 01:47:19.980
+Õpetaja: No ma Ikkagi lasen teil veits uurida kõrvalt.
+
+867
+01:47:25.225 --> 01:47:29.710
+Õpetaja: Ei, Location. Just seda asja üles ei leia.
+
+868
+01:47:30.833 --> 01:47:38.200
+Õpetaja: Aga see, mis? Ee, Fred vist mainis juba. Oli natuke Lähemal võtame, tuleb kaasa.
+
+869
+01:47:39.947 --> 01:47:44.509
+Õpetaja: Asi on visuaalses elemendis. Vaata, näita pilti või näita.
+
+870
+01:47:46.115 --> 01:47:51.010
+Õpetaja: Ei tule. Tuttav kuidagi, et. Ee, Ahah.
+
+871
+01:48:01.574 --> 01:48:06.120
+Õpetaja: Noh, arendaja nagu hakkaks kuidagi juurde tegema, siis võibolla võiks vaadata, et äkki. Mis on olemas.
+
+872
+01:48:10.405 --> 01:48:16.069
+Õpetaja: Oo, nime. Sümbol vist on, aga Evel juba vist mainis midagi ära. Ütles ka vahel. Aga jah,
+
+873
+01:48:19.203 --> 01:48:20.930
+Õpetaja: mis asi?
+
+874
+01:48:23.755 --> 01:48:27.550
+Õpetaja: Ee, input ei ole. Kas me soovime pilti sisestada? Ei soovi,
+
+875
+01:48:28.355 --> 01:48:32.309
+Õpetaja: Aga sa oled viga ja te Olete väga lähedal, aga ma tahaks peegelda seda.
+
+876
+01:48:32.873 --> 01:48:33.480
+Õpetaja: Palju tunne
+
+877
+01:48:34.772 --> 01:48:44.089
+Õpetaja: on lihtsalt mingi meetod. Vaata, me ei soovi midagi. See Sa räägid meetodidest, mina Räägin visuaalsest komponendist. No kurat, nüüd juba ütlen kõik ära. Nagu
+
+878
+01:48:45.940 --> 01:48:53.699
+Õpetaja: ei, vaata. Kui me teeksime uuesti, siis on meil see, Kas on pilt või ei ole pilt.
+
+879
+01:48:54.417 --> 01:49:07.639
+Õpetaja: Ja mõte on see, et requirement on see, et kui pilti pole, näita seda Place order pilti aga kui pilt on? Siis näita. Aa, oota korra. Aa, siin on üks asi, mis mulle enda. Ohoh, Mybad.
+
+880
+01:49:08.095 --> 01:49:12.689
+Õpetaja: Siin on üks asi, mis ma vist korraks Mingi hetk märkasin, et meil on üks asi jäänud tegemata.
+
+881
+01:49:13.410 --> 01:49:14.000
+Õpetaja: Ee
+
+882
+01:49:14.553 --> 01:49:21.450
+Õpetaja: suunan ja suunan. No muidugi, ee. Tuli meelde. Vaata, et see on tegemata. Lähme teeme korra Location View lahti.
+
+883
+01:49:22.406 --> 01:49:24.589
+Õpetaja: Aga täpsemalt. Location Formi lahti.
+
+884
+01:49:25.896 --> 01:49:32.450
+Õpetaja: Ee, siin all. Kus on see pildi näitamine Või mitte meil on väike Tehniline võlg
+
+885
+01:49:33.185 --> 01:49:38.850
+Õpetaja: Task nõudis, et on olemas. Ee, selline komponent nagu Atms Image.
+
+886
+01:49:39.848 --> 01:49:41.579
+Õpetaja: Lähme korra. Teeme selle taaski lahti.
+
+887
+01:49:42.447 --> 01:49:44.409
+Õpetaja: Ee, siin on tehniline võlg meil
+
+888
+01:49:48.420 --> 01:49:50.430
+Õpetaja: nii mhmh.
+
+889
+01:49:50.919 --> 01:50:05.210
+Õpetaja: Kusjuures, enne kui ma korraks, kui me tõstsime neid asju õigesse kaupa, ma märkasin seda. Ma teadsin, et image I all peaks olema see komponent. Atm. Image. Ma nägin seda pole ja ma otsisin. Ja ma sain aru, et ma korra isegi käisin piilumas. Mul Tuli meelde, et me ei teinud seda ära
+
+890
+01:50:05.584 --> 01:50:14.569
+Õpetaja: Aga mul läks meelest ära. No päriselus olekski pidanud kohe panema, onju? Kui me vaatame korra Pangaautomaadi asukoha lisamist teenust uuesti või seda taaske
+
+891
+01:50:16.544 --> 01:50:25.220
+Õpetaja: Ee, ma olen korra frontend I peale, et seda üles otsida alt, aga tegelikult siit Ee Tehtud asjade alt. Saame ka kätte
+
+892
+01:50:26.967 --> 01:50:31.840
+Õpetaja: Pangaauto asukohal lisamine. Vaatame taaski. Ee, taaski. Ütlesin, niimoodi et
+
+893
+01:50:35.490 --> 01:50:45.180
+Õpetaja: Eraldi komponendid tuha. Juhan, et ei leia seda Atm. Imej ülesse. On ju see siin?
+
+894
+01:50:47.932 --> 01:50:54.100
+Õpetaja: Kuva pilti komponendiga. Atm, image. Kui pildi info on all või tühistring, siis kuva ta default vaikimisi pilti.
+
+895
+01:50:55.340 --> 01:50:59.799
+Õpetaja: Jah, tulge siis siia. Ekstraktime selle ära. Siis lihtsalt. Ega siin midagi ei olegi.
+
+896
+01:51:01.562 --> 01:51:06.910
+Õpetaja: See on ekstraktimine Control alt Ei, siin. Peab seda Pirniga
+
+897
+01:51:07.862 --> 01:51:10.819
+Õpetaja: Ekstract View Component. Ja pange nimeks Atm
+
+898
+01:51:11.647 --> 01:51:15.770
+Õpetaja: Ainsust Pigem on ju Atm image.
+
+899
+01:51:16.553 --> 01:51:22.750
+Õpetaja: Noh, tahtsime hirmsasti et seda saame taaskasutada. Aga Noh, veel Ei saa, et sorry.
+
+900
+01:51:23.335 --> 01:51:29.150
+Õpetaja: Kuidas Kloki puht, kui sa oled seal? See on pirn. Lihtsalt pirnil saab alati lahti.
+
+901
+01:51:30.280 --> 01:51:34.270
+Õpetaja: Üldentriga valmis.
+
+902
+01:51:36.424 --> 01:51:36.980
+Õpetaja: Goodspot.
+
+903
+01:51:38.312 --> 01:51:45.300
+Õpetaja: Jah, Davai Ekstrakti määra eest. Teeme selle korda, Aga see, ee, tegelikult.
+
+904
+01:51:45.854 --> 01:51:53.579
+Õpetaja: Ee. Kus me pidime olema? Aa, onju, Ee, et kui me praegult võtame selle Mõlemad imidzid.
+
+905
+01:51:54.594 --> 01:51:59.460
+Õpetaja: Üks või teine Vaata, näidatakse seda. Kui infot on. Kui ei ole, siis näidatakse. Seda.
+
+906
+01:52:00.189 --> 01:52:04.050
+Õpetaja: Tähendab, kui ei, Kui Location imetus data on tühi
+
+907
+01:52:10.673 --> 01:52:18.690
+Õpetaja: Control alt ja lihtsalt. Ja Atm, et. Mm, image
+
+908
+01:52:24.195 --> 01:52:33.590
+Õpetaja: nüüd. Siin on üks asi, mille tuleks veel natukene ringi teha, vähe sellest, et nüüd on kaks child i kogemata siin. Ee, selles templateis on siin teine mure.
+
+909
+01:52:34.029 --> 01:52:36.920
+Õpetaja: No selle lahendame lihtsalt ära, et teeme lihtsalt Dv. I.
+
+910
+01:52:37.428 --> 01:52:39.240
+Õpetaja: Topime need siia ära. Ja Ongi kõik
+
+911
+01:52:41.618 --> 01:52:47.469
+Õpetaja: nii. See on nüüd see, et iga template vahel peaks olema ainult üks ee, üks niiöelda See, Ee, laps on ju.
+
+912
+01:52:48.006 --> 01:52:56.070
+Õpetaja: Aga siin on üks asi veel, mis oleks mõistlikum ära. Teha ma annan lihtsaks on. See kuidagi seotud propsiga Ja Siis ee
+
+913
+01:52:56.990 --> 01:52:58.589
+Õpetaja: oleks vaja midagi muuta.
+
+914
+01:52:59.460 --> 01:53:09.540
+Õpetaja: Meil on praegu lugesid sulle, aga. Okei, no teeme selle korraks korda. Aga ma ütlen, et sa pole.
+
+915
+01:53:09.929 --> 01:53:24.730
+Õpetaja: Vot vot täpselt. Ja siin. Nüüd tuleb esimest korda Nagu see hea näide ka, et meil juhuslikult meil juhuslikult nüüd ka tegelikult on Niimoodi, et selles teises kohas on location objekt. Ja seal sees on välinimega imest Data.
+
+916
+01:53:25.126 --> 01:53:32.319
+Õpetaja: Aga olet oletame, et ei oleks niukest struktuur. Oletame et me lihtsalt saame selle. Me võime pilti eraldi ka küsida. Väga Mõistlik
+
+917
+01:53:32.856 --> 01:53:36.269
+Õpetaja: on üldse tegelikult pilt eraldi küsida nagu. Teenusena
+
+918
+01:53:37.327 --> 01:53:54.249
+Õpetaja: ee. Siis, sai Siis on nagu see, et see on Flexibility. Ma isegi täna. Ma ütlen, et ma teekski sealt taas kliksa ümber nagu pilt võiks tegelikult tulla nagu informatsioonina eraldi. Sellele Teil hakkab tekkima natukene siukene olukord, et, ee, kus te näiteks tahate mingisuguse Aa,
+
+919
+01:53:55.141 --> 01:54:02.339
+Õpetaja: Mingisuguse objekti andmeid vaata ilmapildita Ja te tahate kuskil olukorras? Kus te mõtlete, et tore, et oleks pilt ka,
+
+920
+01:54:02.727 --> 01:54:21.130
+Õpetaja: kui te teete nüüd niimoodi, et ongi, et kaks sellist Eraldi Defini defineeritud. Niiöelda olukorda siis on teil. Valikud on sellised, et Kas te teete jaavas seal? Ka Niiöelda teete kaks klassi, ühel on image ja teisel pole. Või siis lihtsalt et ka enda. Vaata, ühel nagu. Võibolla ei pruugi midagi. Tulla Vaata
+
+921
+01:54:21.595 --> 01:54:28.719
+Õpetaja: aga palju lihtsam variant sellises situatsioonis. Kui me räägime üksikobjektist. Vähemalt on teha niimoodi, et pilt päritakse eraldi,
+
+922
+01:54:29.581 --> 01:54:34.249
+Õpetaja: siis on, see, et ise valid seal kohas, kus pilti tahad, Küsid lihtsalt pildi, juurde.
+
+923
+01:54:35.391 --> 01:54:39.920
+Õpetaja: Et Sul võib olla mingi vorm. Võib sulle olla mingi asi, mida sa sisuliselt näed,
+
+924
+01:54:40.352 --> 01:54:49.340
+Õpetaja: aga siis ongi nagu see, et sa ei pea ühe pauguga kõik kätte saama. Sa võid küsida eraldi päringut, aga mis? See annab? See annab nagu Legoklotsi.
+
+925
+01:54:49.972 --> 01:55:05.529
+Õpetaja: Proged selle Ühe korra ära vaatad, Küsid pilti Id alusel edaspidi nagu Palun väga kasuta seda Kus Tahad, Aa ei pea tekitama potentsiaalselt juurde mingi mitu erinevat variatsiooni. Aa, niiöelda nõutud sisendist. Niiöelda või väljundit pole.
+
+926
+01:55:06.179 --> 01:55:11.170
+Õpetaja: Ee et see nagu oleks mõttekoht, aga siin on õige.
+
+927
+01:55:12.505 --> 01:55:28.609
+Õpetaja: Ee. Siin oli, see et me tahtsime võtta, et oleks ühtne lähenemine. See on pigem arhitektuuriline otsus. Kuidas meie taha meeskondlik niiöelda arhitektuuriline otsus, mitte nagu tehniline, Nõue
+
+928
+01:55:29.329 --> 01:55:38.680
+Õpetaja: sobib väga hästi. See loogiline, Aga see kohe muutubki. Me tahamegi nüüd öelda, et nüüd see ei ole refaktoreerimise koht või? Tähendab, on, aga
+
+929
+01:55:39.287 --> 01:55:44.510
+Õpetaja: Ei, ikkagi refaktoreerime. Vaatame, et mujal ka muutuks. Teeme korra ühe komeiti. Kas keidab järgi ka tulla?
+
+930
+01:55:45.428 --> 01:55:56.560
+Õpetaja: Ee, tulge järgi. Kõigepealt. Ee, aga mina Tahan nagu seda eelkõige. Sellepärast, et ma refaktureerides. Ma tahan hästi natukene. Nagu näha, et kus ta muudatused teeb?
+
+931
+01:55:57.381 --> 01:56:10.989
+Õpetaja: Mind huvitab. Vaata, et kus Ta igal pool muudab ära, kui et me ei taha et meil tuleb, sisse, võiks ka ära teha, onju? Me ei taha, et selle Muutuja nimi on. Me tahame, et selle muutuja nimi oleks image. Data,
+
+932
+01:56:11.950 --> 01:56:19.369
+Õpetaja: ta on hästi neutraalne. Vaata, noh, kust iganes nagu saad, seda kasutada, Anna lihtsalt nagu sisse ta näitab. Ei näita
+
+933
+01:56:21.464 --> 01:56:36.759
+Õpetaja: pärit eraldi pärit kuskil mingi teise objekti. Sees. Mida iganes siia tegelikult on reaalselt vaja, Data T, kui te vaatate rida. Ee, kaks, kolmteist ja kaheksateist. Seal on ainsad kohad, kus üldse Location objekti on näpitud,
+
+934
+01:56:37.011 --> 01:56:41.530
+Õpetaja: aga mitte nagu sellel Tervel kujul ei ole neid vaja, vaid on ainult ühte osa sellest objektist vaja.
+
+935
+01:56:41.943 --> 01:56:53.950
+Õpetaja: Ee, ja me teeme seda ka Me kindlasti. Jälgime seda Seal, kus ikkagi vaja. Sest et me anname teoreetilise võimaluse niiöelda oma programmile, et me saame taaskasutada seda asja nagu väga, lihtsalt ja mugavalt,
+
+936
+01:56:54.889 --> 01:56:58.629
+Õpetaja: Sest tema ei vaja midagi muud. Ja nüüd ongi see, et
+
+937
+01:56:59.059 --> 01:57:15.430
+Õpetaja: esimest korda vaata, oli meil mingi objekti objekti sees. Info. Väga tore, onju? Aga kuskil teinekord tuleb mingi hoopis teistsugune objekt. Hoopis teistsuguse sisuga Võibolla see või ongi? Näiteks tahame ainult eraldi eraldi. Pärime teenusega Aga siia alla. Ei, saand eraldi.
+
+938
+01:57:15.749 --> 01:57:22.140
+Õpetaja: Ta peab olema objekti Sees Välinimegi. Vist, Vaata, et me nagu Paneme. Ennast lukku selle praeguse disainiga. Vaata, on ju?
+
+939
+01:57:22.556 --> 01:57:23.939
+Õpetaja: Nii, olete kõik järjel.
+
+940
+01:57:24.985 --> 01:57:35.010
+Õpetaja: Davai, Ee, selle ära. Ja nüüd ma tahan näha, mis toimuma hakkab. Mina tahan siia öelda lihtsalt image tata,
+
+941
+01:57:35.746 --> 01:57:47.829
+Õpetaja: sest et seda mul on ainult vaja. No Koodi Pean siin korda tegema. Veel Allpool ka aga mind huvitab seda, et seda T on vähemalt Ühes kohas küsitud. Selles samas. Mind huvitab, kuidas ta seal korda teeb,
+
+942
+01:57:48.523 --> 01:57:52.480
+Õpetaja: vaid ta on entrid. Ta ütleb, et kolmes kohas seda muudab. Ma Võin vaadata ka
+
+943
+01:57:53.020 --> 01:57:59.429
+Õpetaja: Atm siin samas selles endas failis. Ja ta ütleb ka seal, kus välja kutsutakse. Okei, Fine.
+
+944
+01:58:02.106 --> 01:58:17.169
+Õpetaja: Nad õppematerjalides. Igal pool leidis. Vaata, tegi korda, vaata onju? Noh, Davai. Mul sobib nagu mul need õppematerjalid ma vaatan, kuidas ta siin midagi tegi, Ma ei viitsi mul Savi ikkagi ei vaata. Aga mis mind huvitab, on siis siin
+
+945
+01:58:17.810 --> 01:58:22.150
+Õpetaja: siin. Me nüüd ei taha öelda, et image Data, punkt, Image data, vaid Lihtsalt
+
+946
+01:58:23.095 --> 01:58:25.169
+Õpetaja: image data, et siia tulebki sisse
+
+947
+01:58:26.995 --> 01:58:31.719
+Õpetaja: ja see tulebki sisse Nüüd image Data on base. Kuuskümmend neli. Mis ta tüüp on,
+
+948
+01:58:32.746 --> 01:58:39.340
+Õpetaja: See on String. Aga kui me vaatame juba selle vastu, et kas sa oled ühistring? See oleks justkui vihje. Siis siin ütleme String
+
+949
+01:58:40.445 --> 01:58:43.879
+Õpetaja: No Seda Jaanus Juba põhimõtteliselt ka mainis. Vaata, et sa niikuinii kohe muutub. Ära.
+
+950
+01:58:44.792 --> 01:58:46.000
+Õpetaja: Ee, see object.
+
+951
+01:58:46.958 --> 01:59:01.610
+Õpetaja: Aga nüüd vaataks korra siis vähemalt seda location formi, sest et seal antakse endiselt alla. Arvatavasti Location objekti. Ega Seda osa korda ei tee, keda pole päris a ei, me ei teinud seda asja. Korda. Ee, me ei teinud seda asja korda.
+
+952
+01:59:02.929 --> 01:59:15.119
+Õpetaja: Ee, ai, abil Näete, Ootan. Alla image data, et nüüd ta ulub juba Vaata, miks sellepärast, et meie anname sisse objekti, Aga siin all määrame et mina ootan sisse Stringi. Warning. Warning Warning.
+
+953
+01:59:15.683 --> 01:59:18.590
+Õpetaja: Aga me ei tahagi teada Location objekti, Vaid
+
+954
+01:59:19.230 --> 01:59:35.219
+Õpetaja: Ainult üks osa Anname. Alla kaasa. Nüüd. See koht muutus korda. Muutuja nimi. Siin muutus. See kõik näeb. Fine välja, Tundub et ta Oskas selle asja tegelikult suht korrektselt korda teha. Vähemalt muutuja nime osas siin ennem oli location Ja näed, ta näitab, mis see enne oli,
+
+955
+01:59:35.901 --> 01:59:46.859
+Õpetaja: Ennem oli, et anna alla kaasa Props nimega Location. Väärtus nimega Location. Nüüd on Anna alla kaasa Props nimega. Image data ja väärtused. Punkt Image kaudu.
+
+956
+01:59:47.507 --> 01:59:48.580
+Õpetaja: See on korras,
+
+957
+01:59:49.363 --> 01:59:57.280
+Õpetaja: Vaatame korra veel selle Atm imitsi ka üle. Veel. Tundub, et on okei. Props on image data, kui on tühist ringi. Match Data, siis. Ee. Näita seda
+
+958
+01:59:58.300 --> 02:00:00.070
+Õpetaja: vaikimisi pilti. Reminder.
+
+959
+02:00:00.576 --> 02:00:03.940
+Õpetaja: Ee els. Näita seda. Mis andmed sealt siis sisse tulevad.
+
+960
+02:00:04.901 --> 02:00:06.459
+Õpetaja: Noh, nüüd ma Võin minna
+
+961
+02:00:07.078 --> 02:00:12.330
+Õpetaja: Nüüd ma võin minna tagasi lõpuks sinna, kus me olime. Ee location info. Modalis Olime, onju?
+
+962
+02:00:18.372 --> 02:00:28.859
+Õpetaja: Location tabelis. Vot kus mis? Mina, Ahah, okei. Aa lähme, Vaatame.
+
+963
+02:00:35.932 --> 02:00:36.599
+Õpetaja: Mul on täna.
+
+964
+02:00:37.928 --> 02:00:39.419
+Õpetaja: Aa, ta võttis olla seitsmeteistkümne.
+
+965
+02:00:40.142 --> 02:00:44.939
+Õpetaja: Aa, lühike. Siis soovitas kus iganes.
+
+966
+02:00:45.490 --> 02:00:53.689
+Õpetaja: Aa, okei, no vot, vot See ongi see, see on see asi Vaata, et see see tööriist ei ole disainitud veebiarenduseks.
+
+967
+02:00:54.192 --> 02:01:02.379
+Õpetaja: Ee, no teeme niimoodi, et tulge lihtsalt järgi, Sest minul ma vaatan, et. Noh, siin ma Näen. Vaata, mingid Md failid, mis ta on teinud. Ma võin need.
+
+968
+02:01:04.852 --> 02:01:13.290
+Õpetaja: Ma vaatan korra ka Siin on ee, voe komponentide struktuur, kus natukene ikkagi ära. Nagu
+
+969
+02:01:13.828 --> 02:01:17.220
+Õpetaja: tead, see mingi varasem näidis? Selle ma ka Roll Back, In
+
+970
+02:01:18.122 --> 02:01:24.959
+Õpetaja: eks? Ainult Voefailid põhimõtteliselt selle ära. Tuli lihtsalt järgi praegu, et aeg on nii ee piiratud, et
+
+971
+02:01:25.549 --> 02:01:28.109
+Õpetaja: tulge lihtsalt järgi. Ma annan siis kõigile võimaluse
+
+972
+02:01:31.190 --> 02:01:31.570
+Õpetaja: nii
+
+973
+02:01:36.332 --> 02:01:42.319
+Õpetaja: Ütlen, kui Bush on läinud, siis võite hakata. Senikaua saate oma kõik muudatused, et oleks plats puhas.
+
+974
+02:01:46.049 --> 02:01:57.929
+Õpetaja: Mul, ee, eelmised kursused on nagu nalja visanud. Vaata, et vähemalt ühte asja nagu vähemalt ühte asja me oskame. Hästi, vaata, et me oskame ja tulla võtta, Vaata, et
+
+975
+02:01:58.460 --> 02:02:02.469
+Õpetaja: seda liigutust ikka oskab tegi katki midagi vä.
+
+976
+02:02:03.111 --> 02:02:09.250
+Õpetaja: No see oleneb, kuidas kellelgi Sellepärast, et mõnel muutis rohkem, kui seitseteist pluss failis muuta tegi muudatusi,
+
+977
+02:02:10.757 --> 02:02:26.449
+Õpetaja: ehk Siis, kui ta refaktureeris, siis ta ei osanud konteksti võtta korrektselt. See oli sinu arvates jah. Panimegi ju niikuinii. Kasutasime
+
+978
+02:02:27.930 --> 02:02:28.360
+Õpetaja: Mhmh.
+
+979
+02:02:28.953 --> 02:02:38.819
+Õpetaja: Ta. Ta tegi Nagu üle projekti Põhimõtteliselt, et siis igalt poolt läks asi, kus ennem oli. Mitmuses oli nüüd ainsuses
+
+980
+02:02:39.127 --> 02:02:40.310
+Õpetaja: või mida iganes, ma ei tea
+
+981
+02:02:41.797 --> 02:02:49.180
+Õpetaja: komponentide Ja image I alla. Seda ta ütles mul vähemalt blokeetuseni alla projekti puhul.
+
+982
+02:02:50.248 --> 02:02:56.520
+Õpetaja: Sa mõtled seda uut komponenti Minu ta idee järgi peaks olema siin vaataja all
+
+983
+02:03:00.812 --> 02:03:07.140
+Õpetaja: Okei, sina või Jah, sellepärast, et me ekstraktisime selle location formilt.
+
+984
+02:03:09.340 --> 02:03:09.840
+Õpetaja: Sellepärast
+
+985
+02:03:13.349 --> 02:03:20.700
+Õpetaja: väga hea. Nüüd. Ee, ee, Atm Image tõstaks. Tõstame Siis kas te olete joonel või ootan kedagi veel?
+
+986
+02:03:21.887 --> 02:03:29.659
+Õpetaja: Kedagi ei märka öelnud, et Tiriks üldse selle nüüd siia image, alla Vaata image input Ja Atm is on mõlemad imidzi Related, komponent,
+
+987
+02:03:30.615 --> 02:03:31.190
+Õpetaja: komponents.
+
+988
+02:03:32.368 --> 02:03:35.940
+Õpetaja: See siit Lihtsalt drag and Drop osta siia. Ära.
+
+989
+02:03:38.575 --> 02:03:41.320
+Õpetaja: See on see mis mind üldse Ennem ee promptes.
+
+990
+02:03:42.882 --> 02:03:45.379
+Õpetaja: Ja nüüd Ee for the love of Card.
+
+991
+02:03:46.699 --> 02:03:49.569
+Õpetaja: Mille pärast me siia üldse tulime, on siis ee,
+
+992
+02:03:50.138 --> 02:03:54.199
+Õpetaja: ee location image mingi Modal, Mis iganes see oli. Location info modal.
+
+993
+02:03:58.758 --> 02:04:10.540
+Õpetaja: Tahtsime siia kolmkahte panna. Seda pilti, mäletate? See oli kogu selle asja mõte, millega me üldse Nagu reisima hakkasime, siin onju see asi Siin Refresh. Pilt siia kõrvale saada, et tuleb meelde,
+
+994
+02:04:12.233 --> 02:04:18.860
+Õpetaja: et Location info modal seal mudeli komponentsid lahti teha, Otsida ülesse. Kus on see
+
+995
+02:04:19.593 --> 02:04:23.540
+Õpetaja: kolm? Üks, ja kolm, kaks ja kolm, kaks, On see, kui peaks tulema meie pilt.
+
+996
+02:04:24.812 --> 02:04:29.709
+Õpetaja: Noh, see oli See, mis ma kogu aeg ootasin, et. Noh, miks ta ei ütle juba? Atm Image.
+
+997
+02:04:31.018 --> 02:04:34.509
+Õpetaja: Kõik otsivad, vaatavad. Sealt võtame. Ei, ei, ei, ei,
+
+998
+02:04:37.901 --> 02:04:40.429
+Õpetaja: Mis on need kaks tähte, mis ma kirjutan siia.
+
+999
+02:04:45.580 --> 02:04:50.640
+Õpetaja: Ae, oota. Mimage ühe tagiga.
+
+1000
+02:04:53.070 --> 02:04:57.159
+Õpetaja: Kool on image. Data soovib sisu.
+
+1001
+02:04:57.965 --> 02:05:01.320
+Õpetaja: No mis meil siia Sisse tuleb Location objekt. Kus sees on?
+
+1002
+02:05:04.980 --> 02:05:05.840
+Õpetaja: Image Data.
+
+1003
+02:05:07.820 --> 02:05:12.379
+Õpetaja: Nii pilte ei ole. Näita.
+
+1004
+02:05:15.100 --> 02:05:24.160
+Õpetaja: Ma piilusin siin. Ma võtsin selle koodi ette ja ta Tundub, et töötab väikene tiit. Tuur, Väikene rännak.
+
+1005
+02:05:27.868 --> 02:05:29.210
+Õpetaja: Küll mu katkist kõik aitab.
+
+1006
+02:05:30.998 --> 02:05:35.560
+Õpetaja: Ee, Siis see viitab sellele, et ta mingi sisu, saab, aga Seda Ta ei oska pildiks teha.
+
+1007
+02:05:37.334 --> 02:05:39.259
+Õpetaja: Aga miks see nii on? Seda ma ei tea
+
+1008
+02:05:44.476 --> 02:05:46.530
+Õpetaja: teengi, aga
+
+1009
+02:05:47.248 --> 02:05:55.760
+Õpetaja: sa võid. Siis vaatad korra taustal. Et Ee, kui sa teed selle lahti, Sul peab see modal lahti olema.
+
+1010
+02:05:56.317 --> 02:06:02.209
+Õpetaja: Ee, vaatad selle location info mudalit ja vaatad oma location objekti ja Image Data, Kas sul on tühistring?
+
+1011
+02:06:05.751 --> 02:06:11.210
+Õpetaja: Sest et selle peale ta peaks kuvama seda pangaautomaadi pilti?
+
+1012
+02:06:11.847 --> 02:06:16.659
+Õpetaja: Äkki Stoplight ei suutnud sulle vastata. See on võimalus. Kas muu tekst on olemas? Automaat ei tarv ees.
+
+1013
+02:06:18.678 --> 02:06:19.820
+Õpetaja: Ja See on valmis. Ära.
+
+1014
+02:06:20.754 --> 02:06:26.189
+Õpetaja: Siis on huvitav. Siis on midagi siin valesti. Ikkagi praegult. Ee,
+
+1015
+02:06:27.734 --> 02:06:30.249
+Õpetaja: kas sul on kõik tekst? Samasugune nagu minul.
+
+1016
+02:06:32.911 --> 02:06:34.119
+Õpetaja: On Siin Kool on
+
+1017
+02:06:38.742 --> 02:06:41.819
+Õpetaja: ee. Kui seda ei ole, siis
+
+1018
+02:06:42.405 --> 02:06:45.969
+Õpetaja: kui on niimoodi, siis Võibolla pilt on katki niimoodi.
+
+1019
+02:06:49.762 --> 02:06:52.090
+Õpetaja: Nii, teeme nüüd selle järgmise osa ära.
+
+1020
+02:06:57.195 --> 02:07:02.270
+Õpetaja: Ee, ta võid anda.
+
+1021
+02:07:03.685 --> 02:07:04.100
+Õpetaja: Okei,
+
+1022
+02:07:05.377 --> 02:07:13.109
+Õpetaja: sa räägid praegu. Oota, ma ei saa sulgemist panna. Sa Räägid. Ma kordan, Refresh, Vaata, ma saaks. Kas sa mõtled seda, et kui ma olen ee,
+
+1023
+02:07:13.786 --> 02:07:15.330
+Õpetaja: No login sisse Adminina.
+
+1024
+02:07:17.441 --> 02:07:20.329
+Õpetaja: Noh, Panin siia üks, kaks, kolm, mingi vanast harjumusest.
+
+1025
+02:07:23.095 --> 02:07:25.820
+Õpetaja: Ahah, ei, ma mõtlesin, et mul on midagi
+
+1026
+02:07:26.175 --> 02:07:31.049
+Õpetaja: Ja ega midagi meil on katki olnud, praegu, Jah, miks ta Errorisse läheb?
+
+1027
+02:07:32.544 --> 02:07:35.690
+Õpetaja: Korraks? Investicate. Ime siis seda, et mis siis nagu toimub?
+
+1028
+02:07:36.271 --> 02:07:38.379
+Õpetaja: Ee, Vaatame, kas konsooli midagi viskab,
+
+1029
+02:07:45.367 --> 02:07:59.080
+Õpetaja: Sest et me, Just praegu. Ta ütleb, et Location View Sada, üheksakümmend üks. Me oleme katki midagi katki. Me. Me ju tegime muudatusi. Noh, klassikaline näide, Vaata,
+
+1030
+02:07:59.594 --> 02:08:14.370
+Õpetaja: Kuidas tekivad pugid ja asjad et me tegime mingeid muudatusi varasemas failis, Eriti me refaktureerisime ka igast muid asju. Ta viitab siis, et, ee, ta. See number võib veits valetada. Muidugi, Ee Location View.
+
+1031
+02:08:15.731 --> 02:08:19.929
+Õpetaja: Mis ta ütles? Sada üheksakümmend üks. Vaatame korra, Mis siin on?
+
+1032
+02:08:22.847 --> 02:08:27.880
+Õpetaja: Location Form ile läheb Object Location. Miks ta kursiivis on? On hea küsimus.
+
+1033
+02:08:28.280 --> 02:08:29.440
+Õpetaja: Ta ei leia seda.
+
+1034
+02:08:30.596 --> 02:08:48.079
+Õpetaja: Ta justkui viitab, et ee. Datablokis Enam pole niukest asja, Miks sellepärast? Vaadake ta refaktori. Ma panen, vaata. Noh, mina ise. Ee, kui ma refaktoreerisin. Ma ei viitsinud vist ikka väga korralikult vaadata. Kus Muudatus on, mis ta tegi? Siin oli location.
+
+1035
+02:08:48.978 --> 02:08:51.189
+Õpetaja: No kui vaadata seda viimast komitee
+
+1036
+02:08:54.347 --> 02:08:59.569
+Õpetaja: ennem oli Location ee, siis läks image data ja ta ütleb, et ta ei leia seda enam.
+
+1037
+02:09:00.064 --> 02:09:05.649
+Õpetaja: Ehk siis, ee. Puugi vajab parandamist vaja teha Location View lahti
+
+1038
+02:09:06.374 --> 02:09:19.179
+Õpetaja: tulla, siia datablokki ja lihtsalt see siin kirjutada. Vaata, nüüd on vaja korra klikkida. Kuhu see läheb? Ainult siim. Vaata, kas on väga veider. Siin Ta parandas selle ära, Aga See koht, kus seda siin kuskil all kasutatakse sinna ja ikka Location
+
+1039
+02:09:20.087 --> 02:09:25.679
+Õpetaja: et siin on ikka location. No kõik, need on katki Põhimõtteliselt, Nojah Teeme siis korda.
+
+1040
+02:09:26.503 --> 02:09:27.269
+Õpetaja: On võrguline.
+
+1041
+02:09:30.640 --> 02:09:32.690
+Õpetaja: Nii, Opcato on.
+
+1042
+02:09:38.012 --> 02:09:46.179
+Õpetaja: No siis korra saab ära kohe proovida. Vaata, et kas nüüd tuleb. Noh, see alles nüüd Tuli see kihv? Siin onju Refresh. Ei ole mõtet teha, miks
+
+1043
+02:09:47.135 --> 02:09:49.840
+Õpetaja: mul on error lehel? Vaata, nagu et siin sa võidki seda.
+
+1044
+02:09:50.884 --> 02:09:52.260
+Õpetaja: Noh, see kinni. Panna.
+
+1045
+02:09:56.174 --> 02:10:00.990
+Õpetaja: Kuidas saaks sellest lahti? Mul On Crash is. See asi siin. Ee, proovin. Sisselogimine.
+
+1046
+02:10:03.153 --> 02:10:12.229
+Õpetaja: Selle ei olnud isegi Aa, nüüd. Tuli. Lõpuks Läkski nii sisse. Logimine Üks, kaks, kolm. Või Mida iganes. Vahet pole, pangaautomaadi tasukoht on jälle terve.
+
+1047
+02:10:13.340 --> 02:10:13.860
+Õpetaja: Aitäh
+
+1048
+02:10:18.396 --> 02:10:24.500
+Õpetaja: kuidagi raskelt. Edeneb see location info Madal nagu taha üldse. Nagu kiirelt minna.
+
+1049
+02:10:25.155 --> 02:10:31.729
+Õpetaja: Ee, vaatame korra taaski Mis tegema pidi, väikene reminder. Sest et selle pildi me saime ära pandud, sinna.
+
+1050
+02:10:35.650 --> 02:10:43.639
+Õpetaja: Nüüd peaks tulema, Siis viimane osa on. Ee, need Ee Transaction Type D peavad tulema
+
+1051
+02:10:45.303 --> 02:10:48.120
+Õpetaja: Siin muidugi näitab, et Nad on klikitavad, on Nii
+
+1052
+02:10:49.358 --> 02:10:57.949
+Õpetaja: tegelt ma ütlen nagu, et see see visuaal on natukene vananenud, et. Ee. Minu meelest ma olen ammu selle ümber teinud, et siin lihtsalt näitab. Ee, neid.
+
+1053
+02:10:59.958 --> 02:11:06.149
+Õpetaja: See lihtsalt näitabki ainult neid Niiöelda tekstina, mis on olemas, peaks olema. See õige lahendus,
+
+1054
+02:11:13.591 --> 02:11:14.949
+Õpetaja: aga mul on üks mõte,
+
+1055
+02:11:18.208 --> 02:11:22.200
+Õpetaja: Meil vist on eraldi klotsikene. Transaction Types on ju
+
+1056
+02:11:23.670 --> 02:11:28.579
+Õpetaja: kuskil Location I all Peaks olema Transaction Type Checkbox. Vaatame, mida ta sisse võtab.
+
+1057
+02:11:29.172 --> 02:11:39.899
+Õpetaja: Võtad Transaction types. Eid tal on mingi ee, visuaal. Kus peale, käivitatakse? Mingisugune meetod on ju
+
+1058
+02:11:40.721 --> 02:11:51.929
+Õpetaja: Ee, on see joonistus? Tuleb kõik selle pealt mis me sisse anname. Mina pakun, et teeme taaskasutust Ja hästi, natukene seda. Transaction Type Checkbox I mudime.
+
+1059
+02:11:52.748 --> 02:11:55.219
+Õpetaja: Mis te arvate sellest taaskasutama?
+
+1060
+02:11:56.150 --> 02:12:12.000
+Õpetaja: Ee no Alustame seda, et saaks selle visuaalselt ette. Me teame, et selle, asja nimi on Transaction Types Checkbox ja ta ootab siis ee massiivi transaction types ja ülejäänud asjad justkui joonistab selle pealt. Ainukene asi on see, et me peame nagu disable ima selle ära, et ei saaks midagi klikkida.
+
+1061
+02:12:12.608 --> 02:12:18.780
+Õpetaja: See on ainukene muudatus, mis me kavatseme teha? Mõte on siis selline, et proovime saada siis midagi. Analoogset siia ette.
+
+1062
+02:12:19.418 --> 02:12:22.649
+Õpetaja: Ee, lähme sinna Location Info mudalisse.
+
+1063
+02:12:25.224 --> 02:12:30.219
+Õpetaja: Põhimõtteliselt võime siia samma Kolumnisse lihtsalt panna ja öelda, et aiotud samma kolumn
+
+1064
+02:12:30.747 --> 02:12:39.719
+Õpetaja: siiani automaatide alla, on ju Ee transaction type Checkbox on see ee. Komponent, mida me siia tahame. Mis tähed ma siia kirjutan?
+
+1065
+02:12:42.117 --> 02:12:44.540
+Õpetaja: Ddc, valin selle.
+
+1066
+02:12:45.286 --> 02:13:02.140
+Õpetaja: Soovin seda Üksik tag Ina. Näete siiamaani Üksiktäag Aga siis, kui me tahame seda, et meil on mingid Slot Id, siis on vaja kahte tag I, et templeti sees siis öelda, Nagu et mis pesa? Nagu üle kirjuta või või anna või sisusta. Ütleme nii Ee, Kool on Tema tahab saada transaction types E. Okei,
+
+1067
+02:13:02.950 --> 02:13:08.370
+Õpetaja: Anname sulle transaction types I, Kus me selle saame? No, meie mängumaa on Ainult siin, on ju? On see Location
+
+1068
+02:13:10.051 --> 02:13:14.930
+Õpetaja: Location? I küljes peaks olema samamoodi transaction types.
+
+1069
+02:13:19.161 --> 02:13:21.899
+Õpetaja: Nüüd idee järgi. Justkui juba võiks töötada.
+
+1070
+02:13:24.210 --> 02:13:29.290
+Õpetaja: Sul on pangaautomaadid klikin sikupilli prisma peale on need nupukesed.
+
+1071
+02:13:31.075 --> 02:13:44.439
+Õpetaja: Ainuke asi on See, et kui ma praegu vaata, siin ongi, see, et idee järgi ma saan neid nuppe isegi klikkida. Midagi hullu Ei, juhtu. Miks sellepärast, Et selle nupu peal ei ole midagi muud programmeeritud, kui et lihtsalt midagi juhtus,
+
+1072
+02:13:45.219 --> 02:13:55.350
+Õpetaja: selles mõttes nagu ta ei lõhu midagi veel aga meie Mõte oleks nagu see, et seda nuppu vajutada ei saaks. Aga näitaks meile põhimõtteliselt et mis Mis värk on? Vaata, mis teenused on on ju.
+
+1073
+02:13:55.939 --> 02:14:02.970
+Õpetaja: Noh, päriselus. Nagu ma ütlen, et kuskil varasemas taskis. Kui oli vaja pilte rohkem, siis seal oli lihtsalt, et näita ainult neid,
+
+1074
+02:14:03.504 --> 02:14:04.720
+Õpetaja: mis Sul on olemas.
+
+1075
+02:14:06.115 --> 02:14:06.610
+Õpetaja: Okei,
+
+1076
+02:14:08.374 --> 02:14:19.059
+Õpetaja: siis mis oleks vaja teha, on see, et me peame nüüd natukene Transaction Type checkboxi niimoodi mudima, aga me peame natukene arvestama ka seda. Vaata, et, ee, seda on varasemalt kasutatud.
+
+1077
+02:14:20.328 --> 02:14:23.439
+Õpetaja: Minu mõte on see. Lähme Transaction Type Checkboxi.
+
+1078
+02:14:24.850 --> 02:14:26.559
+Õpetaja: Defineerime siia juurde
+
+1079
+02:14:31.253 --> 02:14:32.099
+Õpetaja: ühe muutuja.
+
+1080
+02:14:39.183 --> 02:14:46.429
+Õpetaja: Aa, tüüpi. Aa, tüüpi Muutaja. Mis hakkab reguleerima seda, et kas nupud on või mitte,
+
+1081
+02:14:47.995 --> 02:14:50.919
+Õpetaja: Switchid, aga nad on siin. Switchid. Vaata Paneme, niimoodi
+
+1082
+02:14:55.015 --> 02:14:55.760
+Õpetaja: Reaches,
+
+1083
+02:14:59.648 --> 02:15:01.890
+Õpetaja: Me oleme tee negatiivsed. Teeme
+
+1084
+02:15:06.250 --> 02:15:06.760
+Õpetaja: enabled.
+
+1085
+02:15:08.093 --> 02:15:13.180
+Õpetaja: Siin on midagi C ja vist kuskilt. Puudu on ju Switches and abled.
+
+1086
+02:15:14.920 --> 02:15:20.469
+Õpetaja: Me peame natukene mõtlema. Vaata, et ee, see koht, kus me praegu kasutame. Seal soovitakse
+
+1087
+02:15:21.493 --> 02:15:35.349
+Õpetaja: teha seda lülitamist, kus praegu varasemalt on kasutatav. Siis me peaksime tegema niimoodi, et vaikimise väärtus on true, et me ei muuda seda praegust seda olemasolevat niiöelda toimimist, et Switches Enable the
+
+1088
+02:15:36.437 --> 02:15:38.280
+Õpetaja: Aa. Okei, siin on alles Tüüp
+
+1089
+02:15:39.505 --> 02:15:49.520
+Õpetaja: tüüp on, aga me tahame anda default väärtust. Vaata, siin on see, et ta hakkab olema.
+
+1090
+02:15:51.034 --> 02:15:52.980
+Õpetaja: Võibolla isegi paneks selle are juurde
+
+1091
+02:15:54.174 --> 02:15:57.649
+Õpetaja: nagu, et sa mõttest nagu saaksid seda mõelda.
+
+1092
+02:15:58.439 --> 02:16:14.399
+Õpetaja: Ee, aga nüüd ongi point. On see, et vaata, et ee praegult juba selles Ee location, niiöelda Views või Location Forum is kutsutakse seda Transaction Type Checkboxi välja. Ja seal ei anta kaasa siia väärtust. Mul on vaikimise väärtust anda,
+
+1093
+02:16:14.821 --> 02:16:19.909
+Õpetaja: Siis Me teeme selle värgi, et me laiendame neid võimalusi. Ee, loogiliste sulgudega.
+
+1094
+02:16:20.955 --> 02:16:26.459
+Õpetaja: Nüüd siin sees. Me saame ära defineerida tüübi. Teeme seda nüüd teist korda uuesti. Tüüp on mis asi?
+
+1095
+02:16:27.510 --> 02:16:28.370
+Õpetaja: Kuulen
+
+1096
+02:16:29.122 --> 02:16:37.770
+Õpetaja: koma? Ja nüüd me anname Defaultiga. Anname talle vaikeväärtusi default ja me anname sellise vaikeväärtuse, et olemasolev Asi jääks terveks.
+
+1097
+02:16:38.698 --> 02:16:42.600
+Õpetaja: Hetkel see veel hetkel. Me veel ei kasuta. Seda väärtust. Aga plaan on see,
+
+1098
+02:16:43.183 --> 02:16:45.559
+Õpetaja: et see, sama, koht. Kus need Switch Id on,
+
+1099
+02:16:49.362 --> 02:16:53.680
+Õpetaja: Näete see, mis saab olla Trueway Falls. Vaata, et sees väljas sees väljas.
+
+1100
+02:16:54.173 --> 02:17:11.880
+Õpetaja: Meil on Niukene atribuut. Kui tegemist on, ma nüüd Panen peast, vaata onju. Checkboxil peaks olema niukene asi, et ma saan ta välja lülitada. Selle asja nimi on aga ma panen selle atribuudi kooloniga, et selle väärtuse True Falls tuleb kuskilt muutujast ja see tuleb
+
+1101
+02:17:14.635 --> 02:17:15.100
+Õpetaja: sellest.
+
+1102
+02:17:17.157 --> 02:17:22.980
+Õpetaja: Ee, nüüd ma. See on siin mitmuses. Ma kavatsen selle siit ära muuta. Võibolla ma ei tea, võib ka nii jääda.
+
+1103
+02:17:24.143 --> 02:17:27.389
+Õpetaja: Suitsusaaren saab Selle väärtuse on välja lülitatud.
+
+1104
+02:17:28.539 --> 02:17:32.729
+Õpetaja: Vaatame vana vana, kohta kus seda ennem oli kasutatud location I all.
+
+1105
+02:17:37.413 --> 02:17:44.730
+Õpetaja: Tru. Äkki ma. Äkki ma disable. Ahaa, okei. Vaikimise väärtust ei taha. True.
+
+1106
+02:17:45.814 --> 02:17:51.800
+Õpetaja: Sellepärast see on disabled. Okei, nüüd Ma saan aru, me peame selle muutuja tegema. Ikkagi disabled.
+
+1107
+02:17:52.567 --> 02:18:01.530
+Õpetaja: Sellepärast, et siin ei ole sõna. Nagu enabled, vaid on disabled. See Tekitab rämedalt segadust. Ee Refaktoreerime selle ära Shift F kuus.
+
+1108
+02:18:06.384 --> 02:18:10.349
+Õpetaja: Võibolla. See aar on natuke too. Much. Vaata, Switches isabered
+
+1109
+02:18:17.871 --> 02:18:22.570
+Õpetaja: ja nüüd ei ole tema vaikimise Väärtus truu, vaid hoopis Falls.
+
+1110
+02:18:30.205 --> 02:18:30.629
+Õpetaja: Nii
+
+1111
+02:18:39.349 --> 02:18:40.129
+Õpetaja: saab muuta,
+
+1112
+02:18:43.828 --> 02:18:50.289
+Õpetaja: kui on pangaautomaadid. Siin saab ka hetkel muuta. Sellepärast, et me ei olegi kuskil veel seda sisendina andnud.
+
+1113
+02:18:50.884 --> 02:18:58.290
+Õpetaja: Aga nüüd meil ongi plaanis. Vaata, et, ee. Kui me nüüd kutsume seda Location Info mudalit välja, siis
+
+1114
+02:19:00.923 --> 02:19:02.540
+Õpetaja: me tahame seda kaasa anda.
+
+1115
+02:19:04.472 --> 02:19:08.410
+Õpetaja: Kus selle väljakutsumine on? Selle mudeli väljakutsumine? Ee,
+
+1116
+02:19:09.282 --> 02:19:11.519
+Õpetaja: kus me toimetasime Location Views onju,
+
+1117
+02:19:12.087 --> 02:19:20.940
+Õpetaja: et see koht, kus me nüüd seda välja kutsume, Siin, kus ta on?
+
+1118
+02:19:24.757 --> 02:19:26.309
+Õpetaja: Mm, vale asi.
+
+1119
+02:19:27.185 --> 02:19:35.440
+Õpetaja: Aa, me räägime. Atm peab sassi. Ma ilmselt teil ka pangaautomaadid on ju. Vaata, see Atms
+
+1120
+02:19:36.280 --> 02:19:48.389
+Õpetaja: siin Juhataja. Tahame kutsuda seda välja. Siin kutsutakse seda mudalit välja. Ehk siis Atm su all on? Näete siin Allal läheb kaasa. Location info modalis Open. Anname väärtusega True Wefault kaasa.
+
+1121
+02:19:48.952 --> 02:19:51.629
+Õpetaja: Ee, kuule, siin on ka mingi jama.
+
+1122
+02:19:52.430 --> 02:20:00.560
+Õpetaja: Vaadake, see on allajoonitud, et ta ütleb, et ta ei leia Ta Tegi siin Data blokis selle sama triki või on kihlad. Siin on ka mingi objekt. Imidž. Tata,
+
+1123
+02:20:01.287 --> 02:20:02.510
+Õpetaja: lähme Otsime ülesse.
+
+1124
+02:20:04.728 --> 02:20:07.320
+Õpetaja: On image. Data, Ta tegi siin selle sama asja.
+
+1125
+02:20:08.330 --> 02:20:15.939
+Õpetaja: See refaktureerimine tegelikult maksis meile käte. Oleks käsitsi teinud. Klõps klõps kahes kohas ja Globing löving.
+
+1126
+02:20:18.591 --> 02:20:20.340
+Õpetaja: See tuleb ka teha Location, eks?
+
+1127
+02:20:27.840 --> 02:20:28.230
+Õpetaja: Nii,
+
+1128
+02:20:31.357 --> 02:20:35.090
+Õpetaja: Aga siin on nüüd see uus asi. Vaata, et see location info modal.
+
+1129
+02:20:37.806 --> 02:20:47.900
+Õpetaja: Ee kasutab transaction types. I Ee, Siis meil peab siia tulema. Uus Props,
+
+1130
+02:20:48.512 --> 02:20:51.989
+Õpetaja: mis peegeldab seda sama asja. Siin suitsustas seivel.
+
+1131
+02:20:53.057 --> 02:20:56.080
+Õpetaja: Ehk siis Location info madalile. Peame andma võimekuse,
+
+1132
+02:20:56.528 --> 02:20:58.259
+Õpetaja: sest et kõik peab tulema ülevalt
+
+1133
+02:20:58.818 --> 02:21:03.269
+Õpetaja: sealt, kus Location Info madal käima Siin tuleb see Cranchild teema jälle sisse, Onju,
+
+1134
+02:21:04.006 --> 02:21:10.059
+Õpetaja: et võibolla Copida selle nime Switches Disable saab seda kirjutada ka siin. Ütleme lihtsalt, puule on.
+
+1135
+02:21:19.212 --> 02:21:23.569
+Õpetaja: Nüüd saame nagu Step by Step minna. Vaata, et see on meie. See on meie pärand.
+
+1136
+02:21:24.600 --> 02:21:32.530
+Õpetaja: See on meie Child ja Transaction types. Xbox on Ee Cranchild. Siit peab all the Way voolama alla
+
+1137
+02:21:33.491 --> 02:21:38.040
+Õpetaja: location info Mudelis See info ja transaction Type say.
+
+1138
+02:21:38.995 --> 02:21:52.500
+Õpetaja: Ainuke vahe on see, et vaata, et sellest, kus me teda välja kutsume, meil ei ole tegelikult siia Datablokki Meil ei ole. Vaja. Ee, sellist muutujat, mis Ee, muutujat Disable. Sellepärast, et see ei muutu
+
+1139
+02:21:53.073 --> 02:21:57.069
+Õpetaja: siin selles kontekstis. Vaata, kui me Modalit Näitame. Ta peab alati minema.
+
+1140
+02:21:58.592 --> 02:22:02.909
+Õpetaja: Vabandust, True. Just, disabled. Ta oli onju? Switchest Disabled.
+
+1141
+02:22:04.097 --> 02:22:09.819
+Õpetaja: Pikk jutt. Ee, lühikeseks. Otsime ülesse selle. Koha. Kus siis See location info mudel kutsutakse välja.
+
+1142
+02:22:11.039 --> 02:22:13.610
+Õpetaja: Tuleb siia üks Props juurde.
+
+1143
+02:22:15.420 --> 02:22:24.730
+Õpetaja: Swiches Disabled, mis? Me tahame väärtusena anda. Sinna alla kaasa disabled, True onju,
+
+1144
+02:22:26.209 --> 02:22:35.000
+Õpetaja: et kui sa kutsud välja Location info mudeli, siis seal kuskil all on Transaction Type I ee niiöelda Switch Id.
+
+1145
+02:22:35.840 --> 02:22:41.160
+Õpetaja: Me soovime, et neid Ei ole võimalik muuta Switches. Disabled.
+
+1146
+02:22:44.263 --> 02:22:48.349
+Õpetaja: Teen lahti, Sa vajutada saan.
+
+1147
+02:22:49.062 --> 02:22:51.690
+Õpetaja: No siis on vaja investiga. Äkki on vaja refresh teha.
+
+1148
+02:22:54.145 --> 02:23:04.239
+Õpetaja: Kuskil on Lõk Praegult Nüüd tuleb üles leida Kus on hakkame siis? See on selles mõttes lihtne. Alla läheb praegult Ee true. Ma pakun, et see lihtsalt Veel Ei, Flow siia.
+
+1149
+02:23:04.789 --> 02:23:14.979
+Õpetaja: Ee location infosse. Ee, mudelisse läheb väärtus igal juhul Ee, niiöelda. True Switchis Artisable. Nüüd kus kutsutakse Transaction Type Checkboxi
+
+1150
+02:23:16.088 --> 02:23:18.459
+Õpetaja: Alla lähevad need Transaction types Id endad.
+
+1151
+02:23:19.445 --> 02:23:25.720
+Õpetaja: Aga hetkel ei lähe praegult see info. Vaata, et Switches Artisable aga siin on see võimekus nüüd olemas. Me just tegime selle.
+
+1152
+02:23:26.642 --> 02:23:28.340
+Õpetaja: Ja seda me ütleme, et siia läheb
+
+1153
+02:23:28.850 --> 02:23:30.470
+Õpetaja: see sama asi, mis on Propsis
+
+1154
+02:23:32.412 --> 02:23:34.890
+Õpetaja: Flow Flow Flow Andmed voolavad alla,
+
+1155
+02:23:36.903 --> 02:23:49.100
+Õpetaja: Näiteks see sama. Põhimõtteliselt võiks olla ka selgelt asenditel siis vaid samas location info mugavustele seatega.
+
+1156
+02:23:51.791 --> 02:24:03.930
+Õpetaja: Jah, sul on õigus, et ee, kui teed Modali lahti, et see on ju kui see on juba staatiline. Siin on ju siis tegelikult. Ta on juba ka staatiline siin. Seda location Info mudalit, muud moodi me ei kasuta.
+
+1157
+02:24:04.855 --> 02:24:05.330
+Õpetaja: Ja
+
+1158
+02:24:07.613 --> 02:24:17.859
+Õpetaja: ei, ta on väga hea praktika nagu. Aa, sul on õigus. Ma lihtsalt ise tabanud seda Ära vaata, ma kogemata hakkasin seda asja kontrollima, St. Aga seda pole vaja.
+
+1159
+02:24:18.241 --> 02:24:30.839
+Õpetaja: Location info modal. Alati näitab seda infot. Ainult infona. Mitte kunagi ei saa muuta. Ehk siis me saame seda nüüd paremaks teha, et ei tule muutujast, vaid läheb siit juba staatiliselt, True, onju?
+
+1160
+02:24:31.632 --> 02:24:44.649
+Õpetaja: Ja siis Selle saab ära kaotada. Meil ei ole vaja seda sisendit pärandilt. Meil on ainult barentilt vaja teada, et ava mind ja anna mulle infot, Mida joonistada. Ehk siis me kustutame selle. Ära
+
+1161
+02:24:45.408 --> 02:24:48.200
+Õpetaja: Näed, Jaanus, sul. Sa oled väga switchdown.
+
+1162
+02:24:49.387 --> 02:24:50.379
+Õpetaja: Seda ei ole vaja.
+
+1163
+02:24:50.993 --> 02:25:02.890
+Õpetaja: Sul on õigus, vaatame siis Just, me saame ka ära kustutada Seda, et kui sa kutsud välja Location info mudeli, et ütle, et Switch as disabled, sul ei ole Seda Ei ole vaja teada. See on osa infomodalist.
+
+1164
+02:25:04.784 --> 02:25:11.270
+Õpetaja: No nüüd võiks olla see. Töötada. Ka Vaata, et proovime läbi. Siis igate pidi. Proovime Kõigepealt siit seda, et. Kas see töötab?
+
+1165
+02:25:12.045 --> 02:25:12.990
+Õpetaja: Need on väljas
+
+1166
+02:25:15.403 --> 02:25:32.190
+Õpetaja: ise. Küsimus. Kas üldse tahaks teha niimoodi, et need Switch Id oleks lihtsam, oleks Vf. Iga lihtsalt kuvada. Ainult neid nimesid. Ee, mis on lubatud, aga. Aga printsiibis? Õppimise mõttes. Why Not. Vaata, onju.
+
+1167
+02:25:33.153 --> 02:25:48.430
+Õpetaja: Põhimõtteliselt jah. Nii no Õppimise mõttes on ka hea. Vaata, me saame, Mis me siin jälle vaatame, et esiteks üldse ma ei ole kuskil disseid kasutanud, onju? Sellisel kujul. Noh, nüüd oleme seda proovinud. Vaata, et kui teil on mingisugune interaktiivne element, ma toon näite, kus sa saad seda kasutada ise ka
+
+1168
+02:25:49.261 --> 02:26:02.659
+Õpetaja: Kui te te. Kui te teete mingisuguse vormi, kus saab uusi andmeid lisada, Noh, toome näite. Ee, panen korra siia kinni, Ah, ma ei saa seda kinni panna, sest see ei tööta. See on viimane asi, mis? Ruttu, teeme ära ja siis, ee. Saame minna koju.
+
+1169
+02:26:03.368 --> 02:26:05.600
+Õpetaja: Ee, saab andmeid lisada.
+
+1170
+02:26:07.332 --> 02:26:14.399
+Õpetaja: Siin on juba see informat. Maksimum informatsioon olemas. Ee, mida saab ühe location I kohta olla, vastab tõele.
+
+1171
+02:26:15.448 --> 02:26:22.900
+Õpetaja: Nad hakkama panen ta nime asukoha automaatide arvu koordinaadid raasesse. Ära välja kõik kogu see värk. Mingi.
+
+1172
+02:26:23.366 --> 02:26:29.600
+Õpetaja: Noh, samamoodi saaks. Ee, seda asja Edit Iks kasutada. Kõigepealt too andmed ära täida ära, on ju?
+
+1173
+02:26:30.142 --> 02:26:44.630
+Õpetaja: Nüüd on küsimus, et kui ma tahan lihtsalt mingisuguse asukoha andmeid niiöelda. Ee, informatsioonina kuvada sa saaksid kasutada Täpi pealt seda sama vormi. Ainukese vahel on niimoodi, et ta on eelt täidetud ja kõik nad on
+
+1174
+02:26:45.385 --> 02:26:54.850
+Õpetaja: seda sama kasti saab panna niimoodi et Ta on nagu halliks tehtud, Et sa ei saa muuta. See ei ole võibolla nagu kõige parem lahendus. Esiteks, mingi halli pealt lugemine Niukene,
+
+1175
+02:26:55.237 --> 02:27:06.319
+Õpetaja: Ma ei tea ma mingit liiga raskelt. Näen lugeda. Võibolla on halb lugeda aga idee järgi sa ei peaks tegema uut vaadet uut lehte vaid Sa saaksid seda seda sama vaadet kasutada kolmel põhjusel andmete lisamiseks.
+
+1176
+02:27:06.887 --> 02:27:19.390
+Õpetaja: Andmete kuvamiseks andmete muutmiseks. See oleks nagu võimalus kui tahaks, ma Olen midagi niukest ka. Päris nagu elus, nagu näinud. Vaata, kus andmeid kuvatakse. Niimoodi et on need samad kastikesed ees, aga muuta enam ei saa
+
+1177
+02:27:20.141 --> 02:27:33.100
+Õpetaja: ma isiklikult seda tegelikult ei teeks. Sellepärast ma just pigem naudiks seda Vabandust, vabadust. Vaata, et kui ma tahan inimesele kuvada mingeid andmeid, Siis ma saan seda teha kuidagi väga ilusalt ja eriliselt. Vaata, onju mõnusalt vaadata andmeid,
+
+1178
+02:27:33.876 --> 02:27:40.470
+Õpetaja: mitte mingisugused. Ära varjutatud kastid, aga idee järgi saaks Kas seda
+
+1179
+02:27:42.518 --> 02:27:48.040
+Õpetaja: seal mudelis saab teha? Nagu ütles, et millist?
+
+1180
+02:27:49.265 --> 02:27:49.669
+Õpetaja: Mulle?
+
+1181
+02:27:50.523 --> 02:27:52.470
+Õpetaja: Seal, kus selle raha siis see raha öeldi.
+
+1182
+02:27:53.369 --> 02:27:57.779
+Õpetaja: Jaa, vaata, on praegu välja, et kui teha, et,
+
+1183
+02:27:59.158 --> 02:28:13.929
+Õpetaja: mm. Ei, no, siis ma. Ma saaks Csiga seda tegelikult praegult teha. Vabalt nagu üldse. Vaata, ma saaksin anda nendele kastidele. Ee Niiöelda mingid need. Noh, ma saaks teha mingid klassid? Vaata, mis teeb selle värvid nagu normaalseks, nagu,
+
+1184
+02:28:15.190 --> 02:28:19.619
+Õpetaja: et selles mõttes et nagu, Noh, ongi. Noh selles mõttes see komponent ongi
+
+1185
+02:28:21.648 --> 02:28:27.359
+Õpetaja: nagu siis Html i elemendi enda tasandil, et see input niiöelda checkbox on praegu
+
+1186
+02:28:31.280 --> 02:28:35.540
+Õpetaja: viimane, asi Mis tahaks teha on? Need sulge nupud kohe. Kuidagi Ei, ei toimi ega tee midagi.
+
+1187
+02:28:37.129 --> 02:28:40.639
+Õpetaja: Nüüd tuleb aru saada sellest asjast, Kus kohas need Nupud on.
+
+1188
+02:28:41.510 --> 02:28:45.590
+Õpetaja: Need nupud Ei ole siin. Location Info modalis vastatajale ei ole Jah,
+
+1189
+02:28:46.238 --> 02:28:53.939
+Õpetaja: siin. Ei ole patanssit, mitte midagi. See template Buttans uut Patonit juurde ei tule. Noh, siis lausa ma ei tea. Võid ära kustutada, kui tahad.
+
+1190
+02:28:54.880 --> 02:28:59.350
+Õpetaja: Patoneid ei ole, Kõik need nupud, kus kohas nad asuvad praegult
+
+1191
+02:29:01.252 --> 02:29:09.310
+Õpetaja: Base modalis, et kui me hakkaks minema, et siin kutsume välja Location Info Modalit Location Info Modal kutsub Base Modalit.
+
+1192
+02:29:10.051 --> 02:29:14.069
+Õpetaja: Siin on See nupukene sulge. Siin on see nupukene rist.
+
+1193
+02:29:14.740 --> 02:29:17.710
+Õpetaja: Kui me vaatame, mida nemad teevad ligi iga Close
+
+1194
+02:29:18.532 --> 02:29:21.969
+Õpetaja: nad lihtsalt emiitivad ülesse teadet Event Model Is Closed,
+
+1195
+02:29:23.371 --> 02:29:24.999
+Õpetaja: Kui me tahaksime nüüd kinni panna.
+
+1196
+02:29:28.032 --> 02:29:30.199
+Õpetaja: Ja hallo, rängula.
+
+1197
+02:29:41.536 --> 02:29:44.500
+Õpetaja: Ja ma võin võib auto sinna, et ta, auto kasutust ei leia.
+
+1198
+02:29:48.830 --> 02:29:49.300
+Õpetaja: Mhmh,
+
+1199
+02:29:52.641 --> 02:30:02.809
+Õpetaja: Ei, Ei, ei, ei, ei, siis on. See on ideaalne lahendus. Teeme niimoodi, Okei, väga hea, Super, aitäh.
+
+1200
+02:30:04.608 --> 02:30:08.630
+Õpetaja: Tulen esmaspäeval peale tööd. Nägemist, Yes,
+
+1201
+02:30:09.459 --> 02:30:18.319
+Õpetaja: Nii, ee, mõte on nagu see. Vaata, et, ee, asi, mis kontrollib seda, et. Kas ee, Kus me kontrollime seda, et madal lahti Tuleks
+
+1202
+02:30:18.894 --> 02:30:22.190
+Õpetaja: Kus see on? See on parentis, See on siin,
+
+1203
+02:30:22.676 --> 02:30:28.379
+Õpetaja: meil on endal. Vaata, siin Selles Atms Views on selline muutuja nagu Location info modalis Open.
+
+1204
+02:30:29.262 --> 02:30:36.720
+Õpetaja: See flob alla ja teeb seda kinni. Lahti. Nüüd meie. Niiöelda see nupukene, mis paneb seda kinni, asub siin
+
+1205
+02:30:37.231 --> 02:30:47.830
+Õpetaja: tema imiiti sõnumit ülesse poole hetkel, Close. Mingi mis iganes, mis me nüüd peame lihtsalt tegema. On, See et see sõnum peab jõudma siia barentini välja ja lihtsalt siis muutma selle
+
+1206
+02:30:49.010 --> 02:30:49.450
+Õpetaja: truuks.
+
+1207
+02:30:51.630 --> 02:30:57.050
+Õpetaja: Vabandust poolseks nii,
+
+1208
+02:30:57.521 --> 02:31:04.489
+Õpetaja: Noh, Pacemodal. Juba Mit Ib seda event I siin. Selle Michi Alla Panime ka siis järgmine korrus on Location info modal.
+
+1209
+02:31:07.237 --> 02:31:10.209
+Õpetaja: Hetkel. Me kutsume siin seda paste mudelit välja, on nii?
+
+1210
+02:31:11.284 --> 02:31:16.159
+Õpetaja: Nüüd selle esimese tag i sisse. Vaata siia, me peamegi Siis defineerima ära. Nagu ikka, ät,
+
+1211
+02:31:17.451 --> 02:31:20.659
+Õpetaja: Event. No see vist läheb liiga pikaks. Paneme juba siia. Alla.
+
+1212
+02:31:21.240 --> 02:31:29.710
+Õpetaja: Noh, nii on ät. Kui tuleb Event Modal Closed meil sealt Base modalist. Mis me temaga teha tahame?
+
+1213
+02:31:32.744 --> 02:31:33.099
+Õpetaja: Vot,
+
+1214
+02:31:34.055 --> 02:31:41.309
+Õpetaja: aga siin ei ole seda väärtust. Vaata, sest kui me vaatame, ee, Siin on olemas Location Info mudelis Open. Aga ta on props.
+
+1215
+02:31:42.233 --> 02:31:47.849
+Õpetaja: Noh, me ei saa seda ju muuta siin, sest et see tuleb meie pärandilt.
+
+1216
+02:31:48.510 --> 02:31:51.970
+Õpetaja: Mis me siis siin teeme, kui siin sellega infoga ei ole midagi teha. Selle evendiga
+
+1217
+02:31:53.147 --> 02:31:59.910
+Õpetaja: anname edasi, on ju? Noh, siis on ikka Vana hea meet tulud.
+
+1218
+02:32:00.548 --> 02:32:04.430
+Õpetaja: Nüüd on vaja mingit stringi. No see string on täpselt see sama event.
+
+1219
+02:32:10.529 --> 02:32:18.020
+Õpetaja: Kui on mitu mudalit, siis tal peaks olema mingi täpsem nimi. Ma mõtlen see, et kui siin Atmsiv St. Saaks tulla mitu erinevat mudalit lahti,
+
+1220
+02:32:18.385 --> 02:32:23.160
+Õpetaja: siis meil on vaja täpselt, teada, mis Mudel? Sest et ei saa olla. See on nagu neutraalne praegu.
+
+1221
+02:32:25.443 --> 02:32:34.860
+Õpetaja: Võibolla isegi võiks mõistlik see event siin nagu ära. Muuta vaata et, Jah, see alati ütleb Event Modal Close, kuna tema ei nagu ei räägi spetsiifiliselt. Nagu domeeni mõttes onju.
+
+1222
+02:32:35.975 --> 02:32:39.190
+Õpetaja: Aga siia võibolla võiks isegi panna
+
+1223
+02:32:42.592 --> 02:32:50.240
+Õpetaja: Event Location info modal Close. Sellepärast, et meie jaoks see tähendab see. Seda saate mõttes, et siin on isegi mõistlik et, sõnum muutub
+
+1224
+02:32:51.173 --> 02:32:59.220
+Õpetaja: lihtsalt idee järgi, kui praegult on meil siin ainult kasutuses üks modal ühel tingimusel. Aga kujutage ette, kui oleks mitu madalit
+
+1225
+02:32:59.615 --> 02:33:02.929
+Õpetaja: ja iga kord on see, et event modal is closed, et nagu. Noh,
+
+1226
+02:33:03.308 --> 02:33:22.099
+Õpetaja: see on ka. Okei, pane siis kõik modalid kinni. See on ka nagu mõeldav, aga Pigem on olla võibolla spetsiifiline, kui teekski seda lollakat lahendust. Vaata, et üks modal teeb ühe Modali lahti. Ee, teine modal tuleb veel teine madal lahti sellest esimesest madalist. Siis oleks möödapääsmatu, et see sõnum peab olema erinev. Vaata, et nagu Mis see vend siis tuli on ju
+
+1227
+02:33:22.486 --> 02:33:28.360
+Õpetaja: Nii, aga location Info modalist. Me teame nüüd, et ee, läheb. Niukene Event,
+
+1228
+02:33:29.688 --> 02:33:35.959
+Õpetaja: mis? Enne kui me siit ära läheme, et seda oleks ka Mugav näiteks niiöelda ätiga üles leida. Mis me siin teeme?
+
+1229
+02:33:36.846 --> 02:33:38.149
+Õpetaja: Midagi on siin puudu.
+
+1230
+02:33:39.762 --> 02:33:46.360
+Õpetaja: Ja et siin komponendis ei ole defi defineeritud seda, et Lähevad välja mingid limitid, Seega mits.
+
+1231
+02:33:48.920 --> 02:33:50.519
+Õpetaja: Noh, Mitas ja Mitch.
+
+1232
+02:33:52.682 --> 02:33:56.720
+Õpetaja: No nii see kuidagi väga. Sash, Is
+
+1233
+02:33:57.195 --> 02:34:01.659
+Õpetaja: Ütleme ülesse ka, et läheb Niukene Mitt Pool on nii puudu,
+
+1234
+02:34:06.424 --> 02:34:24.649
+Õpetaja: et ee, täiesti okei. On muuta nagu siin selles keskmises. Childis seda sõnumit. See on nagu kaine, nagu heatahtlik telefonimäng, Onju, et ma vanasti tegin. Ee, kuidas ma rääkisin seda Ee. Õpilastele ka selgitasin. Vaata seda läbi. Ee, läbi. Niiöelda suhtlemist, niiöelda, et, ee,
+
+1235
+02:34:25.095 --> 02:34:34.980
+Õpetaja: See on Niukene Disfunctional Family. Vaata, kus. Nagu, ee, niiöelda lapselaps Ei, ei, räägi oma vanavanemaga ja vanavanem ei räägi oma lapselapsega, nad on tülis.
+
+1236
+02:34:35.378 --> 02:34:36.870
+Õpetaja: See vahepost on see vanem.
+
+1237
+02:34:37.656 --> 02:34:40.920
+Õpetaja: Meil on üks teenindus Functionel koht ka siin selles samas kohas
+
+1238
+02:34:41.773 --> 02:34:43.690
+Õpetaja: see on siin, kes need on, Omavahel
+
+1239
+02:34:45.040 --> 02:34:48.540
+Õpetaja: Nad on eraldi komponendid, kes nad on. No me võime vaadata, kes nad on.
+
+1240
+02:34:49.290 --> 02:34:56.150
+Õpetaja: Kui Atms Viul on olemas City, Strop, town Ja tema Ja kes nad omavahel on?
+
+1241
+02:34:57.503 --> 02:35:04.730
+Õpetaja: Ei ole omavahel sugulastega. Täpsemalt Eesti keeles on see ka Ei,
+
+1242
+02:35:05.240 --> 02:35:11.839
+Õpetaja: õde ja vend City, ma mõtlen, nagu need, kes omavahel vaata, on, vastab tõele. Location Table on omavahel õde vend.
+
+1243
+02:35:12.497 --> 02:35:15.919
+Õpetaja: Nii, Aga kui Cities Trotonis tuleb Event ülesse.
+
+1244
+02:35:16.448 --> 02:35:22.989
+Õpetaja: Ee, et kuule. Ole Hea, Vaata, nagu sinu City Id on niiöelda ma ei tea. Kaks
+
+1245
+02:35:23.757 --> 02:35:38.259
+Õpetaja: siis Cities Dropdown ei saa Location Table öelda, et lae endale uued andmed. Vaata Ja aa, näita mingit uut asju. Vaid tema ütleb ja siis ütleb Kuule, Cityfy või mida iganes.
+
+1246
+02:35:38.650 --> 02:35:48.399
+Õpetaja: Siin on nagu omavaheline nagu Communication Interaction. Aga läbi vanema? Noh, see on korralik Dist Functional Family, Vaata, onju Tõde vend nagu räägivad läbi vanema,
+
+1247
+02:35:49.652 --> 02:35:50.650
+Õpetaja: ikka juhtub seda
+
+1248
+02:35:52.575 --> 02:36:04.660
+Õpetaja: nii Ee, nüüd. Kas see sulge toimib? Veel? Ei, toimi. On ju, et. Ee. Tegime siis uue uue Miti. Nüüd läheme siis sinna lõpuks ja Ütleme, et kui siit location info modalist tuleb. Event
+
+1249
+02:36:05.255 --> 02:36:09.530
+Õpetaja: ät event location Info modal, Closed.
+
+1250
+02:36:10.348 --> 02:36:12.980
+Õpetaja: Nüüd me teame, et mis meie tahame teha.
+
+1251
+02:36:17.474 --> 02:36:24.770
+Õpetaja: Meie Tahame, siis see info, mis läheb alla ja mis kontrollib seda, et näita mudelit.
+
+1252
+02:36:25.260 --> 02:36:28.949
+Õpetaja: Kui see on truu, siis näidatakse madalid. Meil on vaja, et see ei ole enam truu.
+
+1253
+02:36:29.508 --> 02:36:31.400
+Õpetaja: Mis? Me kirjutame siis siia?
+
+1254
+02:36:32.311 --> 02:36:36.290
+Õpetaja: Jah, ütleme Location info modal Is open ja paneme ta Falsex
+
+1255
+02:36:37.553 --> 02:36:47.440
+Õpetaja: ja nüüd on niimoodi, et see ujub jälle nüüd alla. Vaata, ujub siia, ujub base mudelisse ja jõuab siia East Open Isse ja seda asja enam ei näidata.
+
+1256
+02:36:48.231 --> 02:36:50.100
+Õpetaja: Nüüd ta võiks selles mõttes töötada.
+
+1257
+02:36:50.983 --> 02:36:57.119
+Õpetaja: Teed lahti, Mõlemad saadavad sama. Mitte ülesse niiöelda oma pärandile, Kes viskab selle edasi.
+
+1258
+02:37:01.939 --> 02:37:10.329
+Õpetaja: See on Ka see. See on nagu Cssi lahendus. Vaata, et kui sa ka klikid väljapoole läheb kinni, seda saab mudida. Vaata, Csss iga et ära Tee nii.
+
+1259
+02:37:11.051 --> 02:37:25.970
+Õpetaja: Ee, Minule Isiklikult ei meeldi. Ee, kui ee modalist välja poole klikkimisega pannakse madal kinni. No Oledki mobiiliga sõrm, veits libastub vaatad saunas. Mingit asja higitilk. Lihtsalt läheb ekraani peale kõik.
+
+1260
+02:37:27.287 --> 02:37:28.890
+Õpetaja: No mida muud ma saunas teen?
+
+1261
+02:37:30.293 --> 02:37:34.930
+Õpetaja: Naudingi oma vaba hetke, kus ma saan Redditis midagi vaadata.
+
+1262
+02:37:38.585 --> 02:37:39.029
+Õpetaja: Nii
+
+1263
+02:37:42.728 --> 02:37:44.439
+Õpetaja: printsiibist, siis siukene asi
+
+1264
+02:37:45.875 --> 02:37:51.190
+Õpetaja: korra võib vaadata ka. Kas minu meelest selle tase selle taskiga on kõik ee sai ja Naara ka
+
+1265
+02:37:52.667 --> 02:37:58.779
+Õpetaja: Seal ei ole mingit muud funktsionaalsust Tuuakse id Ga ära. Andmed avatakse madal
+
+1266
+02:37:59.438 --> 02:38:04.810
+Õpetaja: Pane kinni. Ainuke asi võibolla veel. Mida siis saaks sättida, on Siis võibolla mingi disain või midagi. Et.
+
+1267
+02:38:06.068 --> 02:38:08.480
+Õpetaja: Noh, ma arvan praegu. See ei ole nagu keskel.
+
+1268
+02:38:08.867 --> 02:38:12.200
+Õpetaja: See pole ka midagi keerulist. Ee, kus see Location Info modal on,
+
+1269
+02:38:13.520 --> 02:38:18.009
+Õpetaja: et see siin on kenasti Colli sees. Need Aa mõlemad on kenasti Colli sees.
+
+1270
+02:38:18.586 --> 02:38:24.480
+Õpetaja: Võibolla see Justify Content Center Vaatame. Kuidas see teeb? See teeb midagi üldse
+
+1271
+02:38:27.180 --> 02:38:29.880
+Õpetaja: seda. Peaks tegelikult timmima juba sealt.
+
+1272
+02:38:30.669 --> 02:38:35.729
+Õpetaja: Transaction types I enda sees Kuidagi. Aga ei. Viitsi ei näe vaja sellega
+
+1273
+02:38:39.800 --> 02:38:40.719
+Õpetaja: mingeid küsimusi.
+
+1274
+02:38:42.663 --> 02:38:48.490
+Õpetaja: Ma tean, et siin oli nüüd jälle päris palju. Vaata, Sest et. Esiteks, meil oli siin mingi de facto segadust Ja igasugused kõike muud ka.
+
+1275
+02:38:48.795 --> 02:39:00.910
+Õpetaja: Ee, keeruline. Võibolla on saada kohe esimesel ringil ikkagi aru. Vaata, et ee. Meil on nagu niuke. Veider olukord, Et, ee, see asi on nagu olu. Veider olukord. Nagu põhimõtteliselt, et kui sa teed lahti, mul on mingi muutuja, mis teeb
+
+1276
+02:39:01.269 --> 02:39:17.080
+Õpetaja: kuskil Childis Nagu midagi nähtavaks teeb nähtavaks Aga see visuaalina tegelikult mõjub Niiöelda, nagu. Onju? Ja kuidas veel, et tuleb ekraani ette vaata, onju siuke, veider Ja Siis see sama asi nii öelda on, et alt et sa tahad sulgeda midagi, mis on Childis,
+
+1277
+02:39:17.383 --> 02:39:34.079
+Õpetaja: siis sa pead All The Way minema sinna et tema sulle põhimõtteliselt ütleks, et jah. Pane kinni, Vaata, tuleb all the Way Alla Et, see. On niuke nagu, veider flow Onju Ei ole harjunud, et kui olekski kuidagi programmeerimine, Kui mõnus oleks. Kui saaks lihtsalt öelda, pane madal kinni. Vaata, on ju kus iganes kohas.
+
+1278
+02:39:34.378 --> 02:39:38.560
+Õpetaja: Aga see ei käi niimoodi Sest et me see niiöelda kuvamine on andmete pealt.
+
+1279
+02:39:39.597 --> 02:39:48.889
+Õpetaja: Ja see, et meil on eraldi Niukene, teeb meie elu. Tegelikult lihtsamaks Mitte raskemaks programemise mõttes. Siin veits on, Vaata Ja see paindlikkus. Ka
+
+1280
+02:39:49.281 --> 02:40:04.170
+Õpetaja: Selles ei ole. Mingeid nuppe veel, näiteks salvesta või Update või kustuta Jah, mida iganes ei ole, neid nuppe, aga selles keskmises kihis nii öelda. Me saame sinna slottidesse mida iganes visata ja seal progeda, mis peab toimuma,
+
+1281
+02:40:05.035 --> 02:40:07.010
+Õpetaja: et. Ee, tegelikult on see.
+
+1282
+02:40:08.230 --> 02:40:21.549
+Õpetaja: Tegelikult on see kõik nagu päris hea paindlikkus saab kõike teha. Alguses vajab lihtsalt Natuke niukest ee, abstraktset mõtlemist, et sa pead kogu selle virvarri nagu peas kokku panema, et mis, nagu tegelikult taustal toimub,
+
+1283
+02:40:22.352 --> 02:40:25.029
+Õpetaja: et siin selles On meil mingi muutuja?
+
+1284
+02:40:25.907 --> 02:40:32.530
+Õpetaja: Sellega me kontrollime seda, kus Cranchildist midagi avaneb. Aga mis justkui visuaalselt avaneb? Siin on ju väga veider
+
+1285
+02:40:33.164 --> 02:40:35.459
+Õpetaja: Veidi noh, Ja kõik asjad on siin. Võibolla veiderad.
+
+1286
+02:40:36.417 --> 02:40:42.030
+Õpetaja: Eriti see kinni panemine on nagu minu meelest veider, et ma tahaks lihtsalt viis Open I ära muuta. Ja ongi kõik.
+
+1287
+02:40:43.137 --> 02:40:50.259
+Õpetaja: Nagu sinna saab ka mingit hookust puhkust teha, et saaks selle ka sinna progeda, kui väga tahaks, Ee, aga
+
+1288
+02:40:50.985 --> 02:40:59.410
+Õpetaja: aga See tegelikult ei ole mõistlik mina. Ei tea aitab, Jõu kipub.
+
+1289
+02:41:00.950 --> 02:41:03.800
+Õpetaja: Ju ee.
+
+1290
+02:41:07.100 --> 02:41:12.210
+Õpetaja: No. Siis praegult mörchime Seda Ei hakka las. Ta siis jääb Mörch Ib. Selle Ära siis esmaspäeval
+
+1291
+02:41:13.068 --> 02:41:16.000
+Õpetaja: käsi südamele. Tõesti, Ee, tähtsamad teemad.
+
+1292
+02:41:16.823 --> 02:41:17.870
+Õpetaja: Palun. Vaadake.
+
+1293
+02:41:19.015 --> 02:41:19.570
+Õpetaja: Mm,
+
+1294
+02:41:20.129 --> 02:41:35.760
+Õpetaja: see see nüüd. Kahjuks on niimoodi et mingid asjad Hakkasid nagu vaikselt nagu siin, Nagu selginema ja aru, nagu selgeks muutuma. Ee, mingisuguseid. Eriti neid põhiasju. Nagu juba ühtteist saab aru, aga kahjuks Nüüd siis. Ee. Esmaspäeval tuleb uus tramm ette. Nüüd astume selle trammi peale.
+
+1295
+02:41:36.493 --> 02:41:47.399
+Õpetaja: Tõe trammi pealt. Astume maha ja hakkab teine trammisõit Jälle on Nagu, ee, mingisuguseid uusi asju. Aga tegelikult meil saab olema ka päris palju niukseid, võrdlusmomente jaavascriptiga,
+
+1296
+02:41:48.094 --> 02:42:05.309
+Õpetaja: et asjad ja näiteks mingisugused muutujad, asjad ja Igast igast värki, mis meil tegelikult siit on niiöelda läbi käinud, et me saame nagu hakata vaikselt tooma paralleele, et mäletate, me tegime Frondis Kuidagi niimoodi. Ja need asjad. Töötasid kuidagi niimoodi. Vaata, et nüüd nagu on ka enda sarnane. Aga lihtsalt kirjaviis on teine.
+
+1297
+02:42:05.760 --> 02:42:08.280
+Õpetaja: Ee, struktuuri mõttes, Läheb Elu läheb lihtsamaks.
+
+1298
+02:42:08.801 --> 02:42:21.470
+Õpetaja: Ee, rohkem tähtsamaks muutub ka see päris joonis, et siin peal, nagu Meil oli lihtsalt mingi informatsioon siin peal. Meil on skeem. Me hakkame seda skeemi tegema. Uuesti ja uuesti. See Wir värv, mis on nagu
+
+1299
+02:42:23.079 --> 02:42:29.460
+Õpetaja: seda me teeme tegelikult nüüd täpselt sama palju kordi, kui meil neid teenuseid siin kokku on. Ee, selles Ee, süsteemis.
+
+1300
+02:42:30.920 --> 02:42:39.909
+Õpetaja: Ee, Jah, ee, Võibolla siis. Ee. Natukene ka. Cloud Code. Ee, eraldi Kavatsen veidi õpetada.
+
+1301
+02:42:40.635 --> 02:42:42.809
+Õpetaja: Muutub natuke temaatilisemaks See asi
+
+1302
+02:42:44.098 --> 02:42:58.009
+Õpetaja: Ja mida Kiiremini? Ee, selle osa ära teeme, seda kiiremini. Saate oma projektidega alustada Ee, nädala Alguses, ee. Kuskil seal stiilis. Esmaspäev, teisipäev. Midagi taolist. Aa, arvan, et Teeme tiimid ära,
+
+1303
+02:42:59.644 --> 02:43:04.680
+Õpetaja: et ka see, asi, et ee põnevust on palju,
+
+1304
+02:43:05.222 --> 02:43:12.270
+Õpetaja: Proovige siis teha kahte asja korraga, et puhake. Õppige, Aitäh, kuidas tänane päev oli?
+
+1305
+02:43:14.180 --> 02:43:14.590
+Õpetaja: Jah
+
+1306
+02:43:21.840 --> 02:43:22.200
+Õpetaja: Mhmh.
+
+1307
+02:43:23.170 --> 02:43:23.600
+Õpetaja: Aitäh.
+
+1308
+02:43:32.720 --> 02:43:36.679
+Õpetaja: Ta ei ole puugi sellepärast, sest vastab Kogu aeg sikupilli. Prisma andmetega.
+
+1309
+02:43:38.545 --> 02:43:44.550
+Õpetaja: Its. Its a feature not about davaika. Kuulge, ee. Laskevarvast.
+
+1310
+02:43:47.105 --> 02:43:47.689
+Õpetaja: Aa.
+
