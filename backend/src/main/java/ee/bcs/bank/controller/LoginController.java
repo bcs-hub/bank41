@@ -13,9 +13,10 @@ public class LoginController {
     private final LoginService loginService;
 
     @PostMapping("/api/login")
-    public void loginUser(@RequestBody LoginRequest loginRequest) {
+    public LoginResponse loginUser(@RequestBody LoginRequest loginRequest) {
 
-        loginService.loginUser(loginRequest);
+        LoginResponse loginResponse = loginService.loginUser(loginRequest);
+        return loginResponse;
     }
 
 }
