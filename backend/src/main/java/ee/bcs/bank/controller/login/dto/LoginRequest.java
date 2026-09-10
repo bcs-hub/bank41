@@ -1,4 +1,4 @@
-package ee.bcs.bank.controller;
+package ee.bcs.bank.controller.login.dto;
 
 import lombok.*;
 
