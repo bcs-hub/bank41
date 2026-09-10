@@ -35,5 +35,4 @@ public class LoginController {
         LoginResponse loginResponse = loginService.loginUser(loginRequest);
         return loginResponse;
     }
-
 }
