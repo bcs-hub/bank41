@@ -1,4 +1,4 @@
-package ee.bcs.bank.controller;
+package ee.bcs.bank.controller.city;
 
 import ee.bcs.bank.service.CityService;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,8 @@
 package ee.bcs.bank.service;
 
 import ee.bcs.bank.Status;
-import ee.bcs.bank.controller.LoginRequest;
-import ee.bcs.bank.controller.LoginResponse;
+import ee.bcs.bank.controller.login.dto.LoginRequest;
+import ee.bcs.bank.controller.login.LoginResponse;
 import ee.bcs.bank.infrastructure.exception.ForbiddenException;
 import ee.bcs.bank.persistence.user.User;
 import ee.bcs.bank.persistence.user.UserMapper;

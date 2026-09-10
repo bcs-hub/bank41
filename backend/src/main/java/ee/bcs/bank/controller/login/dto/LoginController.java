@@ -1,5 +1,6 @@
-package ee.bcs.bank.controller;
+package ee.bcs.bank.controller.login.dto;
 
+import ee.bcs.bank.controller.login.LoginResponse;
 import ee.bcs.bank.infrastructure.error.ApiError;
 import ee.bcs.bank.service.LoginService;
 
