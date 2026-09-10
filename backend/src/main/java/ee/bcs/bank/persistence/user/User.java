@@ -12,10 +12,13 @@ import lombok.Setter;
 @Entity
 @Table(name = "\"user\"", schema = "bank")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
+
+
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

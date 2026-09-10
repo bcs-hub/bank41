@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @RequiredArgsConstructor
 public class LoginController {
@@ -14,10 +15,12 @@ public class LoginController {
     private final LoginService loginService;
 
     @PostMapping("/api/login")
-    public void loginUser(@RequestBody LoginRequest loginRequest) {
-        loginService.loginUser(loginRequest);
+    public LoginResponse loginUser(@RequestBody LoginRequest loginRequest) {
 
+        LoginResponse loginResponse = loginService.loginUser(loginRequest);
+
+        return loginResponse;
     }
-
-
 }
+
+
