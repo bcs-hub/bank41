@@ -3,6 +3,7 @@ package ee.bcs.bank.service;
 import ee.bcs.bank.controller.LoginRequest;
 import ee.bcs.bank.controller.LoginResponse;
 import ee.bcs.bank.persistence.user.User;
+import ee.bcs.bank.persistence.user.UserMapper;
 import ee.bcs.bank.persistence.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,25 +17,15 @@ import static ee.bcs.bank.Status.STATUS_ACTIVE;
 public class LoginService {
 
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     public LoginResponse loginUser(LoginRequest loginRequest) {
-
-
-
         Optional<User> optionalUser = userRepository.findUserBy(loginRequest.getUsername(), loginRequest.getPassword(), STATUS_ACTIVE.getCode());
 
         if (optionalUser.isPresent()) {
 
-            //
             User user = optionalUser.get();
-
-            LoginResponse loginResponse = new LoginResponse();
-
-
-
-
-
-
+            LoginResponse loginResponse = userMapper.toLoginResponse(user);
             return loginResponse;
         }
 
