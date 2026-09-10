@@ -1,7 +1,11 @@
 package ee.bcs.bank.controller;
 
+import ee.bcs.bank.infrastructure.error.ApiError;
 import ee.bcs.bank.service.LoginService;
+
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
@@ -17,14 +21,17 @@ public class LoginController {
 
     @PostMapping("/api/login")
     @Operation(summary = "Sisse logimine. Tagastab userId ja roleName")
-    @ApiResponses(
+    @ApiResponses( value = {
+            @ApiResponse(
+                    responseCode = "200",  description = "OK"
+            ),
             @ApiResponse(
                     responseCode = "403",
-                    description = "Ebaõnnestunud sisselogimisel kuvatakse -> 'message:' Vale kasutajanimi või parool; 'errorCode': INCORRECT_CREDENTIALS"
+                    description = "Ebaõnnestunud sisselogimisel kuvatakse -> 'message:' Vale kasutajanimi või parool; 'errorCode': INCORRECT_CREDENTIALS",
+                    content = @Content( schema = @Schema(implementation = ApiError.class))
             )
-    )
+    })
     public LoginResponse loginUser(@RequestBody LoginRequest loginRequest) {
-
         LoginResponse loginResponse = loginService.loginUser(loginRequest);
         return loginResponse;
     }
