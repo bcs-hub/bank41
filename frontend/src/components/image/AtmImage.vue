@@ -15,6 +15,6 @@ export default {
       class="img-thumbnail"
       alt="panga automaadi pilt"
     />
-    <img v-else :src="location.imageData" class="img-thumbnail" alt="panga automaadi pilt" />
+    <img v-else :src="imageData" class="img-thumbnail" alt="panga automaadi pilt" />
   </div>
 </template>

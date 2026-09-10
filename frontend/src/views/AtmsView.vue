@@ -14,11 +14,9 @@ export default {
     this.getCities()
     this.getLocations()
   },
-
   data() {
     return {
       locationInfoModalIsOpen: false,
-
       errorMessage: '',
       userId: sessionStorage.getItem('userId'),
       roleName: sessionStorage.getItem('roleName'),
@@ -31,34 +29,22 @@ export default {
         },
       ],
 
-      location: [
-        {
-          locationId: 12,
-          cityId: 2,
-          locationName: 'Sikupilli Prisma',
-          numberOfAtms: 5,
-          imageData: '',
-          lng: 123,
-          lat: 123,
-          transactionTypes: [
-            {
-              transactionTypeId: 1,
-              transactionTypeName: 'raha sisse',
-              isAvailable: true,
-            },
-            {
-              transactionTypeId: 2,
-              transactionTypeName: 'raha välja',
-              isAvailable: true,
-            },
-            {
-              transactionTypeId: 3,
-              transactionTypeName: 'maksed',
-              isAvailable: true,
-            },
-          ],
-        },
-      ],
+      location: {
+        locationId: 0,
+        cityId: 0,
+        locationName: '',
+        numberOfAtms: 0,
+        imageData: '',
+        lng: 0,
+        lat: 0,
+        transactionTypes: [
+          {
+            transactionTypeId: 0,
+            transactionTypeName: '',
+            isAvailable: false
+          }
+        ]
+      },
 
       locations: [
         {
@@ -125,9 +111,12 @@ export default {
           .then(response => this.handleGetLocationResponse(response))
           .catch()
     },
+
     handleGetLocationResponse(response) {
       this.location = response.data
       this.locationInfoModalIsOpen = true
+
+
     }
   },
 }
@@ -138,9 +127,10 @@ export default {
     <div class="row justify-content-center mb-4">
       <div class="col col-5">
         <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen"
-        :location="location"
-        @event-location-info-modal-closed="locationInfoModalIsOpen= false"
+                           :location="location"
+                           @event-location-info-modal-closed="locationInfoModalIsOpen = false"
         />
+
         <h1>Pangaautomaadid</h1>
         <AlertDanger :error-message="errorMessage" />
       </div>
@@ -152,11 +142,7 @@ export default {
       </div>
 
       <div class="col col-5">
-        <!-- todo  SIIN ON ASUKOHTADE TABEL     -->
-        <LocationsTable
-          :locations="locations"
-          @event-location-name-click="handleOpenLocationInfoModal"
-        />
+        <LocationsTable :locations="locations" @event-location-name-click="handleOpenLocationInfoModal" />
       </div>
     </div>
   </div>

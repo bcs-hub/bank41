@@ -5,8 +5,8 @@ export default {
     transactionTypes: Array,
     switchesDisabled: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   methods: {
     emitEventTransactionTypesCheckboxUpdated(transactionTypeId, checked) {

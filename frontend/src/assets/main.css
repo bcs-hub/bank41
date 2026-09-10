@@ -10,13 +10,16 @@ a,
   padding: 3px;
 }
 
+
+
 .pointer {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .text-pointer-underlined:hover {
   text-decoration: underline;
 }
+
 
 @media (hover: hover) {
   a:hover {
