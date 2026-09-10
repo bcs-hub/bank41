@@ -18,8 +18,6 @@ public class User {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-
-
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "role_id", nullable = false)
