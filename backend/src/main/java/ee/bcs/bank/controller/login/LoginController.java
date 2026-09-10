@@ -1,6 +1,7 @@
-package ee.bcs.bank.controller;
+package ee.bcs.bank.controller.login;
 
-import ee.bcs.bank.persistence.user.User;
+import ee.bcs.bank.controller.login.dto.LoginRequest;
+import ee.bcs.bank.controller.login.dto.LoginResponse;
 import ee.bcs.bank.service.LoginService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;

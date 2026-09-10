@@ -1,7 +1,7 @@
 package ee.bcs.bank.persistence.user;
 
 
-import ee.bcs.bank.controller.LoginResponse;
+import ee.bcs.bank.controller.login.dto.LoginResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
