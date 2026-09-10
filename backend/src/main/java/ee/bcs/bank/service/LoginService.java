@@ -19,18 +19,19 @@ public class LoginService {
 
     public LoginResponse loginUser(LoginRequest loginRequest) {
 
+
+
         Optional<User> optionalUser = userRepository.findUserBy(loginRequest.getUsername(), loginRequest.getPassword(), STATUS_ACTIVE.getCode());
 
         if (optionalUser.isPresent()) {
+
+            //
             User user = optionalUser.get();
 
             LoginResponse loginResponse = new LoginResponse();
-            loginResponse.setUserId(user.getId());
 
-            if (user.getRole() != null) {
-                loginResponse.setRoleName(user.getRole().getName());
 
-            }
+
 
 
 
