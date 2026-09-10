@@ -13,6 +13,4 @@ public class LoginController {
         System.out.println("kasutajanimi: " + loginRequest.getUsername());
         System.out.println("parool: " + loginRequest.getPassword());
     }
-
-
 }
