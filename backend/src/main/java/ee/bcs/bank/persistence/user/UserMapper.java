@@ -11,7 +11,6 @@ import org.mapstruct.ReportingPolicy;
 @Mapper
 public interface UserMapper {
 
-
     @Mapping(source = "id", target = "userId")
     @Mapping(source = "role.name", target = "roleName")
     LoginResponse toLoginResponse(User user);

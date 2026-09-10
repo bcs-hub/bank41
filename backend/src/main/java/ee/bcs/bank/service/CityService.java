@@ -20,14 +20,11 @@ public class CityService {
 
     public List<CityDto> findCities() {
         List<City> cities = cityRepository.findAll();
+        List<CityDto> cityDtos = cityMapper.toCityDtos(cities);
+        return cityDtos;
+
+//        List<CityDto> cityDtos = new ArrayList<>();
 
 
-        List<CityDto> cityDtos = new ArrayList<>();
-        for (City city : cities) {
-            CityDto cityDto = cityMapper.toCityDto(city);
-            cityDtos.add(cityDto)
-        }
-
-    return cityDtos;
     }
 }
