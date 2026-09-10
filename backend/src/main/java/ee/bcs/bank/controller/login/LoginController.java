@@ -1,5 +1,7 @@
-package ee.bcs.bank.controller;
+package ee.bcs.bank.controller.login;
 
+import ee.bcs.bank.controller.login.dto.LoginRequest;
+import ee.bcs.bank.controller.login.dto.LoginResponse;
 import ee.bcs.bank.infrastructure.error.ApiError;
 import ee.bcs.bank.service.LoginService;
 import io.swagger.v3.oas.annotations.Operation;
