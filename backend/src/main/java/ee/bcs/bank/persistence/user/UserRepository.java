@@ -1,6 +1,5 @@
 package ee.bcs.bank.persistence.user;
 
-import ee.bcs.bank.persistence.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

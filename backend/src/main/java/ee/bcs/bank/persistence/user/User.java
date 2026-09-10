@@ -1,5 +1,6 @@
-package ee.bcs.bank.persistence;
+package ee.bcs.bank.persistence.user;
 
+import ee.bcs.bank.persistence.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
