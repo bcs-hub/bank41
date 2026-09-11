@@ -1,7 +1,10 @@
 package ee.bcs.bank.persistence.city;
 
 import ee.bcs.bank.controller.city.dto.CityDto;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+import org.mapstruct.ReportingPolicy;
 
 import java.util.List;
 
@@ -12,6 +15,6 @@ public interface CityMapper {
     @Mapping(source = "name", target = "cityName")
     CityDto toCityDto(City city);
 
-    List <CityDto> toCityDtos(List <City> cities);
+    List<CityDto> toCityDtos(List<City> cities);
 
 }
