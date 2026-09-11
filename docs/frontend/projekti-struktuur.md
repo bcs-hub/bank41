@@ -73,7 +73,7 @@ projekti-nimi/
 | `frontend/src/api-services/` | Kõik HTTP päringud backendiga — üks fail ressursi kohta |
 | `frontend/src/auth/` | Sisselogimise kontroll, token'i haldus, route-kaitse |
 | `frontend/src/components/` | Korduvkasutatavad Vue komponendid, jaotatud alltüüpide kaupa |
-| `frontend/src/components/common/` | Üldised UI-elemendid mida kasutatakse kogu rakenduses |
+| `../../frontend/src/components/alert/` | Üldised UI-elemendid mida kasutatakse kogu rakenduses |
 | `frontend/src/components/forms/` | Vormi sisend- ja validatsiooniloogikaga seotud komponendid |
 | `frontend/src/components/modals/` | Modaalakende komponendid |
 | `frontend/src/components/tables/` | Tabelite kuvamiseks mõeldud komponendid |

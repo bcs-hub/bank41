@@ -90,7 +90,7 @@ Kõik väljalähtuvad sündmused kirjutatakse `emits` massiivi.
 Sündmuse nimi algab alati **`event-`** eesliitega:
 
 ```js
-emits: ['event-modal-closed', 'event-location-deleted', 'event-new-city-selected']
+emits: ['event-modal-closed', 'event-imageData-deleted', 'event-new-city-selected']
 ```
 
 ---
@@ -100,32 +100,34 @@ emits: ['event-modal-closed', 'event-location-deleted', 'event-new-city-selected
 `data()` tagastab alati objekti. Keerukamad andmed (API vastused) kirjutatakse välja koos tühja struktuuriga, et Vue saaks reaktiivsuse seadistada:
 
 ```js
-data() {
-  return {
-    successMessage: '',
-    errorMessage: '',
-    selectedCityId: 0,
+data()
+{
+    return {
+        successMessage: '',
+        errorMessage: '',
+        selectedCityId: 0,
 
-    location: {
-      cityId: 0,
-      locationName: '',
-      numberOfAtms: 1,
-      imageData: '',
-      transactionTypes: [
-        {
-          transactionTypeId: 0,
-          transactionTypeName: '',
-          isAvailable: false,
+        imageData: {
+            cityId: 0,
+            locationName: '',
+            numberOfAtms: 1,
+            imageData: '',
+            transactionTypes: [
+                {
+                    transactionTypeId: 0,
+                    transactionTypeName: '',
+                    isAvailable: false,
+                },
+            ],
         },
-      ],
-    },
 
-    errorResponse: {
-      message: '',
-      errorCode: 0,
-    },
-  }
-},
+        errorResponse: {
+            message: '',
+            errorCode: 0,
+        },
+    }
+}
+,
 ```
 
 ---
@@ -187,13 +189,13 @@ beforeMount() {
 
 **Sündmused** kuulatakse `@`-ga (lühivorm `v-on:`):
 ```html
-<LocationsTable @event-location-deleted="handleLocationDeleted" />
+<LocationsTable @event-imageData-deleted="handleLocationDeleted" />
 ```
 
 Lihtsad sündmused võib kirjutada otse template'i:
 ```html
 @event-modal-closed="isInfoModalOpen = false"
-@event-new-city-selected="location.cityId = $event"
+@event-new-city-selected="imageData.cityId = $event"
 ```
 
 ---
@@ -213,7 +215,7 @@ v-for="element in elements"
 Näited:
 ```html
 <div v-for="city in cities">...</div>
-<div v-for="location in locations">...</div>
+<div v-for="imageData in locations">...</div>
 <div v-for="transactionType in transactionTypes">...</div>
 ```
 

@@ -51,7 +51,7 @@ persistence/      JPA entiteedid, repositooriumid, MapStructi mapperid
 infrastructure/   Läbivad komponendid: erindi tüübid, veakoodid, globaalne erindite käsitleja
 ```
 
-Igal domeenialasel (location, city, transactiontype, login) on oma alampakk `controller/`-is koos DTOdega, teenusklass ja persistence pakk.
+Igal domeenialasel (imageData, city, transactiontype, login) on oma alampakk `controller/`-is koos DTOdega, teenusklass ja persistence pakk.
 
 ### Olulised konventsioonid
 

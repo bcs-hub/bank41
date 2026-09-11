@@ -25,7 +25,7 @@ Projektis on läbiv kolmekihiline muster:
 
 ```
 View (nt LocationView.vue)        — omab olekut (data), teeb API päringud
-   ↓ props (cities, location)
+   ↓ props (cities, imageData)
 Form (nt LocationForm.vue)        — "torujuhe": kogub väiksed komponendid kokku,
                                      edastab props alla, re-emit'ib sündmused üles
    ↓ props (cities, cityId / transactionTypes)

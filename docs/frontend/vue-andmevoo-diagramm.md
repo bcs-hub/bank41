@@ -20,8 +20,8 @@ seda oleks lihtne meeles pidada.
 
 ```mermaid
 graph TD
-    LV["LocationView<br/><i>omab: cities, location</i>"]
-    LF["LocationForm<br/><i>props: cities, location<br/>ise data() puudub — ainult edastab</i>"]
+    LV["LocationView<br/><i>omab: cities, imageData</i>"]
+    LF["LocationForm<br/><i>props: cities, imageData<br/>ise data() puudub — ainult edastab</i>"]
 
     CD["CitiesDropdown"]
     LN["LocationNameInput"]
@@ -30,7 +30,7 @@ graph TD
     TT["TransactionTypesCheckbox"]
     II["ImageInput"]
 
-    LV -- "props: cities, location" --> LF
+    LV -- "props: cities, imageData" --> LF
     LF -- "props: cities, city-id" --> CD
     LF --> LN
     LF --> NA
@@ -39,9 +39,9 @@ graph TD
     LF --> II
 
     CD -. "event-new-city-selected" .-> LF
-    LN -. "event-new-location-name-input" .-> LF
+    LN -. "event-new-imageData-name-input" .-> LF
     NA -. "event-new-number-of-atms-input" .-> LF
-    LM -. "event-new-location-map-input" .-> LF
+    LM -. "event-new-imageData-map-input" .-> LF
     TT -. "event-transaction-types-checkbox-updated" .-> LF
     II -. "event-new-image-selected /<br/>event-chosen-image-cleared" .-> LF
 
@@ -83,8 +83,8 @@ this.$emit('event-new-city-selected', selectedCityId)
 ```html
 <LocationForm
   :cities="cities"
-  :location="location"
-  @event-new-city-selected="location.cityId = $event"
+  :imageData="imageData"
+  @event-new-city-selected="imageData.cityId = $event"
 />
 ```
 
