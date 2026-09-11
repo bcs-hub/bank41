@@ -5,7 +5,10 @@ import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
 import ee.bcs.bank.persistence.location.Location;
 import ee.bcs.bank.persistence.location.LocationMapper;
 import ee.bcs.bank.persistence.location.LocationRepository;
+import ee.bcs.bank.persistence.transactiontype.TransactionType;
+import ee.bcs.bank.persistence.transactiontype.TransactionTypeRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +22,7 @@ public class LocationService {
 
     private final LocationRepository locationRepository;
     private final LocationMapper locationMapper;
+    private final TransactionTypeRepository transactionTypeRepository;
 
     public List<LocationInfo> findAtmLocations(Integer cityId) {
         List<Location> locations = locationRepository.findFilteredLocationsBy(cityId, STATUS_ACTIVE.getCode());
@@ -27,6 +31,11 @@ public class LocationService {
         }
 
         List<LocationInfo> locationInfos = locationMapper.toLocationInfos(locations);
+        for (LocationInfo locationInfo : locationInfos ) {
+            Sort byNameDesc = Sort.by(Sort.Direction.DESC, "name");
+            List<TransactionType> transactionTypes = transactionTypeRepository.findAll(byNameDesc);
+        }
         return locationInfos;
+
     }
 }
