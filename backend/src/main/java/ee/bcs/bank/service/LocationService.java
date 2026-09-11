@@ -31,27 +31,39 @@ public class LocationService {
 
     public List<LocationInfo> findAtmLocations(Integer cityId) {
         List<Location> locations = locationRepository.findFilteredLocationsBy(cityId, STATUS_ACTIVE.getCode());
+        validateAtLeastOneLocationExists(locations);
+        List<LocationInfo> locationInfos = locationMapper.toLocationInfos(locations);
+        addTransactionTypes(locationInfos);
+
+        return locationInfos;
+    }
+
+    private void addTransactionTypes(List<LocationInfo> locationInfos) {
+        for (LocationInfo locationInfo : locationInfos) {
+            List<TransactionTypeDto> transactionTypeDtos = getTransactionTypeDtos(locationInfo);
+            addIsAvailableInfo(locationInfo, transactionTypeDtos);
+            locationInfo.setTransactionTypes(transactionTypeDtos);
+        }
+    }
+
+    private void addIsAvailableInfo(LocationInfo locationInfo, List<TransactionTypeDto> transactionTypeDtos) {
+        for (TransactionTypeDto transactionTypeDto : transactionTypeDtos) {
+            boolean locationTransactionTypeExists = locationTransactionTypeRepository.locationTransactionTypeExistsBy(locationInfo.getLocationId(), transactionTypeDto.getTransactionTypeId());
+            transactionTypeDto.setIsAvailable(locationTransactionTypeExists);
+        }
+    }
+
+    private List<TransactionTypeDto> getTransactionTypeDtos(LocationInfo locationInfo) {
+        Sort byNameDesc = Sort.by(Sort.Direction.DESC, "name");
+        List<TransactionType> transactionTypes = transactionTypeRepository.findAll(byNameDesc);
+        List<TransactionTypeDto> transactionTypeDtos = transactionTypeMapper.toTransactionTypeDtos(transactionTypes);
+        locationInfo.setTransactionTypes(transactionTypeDtos);
+        return transactionTypeDtos;
+    }
+
+    private static void validateAtLeastOneLocationExists(List<Location> locations) {
         if (locations.isEmpty()) {
             throw new DataNotFoundException(NO_LOCATION_FOUND.getMessage(), NO_LOCATION_FOUND.name());
         }
-
-        List<LocationInfo> locationInfos = locationMapper.toLocationInfos(locations);
-
-        for (LocationInfo locationInfo : locationInfos) {
-            Sort byNameDesc = Sort.by(Sort.Direction.DESC, "name");
-            List<TransactionType> transactionTypes = transactionTypeRepository.findAll(byNameDesc);
-            List<TransactionTypeDto> transactionTypeDtos = transactionTypeMapper.toTransactionTypeDtos(transactionTypes);
-            locationInfo.setTransactionTypes(transactionTypeDtos);
-
-            for (TransactionTypeDto transactionTypeDto : transactionTypeDtos) {
-                boolean locationTransactionTypeExists = locationTransactionTypeRepository.locationTransactionTypeExistsBy(locationInfo.getLocationId(), transactionTypeDto.getTransactionTypeId());
-                transactionTypeDto.setIsAvailable(locationTransactionTypeExists);
-            }
-
-            locationInfo.setTransactionTypes(transactionTypeDtos);
-        }
-
-
-        return locationInfos;
     }
 }
