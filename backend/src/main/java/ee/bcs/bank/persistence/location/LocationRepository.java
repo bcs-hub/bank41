@@ -9,8 +9,9 @@ import java.util.List;
 public interface LocationRepository extends JpaRepository<Location, Integer> {
 
 
-    @Query("select l from Location l where l.city.id = :id and l.status = :status order by l.city.name, l.name")
-    List<Location> findByCity_IdAndStatusOrderByCity_NameAscNameAsc(@Param("id") Integer id, @Param("status") String status);
+    @Query("select l from Location l where ( :cityId = 0 or l.city.id = :cityid) and l.status = :status order by l.city.name, l.name")
+    List<Location> findFilteredLocationsBy(Integer cityId, String status);
+
 
 
 }
