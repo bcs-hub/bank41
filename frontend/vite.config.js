@@ -12,8 +12,8 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/api': 'https://stoplight.io/mocks/valiit/myproject/1968960041'
-      // '/api': 'http://localhost:8080'
+     // '/api': 'https://stoplight.io/mocks/valiit/myproject/1968960041'
+       '/api': 'http://localhost:8080'
     }
   },
   resolve: {

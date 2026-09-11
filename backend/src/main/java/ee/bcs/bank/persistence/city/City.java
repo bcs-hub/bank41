@@ -1,4 +1,4 @@
-package ee.bcs.bank.persistence;
+package ee.bcs.bank.persistence.city;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
