@@ -11,6 +11,9 @@ public interface LocationMapper {
     @Mapping(source = "id", target = "locationId")
     @Mapping(source = "city.name", target = "cityName")
     @Mapping(source = "name", target = "locationName")
+    @Mapping(source = "lng", target = "lng")
+    @Mapping(source = "lat", target = "lat")
+
     LocationInfo toLocationInfo(Location location);
 
     List<LocationInfo> toLocationInfos(List<Location> locations);
