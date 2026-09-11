@@ -1,5 +1,7 @@
-package ee.bcs.bank.persistence;
+package ee.bcs.bank.persistence.locationtransactiontype;
 
+import ee.bcs.bank.persistence.TransactionType;
+import ee.bcs.bank.persistence.location.Location;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
