@@ -1,11 +1,11 @@
 <script>
-import LocationForm from '@/components/LocationForm.vue'
+import LocationForm from '@/components/location/LocationForm.vue'
 import CityService from '@/services/CityService.js'
 import NavigationService from '@/services/NavigationService.js'
 import TransactionTypeService from '@/services/TransactionTypeService.js'
-import AlertDanger from '@/components/AlertDanger.vue'
+import AlertDanger from '@/components/alert/AlertDanger.vue'
 import LocationService from '@/services/LocationService.js'
-import AlertSuccess from '@/components/AlertSuccess.vue'
+import AlertSuccess from '@/components/alert/AlertSuccess.vue'
 import SessionStorageService from '@/services/SessionStorageService.js'
 
 export default {
@@ -54,51 +54,6 @@ export default {
     }
   },
   methods: {
-    getCities() {
-      CityService.getCitiesRequest()
-        .then((response) => this.handleGetCitiesResponse(response))
-        .catch(() => NavigationService.navigateToErrorView())
-    },
-
-    handleGetCitiesResponse(response) {
-      this.cities = response.data
-    },
-
-    setLocationLngLat(lngLat) {
-      let resultArray = lngLat.split(', ')
-      this.location.lat = Number(resultArray[0])
-      this.location.lng = Number(resultArray[1])
-    },
-
-    getLocationTransactionTypes() {
-      TransactionTypeService.getTransactionTypesRequest()
-        .then((response) => this.handleGetLocationTransactionTypesResponse(response))
-        .catch(() => NavigationService.navigateToErrorView())
-        .finally()
-    },
-
-    handleGetLocationTransactionTypesResponse(response) {
-      this.location.transactionTypes = response.data
-    },
-
-    updateLocationTransactionTypesIsAvailableValue(updatedCheckbox) {
-      // otsib ülesse target objekti arrayst
-      let transactionType = this.location.transactionTypes.find(
-        (transactionType) =>
-          transactionType.transactionTypeId === updatedCheckbox.transactionTypeId,
-      )
-
-      // kui objekt on olemas (ei ole null)
-      if (transactionType) {
-        // siis muuda selle objekti 'isAvailable' -> nii  nagu on 'updatedCheckbox.checked' väärtus
-        transactionType.isAvailable = updatedCheckbox.checked
-      }
-    },
-
-    errorMessageIsEmpty() {
-      return this.errorMessage === ''
-    },
-
     addLocation() {
       this.resetSuccessMessage()
       this.resetErrorMessage()
@@ -133,12 +88,9 @@ export default {
       return false
     },
 
-    resetSuccessMessage() {
-      this.successMessage = ''
-    },
 
-    resetErrorMessage() {
-      this.errorMessage = ''
+    errorMessageIsEmpty() {
+      return this.errorMessage === ''
     },
 
     handleAddLocationResponse() {
@@ -167,6 +119,57 @@ export default {
       } else {
         NavigationService.navigateToErrorView()
       }
+    },
+
+    getCities() {
+      CityService.getCitiesRequest()
+        .then((response) => this.handleGetCitiesResponse(response))
+        .catch(() => NavigationService.navigateToErrorView())
+    },
+
+    handleGetCitiesResponse(response) {
+      this.cities = response.data
+    },
+
+    getLocationTransactionTypes() {
+      TransactionTypeService.getTransactionTypesRequest()
+        .then((response) => this.handleGetLocationTransactionTypesResponse(response))
+        .catch(() => NavigationService.navigateToErrorView())
+        .finally()
+    },
+
+    handleGetLocationTransactionTypesResponse(response) {
+      this.location.transactionTypes = response.data
+    },
+
+    setLocationLngLat(lngLat) {
+      let resultArray = lngLat.split(', ')
+      this.location.lat = Number(resultArray[0])
+      this.location.lng = Number(resultArray[1])
+    },
+
+    updateLocationTransactionTypesIsAvailableValue(updatedCheckbox) {
+      // otsib ülesse target objekti arrayst
+      let transactionType = this.location.transactionTypes.find(
+        (transactionType) =>
+          transactionType.transactionTypeId === updatedCheckbox.transactionTypeId,
+      )
+
+      // kui objekt on olemas (ei ole null)
+      if (transactionType) {
+        // siis muuda selle objekti 'isAvailable' -> nii  nagu on 'updatedCheckbox.checked' väärtus
+        transactionType.isAvailable = updatedCheckbox.checked
+      }
+    },
+
+    // todo: JÄRG ON SIIN
+
+    resetSuccessMessage() {
+      this.successMessage = ''
+    },
+
+    resetErrorMessage() {
+      this.errorMessage = ''
     },
   },
 }

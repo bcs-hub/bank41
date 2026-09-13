@@ -1,5 +1,5 @@
 <script>
-import AlertDanger from '@/components/AlertDanger.vue'
+import AlertDanger from '@/components/alert/AlertDanger.vue'
 import LoginService from '@/services/LoginService.js'
 import NavigationService from '@/services/NavigationService.js'
 
@@ -28,7 +28,6 @@ export default {
     }
   },
   methods: {
-    // todo: meetodite hierarhia (järts)
     login() {
       this.resetErrorMessage()
       if (this.allFieldsHaveInput()) {
@@ -43,20 +42,16 @@ export default {
       }
     },
 
+    resetErrorMessage() {
+      this.errorMessage = ''
+    },
+
     allFieldsHaveInput() {
       return this.loginRequest.username.length > 0 && this.loginRequest.password.length > 0
     },
 
     startSpinner() {
       this.showSpinner = true
-    },
-
-    stopSpinner() {
-      this.showSpinner = false
-    },
-
-    resetErrorMessage() {
-      this.errorMessage = ''
     },
 
     handleLoginResponse(response) {
@@ -84,6 +79,10 @@ export default {
       } else {
         NavigationService.navigateToErrorView()
       }
+    },
+
+    stopSpinner() {
+      this.showSpinner = false
     },
   },
 }
