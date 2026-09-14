@@ -70,13 +70,17 @@ public class LocationService {
 
         if (!imageDataAsString.isEmpty()) {
 
-            byte[] imageDataAsBytes = StringBytesConverter.stringToBytes(imageDataAsString);
 
 
-            LocationImage locationImage = new LocationImage();
-            locationImage.setLocation(location);
-            locationImage.setData(imageDataAsBytes);
-            locationImageRepository.save(locationImage);
+
+            // todo: seee on otse tehes
+//            byte[] imageDataAsBytes = StringBytesConverter.stringToBytes(imageDataAsString);
+//            LocationImage locationImage = new LocationImage();
+//            locationImage.setLocation(location);
+//            locationImage.setData(imageDataAsBytes);
+//            locationImageRepository.save(locationImage);
+//
+
         }
 
         System.out.println();
