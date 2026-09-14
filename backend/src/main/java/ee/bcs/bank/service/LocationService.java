@@ -34,30 +34,25 @@ public class LocationService {
         validateAtLeastOneLocationExists(locations);
         List<LocationInfo> locationInfos = locationMapper.toLocationInfos(locations);
         addTransactionTypes(locationInfos);
-
         return locationInfos;
     }
 
     private void addTransactionTypes(List<LocationInfo> locationInfos) {
         for (LocationInfo locationInfo : locationInfos) {
-            List<TransactionTypeDto> transactionTypeDtos = getTransactionTypeDtos(locationInfo);
-            addIsAvailableInfo(locationInfo, transactionTypeDtos);
+            List<TransactionTypeDto> transactionTypeDtos = createTransactionTypeDtos(locationInfo);
             locationInfo.setTransactionTypes(transactionTypeDtos);
         }
     }
 
-    private void addIsAvailableInfo(LocationInfo locationInfo, List<TransactionTypeDto> transactionTypeDtos) {
+    private List<TransactionTypeDto> createTransactionTypeDtos(LocationInfo locationInfo) {
+        Sort byNameDesc = Sort.by(Sort.Direction.DESC, "name");
+        List<TransactionType> transactionTypes = transactionTypeRepository.findAll(byNameDesc);
+        List<TransactionTypeDto> transactionTypeDtos = transactionTypeMapper.toTransactionTypeDtos(transactionTypes);
+
         for (TransactionTypeDto transactionTypeDto : transactionTypeDtos) {
             boolean locationTransactionTypeExists = locationTransactionTypeRepository.locationTransactionTypeExistsBy(locationInfo.getLocationId(), transactionTypeDto.getTransactionTypeId());
             transactionTypeDto.setIsAvailable(locationTransactionTypeExists);
         }
-    }
-
-    private List<TransactionTypeDto> getTransactionTypeDtos(LocationInfo locationInfo) {
-        Sort byNameDesc = Sort.by(Sort.Direction.DESC, "name");
-        List<TransactionType> transactionTypes = transactionTypeRepository.findAll(byNameDesc);
-        List<TransactionTypeDto> transactionTypeDtos = transactionTypeMapper.toTransactionTypeDtos(transactionTypes);
-        locationInfo.setTransactionTypes(transactionTypeDtos);
         return transactionTypeDtos;
     }
 
