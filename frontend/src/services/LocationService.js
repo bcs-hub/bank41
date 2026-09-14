@@ -25,6 +25,6 @@ export default {
     return axios.get(`/api/atm/locations/${locationId}`)
   },
   postAtmLocationRequest(location) {
-    return axios.post('/api/atm/locations', location)
+    return axios.post('/api/atm/location', location)
   },
 }

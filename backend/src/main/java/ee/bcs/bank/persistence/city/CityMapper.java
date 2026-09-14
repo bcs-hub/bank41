@@ -12,4 +12,5 @@ public interface CityMapper {
     CityDto toCityDto(City city);
 
     List<CityDto> toCityDtos(List<City> cities);
+
 }
