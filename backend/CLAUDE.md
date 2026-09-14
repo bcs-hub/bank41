@@ -67,6 +67,8 @@ Igal domeenialasel (location, city, transactiontype, login) on oma alampakk `con
 
 **SQL päringud** — Kohandatud päringud on JPQL, kirjutatud otse Spring Data repositooriumi liidesele `@Query` annotatsiooniga. `LocationTransactionTypeRepository` kasutab konstruktori avaldist otse DTOsse projekteerimiseks.
 
+**Repositooriumi meetodi nimetamine** — Meetodi nimi peab mainima, mida ta tagastab (subjekti), mitte jääma geneeriliseks: `findFilteredLocationsBy(...)` tagastab `List<Location>`, `findUserBy(...)` tagastab `User`. Väldi kujundeid nagu `findFilteredBy(...)`, kust pole näha, mida meetod tagastab.
+
 **SQL logimine** — P6Spy on seadistatud (`spy.properties`), nii et täielik parameetritega SQL kuvatakse konsoolis. Selle saab keelata, lülitades `application.properties`-is tagasi kommenteeritud tavaliste PostgreSQL seadetele.
 
 ### Domeenikujundus (põhitabelid)

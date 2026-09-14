@@ -138,5 +138,27 @@ ALTER TABLE "user" ADD CONSTRAINT user_role
             INITIALLY IMMEDIATE
 ;
 
+-- views
+-- View: location_transaction_type_view
+-- Kasutusel /api/v2/atm/locations teenuses (õppise eesmärgil) - kombineerib city, location ja
+-- transaction_type andmed ühte lamedasse ritta, näidates ka tehingutüübid, mida asukohas ei pakuta
+-- (is_available = false).
+CREATE VIEW location_transaction_type_view AS
+SELECT c.id       AS city_id,
+       c.name     AS city_name,
+       l.id       AS location_id,
+       l.name     AS location_name,
+       l.status   AS location_status,
+       l.lng      AS lng,
+       l.lat      AS lat,
+       tt.id      AS transaction_type_id,
+       tt.name    AS transaction_type_name,
+       (ltt.id IS NOT NULL) AS is_available
+FROM location l
+         JOIN city c ON c.id = l.city_id
+         CROSS JOIN transaction_type tt
+         LEFT JOIN location_transaction_type ltt
+                   ON ltt.location_id = l.id AND ltt.transaction_type_id = tt.id;
+
 -- End of file.
 
