@@ -1,5 +1,6 @@
-package ee.bcs.bank.persistence;
+package ee.bcs.bank.persistence.userimage;
 
+import ee.bcs.bank.persistence.user.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -8,8 +9,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "location_image", schema = "bank")
-public class LocationImage {
+@Table(name = "user_image", schema = "bank")
+public class UserImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -17,8 +18,8 @@ public class LocationImage {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "location_id", nullable = false)
-    private Location location;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @NotNull
     @Column(name = "data", nullable = false)

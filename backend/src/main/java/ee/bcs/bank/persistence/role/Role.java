@@ -1,4 +1,4 @@
-package ee.bcs.bank.persistence;
+package ee.bcs.bank.persistence.role;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -9,8 +9,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "transaction_type", schema = "bank")
-public class TransactionType {
+@Table(name = "role", schema = "bank")
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

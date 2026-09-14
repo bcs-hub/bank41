@@ -1,4 +1,4 @@
-package ee.bcs.bank.persistence;
+package ee.bcs.bank.persistence.location;
 
 import ee.bcs.bank.persistence.city.City;
 import jakarta.persistence.*;
