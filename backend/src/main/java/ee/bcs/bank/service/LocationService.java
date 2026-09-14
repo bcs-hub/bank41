@@ -1,5 +1,6 @@
 package ee.bcs.bank.service;
 
+import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.controller.location.dto.TransactionTypeDto;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
@@ -99,4 +100,8 @@ public class LocationService {
     }
 
 
+    public void addLocation(LocationDto locationDto) {
+        Location location = locationMapper.toLocation(locationDto);
+        System.out.println();
+    }
 }
