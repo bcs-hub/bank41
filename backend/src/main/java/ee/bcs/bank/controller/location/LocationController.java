@@ -1,5 +1,6 @@
 package ee.bcs.bank.controller.location;
 
+import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.infrastructure.error.ApiError;
 import ee.bcs.bank.service.LocationService;
@@ -9,20 +10,29 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class LocationController {
 
     private final LocationService locationService;
 
+    @PostMapping("/atm/location")
+    @Operation(
+            summary = "Uue pangaautomaadi lisamine",
+            description = "Uue pangaautoaadi lisamine..."
+    )
+    public void addLocation(@RequestBody LocationDto locationDto) {
+        locationService.addLocation(locationDto);
 
-    @GetMapping("/api/atm/locations")
+    }
+
+
+    @GetMapping("/atm/locations")
     @Operation(
             summary = "Tagastab pangaautomaatide asukohtade infot",
             description = "Kui cityId on 0, siis tagastatakse kõik asukohad"
@@ -42,7 +52,7 @@ public class LocationController {
         return locationInfos;
     }
 
-    @GetMapping("/api/v2/atm/locations")
+    @GetMapping("/v2/atm/locations")
     @Operation(
             summary = "Tagastab pangaautomaatide asukohtade infot (v2, õppise eesmärgil)",
             description = "Kui cityId on 0, siis tagastatakse kõik asukohad. Andmed pärineb database view'st " +

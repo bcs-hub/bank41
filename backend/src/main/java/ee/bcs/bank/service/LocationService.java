@@ -1,11 +1,22 @@
 package ee.bcs.bank.service;
 
+import ee.bcs.bank.Error;
+import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.controller.location.dto.TransactionTypeDto;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
+import ee.bcs.bank.infrastructure.exception.ForbiddenException;
+import ee.bcs.bank.infrastructure.exception.PrimaryKeyNotFoundException;
+import ee.bcs.bank.infrastructure.util.StringBytesConverter;
+import ee.bcs.bank.persistence.city.City;
+import ee.bcs.bank.persistence.city.CityRepository;
 import ee.bcs.bank.persistence.location.Location;
 import ee.bcs.bank.persistence.location.LocationMapper;
 import ee.bcs.bank.persistence.location.LocationRepository;
+import ee.bcs.bank.persistence.locationimage.LocationImage;
+import ee.bcs.bank.persistence.locationimage.LocationImageMapper;
+import ee.bcs.bank.persistence.locationimage.LocationImageRepository;
+import ee.bcs.bank.persistence.locationtransasctiontype.LocationTransactionType;
 import ee.bcs.bank.persistence.locationtransasctiontype.LocationTransactionTypeRepository;
 import ee.bcs.bank.persistence.locationtransactiontypeview.LocationTransactionTypeView;
 import ee.bcs.bank.persistence.locationtransactiontypeview.LocationTransactionTypeViewMapper;
@@ -18,11 +29,10 @@ import org.jspecify.annotations.NonNull;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
+import static ee.bcs.bank.Error.*;
 import static ee.bcs.bank.Error.NO_LOCATION_FOUND;
 import static ee.bcs.bank.Status.STATUS_ACTIVE;
 
@@ -37,6 +47,9 @@ public class LocationService {
     private final LocationTransactionTypeRepository locationTransactionTypeRepository;
     private final LocationTransactionTypeViewRepository locationTransactionTypeViewRepository;
     private final LocationTransactionTypeViewMapper locationTransactionTypeViewMapper;
+    private final CityRepository cityRepository;
+    private final LocationImageRepository locationImageRepository;
+    private final LocationImageMapper locationImageMapper;
 
     public List<LocationInfo> findAtmLocations(Integer cityId) {
         List<Location> locations = locationRepository.findFilteredLocationsBy(cityId, STATUS_ACTIVE.getCode());
@@ -99,4 +112,70 @@ public class LocationService {
     }
 
 
+    public void addLocation(LocationDto locationDto) {
+
+        validateLocationNameIsAvailable(locationDto.getLocationName());
+        Location location = createAndSaveLocation(locationDto);
+        String imageDataAsString = locationDto.getImageData();
+        handleCreateAndSaveLocationImage(locationDto, imageDataAsString, location);
+        handleCreateAndSaveLocationTransactionTypes(locationDto, location);
+
+
+    }
+
+    private void handleCreateAndSaveLocationTransactionTypes(LocationDto locationDto, Location location) {
+        for (TransactionTypeDto transactionTypeDto : locationDto.getTransactionTypes()) {
+            if (transactionTypeDto.getIsAvailable()) {
+                LocationTransactionType locationTransactionType = new LocationTransactionType();
+                locationTransactionType.setLocation(location);
+
+                TransactionType transactionType = transactionTypeRepository.findById(transactionTypeDto.getTransactionTypeId())
+                        .orElseThrow(() -> new PrimaryKeyNotFoundException("transactionTypeId", transactionTypeDto.getTransactionTypeId()));
+                locationTransactionType.setTransactionType(transactionType);
+                locationTransactionTypeRepository.save(locationTransactionType);
+
+
+            }
+        }
+    }
+
+    private void handleCreateAndSaveLocationImage(LocationDto locationDto, String imageDataAsString, Location location) {
+        if (!locationDto.getImageData().isEmpty()) {
+
+            byte[] imageDataAsStringBytes = StringBytesConverter.stringToBytes(imageDataAsString);
+
+            LocationImage locationImage = new LocationImage();
+            locationImage.setLocation(location);
+            locationImage.setData(imageDataAsStringBytes);
+            locationImageRepository.save(locationImage);
+
+        }
+    }
+
+    private @NonNull Location createAndSaveLocation(LocationDto locationDto) {
+        Location location = createLocation(locationDto);
+        locationRepository.save(location);
+        return location;
+    }
+
+    private @NonNull Location createLocation(LocationDto locationDto) {
+        City city = getValidCityBy(locationDto.getCityId());
+
+        Location location = locationMapper.toLocation(locationDto);
+        location.setCity(city);
+        return location;
+    }
+
+    private @NonNull City getValidCityBy(Integer cityId) {
+        City city = cityRepository.findById(cityId)
+                .orElseThrow(() -> new PrimaryKeyNotFoundException("cityId", cityId));
+        return city;
+    }
+
+    private void validateLocationNameIsAvailable(String locationName) {
+        boolean locationExists = locationRepository.locationExistsBy(locationName);
+        if (locationExists) {
+            throw new ForbiddenException(LOCATION_UNAVAILABLE.getMessage(), LOCATION_UNAVAILABLE.name());
+        }
+    }
 }
