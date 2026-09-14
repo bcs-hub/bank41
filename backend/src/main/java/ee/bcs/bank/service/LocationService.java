@@ -24,6 +24,7 @@ import ee.bcs.bank.persistence.transactiontype.TransactionType;
 import ee.bcs.bank.persistence.transactiontype.TransactionTypeMapper;
 import ee.bcs.bank.persistence.transactiontype.TransactionTypeRepository;
 import lombok.RequiredArgsConstructor;
+import org.jspecify.annotations.NonNull;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -53,51 +54,81 @@ public class LocationService {
     private final LocationImageMapper locationImageMapper;
 
     public void addLocation(LocationDto locationDto) {
-
-        boolean locationExists = locationRepository.locationExistsBy(locationDto.getLocationName());
-        if (locationExists) {
-            throw new ForbiddenException(LOCATION_UNAVAILABLE.getMessage(), LOCATION_UNAVAILABLE.name());
-        }
-
-        Integer cityId = locationDto.getCityId();
-        City city = cityRepository.findById(cityId)
-                .orElseThrow(() -> new PrimaryKeyNotFoundException("cityId", cityId));
-
-        Location location = locationMapper.toLocation(locationDto);
-
-        location.setCity(city);
-        locationRepository.save(location);
+        validateLocationNameIsAvailable(locationDto.getLocationName());
+        Location location = createAndSaveLocation(locationDto);
+        handleCreateAndSaveLocationImage(locationDto, location);
+        handleCreateAndSaveLocationTransactionTypes(locationDto, location);
 
 
-        String imageDataAsString = locationDto.getImageData();
+    }
 
-        if (!imageDataAsString.isEmpty()) {
-            LocationImage locationImage = locationImageMapper.toLocationImage(locationDto);
-            locationImage.setLocation(location);
-            locationImageRepository.save(locationImage);
-        }
+    private void handleCreateAndSaveLocationTransactionTypes(LocationDto locationDto, Location location) {
+        List<LocationTransactionType> locationTransactionTypes = createLocationTransactionTypes(locationDto, location);
+        locationTransactionTypeRepository.saveAll(locationTransactionTypes);
+    }
 
+    private @NonNull List<LocationTransactionType> createLocationTransactionTypes(LocationDto locationDto, Location location) {
         List<LocationTransactionType> locationTransactionTypes = new ArrayList<>();
-
         for (TransactionTypeDto transactionTypeDto : locationDto.getTransactionTypes()) {
 
             if (transactionTypeDto.getIsAvailable()) {
+                
                 Integer transactionTypeId = transactionTypeDto.getTransactionTypeId();
-                TransactionType transactionType = transactionTypeRepository.findById(transactionTypeId)
-                        .orElseThrow(() -> new PrimaryKeyNotFoundException("transactionTypeId", transactionTypeId));
-
-
+                
+                TransactionType transactionType = getValidTransactionType(transactionTypeId);
                 LocationTransactionType locationTransactionType = new LocationTransactionType();
                 locationTransactionType.setLocation(location);
                 locationTransactionType.setTransactionType(transactionType);
                 locationTransactionTypes.add(locationTransactionType);
             }
         }
+        return locationTransactionTypes;
+    }
 
-        locationTransactionTypeRepository.saveAll(locationTransactionTypes);
+    private @NonNull TransactionType getValidTransactionType(Integer transactionTypeId) {
+        TransactionType transactionType = transactionTypeRepository.findById(transactionTypeId)
+                .orElseThrow(() -> new PrimaryKeyNotFoundException("transactionTypeId", transactionTypeId));
+        return transactionType;
+    }
 
+    private void handleCreateAndSaveLocationImage(LocationDto locationDto, Location location) {
+        String imageDataAsString = locationDto.getImageData();
+        if (!imageDataAsString.isEmpty()) {
+            LocationImage locationImage = createLocationImage(locationDto, location);
+            locationImageRepository.save(locationImage);
+        }
+    }
 
+    private LocationImage createLocationImage(LocationDto locationDto, Location location) {
+        LocationImage locationImage = locationImageMapper.toLocationImage(locationDto);
+        locationImage.setLocation(location);
+        return locationImage;
+    }
 
+    private Location createAndSaveLocation(LocationDto locationDto) {
+        Location location = createLocation(locationDto);
+        locationRepository.save(location);
+        return location;
+    }
+
+    private Location createLocation(LocationDto locationDto) {
+        City city = getValidCity(locationDto.getCityId()); //todo: Rainil mingi mõte siin, tuleta meelde.
+        Location location = locationMapper.toLocation(locationDto);
+        location.setCity(city);
+        return location;
+    }
+
+    private City getValidCity(Integer cityId) {
+        City city = cityRepository.findById(cityId)
+                .orElseThrow(() -> new PrimaryKeyNotFoundException("cityId", cityId));
+        return city;
+    }
+
+    private void validateLocationNameIsAvailable(String locationName) {
+        boolean locationExists = locationRepository.locationExistsBy(locationName);
+        if (locationExists) {
+            throw new ForbiddenException(LOCATION_UNAVAILABLE.getMessage(), LOCATION_UNAVAILABLE.name());
+        }
     }
 
     public List<LocationInfo> findAtmLocations(Integer cityId) {
