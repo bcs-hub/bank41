@@ -16,11 +16,15 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+// "/api" on nüüd klassi tasemel — iga alloleva @xxxMapping tee (nt "/atm/location")
+// liidetakse selle külge, seega päris URL jääb samaks (nt "/api/atm/location")
 @RequestMapping("/api")
 public class LocationController {
 
     private final LocationService locationService;
 
+    // Uue pangaautomaadi asukoha lisamine. Vastuse tüüp on void, kuna frontend ei vaja
+    // hetkel vastust — piisab HTTP staatusest.
     @PostMapping("/atm/location")
     @Operation(summary = "Uue pangaautomaadi lisamine.",
             description = """

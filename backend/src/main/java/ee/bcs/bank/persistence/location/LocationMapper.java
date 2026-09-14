@@ -14,6 +14,13 @@ import java.util.List;
 public interface LocationMapper {
 
 
+    // Uue asukoha loomine LocationDto pealt (kasutab POST /api/atm/location endpoint).
+    // id jäetakse teadlikult mappimata (ignore = true) — andmebaas genereerib selle ise
+    // (@GeneratedValue Location entiteedis).
+    // city jäetakse samuti mappimata, kuna DTO-s on ainult cityId (number), mitte terve
+    // City objekt — seose panemine cityId järgi tuleb teha eraldi service kihis.
+    // status pannakse otse "A" (aktiivne) väärtuseks java expression'iga, kuna DTO-s
+    // seda välja üldse ei ole — uus asukoht luuakse alati aktiivsena.
     @Mapping(ignore = true, target = "id")
     @Mapping(ignore = true, target = "city")
     @Mapping(source = "locationName", target = "name")

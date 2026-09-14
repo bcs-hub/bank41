@@ -100,6 +100,12 @@ public class LocationService {
     }
 
 
+    // TODO see meetod on hetkel pooleli (õpetaja "wip" commit):
+    //  1) location.setCity(...) pole veel pandud, seega city_id jääks NULL-iks
+    //  2) locationRepository.save(location) puudub, seega midagi ei salvestata andmebaasi
+    //  3) transactionTypes DTO-st ei tehta veel location_transaction_type kirjeid
+    //  System.out.println() on debug-jääk, mille eesmärk oli lihtsalt kontrollida, et
+    //  mapper õieti töötab (pane breakpoint siia rea peale, et "location" objekti näha).
     public void addLocation(LocationDto locationDto) {
         Location location = locationMapper.toLocation(locationDto);
         System.out.println();
