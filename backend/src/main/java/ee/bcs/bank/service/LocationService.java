@@ -6,11 +6,14 @@ import ee.bcs.bank.controller.location.dto.TransactionTypeDto;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
 import ee.bcs.bank.infrastructure.exception.ForbiddenException;
 import ee.bcs.bank.infrastructure.exception.PrimaryKeyNotFoundException;
+import ee.bcs.bank.infrastructure.util.StringBytesConverter;
 import ee.bcs.bank.persistence.city.City;
 import ee.bcs.bank.persistence.city.CityRepository;
 import ee.bcs.bank.persistence.location.Location;
 import ee.bcs.bank.persistence.location.LocationMapper;
 import ee.bcs.bank.persistence.location.LocationRepository;
+import ee.bcs.bank.persistence.locationimage.LocationImage;
+import ee.bcs.bank.persistence.locationimage.LocationImageRepository;
 import ee.bcs.bank.persistence.locationtransactiontypeview.LocationTransactionTypeView;
 import ee.bcs.bank.persistence.locationtransactiontypeview.LocationTransactionTypeViewMapper;
 import ee.bcs.bank.persistence.locationtransactiontypeview.LocationTransactionTypeViewRepository;
@@ -22,6 +25,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -43,6 +47,7 @@ public class LocationService {
     private final LocationTransactionTypeViewRepository locationTransactionTypeViewRepository;
     private final LocationTransactionTypeViewMapper locationTransactionTypeViewMapper;
     private final CityRepository cityRepository;
+    private final LocationImageRepository locationImageRepository;
 
     public void addLocation(LocationDto locationDto) {
 
@@ -60,6 +65,19 @@ public class LocationService {
         location.setCity(city);
         locationRepository.save(location);
 
+
+        String imageDataAsString = locationDto.getImageData();
+
+        if (!imageDataAsString.isEmpty()) {
+
+            byte[] imageDataAsBytes = StringBytesConverter.stringToBytes(imageDataAsString);
+
+
+            LocationImage locationImage = new LocationImage();
+            locationImage.setLocation(location);
+            locationImage.setData(imageDataAsBytes);
+            locationImageRepository.save(locationImage);
+        }
 
         System.out.println();
 
