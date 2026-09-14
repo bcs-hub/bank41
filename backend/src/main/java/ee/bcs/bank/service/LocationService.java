@@ -6,11 +6,14 @@ import ee.bcs.bank.controller.location.dto.TransactionTypeDto;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
 import ee.bcs.bank.infrastructure.exception.ForbiddenException;
 import ee.bcs.bank.infrastructure.exception.PrimaryKeyNotFoundException;
+import ee.bcs.bank.infrastructure.util.StringBytesConverter;
 import ee.bcs.bank.persistence.city.City;
 import ee.bcs.bank.persistence.city.CityRepository;
 import ee.bcs.bank.persistence.location.Location;
 import ee.bcs.bank.persistence.location.LocationMapper;
 import ee.bcs.bank.persistence.location.LocationRepository;
+import ee.bcs.bank.persistence.locationimage.LocationImage;
+import ee.bcs.bank.persistence.locationimage.LocationImageRepository;
 import ee.bcs.bank.persistence.locationtransactiontype.LocationTransactionTypeRepository;
 import ee.bcs.bank.persistence.transactiontype.TransactionType;
 import ee.bcs.bank.persistence.transactiontype.TransactionTypeMapper;
@@ -19,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import static ee.bcs.bank.Error.LOCATION_UNAVAILABLE;
@@ -35,6 +39,7 @@ public class LocationService {
     private final TransactionTypeMapper transactionTypeMapper;
     private final LocationTransactionTypeRepository locationTransactionTypeRepository;
     private final CityRepository cityRepository;
+    private final LocationImageRepository locationImageRepository;
 
     public void addLocation(LocationDto locationDto) {
         boolean locationExists = locationRepository.locationExistsBy(locationDto.getLocationName());
@@ -50,6 +55,17 @@ public class LocationService {
         Location location = locationMapper.toLocation(locationDto);
         location.setCity(city);
         locationRepository.save(location);
+
+        String imageDataAsString = locationDto.getImageData();
+        if (!imageDataAsString.isEmpty()) {
+            byte[] imageAsBytes = StringBytesConverter.stringToBytes(imageDataAsString);
+
+            LocationImage locationImage = new LocationImage();
+            locationImage.setLocation(location);
+            locationImage.setData(imageAsBytes);
+
+            locationImageRepository.save(locationImage);
+        }
     }
 
     public List<LocationInfo> findAtmLocations(Integer cityId) {
