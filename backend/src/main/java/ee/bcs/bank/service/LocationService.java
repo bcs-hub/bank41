@@ -43,20 +43,20 @@ public class LocationService {
     private void addTransactionTypes(List<LocationInfo> locationInfos) {
         for (LocationInfo locationInfo : locationInfos) {
 
-            List<TransactionTypeDto> transactionTypeDtos = createTransactionTypeDtos(locationInfo);
+            List<TransactionTypeDto> transactionTypeDtos = createTransactionTypeDtos(locationInfo.getLocationId());
             locationInfo.setTransactionTypes(transactionTypeDtos);
 
         }
     }
 
-    private List<TransactionTypeDto> createTransactionTypeDtos(LocationInfo locationInfo) {
+    private List<TransactionTypeDto> createTransactionTypeDtos(Integer locationId) {
         Sort byNameDesc = Sort.by(Sort.Direction.DESC, "name");
         List<TransactionType> transactionTypes = transactionTypeRepository.findAll(byNameDesc);
         List<TransactionTypeDto> transactionTypeDtos = transactionTypeMapper.toTransactionTypeDtos(transactionTypes);
 
         for (TransactionTypeDto transactionTypeDto : transactionTypeDtos) {
             boolean locationTransactionTypeExists = locationTransactionTypeRepository
-                    .locationTransactionTypeExistsBy(locationInfo.getLocationId(), transactionTypeDto.getTransactionTypeId());
+                    .locationTransactionTypeExistsBy(locationId, transactionTypeDto.getTransactionTypeId());
             transactionTypeDto.setIsAvailable(locationTransactionTypeExists);
         }
         return transactionTypeDtos;
