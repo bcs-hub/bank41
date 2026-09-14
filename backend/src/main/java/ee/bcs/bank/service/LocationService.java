@@ -112,7 +112,7 @@ public class LocationService {
     }
 
     private Location createLocation(LocationDto locationDto) {
-        City city = getValidCity(locationDto.getCityId()); //todo: Rainil mingi mõte siin, tuleta meelde.
+        City city = getValidCity(locationDto.getCityId());
         Location location = locationMapper.toLocation(locationDto);
         location.setCity(city);
         return location;
