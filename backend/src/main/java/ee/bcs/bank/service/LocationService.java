@@ -13,10 +13,12 @@ import ee.bcs.bank.persistence.location.Location;
 import ee.bcs.bank.persistence.location.LocationMapper;
 import ee.bcs.bank.persistence.location.LocationRepository;
 import ee.bcs.bank.persistence.locationimage.LocationImage;
+import ee.bcs.bank.persistence.locationimage.LocationImageMapper;
 import ee.bcs.bank.persistence.locationimage.LocationImageRepository;
 import ee.bcs.bank.persistence.locationtransactiontypeview.LocationTransactionTypeView;
 import ee.bcs.bank.persistence.locationtransactiontypeview.LocationTransactionTypeViewMapper;
 import ee.bcs.bank.persistence.locationtransactiontypeview.LocationTransactionTypeViewRepository;
+import ee.bcs.bank.persistence.locationtransasctiontype.LocationTransactionType;
 import ee.bcs.bank.persistence.locationtransasctiontype.LocationTransactionTypeRepository;
 import ee.bcs.bank.persistence.transactiontype.TransactionType;
 import ee.bcs.bank.persistence.transactiontype.TransactionTypeMapper;
@@ -48,6 +50,7 @@ public class LocationService {
     private final LocationTransactionTypeViewMapper locationTransactionTypeViewMapper;
     private final CityRepository cityRepository;
     private final LocationImageRepository locationImageRepository;
+    private final LocationImageMapper locationImageMapper;
 
     public void addLocation(LocationDto locationDto) {
 
@@ -69,21 +72,31 @@ public class LocationService {
         String imageDataAsString = locationDto.getImageData();
 
         if (!imageDataAsString.isEmpty()) {
-
-
-
-
-            // todo: seee on otse tehes
-//            byte[] imageDataAsBytes = StringBytesConverter.stringToBytes(imageDataAsString);
-//            LocationImage locationImage = new LocationImage();
-//            locationImage.setLocation(location);
-//            locationImage.setData(imageDataAsBytes);
-//            locationImageRepository.save(locationImage);
-//
-
+            LocationImage locationImage = locationImageMapper.toLocationImage(locationDto);
+            locationImage.setLocation(location);
+            locationImageRepository.save(locationImage);
         }
 
-        System.out.println();
+        List<LocationTransactionType> locationTransactionTypes = new ArrayList<>();
+
+        for (TransactionTypeDto transactionTypeDto : locationDto.getTransactionTypes()) {
+
+            if (transactionTypeDto.getIsAvailable()) {
+                Integer transactionTypeId = transactionTypeDto.getTransactionTypeId();
+                TransactionType transactionType = transactionTypeRepository.findById(transactionTypeId)
+                        .orElseThrow(() -> new PrimaryKeyNotFoundException("transactionTypeId", transactionTypeId));
+
+
+                LocationTransactionType locationTransactionType = new LocationTransactionType();
+                locationTransactionType.setLocation(location);
+                locationTransactionType.setTransactionType(transactionType);
+                locationTransactionTypes.add(locationTransactionType);
+            }
+        }
+
+        locationTransactionTypeRepository.saveAll(locationTransactionTypes);
+
+
 
     }
 
