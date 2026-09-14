@@ -42,4 +42,26 @@ public class LocationController {
         return locationInfos;
     }
 
+    @GetMapping("/api/v2/atm/locations")
+    @Operation(
+            summary = "Tagastab pangaautomaatide asukohtade infot (v2, õppise eesmärgil)",
+            description = "Kui cityId on 0, siis tagastatakse kõik asukohad. Andmed pärineb database view'st " +
+                    "bank.location_transaction_type_view ning tulemus on lameda struktuuriga (üks rida iga " +
+                    "asukoha-tehingutüübi kombinatsiooni kohta)"
+    )
+    @ApiResponses( value = {
+            @ApiResponse(
+                    responseCode = "200",  description = "OK"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Kui ühtegi askohta ei leita, siis 'message': Ei leitud ühtegi pangaautomaati, 'errorCode:' NO_LOCATION_FOUND",
+                    content = @Content( schema = @Schema(implementation = ApiError.class))
+            )
+    })
+    public List<LocationInfo> findAtmLocationsV2(@RequestParam Integer cityId) {
+        List<LocationInfo> locationInfos = locationService.findAtmLocationsV2(cityId);
+        return locationInfos;
+    }
+
 }
