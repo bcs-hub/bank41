@@ -4,7 +4,6 @@ export default {
 }
 </script>
 
-
 <template>
   <div class="container text-center">
     <div class="row">
