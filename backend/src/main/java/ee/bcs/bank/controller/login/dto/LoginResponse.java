@@ -1,5 +1,6 @@
 package ee.bcs.bank.controller.login.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -11,6 +11,5 @@ public enum Status {
 
     Status(String code) {
         this.code = code;
-
     }
 }

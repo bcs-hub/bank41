@@ -11,14 +11,16 @@ import java.util.List;
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
 public interface LocationMapper {
 
+
     @Mapping(source = "id", target = "locationId")
     @Mapping(source = "city.name", target = "cityName")
     @Mapping(source = "name", target = "locationName")
     @Mapping(source = "lng", target = "lng")
     @Mapping(source = "lat", target = "lat")
-    LocationInfo toLocationInfoDto(Location location);
+    LocationInfo toLocationInfo(Location location);
 
 
     List<LocationInfo> toLocationInfos(List<Location> locations);
+
 
 }

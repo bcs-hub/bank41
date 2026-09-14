@@ -20,4 +20,5 @@ public interface TransactionTypeMapper {
 
     List<TransactionTypeDto> toTransactionTypeDtos(List<TransactionType> transactionTypes);
 
+
 }

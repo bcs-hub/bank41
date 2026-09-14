@@ -2,6 +2,7 @@ import axios from 'axios'
 
 export default {
   postAtmLocationRequest(location) {
+    // todo: muudame URL ainsusesse
     return axios.post('/api/atm/locations', location)
   },
 

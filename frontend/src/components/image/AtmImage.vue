@@ -2,10 +2,7 @@
 export default {
   name: 'AtmImage',
   props: {
-    imageData: {
-      type: String,
-
-    },
+    imageData: String,
   },
 }
 </script>

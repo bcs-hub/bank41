@@ -16,15 +16,14 @@ import static ee.bcs.bank.Error.INCORRECT_CREDENTIALS;
 @RequiredArgsConstructor
 public class LoginService {
 
-
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
     public LoginResponse loginUser(LoginRequest loginRequest) {
-
         User user = userRepository.findUserBy(loginRequest.getUsername(), loginRequest.getPassword(), Status.STATUS_ACTIVE.getCode())
                 .orElseThrow(() -> new ForbiddenException(INCORRECT_CREDENTIALS.getMessage(), INCORRECT_CREDENTIALS.name()));
         LoginResponse loginResponse = userMapper.toLoginResponse(user);
         return loginResponse;
     }
+
 }

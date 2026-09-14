@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public enum Error {
     INCORRECT_CREDENTIALS("Vale kasutajanimi või parool"),
-    NO_LOCATION_FOUND("Ei leitud ühtegi pangaautomaati") ;
+    NO_LOCATION_FOUND("Ei leitud ühtegi pangaautomaati");
 
     private final String message;
 

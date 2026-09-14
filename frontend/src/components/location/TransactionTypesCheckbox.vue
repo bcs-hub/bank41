@@ -6,7 +6,7 @@ export default {
     switchesDisabled: {
       type: Boolean,
       default: false
-    },
+    }
   },
   methods: {
     emitEventTransactionTypesCheckboxUpdated(transactionTypeId, checked) {

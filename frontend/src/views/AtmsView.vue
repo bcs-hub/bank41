@@ -28,19 +28,20 @@ export default {
           cityName: '',
         },
       ],
+
       location: {
         locationId: 0,
         cityId: 0,
         locationName: '',
         numberOfAtms: 0,
         imageData: '',
-        lng: 0.0,
-        lat: 0.0,
+        lng: 0,
+        lat: 0,
         transactionTypes: [
           {
             transactionTypeId: 0,
             transactionTypeName: '',
-            isAvailable: true
+            isAvailable: false
           }
         ]
       },
@@ -104,15 +105,18 @@ export default {
         this.locations = []
       }
     },
+
     handleOpenLocationInfoModal(locationId) {
       LocationService.getAtmLocationRequest(locationId)
-        .then(response => this.handleGetLocationResponse(response))
-        .catch(() => NavigationService.navigateToErrorView())
-
+          .then(response => this.handleGetLocationResponse(response))
+          .catch()
     },
+
     handleGetLocationResponse(response) {
       this.location = response.data
       this.locationInfoModalIsOpen = true
+
+
     }
   },
 }
@@ -122,10 +126,9 @@ export default {
   <div class="container text-center">
     <div class="row justify-content-center mb-4">
       <div class="col col-5">
-        <LocationInfoModal
-          :location-info-modal-is-open="locationInfoModalIsOpen"
-          :location="location"
-          @event-location-info-modal-closed="locationInfoModalIsOpen = false"
+        <LocationInfoModal :location-info-modal-is-open="locationInfoModalIsOpen"
+                           :location="location"
+                           @event-location-info-modal-closed="locationInfoModalIsOpen = false"
         />
 
         <h1>Pangaautomaadid</h1>

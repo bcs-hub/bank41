@@ -10,7 +10,7 @@ export default {
     locationInfoModalIsOpen: Boolean,
     location: Object,
   },
-  emits: ['event-location-info-modal-closed'],
+  emits: ['event-location-info-modal-closed']
 }
 </script>
 
@@ -22,20 +22,20 @@ export default {
     <template #title>{{ location.locationName }}</template>
 
     <template #body>
-      <h6>Automaatide arv: {{ location.numberOfAtms }}</h6>
       <div class="container text-center">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col">
+            <h5>Automaatide arv: {{ location.numberOfAtms }}</h5>
             <TransactionTypesCheckbox
               :transaction-types="location.transactionTypes"
               :switches-disabled="true"
             />
           </div>
-          <div class="col"><AtmImage :image-data="location.imageData" /></div>
+          <div class="col">
+            <AtmImage :image-data="location.imageData" />
+          </div>
         </div>
       </div>
     </template>
-
-    <template #buttons> </template>
   </BaseModal>
 </template>
