@@ -60,6 +60,20 @@ public class LocationService {
         handleCreateAndSaveLocationTransactionTypes(locationDto, location);
     }
 
+    public List<LocationInfo> findAtmLocations(Integer cityId) {
+        List<Location> locations = locationRepository.findFilteredLocationsBy(cityId, STATUS_ACTIVE.getCode());
+        validateAtLeastOneLocationExists(locations);
+        List<LocationInfo> locationInfos = locationMapper.toLocationInfos(locations);
+        addTransactionTypes(locationInfos);
+        return locationInfos;
+    }
+
+    public List<LocationInfo> findAtmLocationsV2(Integer cityId) {
+        List<LocationTransactionTypeView> locationTransactionTypeViews = locationTransactionTypeViewRepository.findFilteredLocationTransactionTypeViewsBy(cityId);
+        validateAtLeastOneLocationTransactionTypeExists(locationTransactionTypeViews);
+        return groupToLocationInfos(locationTransactionTypeViews);
+    }
+
     private void validateLocationNameIsAvailable(String locationName) {
         boolean locationExists = locationRepository.locationExistsBy(locationName);
         if (locationExists) {
@@ -124,14 +138,6 @@ public class LocationService {
         return locationTransactionType;
     }
 
-    public List<LocationInfo> findAtmLocations(Integer cityId) {
-        List<Location> locations = locationRepository.findFilteredLocationsBy(cityId, STATUS_ACTIVE.getCode());
-        validateAtLeastOneLocationExists(locations);
-        List<LocationInfo> locationInfos = locationMapper.toLocationInfos(locations);
-        addTransactionTypes(locationInfos);
-        return locationInfos;
-    }
-
     private static void validateAtLeastOneLocationExists(List<Location> locations) {
         if (locations.isEmpty()) {
             throw new DataNotFoundException(NO_LOCATION_FOUND.getMessage(), NO_LOCATION_FOUND.name());
@@ -155,12 +161,6 @@ public class LocationService {
             transactionTypeDto.setIsAvailable(locationTransactionTypeExists);
         }
         return transactionTypeDtos;
-    }
-
-    public List<LocationInfo> findAtmLocationsV2(Integer cityId) {
-        List<LocationTransactionTypeView> locationTransactionTypeViews = locationTransactionTypeViewRepository.findFilteredLocationTransactionTypeViewsBy(cityId);
-        validateAtLeastOneLocationTransactionTypeExists(locationTransactionTypeViews);
-        return groupToLocationInfos(locationTransactionTypeViews);
     }
 
     private static void validateAtLeastOneLocationTransactionTypeExists(List<LocationTransactionTypeView> locationTransactionTypeViews) {

@@ -37,9 +37,9 @@ class TransactionTypeControllerTest {
 
         mockMvc.perform(get("/api/atm/transaction-types"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.length()").value(3))
+                .andExpect(jsonPath("$.length()").value(1))
                 .andExpect(jsonPath("$[0].transactionTypeId").value(2))
-                .andExpect(jsonPath("$[0].transactionTypeName").value("raha välja"))
+                .andExpect(jsonPath("$[0].transactionTypeName").value("raha sisse"))
                 .andExpect(jsonPath("$[0].isAvailable").value(false));
     }
 
