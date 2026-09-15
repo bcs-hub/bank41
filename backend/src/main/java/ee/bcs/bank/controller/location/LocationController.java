@@ -1,5 +1,6 @@
 package ee.bcs.bank.controller.location;
 
+import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.infrastructure.error.ApiError;
 import ee.bcs.bank.service.LocationService;
@@ -9,32 +10,56 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class LocationController {
 
     private final LocationService locationService;
 
+    @PostMapping("/atm/location")
+    @Operation(summary = "Uue pangaautomaadi lisamine.",
+            description = """
+                    Pildi lisamine pole kohustuslik.
+                    Pildi puudumisel saadetakse imageData väärtuseks tühi string.
+                    transactionTypeName infot koodis ei kasutata."""
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200", description = "OK"
+            ),
+            @ApiResponse(
+                    responseCode = "403",
+                    description = "'message': Sellise nimega pangaautomaadi asukoht on juba süsteemis olemas, 'errorCode:' LOCATION_UNAVAILABLE",
+                    content = @Content(schema = @Schema(implementation = ApiError.class))
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "'message': Ei leidnud primary keyd 'x' väärtusega 'y', 'errorCode:' PRIMARY_KEY_NOT_FOUND",
+                    content = @Content(schema = @Schema(implementation = ApiError.class))
+            )
+    })
+    public void addLocation(@RequestBody LocationDto locationDto) {
+        locationService.addLocation(locationDto);
+    }
 
-    @GetMapping("/api/atm/locations")
+    @GetMapping("/atm/locations")
     @Operation(
             summary = "Tagastab pangaautomaatide asukohtade infot",
             description = "Kui cityId on 0, siis tagastatakse kõik asukohad"
     )
-    @ApiResponses( value = {
+    @ApiResponses(value = {
             @ApiResponse(
-                    responseCode = "200",  description = "OK"
+                    responseCode = "200", description = "OK"
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Kui ühtegi askohta ei leita, siis 'message': Ei leitud ühtegi pangaautomaati, 'errorCode:' NO_LOCATION_FOUND",
-                    content = @Content( schema = @Schema(implementation = ApiError.class))
+                    content = @Content(schema = @Schema(implementation = ApiError.class))
             )
     })
     public List<LocationInfo> findAtmLocations(@RequestParam Integer cityId) {
@@ -42,26 +67,27 @@ public class LocationController {
         return locationInfos;
     }
 
-    @GetMapping("/api/v2/atm/locations")
+    @GetMapping("/v2/atm/locations")
     @Operation(
             summary = "Tagastab pangaautomaatide asukohtade infot (v2, õppise eesmärgil)",
             description = "Kui cityId on 0, siis tagastatakse kõik asukohad. Andmed pärineb database view'st " +
                     "bank.location_transaction_type_view ning tulemus on lameda struktuuriga (üks rida iga " +
                     "asukoha-tehingutüübi kombinatsiooni kohta)"
     )
-    @ApiResponses( value = {
+    @ApiResponses(value = {
             @ApiResponse(
-                    responseCode = "200",  description = "OK"
+                    responseCode = "200", description = "OK"
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Kui ühtegi askohta ei leita, siis 'message': Ei leitud ühtegi pangaautomaati, 'errorCode:' NO_LOCATION_FOUND",
-                    content = @Content( schema = @Schema(implementation = ApiError.class))
+                    content = @Content(schema = @Schema(implementation = ApiError.class))
             )
     })
     public List<LocationInfo> findAtmLocationsV2(@RequestParam Integer cityId) {
         List<LocationInfo> locationInfos = locationService.findAtmLocationsV2(cityId);
         return locationInfos;
     }
+
 
 }
