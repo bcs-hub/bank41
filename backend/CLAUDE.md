@@ -42,6 +42,8 @@ Kõik tabelid asuvad `bank` skeemas.
 
 Tegemist on Spring Boot 4.x / Java 21 REST backendiga pangaautomaatide asukoharakenduse jaoks. Frontend on eraldi Vue 3 SPA (ei ole selles repos).
 
+Täielik kaustastruktuuri ülevaade (koos lühikirjelduste ja domeenialase paketi näidisega) on failis `docs/backend/projekti-struktuur.md`.
+
 ### Kihtide struktuur
 
 ```
