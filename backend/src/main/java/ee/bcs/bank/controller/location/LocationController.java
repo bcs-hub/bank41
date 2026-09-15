@@ -21,11 +21,22 @@ public class LocationController {
 
     private final LocationService locationService;
 
+
+
     @PostMapping("/atm/location")
     @Operation(summary ="Uue pangaautomaadi lisamine.",
         description = """
                 Pildi lisamine pole kohustuslik; pildi puudumisel saadetakse imageData väärtuseks tühi string. 
                 transactionTypeName infot koodis ei kasutata""")
+    @ApiResponses(value= {
+            @ApiResponse(responseCode = "200", description = "OK"),
+            @ApiResponse(
+                    responseCode = "403",
+                    description = "Selle nimega asukoht on juba süsteemis olemas, 'errorCode': 'LOCATION_UNAVAILABLE'",
+                    content = @Content(schema = @Schema(implementation = ApiError.class))
+            )
+
+    })
     public void addLocation(@RequestBody LocationDto locationDto) {
         locationService.addLocation(locationDto);
     }
@@ -37,7 +48,7 @@ public class LocationController {
     )
     @ApiResponses(value =
             {
-                    @ApiResponse(responseCode = "200", description = "ok"),
+                    @ApiResponse(responseCode = "200", description = "OK"),
                     @ApiResponse(
                             responseCode = "404",
                             description = "Kui ühtegi pangaautomaati ei leita, siis 'message': 'Ei leitud ühtegi pangaautomaati', 'errorCode': 'NO_LOCATION_FOUND'",
@@ -48,5 +59,7 @@ public class LocationController {
         List<LocationInfo> locationInfos = locationService.findAtmLocations(cityId);
         return locationInfos;
     }
+
+
 
 }

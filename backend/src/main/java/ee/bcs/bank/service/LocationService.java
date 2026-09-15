@@ -5,7 +5,6 @@ import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.controller.location.dto.TransactionTypeDto;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
 import ee.bcs.bank.infrastructure.exception.ForbiddenException;
-import ee.bcs.bank.infrastructure.exception.PrimaryKeyNotFoundException;
 import ee.bcs.bank.persistence.city.City;
 import ee.bcs.bank.persistence.city.CityRepository;
 import ee.bcs.bank.persistence.location.Location;
@@ -76,7 +75,6 @@ public class LocationService {
         }
         return locationTransactionTypes;
     }
-
 
 
     private void handleCreateAndSaveLocationImage(LocationDto locationDto, Location location) {
