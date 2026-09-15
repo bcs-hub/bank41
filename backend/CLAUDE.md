@@ -69,6 +69,8 @@ Igal domeenialasel (location, city, transactiontype, login) on oma alampakk `con
 
 **Repositooriumi meetodi nimetamine** — Meetodi nimi peab mainima, mida ta tagastab (subjekti), mitte jääma geneeriliseks: `findFilteredLocationsBy(...)` tagastab `List<Location>`, `findUserBy(...)` tagastab `User`. Väldi kujundeid nagu `findFilteredBy(...)`, kust pole näha, mida meetod tagastab.
 
+**Jagatud DTO-d** — DTO klass, mida kasutab rohkem kui üks ressursipakett (nt mitme kontrolleri/mapperi vahel jagatud), ei kuulu ühegi üksiku ressursi `dto/` paketti, vaid paketti `controller/common/dto/` (nt `TransactionTypeDto`).
+
 **SQL logimine** — P6Spy on seadistatud (`spy.properties`), nii et täielik parameetritega SQL kuvatakse konsoolis. Selle saab keelata, lülitades `application.properties`-is tagasi kommenteeritud tavaliste PostgreSQL seadetele.
 
 ### Domeenikujundus (põhitabelid)
@@ -81,11 +83,4 @@ Igal domeenialasel (location, city, transactiontype, login) on oma alampakk `con
 
 Baastee: `/api`. Swagger UI on saadaval aadressil `/swagger-ui.html`.
 
-| Meetod | Tee | Kirjeldus |
-|--------|-----|-----------|
-| GET | `/api/login` | Sisselogimine (tagastab userId ja roleName) |
-| POST | `/api/atm/location` | Uue pangaautomaadi asukoha lisamine |
-| GET | `/api/atm/locations?cityId=` | Pangaautomaatide asukohtade loetelu (0 = kõik linnad) |
-| GET | `/api/atm/location?locationId=` | Pangaautomaadi asukoha detailinfo |
-| GET | `/api/cities` | Linnade valikute loetelu |
-| GET | `/api/transaction-types` | Tehingutüüpide valikute loetelu |
+Üksikute teenuste kirjeldused (URL, sisend, väljund, veaolukorrad, vastuvõtu kriteeriumid) ei ole selles failis — need dokumenteeritakse taski failidena kaustas `docs/tasks/backend/`.

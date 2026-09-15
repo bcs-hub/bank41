@@ -1,7 +1,7 @@
 package ee.bcs.bank.persistence.locationtransactiontypeview;
 
+import ee.bcs.bank.controller.common.dto.TransactionTypeDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
-import ee.bcs.bank.controller.location.dto.TransactionTypeDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
