@@ -10,7 +10,8 @@ export default {
   },
 
   navigateToErrorView() {
-    router.push({ name: 'errorRoute' })
+    // todo: kommenteeri sisse kui lahendus on valmis
+   // router.push({ name: 'errorRoute' })
   },
 
   navigateToNotAuthorizedView() {

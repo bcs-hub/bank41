@@ -29,11 +29,11 @@ Claude Code terminal jookseb WSL2 Ubuntu sees, mitte Windowsi peal — Windowsi 
 
 ## docs/ kausta struktuur
 
-- `docs/001-theory-materials/` — algajasõbralikud õppematerjalid (Java, Spring, Vue, HTML/CSS teemadel)
-- `docs/002-transcript-materials/` — õppevideote transkriptidest genereeritud õppematerjalid
-- `docs/backend/` — backendiga seotud ülesannete kirjeldused (`tasks/`)
+- `docs/theory-materials/` — algajasõbralikud õppematerjalid (Java, Spring, Vue, HTML/CSS teemadel), iga teema kohta nii `.md` kui vastav `.html`
+- `docs/transcript-materials/` — õppevideote transkriptidest genereeritud õppematerjalid (`.md`, kuupäeva-video numbriga nimetatud)
+- `docs/transcripts/` — õppevideote toored transkriptid (`.vtt`), millest `transcript-materials/` genereeritakse
 - `docs/database/` — PostgreSQL skeemi skriptid (`1_reset_database.sql`, `2_create.sql`, `3_import.sql`), mida käivitatakse backendi lokaalseks seadistamiseks (vt backend/CLAUDE.md andmebaasi jaotist)
 - `docs/frontend/` — frontendi arhitektuuri dokumendid (nt projekti struktuur, Vue komponendi struktuur)
-- `docs/system/` — hetkel tühi
+- `docs/claude-code/` — Claude Code töötoa materjalid ja checklist
 
 Kogu dokumentatsiooni sisu (sh uued failid) peab olema eestikeelne.
