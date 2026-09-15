@@ -2,7 +2,7 @@ package ee.bcs.bank.service;
 
 import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
-import ee.bcs.bank.controller.location.dto.TransactionTypeDto;
+import ee.bcs.bank.controller.common.dto.TransactionTypeDto;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
 import ee.bcs.bank.infrastructure.exception.ForbiddenException;
 import ee.bcs.bank.infrastructure.exception.PrimaryKeyNotFoundException;

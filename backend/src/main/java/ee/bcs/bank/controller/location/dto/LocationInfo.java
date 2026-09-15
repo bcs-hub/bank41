@@ -1,5 +1,6 @@
 package ee.bcs.bank.controller.location.dto;
 
+import ee.bcs.bank.controller.common.dto.TransactionTypeDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

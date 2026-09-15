@@ -51,7 +51,7 @@ persistence/      JPA entiteedid, repositooriumid, MapStructi mapperid
 infrastructure/   Läbivad komponendid: erindi tüübid, veakoodid, globaalne erindite käsitleja
 ```
 
-Igal domeenialasel (location, city, transactiontype, login) on oma alampakk `controller/`-is koos DTOdega, teenusklass ja persistence pakk.
+Igal domeenialasel (location, city, transactiontype, login) on oma alampakk `controller/`-is koos DTOdega, teenusklass ja persistence pakk. Erand: mitme domeeni vahel jagatud DTOd (nt `TransactionTypeDto`, mida kasutavad nii `location` kui `transactiontype`) elavad `controller/common/dto` paketis, mitte ühe domeeni omas.
 
 ### Olulised konventsioonid
 
@@ -88,4 +88,4 @@ Baastee: `/api`. Swagger UI on saadaval aadressil `/swagger-ui.html`.
 | GET | `/api/atm/locations?cityId=` | Pangaautomaatide asukohtade loetelu (0 = kõik linnad) |
 | GET | `/api/atm/location?locationId=` | Pangaautomaadi asukoha detailinfo |
 | GET | `/api/cities` | Linnade valikute loetelu |
-| GET | `/api/transaction-types` | Tehingutüüpide valikute loetelu |
+| GET | `/api/atm/transaction-types` | Tehingutüüpide valikute loetelu |
