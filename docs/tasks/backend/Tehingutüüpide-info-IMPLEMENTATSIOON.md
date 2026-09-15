@@ -55,17 +55,18 @@ Selleks tuleb `TransactionTypeService`-le lisada ka `transactionTypeMapper` sõl
 
 ### 4. Loo uus controller `controller/transactiontype/TransactionTypeController.java`
 
+Järgi `CityController` mustrit (ilma klassitasandi `@RequestMapping`-uta, täistee otse `@GetMapping`-ul):
+
 ```java
 package ee.bcs.bank.controller.transactiontype;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api")
 public class TransactionTypeController {
 
     private final TransactionTypeService transactionTypeService;
 
-    @GetMapping("/atm/transaction-types")
+    @GetMapping("/api/atm/transaction-types")
     @Operation(summary = "Tagastab kõik süsteemis defineeritud tehingutüübid")
     public List<TransactionTypeDto> findTransactionTypes() {
         List<TransactionTypeDto> transactionTypeDtos = transactionTypeService.findTransactionTypes();
@@ -77,6 +78,13 @@ public class TransactionTypeController {
 Swagger `@ApiResponses` blokki eraldi lisada pole vaja (ainult 200-vastus, vt taski veaolukordade tabel — 500 on Springi vaikekäitumine, mida eraldi ei dokumenteerita, sarnaselt `CityController`-ile).
 
 Eraldi DTO alampakki (`controller/transactiontype/dto/`) ei looda, kuna `TransactionTypeDto` on jagatud DTO ja elab nüüd `controller.common.dto`-s (vt samm 1).
+
+### 5. Uuenda `backend/CLAUDE.md`
+
+Kaks parandust:
+
+1. **REST API tabel** (rida 91) — hetkel on seal ekslikult kirjas `GET /api/transaction-types` (implementeerimata endpoint), aga tegelik implementeeritav tee on `/api/atm/transaction-types`. Paranda rida vastavaks.
+2. **Domeenikujunduse jaotis** (rea 54 lähedal, kus kirjeldatakse, et "igal domeenialasel on oma alampakk `controller/`-is koos DTOdega") — lisa lühike lause, mis dokumenteerib uue erandi: mitme domeeni vahel jagatud DTOd (nt `TransactionTypeDto`, mida kasutavad nii `location` kui `transactiontype`) elavad `controller/common/dto` paketis, mitte ühe domeeni omas.
 
 ## Loodavad/muudetavad failid
 
@@ -91,6 +99,7 @@ Eraldi DTO alampakki (`controller/transactiontype/dto/`) ei looda, kuna `Transac
 - `persistence/transactiontype/TransactionTypeMapper.java` (import)
 - `persistence/locationtransactiontypeview/LocationTransactionTypeViewMapper.java` (import)
 - `service/LocationService.java` (import)
+- `backend/CLAUDE.md` (REST API tabeli parandus + jagatud DTO konventsiooni dokumenteerimine)
 
 **Kustutatavad:**
 - `controller/location/dto/TransactionTypeDto.java` (vana asukoht)
