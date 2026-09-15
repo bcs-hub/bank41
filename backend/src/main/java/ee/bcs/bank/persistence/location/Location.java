@@ -44,4 +44,8 @@ public class Location {
     private BigDecimal lat;
 
 
+    public void sendEmail() {
+
+    }
+
 }
