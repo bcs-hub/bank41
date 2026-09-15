@@ -54,6 +54,41 @@ public class LocationService {
         handleCreateAndSaveLocationTransactionTypes(locationDto, location);
     }
 
+    private void validateLocationNameIsAvailable(String locationName) {
+        boolean locationExists = locationRepository.locationExistsBy(locationName);
+        if (locationExists) {
+            throw new ForbiddenException(LOCATION_UNAVAILABLE.getMessage(), LOCATION_UNAVAILABLE.name());
+        }
+    }
+
+    private Location createAndSaveLocation(LocationDto locationDto) {
+        Location location = createLocation(locationDto);
+        locationRepository.save(location);
+        return location;
+    }
+
+    private Location createLocation(LocationDto locationDto) {
+        City city = cityService.getValidCity(locationDto.getCityId());
+        Location location = locationMapper.toLocation(locationDto);
+        location.setCity(city);
+        locationRepository.save(location);
+        return location;
+    }
+
+    private void handleCreateAndSaveLocationImage(LocationDto locationDto, Location location) {
+        String imageDataAsString = locationDto.getImageData();
+        if (!imageDataAsString.isEmpty()) {
+            LocationImage locationImage = createLocationImage(locationDto, location);
+            locationImageRepository.save(locationImage);
+        }
+    }
+
+    private LocationImage createLocationImage(LocationDto locationDto, Location location) {
+        LocationImage locationImage = locationImageMapper.toLocationImage(locationDto);
+        locationImage.setLocation(location);
+        return locationImage;
+    }
+
     private void handleCreateAndSaveLocationTransactionTypes(LocationDto locationDto, Location location) {
         List<LocationTransactionType> locationTransactionTypes = createLocationTransactionTypes(locationDto, location);
         locationTransactionTypeRepository.saveAll(locationTransactionTypes);
@@ -76,49 +111,18 @@ public class LocationService {
         return locationTransactionTypes;
     }
 
-
-    private void handleCreateAndSaveLocationImage(LocationDto locationDto, Location location) {
-        String imageDataAsString = locationDto.getImageData();
-        if (!imageDataAsString.isEmpty()) {
-            LocationImage locationImage = createLocationImage(locationDto, location);
-            locationImageRepository.save(locationImage);
-        }
-    }
-
-    private LocationImage createLocationImage(LocationDto locationDto, Location location) {
-        LocationImage locationImage = locationImageMapper.toLocationImage(locationDto);
-        locationImage.setLocation(location);
-        return locationImage;
-    }
-
-    private Location createAndSaveLocation(LocationDto locationDto) {
-        Location location = createLocation(locationDto);
-        locationRepository.save(location);
-        return location;
-    }
-
-    private Location createLocation(LocationDto locationDto) {
-        City city = cityService.getValidCity(locationDto.getCityId());
-        Location location = locationMapper.toLocation(locationDto);
-        location.setCity(city);
-        locationRepository.save(location);
-        return location;
-    }
-
-    private void validateLocationNameIsAvailable(String locationName) {
-        boolean locationExists = locationRepository.locationExistsBy(locationName);
-        if (locationExists) {
-            throw new ForbiddenException(LOCATION_UNAVAILABLE.getMessage(), LOCATION_UNAVAILABLE.name());
-        }
-    }
-
-
     public List<LocationInfo> findAtmLocations(Integer cityId) {
         List<Location> locations = locationRepository.findFilteredLocationsBy(cityId, STATUS_ACTIVE.getCode());
         validateAtLeastOneLocationExists(locations);
         List<LocationInfo> locationInfos = locationMapper.toLocationInfos(locations);
         addTransactionTypes(locationInfos);
         return locationInfos;
+    }
+
+    private static void validateAtLeastOneLocationExists(List<Location> locations) {
+        if (locations.isEmpty()) {
+            throw new DataNotFoundException(NO_LOCATION_FOUND.getMessage(), NO_LOCATION_FOUND.name());
+        }
     }
 
     private void addTransactionTypes(List<LocationInfo> locationInfos) {
@@ -138,12 +142,6 @@ public class LocationService {
             transactionTypeDto.setIsAvailable(locationTransactionTypeExists);
         }
         return transactionTypeDtos;
-    }
-
-    private static void validateAtLeastOneLocationExists(List<Location> locations) {
-        if (locations.isEmpty()) {
-            throw new DataNotFoundException(NO_LOCATION_FOUND.getMessage(), NO_LOCATION_FOUND.name());
-        }
     }
 
 }
