@@ -12,9 +12,10 @@ export default {
     })
   },
   navigateToErrorView() {
-    router.push({
-      name: 'errorRoute',
-    })
+    // todo: kommenteeri sisse tagasi kui lahendus on valmis
+    // router.push({
+    //   name: 'errorRoute',
+    // })
   },
   navigateToNotAuthorizedView() {
     router.push({
