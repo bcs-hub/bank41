@@ -1,6 +1,7 @@
 package ee.bcs.bank.service;
 
 import ee.bcs.bank.controller.city.dto.CityDto;
+import ee.bcs.bank.infrastructure.exception.PrimaryKeyNotFoundException;
 import ee.bcs.bank.persistence.city.City;
 import ee.bcs.bank.persistence.city.CityMapper;
 import ee.bcs.bank.persistence.city.CityRepository;
@@ -22,5 +23,11 @@ public class CityService {
         List<CityDto> cityDtos = cityMapper.toCityDtos(cities);
 
         return cityDtos;
+    }
+
+    public City getValidCity(Integer cityId) {
+        City city = cityRepository.findById(cityId)
+                .orElseThrow(() -> new PrimaryKeyNotFoundException("cityId", cityId));
+        return city;
     }
 }
