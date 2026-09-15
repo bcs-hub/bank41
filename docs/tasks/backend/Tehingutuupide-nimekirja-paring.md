@@ -12,18 +12,18 @@ Teenusel puuduvad sisendid — ei path variable't, ei query parameetreid ega req
 
 ## Väljund
 
-**Response (200 OK):** massiiv `TransactionTypeInfoDto` objekte, mis sisaldab kõiki süsteemis defineeritud tehingutüüpe.
+**Response (200 OK):** massiiv `TransactionTypeDto` objekte, mis sisaldab kõiki süsteemis defineeritud tehingutüüpe.
 
 ```json
 [
   {
-    "transactionTypeId": 1,
-    "transactionTypeName": "raha sisse",
+    "transactionTypeId": 2,
+    "transactionTypeName": "raha välja",
     "isAvailable": false
   },
   {
-    "transactionTypeId": 2,
-    "transactionTypeName": "raha välja",
+    "transactionTypeId": 1,
+    "transactionTypeName": "raha sisse",
     "isAvailable": false
   },
   {
@@ -78,9 +78,9 @@ Muid veaolukordi teenusel ei ole, kuna sisendeid ei kontrollita ja teenus ei sõ
 
 - [ ] Loodud on endpoint `GET /api/atm/transaction-types`.
 - [ ] Endpoint tagastab HTTP staatuskoodiga `200 OK` kõik `transaction_type` tabelis olevad kirjed.
-- [ ] Response body on JSON massiiv `TransactionTypeInfoDto` objektidest väljadega `transactionTypeId`, `transactionTypeName`, `isAvailable`.
+- [ ] Response body on JSON massiiv `TransactionTypeDto` objektidest väljadega `transactionTypeId`, `transactionTypeName`, `isAvailable`.
 - [ ] `isAvailable` väärtus on vastuses alati `false` (teenus ei tea asukohast, seega ei saa määrata, kas tehingutüüp on kuskil saadaval).
-- [ ] Tehingutüübid tagastatakse `transaction_type.id` järgi kasvavas järjekorras.
+- [ ] Tehingutüübid tagastatakse `transaction_type.name` järgi kahanevas (DESC) järjekorras.
 - [ ] Kui andmebaasis pole ühtegi tehingutüüpi, tagastatakse `200 OK` koos tühja massiiviga `[]`.
 - [ ] Ootamatu serveripoolse vea korral tagastatakse `500 Internal Server Error`.
 - [ ] Teenuse jaoks on kirjutatud automaattestid (nii õnnestunud päringu kui ka tühja tulemuse juhtumi kohta).

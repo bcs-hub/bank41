@@ -1,5 +1,5 @@
 ---
-name: grill-me
+name: skill-grill-me
 description: Küsitle kasutajat põhjalikult plaani või disaini kohta, kuni jõuame ühisele arusaamale, lahendades otsustuspuu iga haru. Kasuta, kui kasutaja tahab oma plaani proovile panna, soovib, et teda "grillitaks", või mainib "grill me".
 ---
 
