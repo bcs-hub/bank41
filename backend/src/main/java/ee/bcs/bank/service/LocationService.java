@@ -41,6 +41,7 @@ import static ee.bcs.bank.Status.STATUS_ACTIVE;
 @RequiredArgsConstructor
 public class LocationService {
 
+    private final TransactionTypeService transactionTypeService;
     private final LocationRepository locationRepository;
     private final LocationMapper locationMapper;
     private final TransactionTypeRepository transactionTypeRepository;
@@ -51,9 +52,9 @@ public class LocationService {
     private final CityRepository cityRepository;
     private final LocationImageRepository locationImageRepository;
     private final LocationImageMapper locationImageMapper;
+    private final CityService cityService;
 
 
-    // TODO: RAIN räägib
     @Transactional
     public void addLocation(LocationDto locationDto) {
         validateLocationNameIsAvailable(locationDto.getLocationName());
@@ -74,30 +75,31 @@ public class LocationService {
             if (transactionTypeDto.getIsAvailable()) {
 
                 Integer transactionTypeId = transactionTypeDto.getTransactionTypeId();
-
-                // TODO: RAIN räägib
-                TransactionType transactionType = getValidTransactionType(transactionTypeId);
-                LocationTransactionType locationTransactionType = new LocationTransactionType();
-                locationTransactionType.setLocation(location);
-                locationTransactionType.setTransactionType(transactionType);
+                TransactionType transactionType = transactionTypeService.getValidTransactionType(transactionTypeId);
+                LocationTransactionType locationTransactionType = createLocationTransactionType(location, transactionType);
                 locationTransactionTypes.add(locationTransactionType);
             }
         }
         return locationTransactionTypes;
     }
 
-    private @NonNull TransactionType getValidTransactionType(Integer transactionTypeId) {
-        TransactionType transactionType = transactionTypeRepository.findById(transactionTypeId)
-                .orElseThrow(() -> new PrimaryKeyNotFoundException("transactionTypeId", transactionTypeId));
-        return transactionType;
+    private static @NonNull LocationTransactionType createLocationTransactionType(Location location, TransactionType transactionType) {
+        LocationTransactionType locationTransactionType = new LocationTransactionType();
+        locationTransactionType.setLocation(location);
+        locationTransactionType.setTransactionType(transactionType);
+        return locationTransactionType;
     }
 
+
     private void handleCreateAndSaveLocationImage(LocationDto locationDto, Location location) {
-        String imageDataAsString = locationDto.getImageData();
-        if (!imageDataAsString.isEmpty()) {
+        if (locationDtoHasImage(locationDto)) {
             LocationImage locationImage = createLocationImage(locationDto, location);
             locationImageRepository.save(locationImage);
         }
+    }
+
+    private static boolean locationDtoHasImage(LocationDto locationDto) {
+        return !locationDto.getImageData().isEmpty();
     }
 
     private LocationImage createLocationImage(LocationDto locationDto, Location location) {
@@ -113,18 +115,12 @@ public class LocationService {
     }
 
     private Location createLocation(LocationDto locationDto) {
-        // TODO: RAIN räägib
-        City city = getValidCity(locationDto.getCityId());
+        City city = cityService.getValidCity(locationDto.getCityId());
         Location location = locationMapper.toLocation(locationDto);
         location.setCity(city);
         return location;
     }
 
-    private City getValidCity(Integer cityId) {
-        City city = cityRepository.findById(cityId)
-                .orElseThrow(() -> new PrimaryKeyNotFoundException("cityId", cityId));
-        return city;
-    }
 
     private void validateLocationNameIsAvailable(String locationName) {
         boolean locationExists = locationRepository.locationExistsBy(locationName);
