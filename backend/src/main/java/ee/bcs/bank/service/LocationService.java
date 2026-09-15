@@ -5,9 +5,7 @@ import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.controller.location.dto.TransactionTypeDto;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
 import ee.bcs.bank.infrastructure.exception.ForbiddenException;
-import ee.bcs.bank.infrastructure.exception.PrimaryKeyNotFoundException;
 import ee.bcs.bank.persistence.city.City;
-import ee.bcs.bank.persistence.city.CityRepository;
 import ee.bcs.bank.persistence.location.Location;
 import ee.bcs.bank.persistence.location.LocationMapper;
 import ee.bcs.bank.persistence.location.LocationRepository;
@@ -49,7 +47,6 @@ public class LocationService {
     private final LocationTransactionTypeRepository locationTransactionTypeRepository;
     private final LocationTransactionTypeViewRepository locationTransactionTypeViewRepository;
     private final LocationTransactionTypeViewMapper locationTransactionTypeViewMapper;
-    private final CityRepository cityRepository;
     private final LocationImageRepository locationImageRepository;
     private final LocationImageMapper locationImageMapper;
     private final CityService cityService;
@@ -61,6 +58,43 @@ public class LocationService {
         Location location = createAndSaveLocation(locationDto);
         handleCreateAndSaveLocationImage(locationDto, location);
         handleCreateAndSaveLocationTransactionTypes(locationDto, location);
+    }
+
+    private void validateLocationNameIsAvailable(String locationName) {
+        boolean locationExists = locationRepository.locationExistsBy(locationName);
+        if (locationExists) {
+            throw new ForbiddenException(LOCATION_UNAVAILABLE.getMessage(), LOCATION_UNAVAILABLE.name());
+        }
+    }
+
+    private Location createAndSaveLocation(LocationDto locationDto) {
+        Location location = createLocation(locationDto);
+        locationRepository.save(location);
+        return location;
+    }
+
+    private Location createLocation(LocationDto locationDto) {
+        City city = cityService.getValidCity(locationDto.getCityId());
+        Location location = locationMapper.toLocation(locationDto);
+        location.setCity(city);
+        return location;
+    }
+
+    private void handleCreateAndSaveLocationImage(LocationDto locationDto, Location location) {
+        if (locationDtoHasImage(locationDto)) {
+            LocationImage locationImage = createLocationImage(locationDto, location);
+            locationImageRepository.save(locationImage);
+        }
+    }
+
+    private static boolean locationDtoHasImage(LocationDto locationDto) {
+        return !locationDto.getImageData().isEmpty();
+    }
+
+    private LocationImage createLocationImage(LocationDto locationDto, Location location) {
+        LocationImage locationImage = locationImageMapper.toLocationImage(locationDto);
+        locationImage.setLocation(location);
+        return locationImage;
     }
 
     private void handleCreateAndSaveLocationTransactionTypes(LocationDto locationDto, Location location) {
@@ -90,45 +124,6 @@ public class LocationService {
         return locationTransactionType;
     }
 
-
-    private void handleCreateAndSaveLocationImage(LocationDto locationDto, Location location) {
-        if (locationDtoHasImage(locationDto)) {
-            LocationImage locationImage = createLocationImage(locationDto, location);
-            locationImageRepository.save(locationImage);
-        }
-    }
-
-    private static boolean locationDtoHasImage(LocationDto locationDto) {
-        return !locationDto.getImageData().isEmpty();
-    }
-
-    private LocationImage createLocationImage(LocationDto locationDto, Location location) {
-        LocationImage locationImage = locationImageMapper.toLocationImage(locationDto);
-        locationImage.setLocation(location);
-        return locationImage;
-    }
-
-    private Location createAndSaveLocation(LocationDto locationDto) {
-        Location location = createLocation(locationDto);
-        locationRepository.save(location);
-        return location;
-    }
-
-    private Location createLocation(LocationDto locationDto) {
-        City city = cityService.getValidCity(locationDto.getCityId());
-        Location location = locationMapper.toLocation(locationDto);
-        location.setCity(city);
-        return location;
-    }
-
-
-    private void validateLocationNameIsAvailable(String locationName) {
-        boolean locationExists = locationRepository.locationExistsBy(locationName);
-        if (locationExists) {
-            throw new ForbiddenException(LOCATION_UNAVAILABLE.getMessage(), LOCATION_UNAVAILABLE.name());
-        }
-    }
-
     public List<LocationInfo> findAtmLocations(Integer cityId) {
         List<Location> locations = locationRepository.findFilteredLocationsBy(cityId, STATUS_ACTIVE.getCode());
         validateAtLeastOneLocationExists(locations);
@@ -137,25 +132,10 @@ public class LocationService {
         return locationInfos;
     }
 
-    public List<LocationInfo> findAtmLocationsV2(Integer cityId) {
-        List<LocationTransactionTypeView> locationTransactionTypeViews = locationTransactionTypeViewRepository.findFilteredLocationTransactionTypeViewsBy(cityId);
-        validateAtLeastOneLocationTransactionTypeExists(locationTransactionTypeViews);
-        return groupToLocationInfos(locationTransactionTypeViews);
-    }
-
-    private List<LocationInfo> groupToLocationInfos(List<LocationTransactionTypeView> locationTransactionTypeViews) {
-        Map<Integer, LocationInfo> locationInfosByLocationId = new LinkedHashMap<>();
-        for (LocationTransactionTypeView locationTransactionTypeView : locationTransactionTypeViews) {
-            Integer locationId = locationTransactionTypeView.getId().getLocationId();
-            LocationInfo locationInfo = locationInfosByLocationId.computeIfAbsent(locationId, id -> {
-                LocationInfo newLocationInfo = locationTransactionTypeViewMapper.toLocationInfo(locationTransactionTypeView);
-                newLocationInfo.setTransactionTypes(new ArrayList<>());
-                return newLocationInfo;
-            });
-            TransactionTypeDto transactionTypeDto = locationTransactionTypeViewMapper.toTransactionTypeDto(locationTransactionTypeView);
-            locationInfo.getTransactionTypes().add(transactionTypeDto);
+    private static void validateAtLeastOneLocationExists(List<Location> locations) {
+        if (locations.isEmpty()) {
+            throw new DataNotFoundException(NO_LOCATION_FOUND.getMessage(), NO_LOCATION_FOUND.name());
         }
-        return new ArrayList<>(locationInfosByLocationId.values());
     }
 
     private void addTransactionTypes(List<LocationInfo> locationInfos) {
@@ -177,16 +157,31 @@ public class LocationService {
         return transactionTypeDtos;
     }
 
-    private static void validateAtLeastOneLocationExists(List<Location> locations) {
-        if (locations.isEmpty()) {
-            throw new DataNotFoundException(NO_LOCATION_FOUND.getMessage(), NO_LOCATION_FOUND.name());
-        }
+    public List<LocationInfo> findAtmLocationsV2(Integer cityId) {
+        List<LocationTransactionTypeView> locationTransactionTypeViews = locationTransactionTypeViewRepository.findFilteredLocationTransactionTypeViewsBy(cityId);
+        validateAtLeastOneLocationTransactionTypeExists(locationTransactionTypeViews);
+        return groupToLocationInfos(locationTransactionTypeViews);
     }
 
     private static void validateAtLeastOneLocationTransactionTypeExists(List<LocationTransactionTypeView> locationTransactionTypeViews) {
         if (locationTransactionTypeViews.isEmpty()) {
             throw new DataNotFoundException(NO_LOCATION_FOUND.getMessage(), NO_LOCATION_FOUND.name());
         }
+    }
+
+    private List<LocationInfo> groupToLocationInfos(List<LocationTransactionTypeView> locationTransactionTypeViews) {
+        Map<Integer, LocationInfo> locationInfosByLocationId = new LinkedHashMap<>();
+        for (LocationTransactionTypeView locationTransactionTypeView : locationTransactionTypeViews) {
+            Integer locationId = locationTransactionTypeView.getId().getLocationId();
+            LocationInfo locationInfo = locationInfosByLocationId.computeIfAbsent(locationId, id -> {
+                LocationInfo newLocationInfo = locationTransactionTypeViewMapper.toLocationInfo(locationTransactionTypeView);
+                newLocationInfo.setTransactionTypes(new ArrayList<>());
+                return newLocationInfo;
+            });
+            TransactionTypeDto transactionTypeDto = locationTransactionTypeViewMapper.toTransactionTypeDto(locationTransactionTypeView);
+            locationInfo.getTransactionTypes().add(transactionTypeDto);
+        }
+        return new ArrayList<>(locationInfosByLocationId.values());
     }
 
 }
