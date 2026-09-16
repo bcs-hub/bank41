@@ -101,6 +101,7 @@ Loo juhend vastavalt allpool toodud mallile ja reeglitele.
 - Iga koodinäite ees peab olema **selgitav tekst**, mis kirjeldab, mida järgmisena tegema peaks
 - Rõhuta IntelliJ IDE funktsionaalsust — **Alt+Enter**, **Tab**, **Ctrl+Space**, **JPA Buddy**
 - Juhend peaks suunama õpilast **ise mõtlema**, mitte andma valmislahendust
+- **Mapperi target-väljad on alati eksplitsiitsed** — iga DTO/entity target-väli peab mapper meetodis olema kaardistatud kas `source`-iga (isegi kui nimi kattub) või `ignore = true`-ga; ühtegi target-välja ei tohi jätta kaardistamata "vaikimisi automaatseks" (vt "Kontrolli mapper konventsioon" allpool)
 
 ### Pseudokoodi näide (ÕIGE — generiline)
 
@@ -232,7 +233,7 @@ public void meetodiNimi(SisendTüüp parameetriNimi) {
 
 ---
 
-## Samm 2 — Service
+## Samm 2 — Service ja esimene repository päring
 
 ### Mida teha?
 
@@ -275,54 +276,22 @@ public class TeenusKlass {
 > võimaluse luua uus interface. Vali **JpaRepository** ja kontrolli, et fail läheks
 > õigesse paketti (sama pakett kui entiteet).
 
----
-
-## Samm 3 — Repository
-
-### Mida teha?
-
-<Kirjelda, et nüüd liigutakse repository interface'i. Maini, et õpilane peab mõtlema, kas JPA pakub valmismeetodit või on vaja uus teha.>
-
 **Küsi endalt:** Kas JPA pakub valmis `findById()` või muu sobiva meetodiga vastust?
 
 > **Rusikareegel:** Kui päringusse läheb sisendina muu väärtus kui tabeli `id`,
-> on tõenäoliselt vaja **uut meetodit** teha.
+> on tõenäoliselt vaja **uut meetodit** teha (vt "Uue meetodi loomine JPA Buddy abil" allpool).
 
-### Uue meetodi loomine JPA Buddy abil
-
-Mine repository interface'i faili. Kasuta **JPA Buddy** funktsionaalsust:
-
-1. Ava JPA Buddy paneel (paremklõps repository klassis → JPA Buddy)
-2. Valikutes **Method** ja **Query** vali → **Query**
-3. Vali meetodi tüüp:
-    - **Find instance** — üksiku rea leidmiseks
-    - **Find collection** — mitme rea leidmiseks
-    - **Count** — loendamiseks
-    - **Exists** — olemasolu kontrollimiseks
-4. Määra **Wrap type**:
-    - Üksiku rea puhul — kaaluda `Optional<EntiteetKlass>`
-    - Mitme rea puhul — `List<EntiteetKlass>`
-5. Lisa **query conditionid** — milliseid veerge filtreeritakse
-6. **Advanced** sektsioonis: vali alati **Named parameters**
-7. Mitme reaga tulemuse puhul mõtle läbi **Order By Attributes**
-
-Peale meetodi loomist:
-- Kontrolli parameetrite nimed — ebamäärane `id` asenda konkreetsemaga (nt `kasutajaId`)
-- Tee vastav muudatus ka `@Query` annotatsiooni nimetud parameetris
-- Eemalda ebavajalikud `@Param()` annotatsioonid meetodist, kui Named parameters on kasutusel
+Kui repository meetod midagi tagastab (entity, `Optional<Entiteet>`, list), **pane tulemus kohe muutujasse** — vt "Meetodi palve" allpool.
 
 ---
 
-## Samm 4 — tagasi Service'i (väljundi teisendamine)
+## Samm 3 — DTO klass (loo kohe, mitte alles lõpus)
 
 ### Mida teha?
 
-<Kirjelda, et repository meetod tagastab entity objekti/lista ja see tuleb nüüd DTO-ks teisendada.>
+<Kirjelda, et niipea kui esimene entity on käes, on aeg luua väljundi DTO klass — isegi kui service meetod vajab veel mitut allikat (nt mitut repository päringut) enne, kui DTO on täielikult täidetud.>
 
-Kasuta äsja loodud repository meetodit service meetodis.
-Andmed saabuvad entity kujul — need tuleb teisendada DTO-ks.
-
-### DTO klass
+**Miks kohe, mitte lõpus?** Kui service meetod kogub andmeid mitmest allikast (nt mitu repository päringut, valikulised seosed), on lihtsam ja selgem täita üht DTO objekti samm-sammult, kui koguda mitu eraldi muutujat ja need alles kõige lõpus kokku panna. Kui aga sinu task vajab andmeid ainult **ühest** allikast, võib DTO loomine loomulikult tulla ka veidi hiljem — kasuta oma otsustust.
 
 Mõtle: kas vastav DTO klass on juba olemas?
 - Vaata kaustast: `backend/src/main/java/<base-pakett>/controller/.../dto/`
@@ -338,7 +307,21 @@ Mõtle: kas vastav DTO klass on juba olemas?
 3. Vali väljad — kui seotud entiteet on foreign key objekt, vali **Flat** struktuur
 4. Peale loomist kontrolli DTO klass üle ja tee käsitsi vajalikud korrektuurid
 
+> **Mitme allikaga DTO:** Kui DTO väljad tulevad rohkem kui ühest entity'st (nt taskis nõutud väljad ei mahu ühe entity struktuuri sisse), loo DTO struktuur taskifaili "Väljund" näidise järgi käsitsi, mitte ainult JPA Buddy ühe-entity generaatoriga.
+
+---
+
+## Samm 4 — Mapper ja ülejäänud andmete kogumine
+
+### Mida teha?
+
+<Kirjelda, et esimese entity väljad tuleb nüüd DTO-sse mapida. Kui service meetod vajab veel täiendavaid andmeid (nt teisi repository päringuid, valikulisi seoseid), kogutakse ja lisatakse need DTO-le samas sammus, enne tagasiliikumist RestController'isse.>
+
 ### Mapper
+
+> **rAIn-i kontrollpunkt (mitte unusta!):** Niipea kui mapper meetodi **signatuur** on olemas (kas IntelliJ lõi selle Alt+Enter'iga või sa kirjutasid ise), aga `@Mapping` annotatsioone veel pole — anna **kohe** Ctrl+Space "tühja malli" vihje (vt allpool), **enne** kui hakkad arutlema, millised konkreetsed väljad kuhu lähevad. Ära lase vestlusel libiseda otse väljade sisu aruteluks, ilma et see IDE-tehnika kõigepealt lauale tuleks — see on täpselt see koht, kus õpilane peaks ise IDE abiga malli nägema, mitte sinu käest kuulma.
+
+> **rAIn-i kontrollpunkt #2 (pärast täitmist):** Kui õpilane on `@Mapping`-read täitnud, loe fail üle ja kontrolli **iga target-välja** DTO-l ükshaaval: kas igaühel on kas `source = "..."` või `ignore = true`? Kui mõni target-väli on lihtsalt unustatud (pole real ainsatki `@Mapping`-t, või on tühi `source = ""`), too see kohe välja, isegi kui õpilane ütleb "tehtud" — ära jäta seda lõpu kontrollnimekirja hooleks.
 
 Ava mapper interface (nt `EntiteetMapper.java`).
 
@@ -353,6 +336,8 @@ TagastatavDtoTüüp toDtoKlassiNimi(EntiteetTüüp entiteet);
 // Lista DTO listiks
 List<TagastatavDtoTüüp> toDtoKlassiNimid(List<EntiteetTüüp> entiteedid);
 ```
+
+> **rAIn-i kontrollpunkt (levinud segadus!):** Kui tulemuseks on vaja **listi**, on õpilasel tihti kiusatus kirjutada ainult `List<TagastatavDtoTüüp> toDtoKlassiNimid(...)` meetod ja lisada `@Mapping`-annotatsioonid otse sellele. **See ei tööta** — MapStruct ei tea, kuidas field-tasemel kaardistada, kui sisend/väljund on kollektsioon. Selgita: `@Mapping` annotatsioonid käivad alati **üksiku objekti** meetodile (`toDtoKlassiNimi`, ainsuses). MapStruct genereerib list-meetodi (`toDtoKlassiNimid`, mitmuses) **automaatselt** — see kutsub üksiku-objekti meetodit iga elemendi kohta ise. Nii et kui vaja on listi, tuleb kirjutada **mõlemad** meetodid: üksiku objekti meetod koos kõigi `@Mapping`-annotatsioonidega, ja list-meetod ilma annotatsioonideta (tühi signatuur piisab).
 
 Lisa `@Mapping` annotatsioonid:
 
@@ -382,14 +367,17 @@ Täida kõik väljad. Mis ei sobi — kasuta `ignore = true`:
 TagastatavDtoTüüp toDtoKlassiNimi(EntiteetTüüp entiteet);
 ```
 
+> **Väljad, mida esimene entity ei kata** (`ignore = true` mapperis) → täida need service meetodis pärast mappimist, täiendavate repository päringute tulemusel. Iga sellise päringu jaoks kehti sama muster nagu Samm 2-s: kontrolli, kas JPA pakub valmismeetodit, kas tulemus on `Optional` (vt "Optional käsitlemine" allpool), ja **pane tulemus kohe muutujasse**.
+
 ### Service meetodi lõpetamine
 
-Kutsu mapper meetod välja service meetodis:
+Kutsu mapper meetod välja service meetodis ja lisa ülejäänud DTO väljad käsitsi, kui vaja:
 
 ```java
 public void meetodiNimi(SisendTüüp parameetriNimi) {
     EntiteetTüüp entiteet = entiteetRepository.meetodiNimi(parameetriNimi);
     TagastatavDtoTüüp dto = mapperMuutuja.toDtoKlassiNimi(entiteet);
+    // kui vaja veel andmeid teistest allikatest, lisa need siia dto-le
     return dto;
 }
 ```
@@ -399,7 +387,46 @@ public void meetodiNimi(SisendTüüp parameetriNimi) {
 
 ---
 
-## Samm 5 — tagasi RestController'isse
+## Samm 5 — Repository (täiendavad päringud, kui vaja)
+
+### Mida teha?
+
+<Kirjelda, kui task vajab rohkem kui üht repository päringut (nt mitu entity't, valikuline seos) — see samm käsitleb ülejäänud päringute loomist, mis Samm 4 juures veel puudu jäid.>
+
+### Uue meetodi loomine JPA Buddy abil
+
+Mine repository interface'i faili. Kasuta **JPA Buddy** funktsionaalsust:
+
+1. Ava JPA Buddy paneel (paremklõps repository klassis → JPA Buddy)
+2. Valikutes **Method** ja **Query** vali → **Query**
+3. Vali meetodi tüüp:
+    - **Find instance** — üksiku rea leidmiseks
+    - **Find collection** — mitme rea leidmiseks
+    - **Count** — loendamiseks
+    - **Exists** — olemasolu kontrollimiseks
+4. Määra **Wrap type**:
+    - Üksiku rea puhul — kaaluda `Optional<EntiteetKlass>`
+    - Mitme rea puhul — `List<EntiteetKlass>`
+5. Lisa **query conditionid** — milliseid veerge filtreeritakse
+6. **Advanced** sektsioonis: vali alati **Named parameters**
+7. Mitme reaga tulemuse puhul mõtle läbi **Order By Attributes**
+
+Peale meetodi loomist:
+- Kontrolli parameetrite nimed — ebamäärane `id` asenda konkreetsemaga (nt `kasutajaId`)
+- Tee vastav muudatus ka `@Query` annotatsiooni nimetud parameetris
+- Eemalda ebavajalikud `@Param()` annotatsioonid meetodist, kui Named parameters on kasutusel
+
+### Optional käsitlemine
+
+Kui repository meetod tagastab `Optional<...>` (nt otsides valikulist seost), otsusta kohe, kuidas puudumist käsitleda:
+- **`orElseThrow(...)`** — kui väärtus on tegelikult kohustuslik (nt `findById` + `PrimaryKeyNotFoundException`, vt `getValid<Entiteet>By` muster)
+- **`orElse(...)` / `isPresent()` / muu `Optional` API** — kui puudumine on lubatud olukord ja tuleb käsitleda (nt väli jääb DTO-s `null`-iks, kui seotud kirjet pole)
+
+Ära lase `Optional`-il "lihtsalt seista" — otsusta teadlikult, mida puudumise korral tehakse.
+
+---
+
+## Samm 6 — tagasi RestController'isse
 
 ### Mida teha?
 
@@ -426,7 +453,7 @@ public TagastatavTüüp meetodiNimi(SisendTüüp parameetriNimi) {
 
 ---
 
-## Samm 6 — kood ilusaks (refactor)
+## Samm 7 — kood ilusaks (refactor)
 
 <Kasuta "Refactor sammu sisu" plokki allpool.>
 ```
@@ -471,6 +498,8 @@ Nimeta meetod konventsiooni järgi:
 EntiteetTüüp toEntiteetKlassiNimi(SisendDtoTüüp dto);
 ```
 
+> **rAIn-i kontrollpunkt (mitte unusta!):** Niipea kui meetodi signatuur on paigas, aga `@Mapping` annotatsioone veel pole — anna **kohe** Ctrl+Space vihje, **enne** kui hakkad arutlema, millised väljad kuhu lähevad. Ja kui õpilane on read täitnud, kontrolli sama moodi nagu Mall A-s: kas iga target-väli on eksplitsiitselt käsitletud (`source` või `ignore = true`), enne kui liigud edasi.
+
 > **IntelliJ vihje:** Kliki meetodi kohale ja vajuta **Ctrl+Space** — IntelliJ näitab, mitu välja entity-l on, mida DTO-st täita saab.
 
 Lisa `@Mapping` annotatsioonid iga välja kohta eraldi — täida sobivad väljad, ignoreeri ülejäänud:
@@ -495,7 +524,7 @@ Mõtle: kas `JpaRepository` baasmeetod (nt `save()`) katab vajaduse, või on vaj
 
 > **Rusikareegel:** Lihtsa loomise puhul katab `save()` enamasti ära — uut meetodit läheb vaja vaid siis, kui enne salvestamist tuleb midagi kontrollida või pärida.
 
-Kui vajad täiendavat päringut (nt olemasolu kontrolliks), kasuta **JPA Buddy** abi samamoodi nagu Mall A Samm 3-s kirjeldatud.
+Kui vajad täiendavat päringut (nt olemasolu kontrolliks), kasuta **JPA Buddy** abi samamoodi nagu Mall A Samm 2-s kirjeldatud.
 
 ## Samm 5 — tagasi Service'i
 
@@ -520,7 +549,7 @@ Kui pead midagi tagastama, kasuta salvestatud entiteeti (`save()` tagastusväär
 
 ## Samm 6 — tagasi RestController'isse
 
-<Sama struktuur, mis Mall A Samm 5. Kontrolli, et kontrolleri meetodi tagastustüüp klapib Samm 1 alguses tehtud otsusega (`void`/staatuskood vs. tagastatav objekt).>
+<Sama struktuur, mis Mall A Samm 6. Kontrolli, et kontrolleri meetodi tagastustüüp klapib Samm 1 alguses tehtud otsusega (`void`/staatuskood vs. tagastatav objekt).>
 
 ## Samm 7 — kood ilusaks (refactor)
 
@@ -553,7 +582,7 @@ Kui pead midagi tagastama, kasuta salvestatud entiteeti (`save()` tagastusväär
 
 Mõtle: kas JPA `findById()` piisab, või on vaja täpsemat otsingut?
 
-<Kasuta JPA Buddy juhiseid samamoodi nagu Mall A Samm 3-s, kui on vaja uut päringut.>
+<Kasuta JPA Buddy juhiseid samamoodi nagu Mall A Samm 2-s, kui on vaja uut päringut.>
 
 > **Veaolukord:** Kui kirjet ei leita — millist exception'it taskifail ette näeb? Vaata taskifailist "Veaolukorrad" sektsiooni.
 
@@ -582,6 +611,8 @@ Nimeta meetod konventsiooni järgi (nt `uuenda...`, mitte `to...` — see pole e
 ```java
 void uuendaEntiteetKlassiNimi(SisendDtoTüüp dto, @MappingTarget EntiteetTüüp entiteet);
 ```
+
+> **rAIn-i kontrollpunkt (mitte unusta!):** Niipea kui meetodi signatuur on paigas, aga `@Mapping` annotatsioone veel pole — anna **kohe** Ctrl+Space vihje, **enne** kui hakkad arutlema, millised väljad kuhu lähevad. Ja kui õpilane on read täitnud, kontrolli sama moodi nagu Mall A-s: kas iga target-väli on eksplitsiitselt käsitletud (`source` või `ignore = true`), enne kui liigud edasi.
 
 Lisa `@Mapping` annotatsioonid iga uuendatava välja kohta eraldi:
 
@@ -613,7 +644,7 @@ Enamasti piisab `save()` baasmeetodist, kuna entiteet on juba tuvastatud (JPA j�
 
 ## Samm 8 — tagasi RestController'isse
 
-<Sama struktuur, mis Mall A Samm 5. Kontrolli, et kontrolleri meetodi tagastustüüp klapib Samm 1 alguses tehtud otsusega.>
+<Sama struktuur, mis Mall A Samm 6. Kontrolli, et kontrolleri meetodi tagastustüüp klapib Samm 1 alguses tehtud otsusega.>
 
 ## Samm 9 — kood ilusaks (refactor)
 
@@ -655,7 +686,7 @@ Mõtle: kas `deleteById()` baasmeetod piisab, või on vaja enne kustutamist kont
 
 ## Samm 5 — tagasi RestController'isse
 
-<Sama struktuur, mis Mall A Samm 5 — kuid DELETE puhul on tagastustüüp sageli `void` või `ResponseEntity<Void>`, mistõttu see samm võib jääda ka lihtsalt väljakutseks ilma `return` väärtuseta.>
+<Sama struktuur, mis Mall A Samm 6 — kuid DELETE puhul on tagastustüüp sageli `void` või `ResponseEntity<Void>`, mistõttu see samm võib jääda ka lihtsalt väljakutseks ilma `return` väärtuseta.>
 
 ## Samm 6 — kood ilusaks (refactor)
 
@@ -808,7 +839,11 @@ Nüüd lisame regionService välja kontrollerisse. Kus see sinu meelest peaks ol
 - Vale pakett (nt `controller.controller` asemel `controller.region`) — kontrolli kohe kui fail luuakse
 - `@Operation` summary ei kirjelda endpointi täpselt (nt "Näita edasimüüja piirkondi" endpoint mis tagastab kõiki piirkondi)
 - Lista mapper meetodi nimi ainsuses (nt `toRegionResponseDto`) — peaks olema mitmuses (`toRegionResponseDtos`)
+- Õpilane üritab `@Mapping`-annotatsioone panna otse list-meetodile (`List<X> toXs(List<Y> ys)`) — need käivad ainult üksiku objekti meetodil; list-meetod jääb annotatsioonideta ja MapStruct genereerib selle automaatselt, kutsudes üksiku-objekti meetodit iga elemendi kohta
 - Repository meetodi nimi liiga pikk JPA konventsioonist (nt `findByOrderBySequenceNumberAsc`) — projekti tava on lühike `findAllRegions()`
+- **Meetodi väljakutse tulemus jääb muutujasse panemata** (nt `locationImageRepository.findByLocation(location);` üksi real, ilma et tulemust kuskile salvestataks) — kui õpilane kutsub välja meetodi, mis midagi tagastab, ja kavatseb selle infoga midagi edasi teha, tuleta kohe meelde **"Meetodi palve"**:
+  > *"Kui sa kutsud välja mingi meetodi, mis tagastab midagi, ja sa soovid selle infoga midagi edasi teha, siis pane see kohe muutujasse."*
+- **`Optional`-i tagastav päring jääb käsitlemata** — kui repository/service meetod tagastab `Optional<...>` (nt otsides valikulist seost, nagu asukoha pilti), suuna õpilast kohe mõtlema, kas ja kuidas andmete olemasolu/puudumist käsitleda: kas sobib `orElseThrow(...)` (kui väärtus on tegelikult kohustuslik), `orElse(...)`/`isPresent()` (kui puudumine on lubatud ja vajab harukäitlust, nt `imageData` jääb `null`-iks), või mõni muu `Optional` API meetod — ära lase `Optional`-il "lihtsalt seista", kuni õpilane on teadlikult valinud, mida puudumise korral teha.
 
 ### 9. Lõpeta soojalt
 

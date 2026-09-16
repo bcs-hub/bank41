@@ -1,5 +1,6 @@
 package ee.bcs.bank.controller.location;
 
+import ee.bcs.bank.controller.location.dto.AtmLocationDetailDto;
 import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.infrastructure.error.ApiError;
@@ -87,6 +88,33 @@ public class LocationController {
     public List<LocationInfo> findAtmLocationsV2(@RequestParam Integer cityId) {
         List<LocationInfo> locationInfos = locationService.findAtmLocationsV2(cityId);
         return locationInfos;
+    }
+
+    @GetMapping("/atm/locations/{locationId}")
+    @Operation(
+            summary = "Tagastab ühe pangaautomaadi asukoha detailandmed",
+            description = "Kasutatakse asukoha muutmisvormi eeltäitmiseks. transactionTypes massiiv sisaldab " +
+                    "alati kõiki süsteemis defineeritud tehingutüüpe, igaühe isAvailable väärtus kajastab, " +
+                    "kas see on selles asukohas hetkel saadaval."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200", description = "OK"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "'message': Ei leidnud primary keyd 'locationId' väärtusega: 'x', 'errorCode:' PRIMARY_KEY_NOT_FOUND",
+                    content = @Content(schema = @Schema(implementation = ApiError.class))
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Ootamatu serveripoolne viga",
+                    content = @Content(schema = @Schema(implementation = ApiError.class))
+            )
+    })
+    public AtmLocationDetailDto getAtmLocationDetailDto(@PathVariable Integer locationId) {
+        AtmLocationDetailDto atmLocationDetailDto = locationService.getAtmLocationDetailDto(locationId);
+        return atmLocationDetailDto;
     }
 
 

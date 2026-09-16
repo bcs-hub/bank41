@@ -1,10 +1,13 @@
 package ee.bcs.bank.service;
 
 import ee.bcs.bank.controller.common.dto.TransactionTypeDto;
+import ee.bcs.bank.controller.location.dto.AtmLocationDetailDto;
 import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
 import ee.bcs.bank.infrastructure.exception.ForbiddenException;
+import ee.bcs.bank.infrastructure.exception.PrimaryKeyNotFoundException;
+import ee.bcs.bank.infrastructure.util.StringBytesConverter;
 import ee.bcs.bank.persistence.city.City;
 import ee.bcs.bank.persistence.location.Location;
 import ee.bcs.bank.persistence.location.LocationMapper;
@@ -26,10 +29,7 @@ import org.jspecify.annotations.NonNull;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static ee.bcs.bank.Error.LOCATION_UNAVAILABLE;
 import static ee.bcs.bank.Error.NO_LOCATION_FOUND;
@@ -72,6 +72,20 @@ public class LocationService {
         List<LocationTransactionTypeView> locationTransactionTypeViews = locationTransactionTypeViewRepository.findFilteredLocationTransactionTypeViewsBy(cityId);
         validateAtLeastOneLocationTransactionTypeExists(locationTransactionTypeViews);
         return groupToLocationInfos(locationTransactionTypeViews);
+    }
+
+    public AtmLocationDetailDto getAtmLocationDetailDto(Integer locationId) {
+        Location location = getValidLocationBy(locationId);
+        AtmLocationDetailDto atmLocationDetailDto = locationMapper.toAtmLocationDetailDto(location);
+        handleSetImageData(atmLocationDetailDto, location);
+        List<TransactionTypeDto> transactionTypeDtos = createTransactionTypeDtos(locationId);
+        atmLocationDetailDto.setTransactionTypes(transactionTypeDtos);
+        return atmLocationDetailDto;
+    }
+
+    public @NonNull Location getValidLocationBy(Integer locationId) {
+        Location location = locationRepository.findById(locationId).orElseThrow(() -> new PrimaryKeyNotFoundException("locationId", locationId));
+        return location;
     }
 
     private void validateLocationNameIsAvailable(String locationName) {
@@ -151,18 +165,6 @@ public class LocationService {
         }
     }
 
-    private List<TransactionTypeDto> createTransactionTypeDtos(Integer locationId) {
-        Sort byNameDesc = Sort.by(Sort.Direction.DESC, "name");
-        List<TransactionType> transactionTypes = transactionTypeRepository.findAll(byNameDesc);
-        List<TransactionTypeDto> transactionTypeDtos = transactionTypeMapper.toTransactionTypeDtos(transactionTypes);
-
-        for (TransactionTypeDto transactionTypeDto : transactionTypeDtos) {
-            boolean locationTransactionTypeExists = locationTransactionTypeRepository.locationTransactionTypeExistsBy(locationId, transactionTypeDto.getTransactionTypeId());
-            transactionTypeDto.setIsAvailable(locationTransactionTypeExists);
-        }
-        return transactionTypeDtos;
-    }
-
     private static void validateAtLeastOneLocationTransactionTypeExists(List<LocationTransactionTypeView> locationTransactionTypeViews) {
         if (locationTransactionTypeViews.isEmpty()) {
             throw new DataNotFoundException(NO_LOCATION_FOUND.getMessage(), NO_LOCATION_FOUND.name());
@@ -184,4 +186,28 @@ public class LocationService {
         return new ArrayList<>(locationInfosByLocationId.values());
     }
 
+    private void handleSetImageData(AtmLocationDetailDto atmLocationDetailDto, Location location) {
+        Optional<LocationImage> optionalLocationImage = locationImageRepository.findByLocation(location);
+        if (optionalLocationImage.isPresent()) {
+            byte[] data = optionalLocationImage.get().getData();
+            String imageAsString = StringBytesConverter.bytesToString(data);
+            atmLocationDetailDto.setImageData(imageAsString);
+        } else {
+            atmLocationDetailDto.setImageData("");
+        }
+    }
+
+    // Jagatud (shared) abimeetod — kasutusel nii findAtmLocations (addTransactionTypes kaudu)
+    // kui ka getAtmLocationDetailDto poolt, seetõttu paikneb faili lõpus.
+    private List<TransactionTypeDto> createTransactionTypeDtos(Integer locationId) {
+        Sort byNameDesc = Sort.by(Sort.Direction.DESC, "name");
+        List<TransactionType> transactionTypes = transactionTypeRepository.findAll(byNameDesc);
+        List<TransactionTypeDto> transactionTypeDtos = transactionTypeMapper.toTransactionTypeDtos(transactionTypes);
+
+        for (TransactionTypeDto transactionTypeDto : transactionTypeDtos) {
+            boolean locationTransactionTypeExists = locationTransactionTypeRepository.locationTransactionTypeExistsBy(locationId, transactionTypeDto.getTransactionTypeId());
+            transactionTypeDto.setIsAvailable(locationTransactionTypeExists);
+        }
+        return transactionTypeDtos;
+    }
 }
