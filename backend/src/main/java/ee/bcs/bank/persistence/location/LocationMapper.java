@@ -1,16 +1,11 @@
 package ee.bcs.bank.persistence.location;
 
 import ee.bcs.bank.Status;
-import ee.bcs.bank.controller.common.dto.TransactionTypeDto;
 import ee.bcs.bank.controller.location.dto.AtmLocationDetailDto;
 import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING, imports = {Status.class})
@@ -37,7 +32,6 @@ public interface LocationMapper {
 
     List<LocationInfo> toLocationInfos(List<Location> locations);
 
-    @Mapping(source = "id", target = "locationId")
     @Mapping(source = "city.id", target = "cityId")
     @Mapping(source = "name", target = "locationName")
     @Mapping(source = "numberOfAtms", target = "numberOfAtms")
@@ -45,7 +39,12 @@ public interface LocationMapper {
     @Mapping(source = "lng", target = "lng")
     @Mapping(source = "lat", target = "lat")
     @Mapping(ignore = true, target = "transactionTypes")
-    AtmLocationDetailDto toAtmLocationDetailDto(Location location);
+    LocationDto toLocationDto(Location location);
+
+
+    @InheritConfiguration(name = "toLocation")
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    Location partialUpdate(LocationDto locationDto, @MappingTarget Location location);
 
 
 }

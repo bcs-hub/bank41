@@ -39,17 +39,17 @@ import static ee.bcs.bank.Status.STATUS_ACTIVE;
 @RequiredArgsConstructor
 public class LocationService {
 
+    private final CityService cityService;
     private final TransactionTypeService transactionTypeService;
-    private final LocationRepository locationRepository;
     private final LocationMapper locationMapper;
-    private final TransactionTypeRepository transactionTypeRepository;
+    private final LocationImageMapper locationImageMapper;
     private final TransactionTypeMapper transactionTypeMapper;
+    private final LocationTransactionTypeViewMapper locationTransactionTypeViewMapper;
+    private final LocationRepository locationRepository;
+    private final LocationImageRepository locationImageRepository;
+    private final TransactionTypeRepository transactionTypeRepository;
     private final LocationTransactionTypeRepository locationTransactionTypeRepository;
     private final LocationTransactionTypeViewRepository locationTransactionTypeViewRepository;
-    private final LocationTransactionTypeViewMapper locationTransactionTypeViewMapper;
-    private final LocationImageRepository locationImageRepository;
-    private final LocationImageMapper locationImageMapper;
-    private final CityService cityService;
 
 
     @Transactional
@@ -74,13 +74,13 @@ public class LocationService {
         return groupToLocationInfos(locationTransactionTypeViews);
     }
 
-    public AtmLocationDetailDto getAtmLocationDetailDto(Integer locationId) {
+    public LocationDto getLocation(Integer locationId) {
         Location location = getValidLocationBy(locationId);
-        AtmLocationDetailDto atmLocationDetailDto = locationMapper.toAtmLocationDetailDto(location);
-        handleSetImageData(atmLocationDetailDto, location);
+        LocationDto locationDto = locationMapper.toLocationDto(location);
+        handleSetImageData(locationDto, location);
         List<TransactionTypeDto> transactionTypeDtos = createTransactionTypeDtos(locationId);
-        atmLocationDetailDto.setTransactionTypes(transactionTypeDtos);
-        return atmLocationDetailDto;
+        locationDto.setTransactionTypes(transactionTypeDtos);
+        return locationDto;
     }
 
     public @NonNull Location getValidLocationBy(Integer locationId) {
@@ -186,14 +186,14 @@ public class LocationService {
         return new ArrayList<>(locationInfosByLocationId.values());
     }
 
-    private void handleSetImageData(AtmLocationDetailDto atmLocationDetailDto, Location location) {
+    private void handleSetImageData(LocationDto locationDto, Location location) {
         Optional<LocationImage> optionalLocationImage = locationImageRepository.findByLocation(location);
         if (optionalLocationImage.isPresent()) {
             byte[] data = optionalLocationImage.get().getData();
             String imageAsString = StringBytesConverter.bytesToString(data);
-            atmLocationDetailDto.setImageData(imageAsString);
+            locationDto.setImageData(imageAsString);
         } else {
-            atmLocationDetailDto.setImageData("");
+            locationDto.setImageData("");
         }
     }
 
@@ -209,5 +209,14 @@ public class LocationService {
             transactionTypeDto.setIsAvailable(locationTransactionTypeExists);
         }
         return transactionTypeDtos;
+    }
+
+    public void updateLocation(Integer locationId, LocationDto locationDto) {
+
+        City city = cityService.getValidCity(locationDto.getCityId());
+        Location location = getValidLocationBy(locationId);
+        location.setCity(city);
+        locationMapper.partialUpdate(locationDto, location);
+        locationRepository.save(location);
     }
 }

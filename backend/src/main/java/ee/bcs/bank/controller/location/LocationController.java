@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,7 +45,7 @@ public class LocationController {
                     content = @Content(schema = @Schema(implementation = ApiError.class))
             )
     })
-    public void addLocation(@RequestBody LocationDto locationDto) {
+    public void addLocation(@RequestBody @Valid LocationDto locationDto) {
         locationService.addLocation(locationDto);
     }
 
@@ -112,10 +113,16 @@ public class LocationController {
                     content = @Content(schema = @Schema(implementation = ApiError.class))
             )
     })
-    public AtmLocationDetailDto getAtmLocationDetailDto(@PathVariable Integer locationId) {
-        AtmLocationDetailDto atmLocationDetailDto = locationService.getAtmLocationDetailDto(locationId);
-        return atmLocationDetailDto;
+    public LocationDto getLocation(@PathVariable Integer locationId) {
+        LocationDto locationDto = locationService.getLocation(locationId);
+        return locationDto;
     }
 
+
+    @PutMapping("/atm/locations/{locationId}")
+    public void updateLocation(@PathVariable Integer locationId, @RequestBody LocationDto locationDto) {
+        locationService.updateLocation(locationId, locationDto);
+
+    }
 
 }
