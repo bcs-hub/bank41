@@ -45,6 +45,7 @@ export default {
         <RouterLink class="nav-link" to="/atms">Pangaautomaadid</RouterLink>
 
         <RouterLink v-if="isAdmin" class="nav-link" to="/location">Asukoht</RouterLink>
+        <RouterLink class="nav-link" to="/extras">Extra asjad</RouterLink>
 
         <div v-if="isLoggedIn">
           <button @click="executeLogOut" class="btn btn-primary" type="submit">Logi välja</button>

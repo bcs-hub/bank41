@@ -5,6 +5,7 @@ import AtmsView from '@/views/AtmsView.vue'
 import LoginView from '@/views/LoginView.vue'
 import LocationView from '@/views/LocationView.vue'
 import NotAuthorizedView from '@/views/NotAuthorizedView.vue'
+import { extraRoutes } from '@/views/extra/extra.routes.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,7 @@ const router = createRouter({
       name: 'notAuthorizedRoute',
       component: NotAuthorizedView,
     },
+    ...extraRoutes,
   ],
 })
 
