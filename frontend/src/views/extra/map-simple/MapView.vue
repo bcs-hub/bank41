@@ -61,8 +61,10 @@
                 [58.254, 22.489],
                 [58.386, 24.495],
               ]"
-              color="green"
-            ></l-polyline>
+              color="red"
+            >
+
+            </l-polyline>
 
             <!--   Large Octagon shape near Tartu -->
             <l-polygon
@@ -78,7 +80,7 @@
               ]"
               color="#41b782"
               :fill="true"
-              :fillOpacity="0.1"
+              :fillOpacity="0.5"
               fillColor="#41b982"
             />
 

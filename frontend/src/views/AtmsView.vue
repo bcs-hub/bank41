@@ -142,7 +142,7 @@ export default {
       </div>
 
       <div class="col col-5">
-        <LocationsTable :locations="locations" @event-location-name-click="handleOpenLocationInfoModal" />
+        <LocationsTable :locations="locations" :role-name="roleName" @event-location-name-click="handleOpenLocationInfoModal" />
       </div>
     </div>
   </div>

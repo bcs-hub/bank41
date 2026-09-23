@@ -1,8 +1,18 @@
 <script>
+import { PhPencil } from '@phosphor-icons/vue'
+import NavigationService from "@/services/NavigationService.js";
+
 export default {
   name: 'LocationsTable',
+  components: { PhPencil },
   props: {
     locations: {},
+    roleName: String
+  },
+  methods: {
+    navigateToLocationViewAsEdit(locationId) {
+      NavigationService.navigateToLocationViewAsEdit(locationId)
+    },
   },
   emits: ['event-location-name-click'],
 }
@@ -15,6 +25,7 @@ export default {
         <th scope="col">Linn</th>
         <th scope="col">Asukoht</th>
         <th scope="col">Teenused</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -37,6 +48,14 @@ export default {
               {{ transactionType.transactionTypeName }}
             </div>
           </div>
+        </td>
+        <td>
+          {{ location.locationId }}
+          <PhPencil v-if="roleName === 'admin' "
+            @click="navigateToLocationViewAsEdit(location.locationId)"
+            :size="32"
+            class="green pointer"
+          />
         </td>
       </tr>
     </tbody>

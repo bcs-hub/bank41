@@ -7,12 +7,21 @@ import AlertDanger from '@/components/alert/AlertDanger.vue'
 import LocationService from '@/services/LocationService.js'
 import AlertSuccess from '@/components/alert/AlertSuccess.vue'
 import SessionStorageService from '@/services/SessionStorageService.js'
+import { useRoute } from 'vue-router'
 
 export default {
   name: 'LocationView',
   components: { AlertSuccess, AlertDanger, LocationForm },
   beforeMount() {
-    if (SessionStorageService.userIsAdmin()) {
+    this.locationId = Number(useRoute().query.locationId)
+    this.isEdit = !isNaN(this.locationId)
+
+    if (SessionStorageService.userIsAdmin() && this.isEdit) {
+      this.getCities()
+      LocationService.getAtmLocationRequest(this.locationId)
+        .then((response) => (this.location = response.data))
+        .catch(() => NavigationService.navigateToErrorView())
+    } else if (SessionStorageService.userIsAdmin() && !this.isEdit) {
       this.getCities()
       this.getLocationTransactionTypes()
     } else {
@@ -21,8 +30,11 @@ export default {
   },
   data() {
     return {
+      isEdit: false,
       successMessage: '',
       errorMessage: '',
+
+      locationId: 0,
 
       cities: [
         {
@@ -54,6 +66,18 @@ export default {
     }
   },
   methods: {
+    updateLocation() {
+      this.resetSuccessMessage()
+      this.resetErrorMessage()
+      this.checkFormForErrors()
+
+      if (this.errorMessageIsEmpty()) {
+        LocationService.putAtmLocationRequest(this.locationId, this.location)
+          .then(() => NavigationService.navigateToAtmsView())
+          .catch(() => NavigationService.navigateToErrorView())
+      }
+    },
+
     addLocation() {
       this.resetSuccessMessage()
       this.resetErrorMessage()
@@ -87,7 +111,6 @@ export default {
 
       return false
     },
-
 
     errorMessageIsEmpty() {
       return this.errorMessage === ''
@@ -181,7 +204,8 @@ export default {
       <div class="col col-5">
         <AlertSuccess :success-message="successMessage" />
         <AlertDanger :error-message="errorMessage" />
-        <h1>Lisa asukoht</h1>
+        <h1 v-if="isEdit">Muuda asukoha infot</h1>
+        <h1 v-else>Lisa asukoht</h1>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -202,7 +226,10 @@ export default {
     <div class="row justify-content-center">
       <div class="col">
         <button class="btn btn-secondary me-3" type="submit">Tagasi</button>
-        <button @click="addLocation" class="btn btn-success" type="submit">Lisa</button>
+        <button v-if="isEdit" @click="updateLocation" class="btn btn-success" type="submit">
+          Salvesta
+        </button>
+        <button v-else @click="addLocation" class="btn btn-success" type="submit">Lisa</button>
       </div>
     </div>
   </div>

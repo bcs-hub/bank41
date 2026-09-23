@@ -112,7 +112,7 @@ public class LocationController {
         return locationInfos;
     }
 
-    @GetMapping("/atm/locations/{locationId}")
+    @GetMapping("/atm/location/{locationId}")
     @Operation(
             summary = "Tagastab ühe pangaautomaadi asukoha detailandmed",
             description = "Kasutatakse asukoha muutmisvormi eeltäitmiseks. transactionTypes massiiv sisaldab " +
@@ -139,8 +139,7 @@ public class LocationController {
         return locationDto;
     }
 
-
-    @PutMapping("/atm/locations/{locationId}")
+    @PutMapping("/atm/location/{locationId}")
     public void updateLocation(@PathVariable Integer locationId, @RequestBody LocationDto locationDto) {
         locationService.updateLocation(locationId, locationDto);
     }

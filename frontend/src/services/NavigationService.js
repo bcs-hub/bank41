@@ -11,7 +11,7 @@ export default {
 
   navigateToErrorView() {
     // todo: kommenteeri sisse kui lahendus on valmis
-   // router.push({ name: 'errorRoute' })
+    // router.push({ name: 'errorRoute' })
   },
 
   navigateToNotAuthorizedView() {
@@ -20,4 +20,12 @@ export default {
     })
   },
 
+  navigateToLocationViewAsEdit(locationId) {
+    router.push({
+      name: 'locationRoute',
+      query: {
+        locationId: locationId,
+      },
+    })
+  },
 }
