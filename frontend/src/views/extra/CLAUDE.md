@@ -1,6 +1,27 @@
-# src/views/extra — õppematerjali kaust
+# src/views/extra — õppenäidete kaust (Rain'i integratsioonijuhend)
 
-See kaust on mõeldud õppenäidetena ja on disainitud nii, et seda saab tervikuna kopeerida ühest Vue 3 projektist teise minimaalse lisakonfiguratsiooniga.
+## Taust ja eesmärk
+
+See fail on mõeldud **Rainile endale**, mitte üldiseks projektidokumentatsiooniks. Rain on BCS
+Koolituse / Vali IT programmi lektor, kes õpetab iga õpilasgrupiga (lend, nt "grupp 41") full-stack
+arendust (Java Spring Boot + Vue 3) ühise pangaäpi (bank) õppeprojekti näitel. Iga grupp saab oma
+lennunumbriga repo ja arendab backendi ning frontendi kursuse jooksul samm-sammult.
+
+Kursuse lõpuosas tutvustab Rain õpilastele Leaflet kaardi võimalusi. Need näited elavad
+`src/views/extra/` kaustas ja on tehtud nii, et terve kaust on tervikuna kopeeritav ühest
+õpilasgrupi projektist teise, minimaalse lisatööga.
+
+**Rain'i töövoog:**
+1. Uus grupp alustab, saab oma repo.
+2. Kursuse lõpus kopeerib Rain käsitsi eelmise grupi `src/views/extra/` kausta uue grupi
+   frontend-projekti samasse asukohta.
+3. Rain suunab Claude Code'i sellele failile (`frontend/src/views/extra/CLAUDE.md`) ja ootab, et AI
+   teeks **iseseisvalt ära kogu integratsiooni**, et näited oleksid kohe brauseris demokõlblikud.
+
+Iga grupp on kursuse käigus jõudnud backend-arendusega erinevasse punkti — mõnel grupil on kõik
+`extra/` näidete vajalikud REST endpointid juba olemas, mõnel puudub üks-kaks. Integratsioon
+koosneb seetõttu kahest erineva iseloomuga etapist (vt allpool): mehaaniline osa on iga kord
+identne, backend-sõltuvuste kontroll nõuab iga kord konkreetse projekti koodibaasi uurimist.
 
 ## Kausta struktuur
 
@@ -21,6 +42,7 @@ src/views/extra/
 │   │   ├── AtmImage.vue
 │   │   └── ImageInput.vue
 │   └── location/
+│       ├── LocationCard.vue          # asukoha kuvamiskaart (kaardi popup, kaartide list)
 │       ├── LocationForm.vue
 │       ├── LocationNameInput.vue
 │       ├── NumberOfAtmsInput.vue
@@ -35,18 +57,21 @@ src/views/extra/
 ├── map-simple/                      # lihtne Leaflet kaardi näide
 ├── map-api-county/                  # maakonnad Overpass API kaudu
 ├── map-json-county/                 # maakonnad lokaalse JSON failiga
-├── map-add-location/                # uue asukoha lisamine kaardil
-├── map-atms/                        # ATM asukohtade kaart koos filtriga
+├── map-location/                    # uue ATM asukoha lisamise vorm (kaart + LocationForm)
+├── map-atms/                        # ATM asukohtade kaart koos filtriga ja detailinfoga (pilt, automaatide arv)
 └── timer/                           # taimer countdown näide
 ```
 
-## Uude projekti kopeerimine
+## Integratsiooni etapp 1 — mehaaniline (iga kord identne)
+
+Need sammud ei sõltu grupi projekti hetkeseisust — tee need alati, kontrollimata koodibaasi eraldi.
 
 ### 1. Kopeeri kaust
 
-Kopeeri terve `src/views/extra/` kaust uude projekti samasse asukohta.
+Kopeeri terve `src/views/extra/` kaust uude projekti samasse asukohta (see teeb Rain ise, käsitsi,
+enne AI sekkumist).
 
-### 2. `src/router/index.js` — lisa üks import ja üks rida
+### 2. `src/router/index.js` — lisa import ja route'id
 
 ```js
 import { extraRoutes } from '@/views/extra/extra.routes.js'
@@ -62,9 +87,7 @@ const router = createRouter({
 `_services/NavigationService.js` viitab marsruutide nimedele `errorRoute` ja `notAuthorizedRoute`.
 Kui uues projektis on need nimed erinevad, muuda need `_services/NavigationService.js` failis ära.
 
-### 3. `package.json` — kontrolli, et sõltuvused on olemas
-
-Extra kaust vajab järgmisi npm pakette:
+### 3. `package.json` — kontrolli sõltuvusi
 
 ```json
 "dependencies": {
@@ -75,13 +98,13 @@ Extra kaust vajab järgmisi npm pakette:
 }
 ```
 
-Installi puuduvad paketid:
+Installi puuduvad paketid: `npm install leaflet @vue-leaflet/vue-leaflet osmtogeojson`
 
-```sh
-npm install leaflet @vue-leaflet/vue-leaflet osmtogeojson
-```
+**WSL2 tähelepanek:** kui `npm run dev` annab vea puuduva natiivmooduli kohta (nt
+`@rolldown/binding-linux-x64-gnu`), tähendab see, et `node_modules` on installitud Windowsi Node'iga.
+Käivita `npm install` uuesti WSL2 seest (Claude Code terminalist), et Linuxi natiivmoodulid tekiksid.
 
-### 4. `src/main.js` — lisa Leaflet CSS import
+### 4. `src/main.js` — Leaflet CSS import
 
 ```js
 import 'leaflet/dist/leaflet.css'
@@ -89,9 +112,9 @@ import 'leaflet/dist/leaflet.css'
 
 Ilma selleta on kaardid nähtavad, kuid visuaalselt katkised (puuduvad ikoonid, valed proportsioonid).
 
-### 5. `src/App.vue` — lisa navigeerimislink (valikuline)
+### 5. `src/App.vue` — navigeerimislink
 
-Lisa navbar'i link Extra vaatele, kui soovid sellele ligi pääseda navigatsioonist:
+Lisa navbar'i link Extra vaatele:
 
 ```html
 <RouterLink class="nav-link" to="/extras">Extra asjad</RouterLink>
@@ -99,9 +122,46 @@ Lisa navbar'i link Extra vaatele, kui soovid sellele ligi pääseda navigatsioon
 
 Ilma selleta on Extra vaade siiski kättesaadav otse URL-ilt `/extras`.
 
+## Integratsiooni etapp 2 — backend-sõltuvuste kontroll (grupiti erinev, nõuab uurimist)
+
+See on iga integratsiooni juures uus töö, kuna grupid on backend-arendusega erineval tasemel.
+
+### Muster
+
+1. Ava iga fail `src/views/extra/_services/*.js` ja iga näite enda `services/*.js` fail (nt
+   `map-atms/services/AtmsMapLocationService.js`) ja loetle kõik `axios` kutsed — need on
+   `extra/` kausta REST-sõltuvused (URL, HTTP meetod, tagastatav kuju).
+2. Kontrolli grupi backend-projektist (`backend/src/main/java/ee/bcs/bank/controller/...`), kas iga
+   endpoint on juba olemas ja tagastab eeldatud kujuga andmed (sh kõik väljad, mida `extra/`
+   komponendid kasutavad, nt pildid, automaatide arv).
+3. Kui endpoint puudub või tagastab liiga vähe infot, loo/täienda see **backend/CLAUDE.md**
+   konventsioone järgides: taaskasuta olemasolevaid `Controller`/`Service`/`Repository`/`Mapper`
+   meetodeid ja mustreid, ära dubleeri loogikat. Kontrolli ka `docs/backend/projekti-struktuur.md`.
+4. Kui frontend-teenuse fail viitab valele/olematule URL-ile või valele teisele teenuse meetodile
+   (nt kopeerimisviga, kus üks helper kutsub kogemata vana endpointi uue asemel), paranda see.
+
+### Näide (2026. a sügis, `map-atms`)
+
+`map-atms` näide eeldas `LocationService.js`-is meetodit `sendGetAtmLocationsDetail(cityId)`, mis
+kutsub `/api/atm/locations/details` ja tagastab lisaks tavapärastele asukoha väljadele ka `cityId`,
+`numberOfAtms` ja `imageData`. Grupi backend'is oli olemas ainult kergem `/api/atm/locations`
+(`LocationInfo`, ilma pildita). Lahendus: lisati uus DTO `AtmLocationDetailDto`, uus
+`LocationController` endpoint `GET /api/atm/locations/details` ning `LocationService`-sse uus
+meetod `findAtmLocationDetails(cityId)`, mis taaskasutas olemasolevaid privaatseid meetodeid
+(`findFilteredLocationsBy`, `validateAtLeastOneLocationExists`, `createTransactionTypeDtos`) ja
+lisas ainult uue bulk-pildipäringu (`LocationImageRepository.findByLocationIn`), et vältida N+1
+probleemi.
+
+### Pärast koodimuudatusi
+
+Käivita backend (`./gradlew bootRun`) ja frontend (`npm run dev`) ning kontrolli reaalse päringuga
+(curl või brauser), et uued/muudetud endpointid tagastavad oodatud andmed enne, kui teatad
+integratsiooni valmis olevaks.
+
 ## Järelejäänud väline sõltuvus
 
-`_services/NavigationService.js` impordib `@/router/index.js` — see on vältimatu, kuna Vue Router on projekti tasemel. Muuda vajadusel marsruutide nimesid selles failis.
+`_services/NavigationService.js` impordib `@/router/index.js` — see on vältimatu, kuna Vue Router on
+projekti tasemel. Muuda vajadusel marsruutide nimesid selles failis.
 
 ## Keel
 

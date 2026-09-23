@@ -3,7 +3,7 @@ import CityService from '../../_services/CityService.js'
 
 export default {
   sendGetAtmLocationsDetail(cityId = 0) {
-    return LocationService.sendGetAtmLocations(cityId)
+    return LocationService.sendGetAtmLocationsDetail(cityId)
   },
 
   sendGetCities() {

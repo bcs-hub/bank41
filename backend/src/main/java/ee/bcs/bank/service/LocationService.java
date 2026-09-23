@@ -1,6 +1,7 @@
 package ee.bcs.bank.service;
 
 import ee.bcs.bank.controller.common.dto.TransactionTypeDto;
+import ee.bcs.bank.controller.location.dto.AtmLocationDetailDto;
 import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
@@ -65,6 +66,15 @@ public class LocationService {
         List<LocationInfo> locationInfos = locationMapper.toLocationInfos(locations);
         addTransactionTypes(locationInfos);
         return locationInfos;
+    }
+
+    public List<AtmLocationDetailDto> findAtmLocationDetails(Integer cityId) {
+        List<Location> locations = locationRepository.findFilteredLocationsBy(cityId, STATUS_ACTIVE.getCode());
+        validateAtLeastOneLocationExists(locations);
+        List<AtmLocationDetailDto> atmLocationDetailDtos = locationMapper.toAtmLocationDetailDtos(locations);
+        addImageData(atmLocationDetailDtos, locations);
+        addTransactionTypesToDetails(atmLocationDetailDtos);
+        return atmLocationDetailDtos;
     }
 
     public List<LocationInfo> findAtmLocationsV2(Integer cityId) {
@@ -161,6 +171,26 @@ public class LocationService {
         for (LocationInfo locationInfo : locationInfos) {
             List<TransactionTypeDto> transactionTypeDtos = createTransactionTypeDtos(locationInfo.getLocationId());
             locationInfo.setTransactionTypes(transactionTypeDtos);
+        }
+    }
+
+    private void addTransactionTypesToDetails(List<AtmLocationDetailDto> atmLocationDetailDtos) {
+        for (AtmLocationDetailDto atmLocationDetailDto : atmLocationDetailDtos) {
+            List<TransactionTypeDto> transactionTypeDtos = createTransactionTypeDtos(atmLocationDetailDto.getLocationId());
+            atmLocationDetailDto.setTransactionTypes(transactionTypeDtos);
+        }
+    }
+
+    private void addImageData(List<AtmLocationDetailDto> atmLocationDetailDtos, List<Location> locations) {
+        List<LocationImage> locationImages = locationImageRepository.findByLocationIn(locations);
+        Map<Integer, String> imageDataByLocationId = new HashMap<>();
+        for (LocationImage locationImage : locationImages) {
+            String imageAsString = StringBytesConverter.bytesToString(locationImage.getData());
+            imageDataByLocationId.put(locationImage.getLocation().getId(), imageAsString);
+        }
+        for (AtmLocationDetailDto atmLocationDetailDto : atmLocationDetailDtos) {
+            String imageData = imageDataByLocationId.getOrDefault(atmLocationDetailDto.getLocationId(), "");
+            atmLocationDetailDto.setImageData(imageData);
         }
     }
 

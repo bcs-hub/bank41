@@ -1,5 +1,6 @@
 package ee.bcs.bank.controller.location;
 
+import ee.bcs.bank.controller.location.dto.AtmLocationDetailDto;
 import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.infrastructure.error.ApiError;
@@ -66,6 +67,27 @@ public class LocationController {
     public List<LocationInfo> findAtmLocations(@RequestParam Integer cityId) {
         List<LocationInfo> locationInfos = locationService.findAtmLocations(cityId);
         return locationInfos;
+    }
+
+    @GetMapping("/atm/locations/details")
+    @Operation(
+            summary = "Tagastab pangaautomaatide asukohtade detailinfo koos piltidega",
+            description = "Kui cityId on 0, siis tagastatakse kõik asukohad. Erinevalt /atm/locations " +
+                    "endpointist sisaldab vastus ka cityId, numberOfAtms ja imageData välju."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200", description = "OK"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Kui ühtegi askohta ei leita, siis 'message': Ei leitud ühtegi pangaautomaati, 'errorCode:' NO_LOCATION_FOUND",
+                    content = @Content(schema = @Schema(implementation = ApiError.class))
+            )
+    })
+    public List<AtmLocationDetailDto> findAtmLocationDetails(@RequestParam Integer cityId) {
+        List<AtmLocationDetailDto> atmLocationDetailDtos = locationService.findAtmLocationDetails(cityId);
+        return atmLocationDetailDtos;
     }
 
     @GetMapping("/v2/atm/locations")

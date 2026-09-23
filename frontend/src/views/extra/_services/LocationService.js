@@ -30,7 +30,7 @@ export default {
   },
 
   sendGetAtmLocationsDetail(cityId = 0) {
-    return axios.get('/api/atm/locations/detail', {
+    return axios.get('/api/atm/locations/details', {
       params: { cityId },
     })
   },
