@@ -1,6 +1,5 @@
 package ee.bcs.bank.controller.location;
 
-import ee.bcs.bank.controller.location.dto.AtmLocationDetailDto;
 import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.infrastructure.error.ApiError;
@@ -122,7 +121,6 @@ public class LocationController {
     @PutMapping("/atm/locations/{locationId}")
     public void updateLocation(@PathVariable Integer locationId, @RequestBody LocationDto locationDto) {
         locationService.updateLocation(locationId, locationDto);
-
     }
 
 }

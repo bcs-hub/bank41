@@ -74,7 +74,7 @@
 <script>
 import { LMap, LTileLayer, LMarker, LTooltip, LPopup } from '@vue-leaflet/vue-leaflet'
 import LocationCards from './components/LocationCards.vue'
-import LocationCard from './components/LocationCard.vue'
+import LocationCard from '@/views/extra/_components/location/LocationCard.vue'
 import AtmsMapLocationService from './services/AtmsMapLocationService.js'
 
 export default {

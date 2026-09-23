@@ -45,23 +45,23 @@
               Leaflet emits a `click` event on markers by default.
               Vue-Leaflet re-emits this so you can open popups or run methods.
               Here, clicking the pin opens the <l-popup> and renders your
-              <LocationInfoCard> component, passing in `locationInfo`.
+              <LocationCard> component, passing in `locationInfo`.
             -->
-            <l-marker :lat-lng="[0, 0]">
+            <l-marker :lat-lng="[locationInfo.latitude, locationInfo.longitude]">
               <l-tooltip> Clickable variant. You can click on this pin </l-tooltip>
-              <l-popup>
-                <LocationInfoCard :location-info="locationInfo" />
+              <l-popup :options="{ minWidth: 200 }">
+                <LocationCard :location="locationInfo" />
               </l-popup>
             </l-marker>
 
             <!--  Joon: Hiiumaa, Saaremaa, Pärnu    -->
             <l-polyline
               :lat-lngs="[
-                [58.948, 20],
-                [58.254, 23],
+                [58.948, 22.591],
+                [58.254, 22.489],
                 [58.386, 24.495],
               ]"
-              color="red"
+              color="green"
             ></l-polyline>
 
             <!--   Large Octagon shape near Tartu -->
@@ -74,7 +74,7 @@
                 [58.328, 26.731],
                 [58.338, 26.701],
                 [58.368, 26.691],
-                [58.398, 26.800],
+                [58.398, 26.701],
               ]"
               color="#41b782"
               :fill="true"
@@ -91,7 +91,7 @@
                 [58.235, 25.658],
               ]"
               :fill="true"
-              color="red"
+              color="#35495d"
             />
           </l-map>
         </div>
@@ -122,11 +122,11 @@ import {
 import logoUrl from '../_assets/logo.png'
 import AtmImage from '../_components/image/AtmImage.vue'
 import ImageInput from '../_components/image/ImageInput.vue'
-import LocationInfoCard from '@/views/extra/map-simple/components/LocationInfoCard.vue'
+import LocationCard from '@/views/extra/_components/location/LocationCard.vue'
 
 export default {
   components: {
-    LocationInfoCard,
+    LocationCard,
     ImageInput,
     AtmImage,
     LMap,
@@ -164,6 +164,7 @@ export default {
         locationName: 'Paide Maksimarket',
         latitude: 58.885,
         longitude: 25.557,
+        numberOfAtms: 1,
         imageData: '',
         transactionTypes: [
           {

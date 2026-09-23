@@ -19,7 +19,7 @@
             <h6 class="mb-2">Kaardi juhtnupud</h6>
             <div class="d-flex gap-2 flex-wrap">
               <button type="button" class="btn btn-sm btn-outline-primary" @click="resetView">
-                Lähtesta vaade
+                Lähtesta kaart
               </button>
               <button type="button" class="btn btn-sm btn-outline-secondary" @click="toggleLabels">
                 {{ showLabels ? 'Peida sildid' : 'Näita silte' }}
@@ -27,20 +27,6 @@
               <button type="button" class="btn btn-sm btn-outline-info" @click="toggleCounties">
                 {{ showCounties ? 'Peida maakonnad' : 'Näita maakondi' }}
               </button>
-            </div>
-          </div>
-
-          <!-- Valitud koordinaadid -->
-          <div v-if="location.lat || location.lng" class="mb-2">
-            <div class="row g-2">
-              <div class="col-6">
-                <label class="form-label small">Laiuskraad:</label>
-                <input type="text" class="form-control form-control-sm" :value="location.lat ? location.lat.toFixed(6) : ''" readonly>
-              </div>
-              <div class="col-6">
-                <label class="form-label small">Pikkuskraad:</label>
-                <input type="text" class="form-control form-control-sm" :value="location.lng ? location.lng.toFixed(6) : ''" readonly>
-              </div>
             </div>
           </div>
 
@@ -166,8 +152,8 @@ export default {
       mapOptions: { zoomControl: true, scrollWheelZoom: true },
       countyData: null,
       countyLabels: [],
-      showLabels: true,
-      showCounties: true,
+      showLabels: false,
+      showCounties: false,
       clickPin: null,
 
       // Vormi andmed
@@ -315,6 +301,8 @@ export default {
       this.clickPin = null
       this.location.lat = null
       this.location.lng = null
+      this.showLabels = false
+      this.showCounties = false
       if (this.$refs.mapRef && this.$refs.mapRef.leafletObject) {
         this.$refs.mapRef.leafletObject.setView([58.7, 25.3], 7)
       }

@@ -1,7 +1,6 @@
 package ee.bcs.bank.service;
 
 import ee.bcs.bank.controller.common.dto.TransactionTypeDto;
-import ee.bcs.bank.controller.location.dto.AtmLocationDetailDto;
 import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import ee.bcs.bank.infrastructure.exception.DataNotFoundException;
@@ -197,8 +196,7 @@ public class LocationService {
         }
     }
 
-    // Jagatud (shared) abimeetod — kasutusel nii findAtmLocations (addTransactionTypes kaudu)
-    // kui ka getAtmLocationDetailDto poolt, seetõttu paikneb faili lõpus.
+
     private List<TransactionTypeDto> createTransactionTypeDtos(Integer locationId) {
         Sort byNameDesc = Sort.by(Sort.Direction.DESC, "name");
         List<TransactionType> transactionTypes = transactionTypeRepository.findAll(byNameDesc);

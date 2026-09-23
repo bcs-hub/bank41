@@ -205,10 +205,10 @@ geoJsonOptions: {
 
 ### Related Components
 
-#### LocationInfoCard.vue
+#### LocationCard.vue (`_components/location/`)
 - **Purpose**: Display ATM location details with image and transaction types
 - **Usage**: Could be integrated for location-based overlays on county map
-- **Props**: `locationInfo` object with name, image, and transaction types
+- **Props**: `location` object with name, image, and transaction types
 
 #### CoordinatesTable.vue  
 - **Purpose**: Tabular display of coordinate arrays

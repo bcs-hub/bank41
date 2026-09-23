@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import LocationCard from './LocationCard.vue'
+import LocationCard from '@/views/extra/_components/location/LocationCard.vue'
 
 export default {
   name: 'LocationCards',

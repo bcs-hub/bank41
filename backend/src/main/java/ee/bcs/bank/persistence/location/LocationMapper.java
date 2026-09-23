@@ -1,7 +1,6 @@
 package ee.bcs.bank.persistence.location;
 
 import ee.bcs.bank.Status;
-import ee.bcs.bank.controller.location.dto.AtmLocationDetailDto;
 import ee.bcs.bank.controller.location.dto.LocationDto;
 import ee.bcs.bank.controller.location.dto.LocationInfo;
 import org.mapstruct.*;
