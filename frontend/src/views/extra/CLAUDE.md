@@ -136,7 +136,7 @@ See on iga integratsiooni juures uus töö, kuna grupid on backend-arendusega er
    komponendid kasutavad, nt pildid, automaatide arv).
 3. Kui endpoint puudub või tagastab liiga vähe infot, loo/täienda see **backend/CLAUDE.md**
    konventsioone järgides: taaskasuta olemasolevaid `Controller`/`Service`/`Repository`/`Mapper`
-   meetodeid ja mustreid, ära dubleeri loogikat. Kontrolli ka `docs/backend/projekti-struktuur.md`.
+   meetodeid ja mustreid, ära dubleeri loogikat. Kontrolli ka `docs/structure/backend-projekti-struktuur.md`.
 4. Kui frontend-teenuse fail viitab valele/olematule URL-ile või valele teisele teenuse meetodile
    (nt kopeerimisviga, kus üks helper kutsub kogemata vana endpointi uue asemel), paranda see.
 
